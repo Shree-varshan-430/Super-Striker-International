@@ -2,25 +2,82 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0b1f3a;
+  --primary-sky: #8ed8f8;
+  --secondary-navy: #0b1f3a;
+  --background-soft: #f5f8fc;
+  
+  --font-inter: var(--font-inter);
+  --font-outfit: var(--font-outfit);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  --color-primary-sky: var(--primary-sky);
+  --color-secondary-navy: var(--secondary-navy);
+  --color-background-soft: var(--background-soft);
+  
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-display: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+/* Custom premium scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f5f8fc;
+}
+::-webkit-scrollbar-thumb {
+  background: #c3d3e6;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8ed8f8;
+}
+
+/* Editorial line highlights */
+.editorial-line {
+  position: relative;
+}
+.editorial-line::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background-color: #8ed8f8;
+}
+
+/* Image overlay overlay-editorial */
+.overlay-editorial {
+  background: linear-gradient(to bottom, rgba(11, 31, 58, 0.1), rgba(11, 31, 58, 0.85));
+}
+
+/* Infinite marquee scrolling keyframes and utilities */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-slow {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee-fast {
+  display: flex;
+  width: max-content;
+  animation: marquee 20s linear infinite;
 }
