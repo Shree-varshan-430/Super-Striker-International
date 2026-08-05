@@ -68,15 +68,15 @@ export default function Investors() {
   ];
 
   return (
-    <div className="w-full bg-[#101B4D] text-white min-h-screen relative overflow-hidden">
+    <div className="w-full bg-[#10143A] text-white min-h-screen relative overflow-hidden">
       {/* Glow backdrop effects */}
-      <div className="absolute top-10 left-10 w-[500px] h-[500px] bg-[#6C4CE6]/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-40 right-10 w-[400px] h-[400px] bg-[#2457D6]/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-10 left-10 w-[500px] h-[500px] bg-[#F5D000]/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-40 right-10 w-[400px] h-[400px] bg-[#1B2255]/40 rounded-full blur-[100px] pointer-events-none" />
 
       {/* Premium Header */}
       <section className="py-24 border-b border-white/10 px-4 text-center relative z-10">
         <div className="max-w-4xl mx-auto flex flex-col gap-4">
-          <span className="text-[10px] font-bold uppercase tracking-widest text-[#3FA9F5]">Partnerships & Capital</span>
+          <span className="text-[10px] font-bold uppercase tracking-widest text-[#F5D000]">Partnerships & Capital</span>
           <h1 className="font-display text-4xl sm:text-5xl font-extrabold uppercase tracking-tight text-white leading-none">
             Invest In The Future Of Indian Football
           </h1>
@@ -89,21 +89,21 @@ export default function Investors() {
       {/* Grid of 5 Investment Cards */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <span className="text-[11px] font-bold uppercase tracking-wider text-[#3FA9F5]">Strategic Allocation</span>
+          <span className="text-[11px] font-bold uppercase tracking-wider text-[#F5D000]">Strategic Allocation</span>
           <h2 className="font-display text-3xl font-black uppercase tracking-tight text-white mt-1">
             Investment Opportunities
           </h2>
-          <div className="h-1 w-12 bg-[#2457D6] mx-auto mt-4" />
+          <div className="h-1 w-12 bg-[#F5D000] mx-auto mt-4" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {investmentOpportunities.map((op) => (
             <div
               key={op.id}
-              className="bg-white/5 border border-white/10 rounded-xl p-8 shadow-2xl flex flex-col gap-4 hover:border-[#6C4CE6]/40 hover:shadow-[0_0_30px_rgba(108,76,230,0.12)] transition-all duration-300 relative overflow-hidden group"
+              className="bg-white/5 border border-white/10 rounded-xl p-8 shadow-2xl flex flex-col gap-4 hover:border-[#F5D000]/40 hover:shadow-[0_0_30px_rgba(245,208,0,0.1)] transition-all duration-300 relative overflow-hidden group"
             >
-              <div className="absolute top-0 left-0 w-1.5 h-full bg-[#6C4CE6] group-hover:h-full transition-all" />
-              <span className="text-xs font-bold text-[#3FA9F5]">0{op.id}</span>
+              <div className="absolute top-0 left-0 w-1.5 h-full bg-[#F5D000] group-hover:h-full transition-all" />
+              <span className="text-xs font-bold text-[#F5D000]">0{op.id}</span>
               <h3 className="font-display text-lg font-bold uppercase tracking-tight text-white">
                 {op.title}
               </h3>
@@ -120,11 +120,11 @@ export default function Investors() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           <div className="lg:col-span-6 flex flex-col gap-6">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#3FA9F5]">Value Proposition</span>
+            <span className="text-xs font-bold uppercase tracking-widest text-[#F5D000]">Value Proposition</span>
             <h2 className="font-display text-3xl sm:text-4xl font-extrabold uppercase tracking-tight text-white">
               Why Partner With Us?
             </h2>
-            <div className="h-1 w-12 bg-[#2457D6]" />
+            <div className="h-1 w-12 bg-[#F5D000]" />
             <p className="text-white/80 text-sm leading-relaxed">
               SuperStriker&apos;s model is designed for long-term growth. We don&apos;t just run football clubs; we operate a complete vertical network integrating academy scouts with professional team assets to create a self-sustaining talent pipeline.
             </p>
@@ -144,7 +144,7 @@ export default function Investors() {
                 key={idx}
                 className="bg-white/5 p-5 rounded-xl border border-white/10 flex items-start gap-4 shadow-sm hover:border-white/20 transition-all duration-300"
               >
-                <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#2457D6]/20 text-[#3FA9F5]">
+                <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#F5D000]/20 text-[#F5D000]">
                   <TrendingUp className="h-3.5 w-3.5" />
                 </div>
                 <p className="text-xs sm:text-sm font-semibold text-white leading-relaxed">
@@ -160,7 +160,7 @@ export default function Investors() {
       {/* Enquiry Form Section */}
       <section id="enquire" className="py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto scroll-mt-24 relative z-10">
         <div className="text-center mb-12">
-          <span className="text-[11px] font-bold uppercase tracking-wider text-[#3FA9F5] font-semibold">Strategic Access</span>
+          <span className="text-[11px] font-bold uppercase tracking-wider text-[#F5D000] font-semibold">Strategic Access</span>
           <h2 className="font-display text-3xl font-black uppercase tracking-tight text-white mt-1">
             Become A Strategic Partner
           </h2>
@@ -220,7 +220,7 @@ export default function Investors() {
                     required
                     disabled={status === "submitting"}
                     placeholder="Enter your name"
-                    className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-[#2457D6] focus:outline-none focus:ring-2 focus:ring-[#2457D6]/20 disabled:opacity-50"
+                    className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-[#F5D000] focus:outline-none focus:ring-2 focus:ring-[#F5D000]/20 disabled:opacity-50"
                   />
                 </div>
 
@@ -239,7 +239,7 @@ export default function Investors() {
                       required
                       disabled={status === "submitting"}
                       placeholder="name@company.com"
-                      className="w-full rounded-lg border border-white/10 bg-white/5 pl-10 pr-4 py-3 text-sm text-white placeholder-gray-500 focus:border-[#2457D6] focus:outline-none focus:ring-2 focus:ring-[#2457D6]/20 disabled:opacity-50"
+                      className="w-full rounded-lg border border-white/10 bg-white/5 pl-10 pr-4 py-3 text-sm text-white placeholder-gray-500 focus:border-[#F5D000] focus:outline-none focus:ring-2 focus:ring-[#F5D000]/20 disabled:opacity-50"
                     />
                     <Mail className="absolute left-3.5 top-3.5 h-4 w-4 text-white/40" />
                   </div>
@@ -260,7 +260,7 @@ export default function Investors() {
                       required
                       disabled={status === "submitting"}
                       placeholder="Company Name"
-                      className="w-full rounded-lg border border-white/10 bg-white/5 pl-10 pr-4 py-3 text-sm text-white placeholder-gray-500 focus:border-[#2457D6] focus:outline-none focus:ring-2 focus:ring-[#2457D6]/20 disabled:opacity-50"
+                      className="w-full rounded-lg border border-white/10 bg-white/5 pl-10 pr-4 py-3 text-sm text-white placeholder-gray-500 focus:border-[#F5D000] focus:outline-none focus:ring-2 focus:ring-[#F5D000]/20 disabled:opacity-50"
                     />
                     <Building className="absolute left-3.5 top-3.5 h-4 w-4 text-white/40" />
                   </div>
@@ -281,7 +281,7 @@ export default function Investors() {
                       required
                       disabled={status === "submitting"}
                       placeholder="+91 99000 00000"
-                      className="w-full rounded-lg border border-white/10 bg-white/5 pl-10 pr-4 py-3 text-sm text-white placeholder-gray-500 focus:border-[#2457D6] focus:outline-none focus:ring-2 focus:ring-[#2457D6]/20 disabled:opacity-50"
+                      className="w-full rounded-lg border border-white/10 bg-white/5 pl-10 pr-4 py-3 text-sm text-white placeholder-gray-500 focus:border-[#F5D000] focus:outline-none focus:ring-2 focus:ring-[#F5D000]/20 disabled:opacity-50"
                     />
                     <Phone className="absolute left-3.5 top-3.5 h-4 w-4 text-white/40" />
                   </div>
@@ -298,12 +298,12 @@ export default function Investors() {
                     value={formData.range}
                     onChange={handleChange}
                     disabled={status === "submitting"}
-                    className="w-full rounded-lg border border-white/10 bg-[#101B4D] px-4 py-3 text-sm text-white focus:border-[#2457D6] focus:outline-none focus:ring-2 focus:ring-[#2457D6]/20 disabled:opacity-50 cursor-pointer"
+                    className="w-full rounded-lg border border-white/10 bg-[#10143A] px-4 py-3 text-sm text-white focus:border-[#F5D000] focus:outline-none focus:ring-2 focus:ring-[#F5D000]/20 disabled:opacity-50 cursor-pointer"
                   >
-                    <option className="bg-[#101B4D] text-white" value="10L-50L">₹10 Lakhs – ₹50 Lakhs</option>
-                    <option className="bg-[#101B4D] text-white" value="50L-2Cr">₹50 Lakhs – ₹2 Crores</option>
-                    <option className="bg-[#101B4D] text-white" value="2Cr-5Cr">₹2 Crores – ₹5 Crores</option>
-                    <option className="bg-[#101B4D] text-white" value="5Cr+">₹5 Crores +</option>
+                    <option className="bg-[#10143A] text-white" value="10L-50L">₹10 Lakhs – ₹50 Lakhs</option>
+                    <option className="bg-[#10143A] text-white" value="50L-2Cr">₹50 Lakhs – ₹2 Crores</option>
+                    <option className="bg-[#10143A] text-white" value="2Cr-5Cr">₹2 Crores – ₹5 Crores</option>
+                    <option className="bg-[#10143A] text-white" value="5Cr+">₹5 Crores +</option>
                   </select>
                 </div>
 
@@ -321,7 +321,7 @@ export default function Investors() {
                     required
                     disabled={status === "submitting"}
                     placeholder="Tell us about your investment objectives and how you would like to collaborate..."
-                    className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-[#2457D6] focus:outline-none focus:ring-2 focus:ring-[#2457D6]/20 disabled:opacity-50 resize-y"
+                    className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-[#F5D000] focus:outline-none focus:ring-2 focus:ring-[#F5D000]/20 disabled:opacity-50 resize-y"
                   />
                 </div>
 
@@ -337,7 +337,7 @@ export default function Investors() {
                   <button
                     type="submit"
                     disabled={status === "submitting"}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#2457D6] px-8 py-4 text-xs font-bold uppercase tracking-wider text-white shadow-lg shadow-[#2457D6]/20 hover:bg-gradient-to-r hover:from-[#2457D6] hover:to-[#6C4CE6] transition-all hover:scale-105 active:scale-95 disabled:bg-gray-500"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#F5D000] px-8 py-4 text-xs font-bold uppercase tracking-wider text-[#10143A] shadow-lg shadow-[#F5D000]/20 hover:bg-white hover:text-[#10143A] transition-all hover:scale-105 active:scale-95 disabled:bg-gray-500"
                   >
                     {status === "submitting" ? (
                       <>

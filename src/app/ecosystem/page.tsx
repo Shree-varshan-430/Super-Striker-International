@@ -108,7 +108,7 @@ export default function Ecosystem() {
       {/* Ecosystem Header */}
       <section className="bg-background-soft py-20 border-b border-gray-100 px-4 text-center">
         <div className="max-w-4xl mx-auto flex flex-col gap-4">
-          <span className="text-[10px] font-bold uppercase tracking-widest text-primary-sky">Ecosystem Mapping</span>
+          <span className="text-[10px] font-bold uppercase tracking-widest text-[#10143A]">Ecosystem Mapping</span>
           <h1 className="font-display text-4xl sm:text-5xl font-extrabold uppercase tracking-tight text-secondary-navy leading-none">
             Our Football Ecosystem
           </h1>
@@ -141,12 +141,12 @@ export default function Ecosystem() {
                       whileTap={{ scale: 0.98 }}
                       className={`w-full max-w-md sm:max-w-none flex items-center gap-4 rounded-xl p-5 border text-left transition-all ${
                         isActive
-                          ? "bg-[#2457D6] text-white border-[#2457D6] shadow-lg shadow-[#2457D6]/20"
-                          : "bg-background-soft text-secondary-navy border-gray-100 hover:bg-[#2457D6]/10"
+                          ? "bg-[#10143A] text-white border-[#10143A]/30 shadow-lg shadow-[#10143A]/20"
+                          : "bg-background-soft text-secondary-navy border-gray-100 hover:bg-[#10143A]/10"
                       }`}
                     >
                       <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg ${
-                        isActive ? "bg-white text-[#2457D6]" : "bg-white text-secondary-navy border border-gray-100"
+                        isActive ? "bg-white text-[#10143A]" : "bg-white text-secondary-navy border border-gray-100"
                       }`}>
                         <Icon className="h-5 w-5" />
                       </div>
@@ -165,7 +165,7 @@ export default function Ecosystem() {
                         <motion.div 
                           animate={{ y: [0, 4, 0] }}
                           transition={{ repeat: Infinity, duration: 1.5 }}
-                          className="text-primary-sky py-1"
+                          className="text-[#10143A] py-1"
                         >
                           <ArrowDown className="h-5 w-5" />
                         </motion.div>
@@ -178,7 +178,7 @@ export default function Ecosystem() {
           </div>
 
           {/* Right column - The dynamic detail cards */}
-          <div className="lg:col-span-6 bg-white border border-[#2457D6]/15 rounded-2xl shadow-[0_15px_35px_rgba(36,87,214,0.06)] hover:border-[#6C4CE6]/35 transition-all duration-300 p-8 lg:p-12 sticky top-28">
+          <div className="lg:col-span-6 bg-white border border-[#10143A]/10 rounded-2xl shadow-[0_12px_24px_rgba(16,20,58,0.05)] hover:border-[#10143A]/30 transition-all duration-300 p-8 lg:p-12 sticky top-28">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeStep}
@@ -189,7 +189,7 @@ export default function Ecosystem() {
                 className="flex flex-col gap-6"
               >
                 <div>
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-primary-sky">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-[#10143A]">
                     Tier 0{activeStep + 1} Details
                   </span>
                   <h2 className="font-display text-2xl lg:text-3xl font-black uppercase tracking-tight text-secondary-navy mt-1">
@@ -211,7 +211,7 @@ export default function Ecosystem() {
                   <ul className="space-y-2">
                     {activeDetails.highlights.map((h, i) => (
                       <li key={i} className="flex items-start gap-2.5 text-xs text-secondary-navy/80 leading-relaxed">
-                        <span className="h-1.5 w-1.5 rounded-full bg-[#2457D6] mt-1.5 shrink-0" />
+                        <span className="h-1.5 w-1.5 rounded-full bg-[#10143A] mt-1.5 shrink-0" />
                         {h}
                       </li>
                     ))}
@@ -226,7 +226,7 @@ export default function Ecosystem() {
                     </h4>
                     <div className="flex flex-col gap-4">
                       {activeDetails.clubsOrEntities.map((entity, i) => (
-                        <div key={i} className="bg-[#F5F7FC] border border-[#2457D6]/10 p-4 rounded-xl flex flex-col gap-1.5 hover:border-[#2457D6]/35 transition-all duration-300">
+                        <div key={i} className="bg-[#F4F6FA] border border-[#10143A]/10 p-4 rounded-xl flex flex-col gap-1.5 hover:border-[#10143A]/30 transition-all duration-300">
                           <div className="flex items-center justify-between gap-2">
                             <h5 className="text-xs font-bold uppercase tracking-wide text-secondary-navy">
                               {entity.name}

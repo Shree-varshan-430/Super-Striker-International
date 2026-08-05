@@ -2,19 +2,19 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #0b1230;
+  --foreground: #0a1028;
   
   /* Brand Color System */
-  --primary-navy: #101B4D;
-  --secondary-blue: #2457D6;
-  --accent-violet: #6C4CE6;
-  --highlight-blue: #3FA9F5;
-  --background-soft: #f5f7fc;
-  --text-body: #4a5568;
+  --primary-navy: #10143A;
+  --secondary-navy: #1B2255;
+  --accent-gold: #F5D000;
+  --background-soft: #F4F6FA;
+  --text-body: #4B5563;
 
   /* Legacy/compatibility mappings to prevent breaking existing classes */
-  --primary-sky: #2457D6;      /* Royal Blue replaces old light blue */
-  --secondary-navy: #101B4D;   /* Deep Navy replaces old navy */
+  --primary-sky: #F5D000;      /* Championship Gold replaces old light blue */
+  --accent-violet: #F5D000;    /* Gold replaces violet accents */
+  --highlight-blue: #F5D000;   /* Gold replaces electric highlights */
   
   --font-inter: var(--font-inter);
   --font-outfit: var(--font-outfit);
@@ -22,15 +22,15 @@
 
 @theme {
   --color-primary-navy: var(--primary-navy);
-  --color-secondary-blue: var(--secondary-blue);
-  --color-accent-violet: var(--accent-violet);
-  --color-highlight-blue: var(--highlight-blue);
+  --color-secondary-navy: var(--secondary-navy);
+  --color-accent-gold: var(--accent-gold);
   --color-background-soft: var(--background-soft);
   --color-text-body: var(--text-body);
 
   /* Legacy/compatibility mapping */
   --color-primary-sky: var(--primary-sky);
-  --color-secondary-navy: var(--secondary-navy);
+  --color-accent-violet: var(--accent-violet);
+  --color-highlight-blue: var(--highlight-blue);
   
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --font-display: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
@@ -54,7 +54,7 @@ body {
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--secondary-blue);
+  background: var(--accent-gold);
 }
 
 /* Editorial line highlights */
@@ -68,12 +68,12 @@ body {
   left: 0;
   width: 40px;
   height: 3px;
-  background-color: var(--secondary-blue);
+  background-color: var(--accent-gold);
 }
 
 /* Image overlay overlay-editorial */
 .overlay-editorial {
-  background: linear-gradient(to bottom, rgba(16, 27, 77, 0.1), rgba(16, 27, 77, 0.85));
+  background: linear-gradient(to bottom, rgba(16, 20, 58, 0.1), rgba(16, 20, 58, 0.85));
 }
 
 /* Infinite marquee scrolling keyframes and utilities */
