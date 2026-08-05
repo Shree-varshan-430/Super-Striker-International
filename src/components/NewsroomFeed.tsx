@@ -114,32 +114,32 @@ export default function NewsroomFeed() {
   ];
 
   return (
-    <div ref={sectionRef} className="w-full bg-white text-secondary-navy pt-0 pb-0">
+    <div ref={sectionRef} className="w-full bg-white text-[#101B4D] pt-0 pb-0">
       {/* 1. SECTION HEADER */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 pb-8 border-b border-gray-100">
           <div className="text-left flex flex-col gap-2 max-w-2xl">
-            <span className="text-xs font-bold uppercase tracking-widest text-primary-sky">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#2457D6]">
               LATEST STORIES
             </span>
-            <h2 className="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight text-secondary-navy">
+            <h2 className="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight text-[#101B4D]">
               Inside The SuperStriker Football World
             </h2>
-            <p className="text-sm text-secondary-navy/60 leading-relaxed mt-2">
+            <p className="text-sm text-[#4A5568] leading-relaxed mt-2">
               Stay updated with the latest stories from our clubs, academies, players, and football ecosystem.
             </p>
           </div>
 
           {/* Filter Navigation */}
-          <div className="flex flex-wrap gap-1.5 shrink-0 bg-background-soft p-1 rounded-full border border-gray-150 max-w-md lg:max-w-none">
+          <div className="flex flex-wrap gap-1.5 shrink-0 bg-[#F5F7FC] p-1 rounded-full border border-gray-200/80 max-w-md lg:max-w-none">
             {filters.map((filter) => (
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
                 className={`px-4 py-2 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
                   activeFilter === filter
-                    ? "bg-secondary-navy text-white shadow-md shadow-secondary-navy/15"
-                    : "text-secondary-navy/70 hover:text-secondary-navy hover:bg-gray-200/50"
+                    ? "bg-[#2457D6] text-white shadow-md shadow-[#2457D6]/20"
+                    : "text-[#101B4D]/70 hover:text-[#101B4D] hover:bg-[#101B4D]/5"
                 }`}
               >
                 {filter}
@@ -155,7 +155,7 @@ export default function NewsroomFeed() {
         <div className="lg:col-span-7 flex h-full">
           <Link
             href={`/news/${featuredStory.id}`}
-            className="group flex flex-col justify-between bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 w-full"
+            className="group flex flex-col justify-between bg-white border border-[#2457D6]/15 rounded-2xl overflow-hidden shadow-sm hover:shadow-[0_15px_35px_rgba(36,87,214,0.12)] hover:border-[#2457D6]/40 transition-all duration-300 w-full"
             title={`Read ${featuredStory.title}`}
           >
             {/* Parallax image container */}
@@ -165,16 +165,16 @@ export default function NewsroomFeed() {
                 alt="Featured Story action"
                 fill
                 priority
-                className="object-cover transition-transform duration-500 group-hover:scale-101"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-secondary-navy/80 via-secondary-navy/10 to-transparent" />
-              <span className="absolute top-6 left-6 inline-flex bg-primary-sky text-secondary-navy px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#101B4D] via-[#101B4D]/35 to-transparent" />
+              <span className="absolute top-6 left-6 inline-flex bg-[#2457D6] text-white px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-md">
                 FEATURED
               </span>
               
               <div className="absolute bottom-6 left-6 right-6 text-white text-left flex flex-col gap-2">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-primary-sky">{featuredStory.category}</span>
-                <h3 className="font-display text-xl sm:text-3xl font-bold uppercase tracking-tight leading-tight group-hover:text-primary-sky transition-colors">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#3FA9F5]">{featuredStory.category}</span>
+                <h3 className="font-display text-xl sm:text-3xl font-bold uppercase tracking-tight leading-tight group-hover:text-[#3FA9F5] transition-colors">
                   {featuredStory.title}
                 </h3>
               </div>
@@ -182,11 +182,11 @@ export default function NewsroomFeed() {
 
             {/* Featured text metadata details */}
             <div className="p-6 sm:p-8 flex-grow flex flex-col justify-between gap-6">
-              <p className="text-xs sm:text-sm text-secondary-navy/70 leading-relaxed line-clamp-2 text-left">
+              <p className="text-xs sm:text-sm text-[#4A5568] leading-relaxed line-clamp-2 text-left">
                 {featuredStory.description}
               </p>
 
-              <div className="flex items-center justify-between border-t border-gray-50 pt-4 text-xs font-semibold text-secondary-navy/50">
+              <div className="flex items-center justify-between border-t border-gray-100 pt-4 text-xs font-semibold text-[#4A5568]/60">
                 <div className="flex items-center gap-4">
                   <span className="flex items-center gap-1">
                     <User className="h-3.5 w-3.5" />
@@ -198,7 +198,7 @@ export default function NewsroomFeed() {
                   </span>
                 </div>
                 
-                <span className="text-[10px] font-bold uppercase tracking-wider text-secondary-navy group-hover:translate-x-1.5 transition-transform flex items-center gap-1">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#2457D6] group-hover:translate-x-1.5 transition-transform flex items-center gap-1">
                   Read Full Story
                   <ArrowRight className="h-3.5 w-3.5" />
                 </span>
@@ -213,7 +213,7 @@ export default function NewsroomFeed() {
             <Link
               key={idx}
               href={`/news/${card.id}`}
-              className="group flex gap-4 bg-white border border-gray-100 p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow items-center"
+              className="group flex gap-4 bg-white border border-[#2457D6]/15 p-4 rounded-xl shadow-sm hover:shadow-[0_8px_20px_rgba(36,87,214,0.08)] hover:border-[#2457D6]/35 transition-all duration-300 items-center"
             >
               {/* Thumbnail image */}
               <div className="relative h-24 w-28 rounded-lg overflow-hidden shrink-0">
@@ -221,19 +221,19 @@ export default function NewsroomFeed() {
                   src={card.image}
                   alt={card.title}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover transition-transform duration-550 group-hover:scale-105"
                 />
               </div>
 
               {/* Card Meta details */}
               <div className="flex flex-col gap-1.5 justify-center">
-                <span className="text-[9px] font-bold uppercase tracking-wider text-primary-sky">
+                <span className="text-[9px] font-bold uppercase tracking-wider text-[#2457D6]">
                   {card.category}
                 </span>
-                <h4 className="font-display text-xs sm:text-sm font-bold uppercase tracking-tight text-secondary-navy group-hover:text-primary-sky transition-colors leading-snug line-clamp-2">
+                <h4 className="font-display text-xs sm:text-sm font-bold uppercase tracking-tight text-[#101B4D] group-hover:text-[#2457D6] transition-colors leading-snug line-clamp-2">
                   {card.title}
                 </h4>
-                <span className="text-[9px] font-semibold text-secondary-navy/40 flex items-center gap-1 mt-1">
+                <span className="text-[9px] font-semibold text-[#4A5568]/50 flex items-center gap-1 mt-1">
                   <Calendar className="h-3 w-3" />
                   {card.date}
                 </span>
@@ -245,7 +245,7 @@ export default function NewsroomFeed() {
 
       {/* 3. SECONDARY NEWS GRID (4 COLUMNS) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 text-left">
-        <h3 className="font-display text-xs font-bold uppercase tracking-widest text-secondary-navy/40 border-b border-gray-100 pb-3 mb-8">
+        <h3 className="font-display text-xs font-bold uppercase tracking-widest text-[#4A5568]/40 border-b border-gray-100 pb-3 mb-8">
           Secondary Editorial Spotlight
         </h3>
 
@@ -255,7 +255,7 @@ export default function NewsroomFeed() {
               <Link
                 key={card.id}
                 href={`/news/${card.id}`}
-                className="secondary-card-anim group flex flex-col justify-between bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow flex-grow h-full"
+                className="secondary-card-anim group flex flex-col justify-between bg-white border border-[#2457D6]/15 rounded-xl overflow-hidden hover:shadow-[0_10px_22px_rgba(36,87,214,0.06)] hover:border-[#2457D6]/35 transition-all duration-300 flex-grow h-full"
               >
                 {/* Image */}
                 <div className="relative h-44 w-full overflow-hidden">
@@ -265,7 +265,7 @@ export default function NewsroomFeed() {
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <span className="absolute top-3 left-3 bg-white px-2.5 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider text-secondary-navy shadow-sm">
+                  <span className="absolute top-3 left-3 bg-[#2457D6] text-white px-2.5 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider shadow-sm">
                     {card.category}
                   </span>
                 </div>
@@ -273,15 +273,15 @@ export default function NewsroomFeed() {
                 {/* Details */}
                 <div className="p-4 flex-grow flex flex-col justify-between gap-4">
                   <div className="flex flex-col gap-2">
-                    <h4 className="font-display text-sm font-bold uppercase tracking-tight text-secondary-navy group-hover:text-primary-sky transition-colors leading-snug line-clamp-2">
+                    <h4 className="font-display text-sm font-bold uppercase tracking-tight text-[#101B4D] group-hover:text-[#2457D6] transition-colors leading-snug line-clamp-2">
                       {card.title}
                     </h4>
-                    <p className="text-[11px] text-secondary-navy/60 leading-relaxed line-clamp-3">
+                    <p className="text-[11px] text-[#4A5568] leading-relaxed line-clamp-3">
                       {card.description}
                     </p>
                   </div>
 
-                  <div className="border-t border-gray-50 pt-3 flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-wider text-secondary-navy/50">
+                  <div className="border-t border-gray-100 pt-3 flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-wider text-[#4A5568]/50">
                     <User className="h-3 w-3" />
                     <span>{card.author.name}</span>
                   </div>
@@ -289,7 +289,7 @@ export default function NewsroomFeed() {
               </Link>
             ))
           ) : (
-            <div className="col-span-full text-center py-12 text-sm text-secondary-navy/40 font-semibold">
+            <div className="col-span-full text-center py-12 text-sm text-[#4A5568]/50 font-semibold">
               No secondary articles found matching this filter category.
             </div>
           )}
@@ -297,15 +297,15 @@ export default function NewsroomFeed() {
       </section>
 
       {/* 4. TRENDING NEWS BAR (INFINITE TICKER) */}
-      <section className="w-full bg-primary-sky/15 py-4 border-y border-primary-sky/35 overflow-hidden relative mb-0">
-        <div className="absolute left-0 top-0 bottom-0 bg-[#E2F4FD] px-6 flex items-center gap-2 z-10 border-r border-primary-sky/25">
-          <TrendingUp className="h-4.5 w-4.5 text-secondary-navy" />
-          <span className="text-xs font-black uppercase tracking-widest text-secondary-navy whitespace-nowrap">TRENDING NOW</span>
+      <section className="w-full bg-[#2457D6]/10 py-4 border-y border-[#2457D6]/20 overflow-hidden relative mb-0">
+        <div className="absolute left-0 top-0 bottom-0 bg-[#101B4D] px-6 flex items-center gap-2 z-10 border-r border-white/10 text-white">
+          <TrendingUp className="h-4.5 w-4.5 text-white" />
+          <span className="text-xs font-black uppercase tracking-widest text-white whitespace-nowrap">TRENDING NOW</span>
         </div>
-        <div className="flex items-center pl-48 animate-marquee-fast">
+        <div className="flex items-center pl-48 animate-marquee-fast text-[#101B4D]">
           {trendingTopics.concat(trendingTopics).map((topic, idx) => (
-            <span key={idx} className="text-xs font-black uppercase tracking-wider mx-10 text-secondary-navy/90 flex items-center gap-2 whitespace-nowrap">
-              <span className="text-secondary-navy font-extrabold">→</span> {topic}
+            <span key={idx} className="text-xs font-black uppercase tracking-wider mx-10 text-[#101B4D]/90 flex items-center gap-2 whitespace-nowrap">
+              <span className="text-[#2457D6] font-extrabold">→</span> {topic}
             </span>
           ))}
         </div>

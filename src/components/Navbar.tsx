@@ -31,11 +31,16 @@ export default function Navbar() {
     { name: "Investors", href: "/investors" },
   ];
 
+  const isHome = pathname === "/";
+  const useDarkTheme = scrolled || (isHome && !scrolled);
+
   return (
-    <header className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+    <header className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
       scrolled 
-        ? "bg-white/95 shadow-md shadow-gray-100/10 border-b border-gray-100/80 backdrop-blur-md" 
-        : "bg-white border-b border-gray-100"
+        ? "bg-[#101B4D]/85 border-b border-white/10 backdrop-blur-md shadow-lg" 
+        : isHome 
+          ? "bg-transparent border-b border-white/5" 
+          : "bg-white border-b border-gray-100"
     }`}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className={`flex items-center justify-between transition-all duration-300 ${
@@ -43,14 +48,22 @@ export default function Navbar() {
         }`}>
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-sky text-secondary-navy font-bold shadow-sm transition-transform group-hover:scale-105">
-              <Shield className="h-5 w-5 fill-secondary-navy" />
+            <div className={`flex h-10 w-10 items-center justify-center rounded-lg font-bold shadow-sm transition-transform group-hover:scale-105 ${
+              useDarkTheme 
+                ? "bg-[#2457D6] text-white" 
+                : "bg-[#101B4D] text-white"
+            }`}>
+              <Shield className="h-5 w-5 fill-white text-white" />
             </div>
             <div className="flex flex-col">
-              <span className="font-display text-lg font-extrabold tracking-tight text-secondary-navy uppercase leading-none">
+              <span className={`font-display text-lg font-extrabold tracking-tight uppercase leading-none transition-colors ${
+                useDarkTheme ? "text-white" : "text-[#101B4D]"
+              }`}>
                 SuperStriker
               </span>
-              <span className="text-[10px] font-semibold uppercase tracking-wider text-primary-sky leading-none mt-0.5">
+              <span className={`text-[10px] font-semibold uppercase tracking-wider leading-none mt-0.5 transition-colors ${
+                useDarkTheme ? "text-[#3FA9F5]" : "text-[#2457D6]"
+              }`}>
                 International
               </span>
             </div>
@@ -64,13 +77,19 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="relative text-sm font-semibold tracking-wide text-secondary-navy/80 hover:text-secondary-navy transition-colors py-2"
+                  className={`relative text-sm font-semibold tracking-wide transition-colors py-2 ${
+                    useDarkTheme 
+                      ? "text-white/80 hover:text-white" 
+                      : "text-[#101B4D]/80 hover:text-[#101B4D]"
+                  }`}
                 >
                   {link.name}
                   {isActive && (
                     <motion.span
                       layoutId="activeNavBorder"
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary-sky"
+                      className={`absolute bottom-0 left-0 right-0 h-0.5 ${
+                        useDarkTheme ? "bg-[#3FA9F5]" : "bg-[#2457D6]"
+                      }`}
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -83,7 +102,11 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-4">
             <Link
               href="/investors#enquire"
-              className="inline-flex items-center gap-2 rounded-full bg-secondary-navy px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition-all hover:bg-secondary-navy/90 hover:shadow-lg hover:shadow-secondary-navy/15 active:scale-95"
+              className={`inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-xs font-bold uppercase tracking-wider transition-all active:scale-95 ${
+                useDarkTheme 
+                  ? "bg-[#2457D6] text-white hover:bg-[#6C4CE6] hover:shadow-lg hover:shadow-[#2457D6]/15" 
+                  : "bg-[#101B4D] text-white hover:bg-[#2457D6] hover:shadow-lg hover:shadow-[#101B4D]/15"
+              }`}
             >
               Partner With Us
               <ArrowRight className="h-3.5 w-3.5" />
@@ -95,7 +118,11 @@ export default function Navbar() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="inline-flex items-center justify-center rounded-md p-2 text-secondary-navy hover:bg-background-soft focus:outline-none"
+              className={`inline-flex items-center justify-center rounded-md p-2 focus:outline-none transition-colors ${
+                useDarkTheme 
+                  ? "text-white hover:bg-white/10" 
+                  : "text-[#101B4D] hover:bg-gray-100"
+              }`}
               aria-controls="mobile-menu"
               aria-expanded={isOpen}
             >
@@ -114,7 +141,11 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden border-t border-gray-100 bg-white"
+            className={`md:hidden border-t ${
+              useDarkTheme 
+                ? "bg-[#101B4D] border-white/10" 
+                : "bg-white border-gray-150"
+            }`}
             id="mobile-menu"
           >
             <div className="space-y-1 px-4 pb-6 pt-4">
@@ -127,19 +158,27 @@ export default function Navbar() {
                     onClick={() => setIsOpen(false)}
                     className={`block rounded-lg px-4 py-3 text-base font-semibold transition-colors ${
                       isActive
-                        ? "bg-primary-sky/10 text-secondary-navy"
-                        : "text-secondary-navy/80 hover:bg-background-soft hover:text-secondary-navy"
+                        ? useDarkTheme 
+                          ? "bg-white/10 text-white" 
+                          : "bg-[#2457D6]/10 text-[#2457D6]"
+                        : useDarkTheme
+                          ? "text-white/80 hover:bg-white/5 hover:text-white"
+                          : "text-[#101B4D]/80 hover:bg-[#f5f7fc] hover:text-[#101B4D]"
                     }`}
                   >
                     {link.name}
                   </Link>
                 );
               })}
-              <div className="pt-4 border-t border-gray-100 px-4">
+              <div className={`pt-4 border-t px-4 ${useDarkTheme ? "border-white/10" : "border-gray-100"}`}>
                 <Link
                   href="/investors#enquire"
                   onClick={() => setIsOpen(false)}
-                  className="flex w-full items-center justify-center gap-2 rounded-full bg-secondary-navy py-3 text-center text-sm font-bold uppercase tracking-wider text-white transition-all hover:bg-secondary-navy/90"
+                  className={`flex w-full items-center justify-center gap-2 rounded-full py-3 text-center text-sm font-bold uppercase tracking-wider transition-all ${
+                    useDarkTheme 
+                      ? "bg-[#2457D6] text-white hover:bg-[#6C4CE6]" 
+                      : "bg-[#101B4D] text-white hover:bg-[#2457D6]"
+                  }`}
                 >
                   Partner With Us
                   <ArrowRight className="h-4 w-4" />

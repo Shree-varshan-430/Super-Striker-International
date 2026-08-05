@@ -2,19 +2,35 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #0b1f3a;
-  --primary-sky: #8ed8f8;
-  --secondary-navy: #0b1f3a;
-  --background-soft: #f5f8fc;
+  --foreground: #0b1230;
+  
+  /* Brand Color System */
+  --primary-navy: #101B4D;
+  --secondary-blue: #2457D6;
+  --accent-violet: #6C4CE6;
+  --highlight-blue: #3FA9F5;
+  --background-soft: #f5f7fc;
+  --text-body: #4a5568;
+
+  /* Legacy/compatibility mappings to prevent breaking existing classes */
+  --primary-sky: #2457D6;      /* Royal Blue replaces old light blue */
+  --secondary-navy: #101B4D;   /* Deep Navy replaces old navy */
   
   --font-inter: var(--font-inter);
   --font-outfit: var(--font-outfit);
 }
 
 @theme {
+  --color-primary-navy: var(--primary-navy);
+  --color-secondary-blue: var(--secondary-blue);
+  --color-accent-violet: var(--accent-violet);
+  --color-highlight-blue: var(--highlight-blue);
+  --color-background-soft: var(--background-soft);
+  --color-text-body: var(--text-body);
+
+  /* Legacy/compatibility mapping */
   --color-primary-sky: var(--primary-sky);
   --color-secondary-navy: var(--secondary-navy);
-  --color-background-soft: var(--background-soft);
   
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --font-display: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
@@ -22,7 +38,7 @@
 
 body {
   background-color: var(--background);
-  color: var(--foreground);
+  color: var(--text-body);
   font-family: var(--font-sans);
 }
 
@@ -31,14 +47,14 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f5f8fc;
+  background: var(--background-soft);
 }
 ::-webkit-scrollbar-thumb {
-  background: #c3d3e6;
+  background: #cbd5e1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #8ed8f8;
+  background: var(--secondary-blue);
 }
 
 /* Editorial line highlights */
@@ -52,12 +68,12 @@ body {
   left: 0;
   width: 40px;
   height: 3px;
-  background-color: #8ed8f8;
+  background-color: var(--secondary-blue);
 }
 
 /* Image overlay overlay-editorial */
 .overlay-editorial {
-  background: linear-gradient(to bottom, rgba(11, 31, 58, 0.1), rgba(11, 31, 58, 0.85));
+  background: linear-gradient(to bottom, rgba(16, 27, 77, 0.1), rgba(16, 27, 77, 0.85));
 }
 
 /* Infinite marquee scrolling keyframes and utilities */

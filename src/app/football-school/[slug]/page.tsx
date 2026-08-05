@@ -59,11 +59,11 @@ export default async function SchoolPage({ params }: PageProps) {
   return (
     <div className="w-full bg-white text-secondary-navy min-h-screen">
       {/* Upper breadcrumb */}
-      <div className="border-b border-gray-100 py-4 bg-background-soft px-4 sm:px-6 lg:px-8">
+      <div className="border-b border-gray-150 py-4 bg-background-soft px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <Link
             href="/"
-            className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-secondary-navy hover:text-primary-sky transition-colors"
+            className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-secondary-navy hover:text-[#2457D6] transition-colors"
           >
             <ChevronLeft className="h-4 w-4" />
             Back to Home
@@ -75,8 +75,8 @@ export default async function SchoolPage({ params }: PageProps) {
       <div className="max-w-4xl mx-auto px-4 py-16 sm:px-6">
         {/* Title and Location */}
         <div className="flex flex-col gap-4 text-center sm:text-left mb-8">
-          <div className="inline-flex items-center gap-1.5 self-center sm:self-start bg-primary-sky/20 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-secondary-navy">
-            <GraduationCap className="h-3.5 w-3.5 text-secondary-navy" />
+          <div className="inline-flex items-center gap-1.5 self-center sm:self-start bg-[#2457D6]/10 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#2457D6] shadow-sm">
+            <GraduationCap className="h-3.5 w-3.5 text-[#2457D6]" />
             {school.location}
           </div>
           <h1 className="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight text-secondary-navy leading-none">
@@ -85,7 +85,7 @@ export default async function SchoolPage({ params }: PageProps) {
         </div>
 
         {/* Hero image */}
-        <div className="relative h-64 sm:h-[400px] w-full rounded-2xl overflow-hidden shadow-sm mb-12">
+        <div className="relative h-64 sm:h-[400px] w-full rounded-2xl overflow-hidden shadow-md mb-12">
           <Image
             src={school.image}
             alt={`${school.name} training clinic`}
@@ -98,8 +98,8 @@ export default async function SchoolPage({ params }: PageProps) {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           {/* Quick Metrics */}
           <div className="md:col-span-4 flex flex-col gap-6">
-            <div className="bg-background-soft border border-gray-150 p-6 rounded-xl flex flex-col gap-4">
-              <h3 className="font-display text-xs font-bold uppercase tracking-widest text-secondary-navy/50 border-b border-gray-200 pb-2">
+            <div className="bg-[#F5F7FC] border border-[#2457D6]/15 p-6 rounded-xl flex flex-col gap-4 hover:border-[#2457D6]/35 hover:shadow-[0_10px_20px_rgba(36,87,214,0.04)] transition-all duration-300">
+              <h3 className="font-display text-xs font-bold uppercase tracking-widest text-[#2457D6] border-b border-gray-200 pb-2">
                 Academy Profile
               </h3>
               
@@ -118,7 +118,7 @@ export default async function SchoolPage({ params }: PageProps) {
             </div>
 
             <div className="flex flex-col gap-2">
-              <h4 className="text-xs font-bold uppercase tracking-widest text-secondary-navy/50">
+              <h4 className="text-xs font-bold uppercase tracking-widest text-secondary-navy/55">
                 Talent Pipeline integration
               </h4>
               <p className="text-xs text-secondary-navy/60 leading-relaxed">
@@ -134,23 +134,23 @@ export default async function SchoolPage({ params }: PageProps) {
               <h2 className="font-display text-xl font-bold uppercase tracking-tight text-secondary-navy">
                 About our Football School
               </h2>
-              <p className="text-sm sm:text-base text-secondary-navy/80 leading-relaxed">
+              <p className="text-sm sm:text-base text-[#4A5568] leading-relaxed">
                 {school.description}
               </p>
-              <p className="text-xs sm:text-sm text-secondary-navy/60 leading-relaxed mt-2">
+              <p className="text-xs sm:text-sm text-[#4A5568]/80 leading-relaxed mt-2">
                 <strong>Training Focus:</strong> {school.focus}
               </p>
             </div>
 
             {/* Core checklist highlights */}
-            <div className="border-t border-gray-100 pt-6">
+            <div className="border-t border-gray-150 pt-6">
               <h3 className="font-display text-base font-bold uppercase tracking-tight text-secondary-navy mb-4">
                 Operations & Coaching Standards
               </h3>
               <div className="grid grid-cols-1 gap-3">
                 {school.highlights.map((h, idx) => (
-                  <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-secondary-navy/80 leading-relaxed">
-                    <span className="h-5 w-5 rounded-full bg-primary-sky/20 text-secondary-navy flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">
+                  <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-[#4A5568] leading-relaxed">
+                    <span className="h-5 w-5 rounded-full bg-[#2457D6]/10 text-[#2457D6] flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">
                       ✓
                     </span>
                     <span>{h}</span>
@@ -160,17 +160,17 @@ export default async function SchoolPage({ params }: PageProps) {
             </div>
 
             {/* Age Cohorts breakdown */}
-            <div className="border-t border-gray-100 pt-6">
+            <div className="border-t border-gray-150 pt-6">
               <h3 className="font-display text-base font-bold uppercase tracking-tight text-secondary-navy mb-4">
                 Age Brackets & Cohorts
               </h3>
               <div className="flex flex-col gap-4">
                 {school.ageGroups.map((g, idx) => (
-                  <div key={idx} className="bg-background-soft border border-gray-150/60 p-5 rounded-xl flex flex-col gap-1">
+                  <div key={idx} className="bg-[#F5F7FC] border border-[#2457D6]/10 p-5 rounded-xl flex flex-col gap-1 hover:border-[#2457D6]/30 hover:shadow-sm transition-all duration-300">
                     <h4 className="text-xs font-bold uppercase tracking-wide text-secondary-navy">
                       {g.title}
                     </h4>
-                    <p className="text-xs text-secondary-navy/60 leading-relaxed mt-1">
+                    <p className="text-xs text-[#4A5568] leading-relaxed mt-1">
                       {g.desc}
                     </p>
                   </div>
@@ -181,7 +181,7 @@ export default async function SchoolPage({ params }: PageProps) {
             <div className="mt-4 flex flex-wrap gap-4">
               <Link
                 href="/investors#enquire"
-                className="inline-flex items-center justify-center rounded-full bg-secondary-navy px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white hover:bg-secondary-navy/90"
+                className="inline-flex items-center justify-center rounded-full bg-[#2457D6] px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white hover:bg-[#6C4CE6] transition-all hover:scale-105 active:scale-95 shadow-md shadow-[#2457D6]/10"
               >
                 Inquire About Sponsorships
               </Link>

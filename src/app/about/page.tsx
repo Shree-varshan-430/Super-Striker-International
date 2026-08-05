@@ -69,13 +69,13 @@ export default function About() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeIn}
-            className="bg-white border border-gray-100 p-8 rounded-2xl shadow-lg shadow-gray-100/50 flex flex-col gap-6 relative overflow-hidden group hover:border-primary-sky/30 transition-colors"
+            className="bg-white border border-[#2457D6]/15 p-8 rounded-2xl shadow-[0_15px_35px_rgba(36,87,214,0.05)] hover:border-[#6C4CE6]/35 flex flex-col gap-6 relative overflow-hidden group transition-all duration-300"
           >
-            <div className="absolute top-0 right-0 h-24 w-24 bg-primary-sky/10 rounded-bl-full flex items-center justify-center text-primary-sky">
-              <Target className="h-8 w-8 text-secondary-navy" />
+            <div className="absolute top-0 right-0 h-24 w-24 bg-[#2457D6]/10 rounded-bl-full flex items-center justify-center text-[#2457D6]">
+              <Target className="h-8 w-8 text-[#2457D6]" />
             </div>
             <div>
-              <span className="text-xs font-bold uppercase tracking-widest text-primary-sky">Our Mission</span>
+              <span className="text-xs font-bold uppercase tracking-widest text-[#2457D6]">Our Mission</span>
               <h2 className="font-display text-2xl font-black uppercase tracking-tight text-secondary-navy mt-1">
                 Excellence & Skill Development
               </h2>
@@ -91,13 +91,13 @@ export default function About() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeIn}
-            className="bg-white border border-gray-100 p-8 rounded-2xl shadow-lg shadow-gray-100/50 flex flex-col gap-6 relative overflow-hidden group hover:border-primary-sky/30 transition-colors"
+            className="bg-white border border-[#2457D6]/15 p-8 rounded-2xl shadow-[0_15px_35px_rgba(36,87,214,0.05)] hover:border-[#6C4CE6]/35 flex flex-col gap-6 relative overflow-hidden group transition-all duration-300"
           >
-            <div className="absolute top-0 right-0 h-24 w-24 bg-primary-sky/10 rounded-bl-full flex items-center justify-center text-primary-sky">
-              <Eye className="h-8 w-8 text-secondary-navy" />
+            <div className="absolute top-0 right-0 h-24 w-24 bg-[#2457D6]/10 rounded-bl-full flex items-center justify-center text-[#2457D6]">
+              <Eye className="h-8 w-8 text-[#2457D6]" />
             </div>
             <div>
-              <span className="text-xs font-bold uppercase tracking-widest text-primary-sky">Our Vision</span>
+              <span className="text-xs font-bold uppercase tracking-widest text-[#2457D6]">Our Vision</span>
               <h2 className="font-display text-2xl font-black uppercase tracking-tight text-secondary-navy mt-1">
                 Creating Future Champions
               </h2>
@@ -120,12 +120,12 @@ export default function About() {
             variants={fadeIn}
             className="lg:col-span-7 flex flex-col gap-6"
           >
-            <span className="text-xs font-bold uppercase tracking-widest text-primary-sky">Heritage & Presidency</span>
+            <span className="text-xs font-bold uppercase tracking-widest text-[#2457D6]">Heritage & Presidency</span>
             <h2 className="font-display text-3xl sm:text-4xl font-extrabold uppercase tracking-tight text-secondary-navy">
               The Dream Behind <br />
               Bangalore Super Strikers
             </h2>
-            <div className="h-1 w-12 bg-primary-sky" />
+            <div className="h-1 w-12 bg-[#2457D6]" />
             
             <div className="space-y-4 text-sm text-secondary-navy/80 leading-relaxed">
               <p>
@@ -145,9 +145,9 @@ export default function About() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-5 bg-white border border-gray-100 p-8 rounded-2xl shadow-xl shadow-gray-200/50 flex flex-col justify-between relative"
+            className="lg:col-span-5 bg-white border border-[#2457D6]/15 p-8 rounded-2xl shadow-[0_15px_35px_rgba(36,87,214,0.06)] hover:border-[#6C4CE6]/35 transition-all duration-300 flex flex-col justify-between relative"
           >
-            <div className="absolute top-4 right-6 text-primary-sky/20 font-serif text-8xl pointer-events-none select-none">
+            <div className="absolute top-4 right-6 text-[#2457D6]/10 font-serif text-8xl pointer-events-none select-none">
               “
             </div>
             
@@ -178,14 +178,17 @@ export default function About() {
       {/* Timeline Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         <div className="text-center mb-16">
-          <span className="text-[11px] font-bold uppercase tracking-wider text-primary-sky font-semibold">Development Roadmap</span>
+          <span className="text-[11px] font-bold uppercase tracking-wider text-[#6C4CE6] font-semibold">Development Roadmap</span>
           <h2 className="font-display text-3xl font-black uppercase tracking-tight text-secondary-navy mt-1">
             Our Journey & Milestones
           </h2>
-          <div className="h-1 w-12 bg-primary-sky mx-auto mt-4" />
+          <div className="h-1 w-12 bg-[#2457D6] mx-auto mt-4" />
         </div>
 
-        <div className="relative border-l-2 border-gray-100 ml-4 md:ml-32">
+        <div className="relative ml-4 md:ml-32">
+          {/* Vertical gradient timeline line */}
+          <div className="absolute left-0 top-2 bottom-6 w-0.5 bg-gradient-to-b from-[#2457D6] to-[#6C4CE6] -translate-x-[1px]" />
+
           {timelineEvents.map((event, index) => {
             const Icon = event.icon;
             return (
@@ -202,19 +205,19 @@ export default function About() {
                   <span className="text-xl font-display font-extrabold text-secondary-navy">
                     {event.year}
                   </span>
-                  <span className="block text-[9px] uppercase font-bold tracking-widest text-primary-sky mt-0.5">
+                  <span className="block text-[9px] uppercase font-bold tracking-widest text-[#6C4CE6] mt-0.5">
                     Phase {index + 1}
                   </span>
                 </div>
 
-                {/* Dot marker */}
-                <div className="absolute -left-[17px] top-1.5 flex h-8 w-8 items-center justify-center rounded-full bg-white border-2 border-primary-sky text-secondary-navy shadow-sm">
-                  <Icon className="h-4 w-4" />
+                {/* Dot marker with Electric Blue glow, transition to active Violet on hover */}
+                <div className="absolute -left-[15px] top-1 flex h-8 w-8 items-center justify-center rounded-full bg-[#101B4D] border-2 border-[#3FA9F5] text-white shadow-[0_0_15px_rgba(63,169,245,0.45)] hover:border-[#6C4CE6] hover:shadow-[0_0_20px_rgba(108,76,230,0.6)] transition-all duration-300 z-10">
+                  <Icon className="h-3.5 w-3.5" />
                 </div>
 
-                <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div className="bg-white border border-[#2457D6]/15 hover:border-[#6C4CE6]/35 rounded-xl p-6 shadow-sm hover:shadow-[0_10px_25px_rgba(108,76,230,0.06)] hover:shadow-md transition-all duration-300">
                   {/* Mobile-only Year Badge */}
-                  <span className="md:hidden inline-block bg-primary-sky/20 text-secondary-navy text-[10px] font-bold px-2 py-0.5 rounded mb-2">
+                  <span className="md:hidden inline-block bg-[#2457D6]/10 text-[#2457D6] text-[10px] font-bold px-2 py-0.5 rounded mb-2">
                     {event.year}
                   </span>
                   <h3 className="font-display text-lg font-bold uppercase tracking-tight text-secondary-navy">
@@ -240,11 +243,11 @@ export default function About() {
         />
         <div className="absolute inset-0 bg-secondary-navy/40 mix-blend-overlay" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 flex flex-col gap-6 items-center">
-          <span className="text-[10px] font-bold uppercase tracking-widest text-primary-sky">Core Creed</span>
+          <span className="text-[10px] font-bold uppercase tracking-widest text-[#3FA9F5]">Core Creed</span>
           <h2 className="font-display text-4xl sm:text-5xl font-black uppercase tracking-tight leading-none">
             Together Everyone Achieves More
           </h2>
-          <div className="h-1 w-16 bg-primary-sky mt-2" />
+          <div className="h-1 w-16 bg-[#2457D6] mt-2" />
         </div>
       </section>
     </div>
