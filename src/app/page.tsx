@@ -8,6 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowRight, ArrowUpRight, Shield, ChevronLeft, ChevronRight } from "lucide-react";
 import NewsroomFeed from "@/components/NewsroomFeed";
 import FootballLoader from "@/components/FootballLoader";
+import { motion } from "framer-motion";
 
 interface HeroSlide {
   image: string;
@@ -634,7 +635,6 @@ export default function Home() {
           <h2 className="font-display text-3xl sm:text-6xl font-black uppercase tracking-tight leading-none max-w-2xl">
             Creating The Total Footballer
           </h2>
-          
           <div className="flex items-center gap-4 text-xs font-semibold text-white/70 mt-2">
             <span>By Ramakrishnan</span>
             <span>•</span>
@@ -643,7 +643,69 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 5. FOUNDER & ORGANIZATION STORIES (MAGAZINE INTERVIEW) */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white">
+        <div className="text-center mb-16">
+          <span className="text-[10px] font-bold uppercase tracking-widest text-[#10143A]">Heritage Interviews</span>
+          <h2 className="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight text-[#10143A] mt-1">
+            Stories Behind The Vision
+          </h2>
+          <div className="h-1 w-12 bg-[#10143A] mx-auto mt-4" />
+        </div>
 
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          {/* Portrait Image with floating hover effect */}
+          <div className="lg:col-span-5 flex justify-center">
+            <motion.div
+              whileHover={{ y: -6, rotate: -1 }}
+              transition={{ type: "spring", stiffness: 200 }}
+              className="relative h-[450px] w-full max-w-[360px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white"
+            >
+              <Image
+                src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=600&auto=format&fit=crop"
+                alt="Ramakrishnan President Portrait"
+                fill
+                className="object-cover"
+              />
+            </motion.div>
+          </div>
+
+          {/* Quote details */}
+          <div className="lg:col-span-7 flex flex-col gap-6 text-left relative pl-4 lg:pl-10">
+            <div className="absolute left-0 top-0 text-[#10143A]/10 font-serif text-9xl pointer-events-none select-none -translate-x-4 -translate-y-8">
+              “
+            </div>
+            
+            <p className="font-display text-2xl sm:text-3xl font-bold uppercase tracking-tight text-[#10143A] relative z-10 leading-snug">
+              Football is not only about creating players. It is about creating opportunities and dreams.
+            </p>
+            
+            <div className="flex flex-col text-xs font-bold uppercase tracking-wider text-[#10143A]/60 border-b border-[#10143A]/10 pb-4 mb-2">
+              <span className="text-[#10143A] text-sm font-extrabold">Ramakrishnan (Ram)</span>
+              <span className="mt-1 font-semibold">President, Bangalore Super Strikers FC</span>
+            </div>
+
+            <div className="space-y-4 text-sm text-[#4B5563] leading-relaxed">
+              <p>
+                Inspired by his parents, Mr. Devaraj and Mrs. Rajammal Devaraj, who dreamed of seeing their grandson play for India, Ram carried the passion forward.
+              </p>
+              <p>
+                As a former athlete who experienced the struggles of middle-class sports development due to lacking resources, he constructed a professional infrastructure where young athletes receive tutoring, scientific conditioning, and KSFA / AIFF league exposure. Today, Ram serves as an AIFF-C coach and active KSFA referee.
+              </p>
+            </div>
+            
+            <div className="mt-4">
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#10143A] hover:opacity-80 transition-opacity"
+              >
+                Read Heritage Interview
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* 6. INVESTOR & BUSINESS STORIES (INSIDE SUPERSTRIKER) */}
       <section ref={businessSectionRef} className="py-24 bg-[#10143A] text-white border-y border-white/10 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
