@@ -96,6 +96,39 @@ const STORIES_DATA: StoryArticle[] = [
     date: "20 JUL 2026",
     readingTime: "4 MIN READ",
     articleUrl: "/news/grassroots-revolution"
+  },
+  {
+    id: "pondicherry-blueprints",
+    image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1200&auto=format&fit=crop",
+    category: "ACADEMY",
+    title: "Pondicherry youth development scouting blueprint",
+    description: "Establishing district-wide training clinics to discover promising sub-junior candidates and draft them directly into the state leagues.",
+    author: "Regional Director",
+    date: "15 JUL 2026",
+    readingTime: "4 MIN READ",
+    articleUrl: "/news/grassroots-revolution"
+  },
+  {
+    id: "commercial-expansion-2026",
+    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200&auto=format&fit=crop",
+    category: "INVESTORS",
+    title: "Commercial partnerships and branding sponsorship expansions",
+    description: "Securing dual-tier sponsorship pacts with corporate retail brands to fund academy turf lighting and coaching workshops.",
+    author: "Commercial Manager",
+    date: "10 JUL 2026",
+    readingTime: "5 MIN READ",
+    articleUrl: "/news/creating-football-pathways"
+  },
+  {
+    id: "tactical-goalkeeper-coaching",
+    image: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1200&auto=format&fit=crop",
+    category: "ACADEMY",
+    title: "Modern goalkeeper coaching advancements",
+    description: "Integrating high-speed video feedback, reaction-time sensory drills, and positioning algorithms for BSS FC keepers.",
+    author: "Lead Goalkeeping Coach",
+    date: "05 JUL 2026",
+    readingTime: "4 MIN READ",
+    articleUrl: "/news/building-next-generation"
   }
 ];
 
@@ -108,22 +141,22 @@ interface PlayerJourney {
 
 const PLAYER_JOURNEYS: PlayerJourney[] = [
   {
-    name: "Gavi",
+    name: "Aditya Kumar",
     position: "Midfielder (BSS FC U-17)",
     journey: "From local school mud grounds in Bengaluru to representing Karnataka state in junior divisions.",
-    image: "https://www.fcbarcelona.com/photo-resources/2026/07/21/1691acd3-0765-4dfc-9296-a3320c24240a/06-Gavi-BLUE.jpg?width=1200&height=750"
+    image: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=600&auto=format&fit=crop"
   },
   {
-    name: "Lionel Messi",
+    name: "Sanjay Raj",
     position: "Forward (BSS FC Senior)",
     journey: "Discovered during a district scouting camp in Pondicherry, now leading the attacking front line.",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/250px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg"
+    image: "https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=600&auto=format&fit=crop"
   },
   {
-    name: "Harry Kane",
+    name: "Vikram Seth",
     position: "Goalkeeper (BSS FC Academy)",
     journey: "Integrated into our high-performance athletic training cohort with a 100% scholarship.",
-    image: "https://upload.wikimedia.org/wikipedia/commons/a/a3/Harry_Kane_England_v_Ghana_23_June_2026-219_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    image: "https://images.unsplash.com/photo-1529900748604-07564a03e7a6?q=80&w=600&auto=format&fit=crop"
   }
 ];
 
@@ -140,29 +173,29 @@ const MEDIA_VIDEOS: MediaVideo[] = [
     title: "Behind The Training Ground: Tactical Drills",
     duration: "10:15",
     category: "TRAINING GROUND",
-    image: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=800&auto=format&fit=crop",
-    youtubeUrl: "https://youtu.be/lEEXYnLJ_4I?si=pirUm48mNJc0ROrh"
+    image: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=600&auto=format&fit=crop",
+    youtubeUrl: "#"
   },
   {
     title: "Coach Conversations: The Blueprint For Victory",
     duration: "15:30",
     category: "COACH TALK",
     image: "https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=600&auto=format&fit=crop",
-    youtubeUrl: "https://youtu.be/COACH_TALK_URL"
+    youtubeUrl: "#"
   },
   {
     title: "Founder Stories: Building A Football Empire",
     duration: "20:45",
     category: "LEADERSHIP",
     image: "https://images.unsplash.com/photo-1544698310-74ea9d1c8258?q=80&w=600&auto=format&fit=crop",
-    youtubeUrl: "https://youtu.be/gnSLGcBaBSk?si=gtGM_V8Wp9ZkyzQH"
+    youtubeUrl: "#"
   },
   {
     title: "Match Highlights: Super Strikers vs State Academy",
     duration: "08:12",
     category: "HIGHLIGHTS",
     image: "https://images.unsplash.com/photo-1529900748604-07564a03e7a6?q=80&w=600&auto=format&fit=crop",
-    youtubeUrl: "https://youtu.be/NcmqUfKdTv8?si=0GEtIQXOEaF1Ch9e"
+    youtubeUrl: "#"
   },
   {
     title: "Academy Life: A Day In The Dorms & Pitch",
@@ -177,14 +210,6 @@ export default function NewsroomFeed() {
   const [activeFilter, setActiveFilter] = useState("ALL");
   const sectionRef = useRef<HTMLDivElement>(null);
   
-  // Featured Story Cover Refs
-  const featuredHeroRef = useRef<HTMLDivElement>(null);
-  const featuredBgRef = useRef<HTMLDivElement>(null);
-  const featuredCategoryRef = useRef<HTMLSpanElement>(null);
-  const featuredHeadlineRef = useRef<HTMLHeadingElement>(null);
-  const featuredDescRef = useRef<HTMLParagraphElement>(null);
-  const featuredCtaRef = useRef<HTMLDivElement>(null);
-
   const gridContainerRef = useRef<HTMLDivElement>(null);
   const playerSectionRef = useRef<HTMLDivElement>(null);
   const mediaSectionRef = useRef<HTMLDivElement>(null);
@@ -193,94 +218,7 @@ export default function NewsroomFeed() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    // 1. Featured Cover zoom/parallax on scroll
-    if (featuredHeroRef.current && featuredBgRef.current) {
-      gsap.fromTo(featuredBgRef.current.querySelector("img"),
-        { scale: 1.1 },
-        {
-          scale: 1,
-          ease: "none",
-          scrollTrigger: {
-            trigger: featuredHeroRef.current,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: true,
-          }
-        }
-      );
-    }
-
-    // Featured Text reveals
-    if (featuredHeroRef.current) {
-      if (featuredCategoryRef.current) {
-        gsap.fromTo(featuredCategoryRef.current,
-          { opacity: 0, x: -30 },
-          {
-            opacity: 1,
-            x: 0,
-            duration: 0.8,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: featuredHeroRef.current,
-              start: "top 80%",
-              toggleActions: "play none none none"
-            }
-          }
-        );
-      }
-      if (featuredHeadlineRef.current) {
-        gsap.fromTo(featuredHeadlineRef.current,
-          { opacity: 0, y: 35 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: featuredHeroRef.current,
-              start: "top 80%",
-              toggleActions: "play none none none"
-            }
-          }
-        );
-      }
-      if (featuredDescRef.current) {
-        gsap.fromTo(featuredDescRef.current,
-          { opacity: 0, y: 30 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            delay: 0.1,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: featuredHeroRef.current,
-              start: "top 80%",
-              toggleActions: "play none none none"
-            }
-          }
-        );
-      }
-      if (featuredCtaRef.current) {
-        gsap.fromTo(featuredCtaRef.current,
-          { opacity: 0, y: 20 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            delay: 0.2,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: featuredHeroRef.current,
-              start: "top 80%",
-              toggleActions: "play none none none"
-            }
-          }
-        );
-      }
-    }
-
-    // 2. Editorial Grid items stagger reveal
+    // 1. Editorial Grid items stagger reveal
     const gridCards = gsap.utils.toArray(".magazine-grid-card");
     if (gridCards.length > 0 && gridContainerRef.current) {
       gsap.fromTo(
@@ -301,7 +239,7 @@ export default function NewsroomFeed() {
       );
     }
 
-    // 3. Player Journeys reveal
+    // 2. Player Journeys reveal
     const playerCards = gsap.utils.toArray(".player-portrait-card");
     if (playerCards.length > 0 && playerSectionRef.current) {
       gsap.fromTo(
@@ -322,7 +260,7 @@ export default function NewsroomFeed() {
       );
     }
 
-    // 4. Video cards reveal
+    // 3. Video cards reveal
     const videoCards = gsap.utils.toArray(".media-video-card");
     if (videoCards.length > 0 && mediaSectionRef.current) {
       gsap.fromTo(
@@ -387,6 +325,7 @@ export default function NewsroomFeed() {
   const leftFeaturedCard = filteredList[0] || STORIES_DATA[0];
   const rightColumnStack = filteredList.slice(1, 3);
   const bottomRowGrid = filteredList.slice(3, 6);
+  const thirdRowGrid = filteredList.slice(6, 9);
 
   const trendingTopics = [
     "Bangalore Super Strikers FC season launch",
@@ -401,73 +340,16 @@ export default function NewsroomFeed() {
       {/* SECTION IDENTITY & DESCRIPTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <div className="text-center flex flex-col items-center gap-3">
-          <span className="text-xs font-bold uppercase tracking-widest text-white bg-[#10143A] px-4 py-1.5 rounded-full shadow-md animate-pulse">
+          <h2 className="font-display text-4xl sm:text-6xl font-black uppercase tracking-tight text-[#0A1028] mt-2">
             INSIDE SUPERSTRIKER
-          </span>
-          <h2 className="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight text-[#0A1028] mt-2">
-            The Official Storytelling Platform
           </h2>
-          <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed max-w-2xl text-center">
-            Explore the people, teams, and ideas behind SuperStriker International&apos;s mission to build India&apos;s next generation football ecosystem.
+          <h3 className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#10143A] bg-[#10143A]/5 px-4 py-1.5 rounded-full shadow-sm mt-1">
+            THE OFFICIAL STORYTELLING PLATFORM
+          </h3>
+          <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed max-w-2xl text-center mt-2">
+            Stories, journeys, and moments shaping the future of football. Explore the people, teams, and ideas behind SuperStriker International&apos;s mission.
           </p>
-          <div className="h-1 w-12 bg-[#10143A] mt-3" />
-        </div>
-      </section>
-
-      {/* PART 1: FEATURED STORY HERO CARD */}
-      <section 
-        ref={featuredHeroRef}
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 flex flex-col gap-6 text-left"
-      >
-        {/* Large Image container with 21:9 ratio on desktop, 16:9 on mobile (no border, square corners) */}
-        <div ref={featuredBgRef} className="relative aspect-[16/9] md:aspect-[21/9] w-full overflow-hidden rounded-md group shrink-0">
-          <Image
-            src="https://images.unsplash.com/photo-1434648957308-5e6a859697e8?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Inside SuperStriker Featured Cover Story"
-            fill
-            priority
-            className="object-cover transition-transform duration-700 group-hover:scale-105"
-          />
-        </div>
-
-        {/* Text details directly below image (No Card wrapper, clean spacing) */}
-        <div className="flex flex-col gap-4 max-w-4xl">
-          <div className="flex items-center gap-2">
-            <span ref={featuredCategoryRef} className="text-[10px] font-black uppercase tracking-widest text-[#10143A] leading-none">
-              FEATURED STORY
-            </span>
-            <div className="w-10 h-[2px] bg-[#F5D000]" />
-          </div>
-
-          <h1 
-            ref={featuredHeadlineRef} 
-            className="font-display text-3xl sm:text-5xl lg:text-7xl font-black uppercase tracking-tight text-[#10143A] leading-[1.05]"
-          >
-            Building India&apos;s Next Generation Of Football Champions
-          </h1>
-          
-          <p ref={featuredDescRef} className="text-sm sm:text-base text-[#4B5563] leading-relaxed max-w-3xl">
-            Discover how SuperStriker International is creating pathways for young footballers through clubs, academies, and grassroots development.
-          </p>
-
-          {/* Metadata and CTA */}
-          <div ref={featuredCtaRef} className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 border-t border-gray-100 pt-6 mt-2">
-            <div className="flex items-center gap-4 text-xs font-bold text-[#4B5563]/60 uppercase tracking-wider">
-              <span className="flex items-center gap-1.5"><User className="h-4 w-4 text-[#10143A]" /> Ramakrishnan</span>
-              <span>•</span>
-              <span>12 AUG 2026</span>
-              <span>•</span>
-              <span>5 MIN READ</span>
-            </div>
-
-            <Link
-              href="/news/building-next-generation"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-[#10143A] px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-[#10143A] bg-transparent hover:bg-[#10143A] hover:text-white transition-all hover:scale-105 active:scale-95 shadow-sm"
-            >
-              READ STORY
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
+          <div className="h-1 w-12 bg-[#10143A] mt-4" />
         </div>
       </section>
 
@@ -574,6 +456,49 @@ export default function NewsroomFeed() {
             {bottomRowGrid.length > 0 && (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 mt-4 text-left">
                 {bottomRowGrid.map((card) => (
+                  <div key={card.id} className="magazine-grid-card">
+                    <Link
+                      href={card.articleUrl}
+                      className="group flex flex-col gap-4 text-left"
+                    >
+                      {/* Image with 16:9 aspect ratio */}
+                      <div className="relative aspect-[16/9] w-full overflow-hidden rounded-md shrink-0">
+                        <Image
+                          src={card.image}
+                          alt={card.title}
+                          fill
+                          className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                      </div>
+
+                      <div className="flex flex-col gap-2">
+                        <span className="text-[10px] font-black uppercase tracking-widest text-[#10143A] leading-none mb-1 block">
+                          {card.category}
+                        </span>
+                        <h4 className="font-display text-base sm:text-lg font-black uppercase tracking-tight text-[#10143A] leading-snug line-clamp-2 group-hover:opacity-85 transition-opacity">
+                          {card.title}
+                        </h4>
+                        <p className="text-xs text-[#4B5563] leading-relaxed line-clamp-2">
+                          {card.description}
+                        </p>
+                        <div className="flex items-center gap-3 text-[9px] font-bold text-[#4B5563]/60 uppercase tracking-wider mt-2">
+                          <span className="flex items-center gap-1"><User className="h-3 w-3 text-[#10143A]" /> {card.author}</span>
+                          <span>•</span>
+                          <span>{card.date}</span>
+                          <span>•</span>
+                          <span>{card.readingTime}</span>
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* Third Row (New): Three more spotlight story blocks */}
+            {thirdRowGrid.length > 0 && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 mt-12 text-left">
+                {thirdRowGrid.map((card) => (
                   <div key={card.id} className="magazine-grid-card">
                     <Link
                       href={card.articleUrl}
