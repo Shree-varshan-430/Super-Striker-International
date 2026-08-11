@@ -22,7 +22,7 @@ interface StoryArticle {
 const STORIES_DATA: StoryArticle[] = [
   {
     id: "building-next-generation",
-    image: "https://images.unsplash.com/photo-1624880357913-a8539238245b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/images/training-1.jpg",
     category: "ACADEMY",
     title: "Building India's Next Generation Of Football Champions",
     description: "Discover how SuperStriker International is creating pathways for young footballers through clubs, academies, and grassroots development.",
@@ -33,7 +33,7 @@ const STORIES_DATA: StoryArticle[] = [
   },
   {
     id: "bss-new-chapter",
-    image: "https://images.unsplash.com/photo-1626248801379-51a0748a5f96?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/images/team-2.jpg",
     category: "CLUB",
     title: "Bangalore Super Strikers begins a new football chapter",
     description: "Establishing new training schedules, expanding senior squads, and targeting national league registrations.",
@@ -44,7 +44,7 @@ const STORIES_DATA: StoryArticle[] = [
   },
   {
     id: "philosophy-pathways",
-    image: "https://images.unsplash.com/flagged/photo-1550413231-202a9d53a331?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/images/training-2.jpg",
     category: "ACADEMY",
     title: "Inside our player development philosophy",
     description: "A deep dive into how structured drills, athletic profiling, and sports nutrition form our syllabus.",
@@ -55,7 +55,7 @@ const STORIES_DATA: StoryArticle[] = [
   },
   {
     id: "from-grassroots-to-pro",
-    image: "https://images.unsplash.com/photo-1529900748604-07564a03e7a6?q=80&w=800&auto=format&fit=crop",
+    image: "/images/match-1.jpg",
     category: "PLAYER JOURNEYS",
     title: "From grassroots football to competitive dreams",
     description: "Follow the story of our academy graduates stepping into state division league squads.",
@@ -66,7 +66,7 @@ const STORIES_DATA: StoryArticle[] = [
   },
   {
     id: "creating-opportunities",
-    image: "https://images.unsplash.com/photo-1518063319789-7217e6706b04?q=80&w=800&auto=format&fit=crop",
+    image: "/images/match-2.jpg",
     category: "FOUNDATION",
     title: "Creating opportunities through football",
     description: "Unlocking regional talent grids, setting up matches in rural clusters, and local club registrations.",
@@ -77,7 +77,7 @@ const STORIES_DATA: StoryArticle[] = [
   },
   {
     id: "investor-milestones-q3",
-    image: "https://images.unsplash.com/photo-1544698310-74ea9d1c8258?q=80&w=800&auto=format&fit=crop",
+    image: "/images/match-1.jpg",
     category: "INVESTORS",
     title: "Unlocking structural expansion models for South India",
     description: "Announcing new infrastructure turf blueprints and commercial sponsorship packages for investors.",
@@ -88,7 +88,7 @@ const STORIES_DATA: StoryArticle[] = [
   },
   {
     id: "community-impact-pitch",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800&auto=format&fit=crop",
+    image: "/images/training-2.jpg",
     category: "COMMUNITY",
     title: "Deploying training camps for underprivileged children",
     description: "Partnering with state councils to provide boots, kits, and professional licensed training guidelines.",
@@ -99,7 +99,7 @@ const STORIES_DATA: StoryArticle[] = [
   },
   {
     id: "pondicherry-blueprints",
-    image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/match-2.jpg",
     category: "ACADEMY",
     title: "Pondicherry youth development scouting blueprint",
     description: "Establishing district-wide training clinics to discover promising sub-junior candidates and draft them directly into the state leagues.",
@@ -110,7 +110,7 @@ const STORIES_DATA: StoryArticle[] = [
   },
   {
     id: "commercial-expansion-2026",
-    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/training-1.jpg",
     category: "INVESTORS",
     title: "Commercial partnerships and branding sponsorship expansions",
     description: "Securing dual-tier sponsorship pacts with corporate retail brands to fund academy turf lighting and coaching workshops.",
@@ -121,7 +121,7 @@ const STORIES_DATA: StoryArticle[] = [
   },
   {
     id: "tactical-goalkeeper-coaching",
-    image: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/training-2.jpg",
     category: "ACADEMY",
     title: "Modern goalkeeper coaching advancements",
     description: "Integrating high-speed video feedback, reaction-time sensory drills, and positioning algorithms for BSS FC keepers.",
@@ -144,19 +144,19 @@ const PLAYER_JOURNEYS: PlayerJourney[] = [
     name: "Aditya Kumar",
     position: "Midfielder (BSS FC U-17)",
     journey: "From local school mud grounds in Bengaluru to representing Karnataka state in junior divisions.",
-    image: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=600&auto=format&fit=crop"
+    image: "/images/training-1.jpg"
   },
   {
     name: "Sanjay Raj",
     position: "Forward (BSS FC Senior)",
     journey: "Discovered during a district scouting camp in Pondicherry, now leading the attacking front line.",
-    image: "https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=600&auto=format&fit=crop"
+    image: "/images/match-1.jpg"
   },
   {
     name: "Vikram Seth",
     position: "Goalkeeper (BSS FC Academy)",
     journey: "Integrated into our high-performance athletic training cohort with a 100% scholarship.",
-    image: "https://images.unsplash.com/photo-1529900748604-07564a03e7a6?q=80&w=600&auto=format&fit=crop"
+    image: "/images/match-2.jpg"
   }
 ];
 
@@ -173,35 +173,35 @@ const MEDIA_VIDEOS: MediaVideo[] = [
     title: "Behind The Training Ground: Tactical Drills",
     duration: "10:15",
     category: "TRAINING GROUND",
-    image: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=600&auto=format&fit=crop",
+    image: "/images/training-1.jpg",
     youtubeUrl: "#"
   },
   {
     title: "Coach Conversations: The Blueprint For Victory",
     duration: "15:30",
     category: "COACH TALK",
-    image: "https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=600&auto=format&fit=crop",
+    image: "/images/training-2.jpg",
     youtubeUrl: "#"
   },
   {
     title: "Founder Stories: Building A Football Empire",
     duration: "20:45",
     category: "LEADERSHIP",
-    image: "https://images.unsplash.com/photo-1544698310-74ea9d1c8258?q=80&w=600&auto=format&fit=crop",
+    image: "/images/team-1.jpg",
     youtubeUrl: "#"
   },
   {
     title: "Match Highlights: Super Strikers vs State Academy",
     duration: "08:12",
     category: "HIGHLIGHTS",
-    image: "https://images.unsplash.com/photo-1529900748604-07564a03e7a6?q=80&w=600&auto=format&fit=crop",
+    image: "/images/match-1.jpg",
     youtubeUrl: "#"
   },
   {
     title: "Academy Life: A Day In The Dorms & Pitch",
     duration: "12:05",
     category: "ACADEMY LIFE",
-    image: "https://images.unsplash.com/photo-1431324155629-1a6edd1d141e?q=80&w=600&auto=format&fit=crop",
+    image: "/images/match-2.jpg",
     youtubeUrl: "#"
   }
 ];
@@ -612,7 +612,7 @@ export default function NewsroomFeed() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <div className="text-center flex flex-col items-center gap-2 mb-16">
-            <span className="text-[10px] font-black uppercase tracking-widest text-[#F5D000]">
+            <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135]">
               VIDEO STORYTELLING
             </span>
             <h2 className="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight text-white mt-1">
@@ -621,7 +621,7 @@ export default function NewsroomFeed() {
             <p className="text-xs sm:text-sm text-white/70 max-w-xl">
               Watch exclusive academy documentaries, player scouting releases, and leadership interviews directly from the training pitches.
             </p>
-            <div className="h-1 w-12 bg-[#F5D000] mt-2" />
+            <div className="h-1 w-12 bg-[#DCE135] mt-2" />
           </div>
 
           {/* Videos Grid */}
@@ -645,14 +645,14 @@ export default function NewsroomFeed() {
                   
                   {/* Pulsing Play Button overlay */}
                   <div className="absolute inset-0 flex items-center justify-center z-20">
-                    <div className="h-12 w-12 rounded-full bg-[#F5D000] flex items-center justify-center shadow-lg group-hover:scale-110 active:scale-95 transition-transform duration-300 relative">
+                    <div className="h-12 w-12 rounded-full bg-[#DCE135] flex items-center justify-center shadow-lg group-hover:scale-110 active:scale-95 transition-transform duration-300 relative">
                       <Play className="h-5 w-5 text-[#10143A] fill-[#10143A] ml-0.5" />
-                      <span className="absolute inset-0 rounded-full border border-[#F5D000] animate-ping opacity-60" />
+                      <span className="absolute inset-0 rounded-full border border-[#DCE135] animate-ping opacity-60" />
                     </div>
                   </div>
                   
                   {/* Category label */}
-                  <span className="absolute top-4 left-4 bg-black/60 backdrop-blur-md text-[#F5D000] px-2.5 py-0.5 rounded text-[8px] font-black tracking-widest uppercase">
+                  <span className="absolute top-4 left-4 bg-black/60 backdrop-blur-md text-[#DCE135] px-2.5 py-0.5 rounded text-[8px] font-black tracking-widest uppercase">
                     {video.category}
                   </span>
 
@@ -664,11 +664,11 @@ export default function NewsroomFeed() {
 
                 {/* Meta Details below image */}
                 <div className="flex flex-col gap-1.5">
-                  <h4 className="font-display text-sm sm:text-base font-bold uppercase text-white leading-snug group-hover:text-[#F5D000] transition-colors line-clamp-2">
+                  <h4 className="font-display text-sm sm:text-base font-bold uppercase text-white leading-snug group-hover:text-[#DCE135] transition-colors line-clamp-2">
                     {video.title}
                   </h4>
                   <div className="flex items-center gap-1.5 text-[9px] font-semibold text-white/50 tracking-wider">
-                    <BookOpen className="h-3.5 w-3.5 text-[#F5D000]" />
+                    <BookOpen className="h-3.5 w-3.5 text-[#DCE135]" />
                     <span>Watch Release</span>
                   </div>
                 </div>

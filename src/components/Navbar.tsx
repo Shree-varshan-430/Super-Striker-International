@@ -2,9 +2,10 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ArrowRight, Shield } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,21 +48,23 @@ export default function Navbar() {
           scrolled ? "h-16" : "h-20"
         }`}>
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className={`flex h-10 w-10 items-center justify-center rounded-lg font-bold shadow-sm transition-transform group-hover:scale-105 ${
-              useDarkTheme 
-                ? "bg-[#F5D000] text-[#10143A]" 
-                : "bg-[#10143A] text-white"
-            }`}>
-              <Shield className={`h-5 w-5 ${useDarkTheme ? "fill-[#10143A] text-[#10143A]" : "fill-white text-white"}`} />
+          <Link href="/" className="flex items-center gap-3 group shrink-0">
+            <div className="relative w-10 h-10 transition-transform group-hover:scale-105">
+              <Image
+                src="/super-strikers-international.png"
+                alt="SuperStrikers International Logo"
+                fill
+                className="object-contain"
+                priority
+              />
             </div>
             <div className="flex flex-col">
-              <span className={`font-display text-lg font-extrabold tracking-tight uppercase leading-none transition-colors ${
+              <span className={`font-display text-base sm:text-lg font-extrabold tracking-tight uppercase leading-none transition-colors ${
                 useDarkTheme ? "text-white" : "text-[#0A1028]"
               }`}>
                 SuperStriker
               </span>
-              <span className="text-[10px] font-semibold uppercase tracking-wider leading-none mt-0.5 transition-colors text-[#F5D000]">
+              <span className="text-[10px] font-bold uppercase tracking-wider leading-none mt-0.5 text-[#DCE135]">
                 International
               </span>
             </div>
@@ -85,7 +88,7 @@ export default function Navbar() {
                   {isActive && (
                     <motion.span
                       layoutId="activeNavBorder"
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#F5D000]"
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#DCE135]"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -100,8 +103,8 @@ export default function Navbar() {
               href="/investors#enquire"
               className={`inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-xs font-bold uppercase tracking-wider transition-all active:scale-95 ${
                 useDarkTheme 
-                  ? "bg-[#F5D000] text-[#10143A] hover:bg-white hover:text-[#10143A] hover:shadow-lg hover:shadow-[#F5D000]/15" 
-                  : "bg-[#10143A] text-white hover:bg-[#F5D000] hover:text-[#10143A] hover:shadow-lg hover:shadow-[#10143A]/15"
+                  ? "bg-[#DCE135] text-[#10143A] hover:bg-white hover:text-[#10143A] hover:shadow-lg hover:shadow-[#DCE135]/15" 
+                  : "bg-[#10143A] text-white hover:bg-[#DCE135] hover:text-[#10143A] hover:shadow-lg hover:shadow-[#10143A]/15"
               }`}
             >
               Partner With Us
@@ -156,7 +159,7 @@ export default function Navbar() {
                       isActive
                         ? useDarkTheme 
                           ? "bg-white/10 text-white" 
-                          : "bg-[#F5D000]/10 text-[#F5D000]"
+                          : "bg-[#DCE135]/10 text-[#DCE135]"
                         : useDarkTheme
                           ? "text-white/80 hover:bg-white/5 hover:text-white"
                           : "text-[#0A1028]/80 hover:bg-[#F4F6FA] hover:text-[#0A1028]"
@@ -172,8 +175,8 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                   className={`flex w-full items-center justify-center gap-2 rounded-full py-3 text-center text-sm font-bold uppercase tracking-wider transition-all ${
                     useDarkTheme 
-                      ? "bg-[#F5D000] text-[#10143A] hover:bg-white hover:text-[#10143A]" 
-                      : "bg-[#10143A] text-white hover:bg-[#F5D000] hover:text-[#10143A]"
+                      ? "bg-[#DCE135] text-[#10143A] hover:bg-white hover:text-[#10143A]" 
+                      : "bg-[#10143A] text-white hover:bg-[#DCE135] hover:text-[#10143A]"
                   }`}
                 >
                   Partner With Us

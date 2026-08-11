@@ -32,15 +32,21 @@ export const articles: Article[] = [
         <cite>— Ramakrishnan, President & Head of Football Operations</cite>
       </blockquote>
 
+      <img src="/images/training-1.jpg" alt="Scientific football coaching drills" class="w-full rounded-xl my-8 object-cover shadow-sm aspect-[16/9]" />
+
       <h3>Modern Curriculum and Scientific Coaching</h3>
       <p>Our training centers utilize periodic development tracking, physical conditioning modules, and video analysis. Rather than focusing solely on match results, the emphasis is placed on technical proficiency, tactical awareness, and cognitive decision-making in high-pressure situations.</p>
       
+      <img src="/images/match-1.jpg" alt="Academy players in a match" class="w-full rounded-xl my-8 object-cover shadow-sm aspect-[16/9]" />
+
       <p>Through our network of clubs, including Bangalore Super Strikers FC, Pondicherry Super Strikers FC, and Chennai Super Strikers FC, players have direct access to senior team exposure. Our coaching staff, comprised of AIFF licensed coaches, ensures every child receives individual focus.</p>
+
+      <img src="/images/team-1.jpg" alt="SuperStrikers Academy Team Cohort" class="w-full rounded-xl my-8 object-cover shadow-sm aspect-[16/9]" />
 
       <h3>Holistic Athlete Support</h3>
       <p>Beyond tactical and physical training, our academy programs provide support in nutrition, sports psychology, and career guidance. We prepare our young athletes for the mental demands of professional sports, ensuring they grow not just as players, but as confident, disciplined individuals.</p>
     `,
-    image: "https://images.unsplash.com/photo-1518063319789-7217e6706b04?q=80&w=800&auto=format&fit=crop",
+    image: "/images/training-1.jpg",
     author: {
       name: "SuperStriker Editorial Team",
       role: "Lead Sports Journalists",
@@ -65,13 +71,17 @@ export const articles: Article[] = [
         "Grassroots is about joy, movement, and initial love for the sport. When children enjoy having the ball at their feet, they learn naturally."
       </blockquote>
 
+      <img src="/images/training-2.jpg" alt="Young children participating in grassroots training" class="w-full rounded-xl my-8 object-cover shadow-sm aspect-[16/9]" />
+
       <h3>Identifying Talent Early</h3>
       <p>Our grassroots festivals are not just about fun; they are scouts' goldmines. Coaches observe players for natural coordination, spatial intelligence, and resilience. Promising talents identified at the grassroots level are offered full scholarships to our elite Bangalore Football School program.</p>
+
+      <img src="/images/match-2.jpg" alt="Youth match action at grassroots festival" class="w-full rounded-xl my-8 object-cover shadow-sm aspect-[16/9]" />
 
       <h3>Building Communities</h3>
       <p>By involving parents, teachers, and local volunteers, SuperStriker is building a community structure around football. We run community coaching clinics to train school physical education teachers in basic football development models, multiplying our impact across schools.</p>
     `,
-    image: "https://images.unsplash.com/photo-1544698310-74ea9d1c8258?q=80&w=800&auto=format&fit=crop",
+    image: "/images/training-2.jpg",
     author: {
       name: "SuperStriker Editorial Team",
       role: "Grassroots Development Coordinator",
@@ -92,6 +102,8 @@ export const articles: Article[] = [
 
       <p>We are creating a robust ladder for players to climb. A child starts at our weekend grassroots clinic, moves to the Bangalore Football School, enters the youth competitive teams, and eventually graduates to our senior professional clubs competing in official leagues.</p>
 
+      <img src="/images/match-1.jpg" alt="Competitive match pathway action" class="w-full rounded-xl my-8 object-cover shadow-sm aspect-[16/9]" />
+
       <h3>The Five Pillars of our Pathway</h3>
       <ol>
         <li><strong>Discovery:</strong> Grassroots clinics and open scouting festivals.</li>
@@ -106,10 +118,12 @@ export const articles: Article[] = [
         <cite>— President's Office</cite>
       </blockquote>
 
+      <img src="/images/team-2.jpg" alt="Senior league squad lineup" class="w-full rounded-xl my-8 object-cover shadow-sm aspect-[16/9]" />
+
       <h3>Strategic Network Impact</h3>
       <p>By owning multiple clubs in different states (Karnataka, Tamil Nadu, Pondicherry), we can offer regional talent localized training while offering a combined network for national scouting scouts and tournament organizers.</p>
     `,
-    image: "https://images.unsplash.com/photo-1431324155629-1a6edd1d141e?q=80&w=800&auto=format&fit=crop",
+    image: "/images/match-1.jpg",
     author: {
       name: "SuperStriker Editorial Team",
       role: "Strategic Development Director",
@@ -135,13 +149,15 @@ export const articles: Article[] = [
         <cite>— Investor Relations Team</cite>
       </blockquote>
 
+      <img src="/images/training-1.jpg" alt="High performance training turf" class="w-full rounded-xl my-8 object-cover shadow-sm aspect-[16/9]" />
+
       <h3>Introducing Smart Telemetry</h3>
       <p>As part of this expansion, all senior team players and elite academy athletes will receive GPS-enabled vest trackers. This technology will gather real-time data on player speed, heat maps, deceleration, and cardiovascular loads, allowing coaches to optimize workouts and prevent injuries.</p>
 
       <h3>Community Access Hours</h3>
       <p>True to our community philosophy, the new turf facilities will host free grassroots clinics for local municipal school children twice a week, ensuring the investment benefits the wider society.</p>
     `,
-    image: "https://images.unsplash.com/photo-1529900748604-07564a03e7a6?q=80&w=800&auto=format&fit=crop",
+    image: "/images/match-2.jpg",
     author: {
       name: "Investor Relations Team",
       role: "Corporate Finance",
@@ -166,10 +182,12 @@ export const articles: Article[] = [
         "The U-15 years are critical for tactical development. This expansion will allow us to shape our players' game understanding to meet professional standards."
       </blockquote>
 
+      <img src="/images/training-2.jpg" alt="U-15 training session" class="w-full rounded-xl my-8 object-cover shadow-sm aspect-[16/9]" />
+
       <h3>Residential Integration</h3>
       <p>The selected players will reside in our partner housing facility, combining specialized football training with high-quality education at local schools. This model guarantees a balanced growth path, preparing students for life both on and off the pitch.</p>
     `,
-    image: "https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=800&auto=format&fit=crop",
+    image: "/images/training-2.jpg",
     author: {
       name: "SuperStriker Editorial Team",
       role: "Academy Scout",
@@ -194,10 +212,12 @@ export const articles: Article[] = [
         "Competing in a structured league is essential for player maturation. Our young squad is eager to test themselves against the best local talent."
       </blockquote>
 
+      <img src="/images/team-1.jpg" alt="Chennai Super Strikers squad lineup" class="w-full rounded-xl my-8 object-cover shadow-sm aspect-[16/9]" />
+
       <h3>Squad Composition</h3>
       <p>The squad is a blend of experienced local league players and elite graduates from our South India academies, fulfilling our commitment to bridging academy training with professional competition.</p>
     `,
-    image: "https://images.unsplash.com/photo-1489945052260-4f21c52268b9?q=80&w=800&auto=format&fit=crop",
+    image: "/images/team-1.jpg",
     author: {
       name: "SuperStriker Editorial Team",
       role: "Chennai Team Correspondent",

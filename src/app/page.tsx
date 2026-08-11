@@ -56,7 +56,7 @@ interface FoundationSlide {
   ctaText: string;
   ctaLink: string;
   image: string;
-  logo: string;
+  logoImg: string;
 }
 
 const FOUNDATION_SLIDES: FoundationSlide[] = [
@@ -70,7 +70,7 @@ const FOUNDATION_SLIDES: FoundationSlide[] = [
     ctaText: "EXPLORE CLUB",
     ctaLink: "/clubs/bangalore-super-strikers-fc",
     image: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1600&auto=format&fit=crop",
-    logo: "BSS"
+    logoImg: "/bangalore-super-strikers-fc.png"
   },
   {
     num: "02",
@@ -82,7 +82,7 @@ const FOUNDATION_SLIDES: FoundationSlide[] = [
     ctaText: "EXPLORE CLUB",
     ctaLink: "/clubs/pondicherry-super-strikers-fc",
     image: "https://images.unsplash.com/photo-1518063319789-7217e6706b04?q=80&w=1600&auto=format&fit=crop",
-    logo: "PSS"
+    logoImg: "/pondicherry-super-strikers-fc.png"
   },
   {
     num: "03",
@@ -94,7 +94,7 @@ const FOUNDATION_SLIDES: FoundationSlide[] = [
     ctaText: "EXPLORE CLUB",
     ctaLink: "/clubs/chennai-super-strikers-fc",
     image: "https://images.unsplash.com/photo-1529900748604-07564a03e7a6?q=80&w=1600&auto=format&fit=crop",
-    logo: "CSS"
+    logoImg: "/chennai-super-strikers-fc.png"
   },
   {
     num: "04",
@@ -106,7 +106,7 @@ const FOUNDATION_SLIDES: FoundationSlide[] = [
     ctaText: "VISIT ACADEMY",
     ctaLink: "/football-school/bangalore-football-school",
     image: "https://images.unsplash.com/photo-1431324155629-1a6edd1d141e?q=80&w=1600&auto=format&fit=crop",
-    logo: "BFS"
+    logoImg: "/foundation.png"
   }
 ];
 
@@ -443,7 +443,7 @@ export default function Home() {
                   idx === currentSlide ? "opacity-100 z-20" : "opacity-0 z-0 pointer-events-none"
                 }`}
               >
-                <span className="slide-category text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#F5D000] leading-none">
+                <span className="slide-category text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#DCE135] leading-none">
                   {slide.category}
                 </span>
                 
@@ -462,7 +462,7 @@ export default function Home() {
                 <div className="slide-cta flex flex-wrap items-center justify-start gap-3 sm:gap-4 mt-1 sm:mt-2">
                   <Link 
                     href={slide.ctaLink} 
-                    className="inline-flex items-center gap-2 rounded-full bg-[#F5D000] px-5 sm:px-6 py-3 sm:py-3.5 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#10143A] hover:bg-white hover:text-[#10143A] transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#F5D000]/15"
+                    className="inline-flex items-center gap-2 rounded-full bg-[#DCE135] px-5 sm:px-6 py-3 sm:py-3.5 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#10143A] hover:bg-white hover:text-[#10143A] transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#DCE135]/15"
                   >
                     {slide.ctaText}
                     <ArrowRight className="h-3.5 sm:h-4 w-3.5 sm:w-4" />
@@ -489,7 +489,7 @@ export default function Home() {
             <div className="w-32 h-1 bg-white/20 rounded-full overflow-hidden relative">
               <div 
                 id="hero-progress-bar" 
-                className="absolute left-0 top-0 bottom-0 bg-[#F5D000] w-0" 
+                className="absolute left-0 top-0 bottom-0 bg-[#DCE135] w-0" 
               />
             </div>
           </div>
@@ -540,17 +540,17 @@ export default function Home() {
         {/* Persistent progress bar & name indicator overlay */}
         <div className="absolute top-8 left-6 sm:top-12 sm:left-16 z-30 flex gap-6 sm:gap-12 items-center pointer-events-none select-none">
           <div className="flex flex-col text-left">
-            <span className="text-[10px] font-black uppercase tracking-widest text-[#F5D000] leading-none">CHAPTER</span>
+            <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] leading-none">CHAPTER</span>
             <span id="foundation-progress-num" className="font-display text-2xl sm:text-4xl font-black text-white leading-none mt-2">01 / 04</span>
           </div>
           
           {/* Progress Indicator line */}
           <div className="w-20 sm:w-48 h-1 bg-white/20 rounded-full overflow-hidden relative">
-            <div id="foundation-progress-line" className="absolute left-0 top-0 bottom-0 bg-[#F5D000] w-0 transition-all duration-100" />
+            <div id="foundation-progress-line" className="absolute left-0 top-0 bottom-0 bg-[#DCE135] w-0 transition-all duration-100" />
           </div>
 
           <div className="flex items-center gap-2 sm:gap-4 border-l border-white/10 pl-4 sm:pl-8 text-left">
-            <span className="text-[10px] font-black uppercase tracking-widest text-[#F5D000]/60 leading-none">ACTIVE STORY</span>
+            <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135]/60 leading-none">ACTIVE STORY</span>
             <span id="foundation-progress-name" className="font-display text-sm sm:text-lg font-extrabold text-white leading-none uppercase tracking-tight truncate max-w-[120px] sm:max-w-xs">
               BANGALORE SUPER STRIKERS FC
             </span>
@@ -580,7 +580,7 @@ export default function Home() {
               <div className="max-w-7xl mx-auto w-full h-full px-6 sm:px-16 lg:px-24 grid grid-cols-1 lg:grid-cols-12 items-center relative z-20">
                 {/* Left Side Info */}
                 <div className="lg:col-span-7 flex flex-col gap-4 sm:gap-6 text-left foundation-text-block mt-16 sm:mt-0">
-                  <span className="text-[10px] sm:text-sm font-bold uppercase tracking-widest text-[#F5D000]">
+                  <span className="text-[10px] sm:text-sm font-bold uppercase tracking-widest text-[#DCE135]">
                     {slide.label}
                   </span>
                   <h2 className="font-display text-2xl sm:text-4xl lg:text-6xl font-black uppercase tracking-tight text-white leading-[1.05] max-w-2xl">
@@ -598,7 +598,7 @@ export default function Home() {
                   <div className="pt-2">
                     <Link
                       href={slide.ctaLink}
-                      className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-[#F5D000] px-5 sm:px-6 py-2.5 sm:py-3.5 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#10143A] hover:bg-white hover:text-[#10143A] transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#F5D000]/15"
+                      className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-[#DCE135] px-5 sm:px-6 py-2.5 sm:py-3.5 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#10143A] hover:bg-white hover:text-[#10143A] transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#DCE135]/15"
                     >
                       {slide.ctaText}
                       <ArrowRight className="h-4 w-4" />
@@ -606,13 +606,15 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Right Side Shield Graphics (hidden on mobile to prevent viewport overflow) */}
+                {/* Right Side Brand Logos (hidden on mobile to prevent viewport overflow) */}
                 <div className="hidden lg:flex lg:col-span-5 justify-center items-center h-full relative pointer-events-none select-none">
-                  <div className="foundation-logo-wrap relative w-48 h-48 sm:w-72 sm:h-72 opacity-25 transition-transform duration-700">
-                    <Shield className="w-full h-full text-[#F5D000] stroke-[0.5px]" />
-                    <span className="absolute inset-0 flex items-center justify-center font-display text-4xl sm:text-6xl font-black text-[#F5D000]">
-                      {slide.logo}
-                    </span>
+                  <div className="foundation-logo-wrap relative w-48 h-48 sm:w-72 sm:h-72 opacity-80 transition-all duration-700 hover:scale-105 hover:opacity-100">
+                    <Image
+                      src={slide.logoImg}
+                      alt={`${slide.title} brand logo`}
+                      fill
+                      className="object-contain"
+                    />
                   </div>
                 </div>
               </div>
@@ -710,22 +712,22 @@ export default function Home() {
       {/* 6. INVESTOR & BUSINESS STORIES (INSIDE SUPERSTRIKER) */}
       <section ref={businessSectionRef} className="py-24 bg-[#10143A] text-white border-y border-white/10 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         {/* Glow backdrop effects */}
-        <div className="absolute top-1/2 left-1/3 w-[300px] h-[300px] bg-[#F5D000]/5 rounded-full blur-[80px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/3 w-[300px] h-[300px] bg-[#DCE135]/5 rounded-full blur-[80px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <span className="text-[10px] font-bold uppercase tracking-widest text-[#F5D000]">Venture & Infrastructure</span>
+            <span className="text-[10px] font-bold uppercase tracking-widest text-[#DCE135]">Venture & Infrastructure</span>
             <h2 className="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight text-white mt-1">
               Inside SuperStriker International
             </h2>
-            <div className="h-1 w-12 bg-[#F5D000] mx-auto mt-4" />
+            <div className="h-1 w-12 bg-[#DCE135] mx-auto mt-4" />
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Business news write-up */}
             <div className="lg:col-span-7 flex flex-col gap-6 text-left">
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-[#F5D000]">Forbes-Style Business Showcase</span>
+                <span className="text-xs font-bold uppercase tracking-wider text-[#DCE135]">Forbes-Style Business Showcase</span>
                 <h3 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight text-white mt-1">
                   Investing in the Next Multi-Billion Football Market
                 </h3>
@@ -743,7 +745,7 @@ export default function Home() {
                   { target: 100, suffix: "%", label: "Talent Pathway" }
                 ].map((item, idx) => (
                   <div key={idx} className="flex flex-col items-center text-center">
-                    <span className="text-3xl sm:text-4xl font-display font-black text-[#F5D000]">
+                    <span className="text-3xl sm:text-4xl font-display font-black text-[#DCE135]">
                       <span className="stat-counter" data-target={item.target}>0</span>
                       {item.suffix}
                     </span>
@@ -757,7 +759,7 @@ export default function Home() {
               <div className="flex gap-4">
                 <Link
                   href="/investors"
-                  className="inline-flex items-center gap-2 rounded-full bg-[#F5D000] px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-[#10143A] hover:bg-white hover:text-[#10143A] transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#F5D000]/15"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#DCE135] px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-[#10143A] hover:bg-white hover:text-[#10143A] transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#DCE135]/15"
                 >
                   Invest In Future Champions
                   <ArrowUpRight className="h-4 w-4" />
@@ -795,19 +797,19 @@ export default function Home() {
                   <path
                     d="M0 180 Q100 130 200 100 T400 40"
                     fill="none"
-                    stroke="#F5D000"
+                    stroke="#DCE135"
                     strokeWidth="4"
                     strokeLinecap="round"
                   />
                   
                   {/* Key highlights dots */}
-                  <circle cx="200" cy="100" r="5" fill="#F5D000" stroke="#ffffff" strokeWidth="2" />
-                  <circle cx="400" cy="40" r="5" fill="#F5D000" stroke="#ffffff" strokeWidth="2" />
+                  <circle cx="200" cy="100" r="5" fill="#DCE135" stroke="#ffffff" strokeWidth="2" />
+                  <circle cx="400" cy="40" r="5" fill="#DCE135" stroke="#ffffff" strokeWidth="2" />
 
                   {/* Gradient definition */}
                   <defs>
                     <linearGradient id="goldGradient" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#F5D000" />
+                      <stop offset="0%" stopColor="#DCE135" />
                       <stop offset="100%" stopColor="rgba(245,208,0,0)" />
                     </linearGradient>
                   </defs>
@@ -827,7 +829,7 @@ export default function Home() {
       {/* 7. PARTNERS & SPONSORS SECTION */}
       <section className="py-20 px-4 text-center bg-white">
         <div className="max-w-7xl mx-auto border-b border-gray-150 pb-16">
-          <span className="text-[10px] font-bold uppercase tracking-widest text-[#F5D000]">Alliance Network</span>
+          <span className="text-[10px] font-bold uppercase tracking-widest text-[#DCE135]">Alliance Network</span>
           <h3 className="font-display text-sm font-bold uppercase tracking-wider text-[#0A1028] mt-1">
             Partners Who Support Our Journey
           </h3>
@@ -838,7 +840,7 @@ export default function Home() {
               {["KSFA Federation", "AIFF Scout Panel", "Bangalore School Board", "Pondicherry Sports Ministry"].map((logo, index) => (
                 <div 
                   key={index} 
-                  className="flex items-center gap-3 bg-[#F4F6FA] border border-[#F5D000]/10 px-8 py-4 rounded-xl shadow-sm hover:border-[#F5D000]/35 hover:shadow-[0_0_20px_rgba(245,208,0,0.06)] transition-all duration-300 group"
+                  className="flex items-center gap-3 bg-[#F4F6FA] border border-[#DCE135]/10 px-8 py-4 rounded-xl shadow-sm hover:border-[#DCE135]/35 hover:shadow-[0_0_20px_rgba(245,208,0,0.06)] transition-all duration-300 group"
                 >
                   <Shield className="h-5 w-5 fill-[#10143A] text-[#10143A] transition-transform duration-300 group-hover:scale-110" />
                   <span className="font-display text-xs font-black uppercase tracking-tight text-[#0A1028] whitespace-nowrap">
@@ -854,7 +856,7 @@ export default function Home() {
       {/* 8. EDITORIAL FEATURED NEWSLETTER */}
       <section className="py-20 bg-background-soft border-t border-gray-150 px-4">
         <div className="max-w-4xl mx-auto text-center flex flex-col gap-6 items-center">
-          <span className="text-[10px] font-bold uppercase tracking-widest text-[#F5D000]">Weekly Dispatch</span>
+          <span className="text-[10px] font-bold uppercase tracking-widest text-[#DCE135]">Weekly Dispatch</span>
           <h2 className="font-display text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#0A1028]">
             Subscribe To SuperStriker Football Stories
           </h2>
@@ -867,11 +869,11 @@ export default function Home() {
               type="email"
               placeholder="Business email address"
               required
-              className="bg-white rounded-full border border-gray-200 px-5 py-3 text-xs text-[#0A1028] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#F5D000]/20 flex-grow"
+              className="bg-white rounded-full border border-gray-200 px-5 py-3 text-xs text-[#0A1028] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#DCE135]/20 flex-grow"
             />
             <button
               type="submit"
-              className="rounded-full bg-[#10143A] px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white hover:bg-[#F5D000] hover:text-[#10143A] transition-all hover:scale-103 shrink-0"
+              className="rounded-full bg-[#10143A] px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white hover:bg-[#DCE135] hover:text-[#10143A] transition-all hover:scale-103 shrink-0"
             >
               Subscribe Stories
             </button>

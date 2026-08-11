@@ -187,7 +187,7 @@ export default function About() {
 
         <div className="relative ml-4 md:ml-32">
           {/* Vertical gradient timeline line */}
-          <div className="absolute left-0 top-2 bottom-6 w-0.5 bg-gradient-to-b from-[#10143A] via-[#F5D000] to-[#1B2255] -translate-x-[1px]" />
+          <div className="absolute left-0 top-2 bottom-6 w-0.5 bg-gradient-to-b from-[#10143A] via-[#DCE135] to-[#1B2255] -translate-x-[1px]" />
 
           {timelineEvents.map((event, index) => {
             const Icon = event.icon;
@@ -211,7 +211,7 @@ export default function About() {
                 </div>
 
                 {/* Dot marker with Electric Blue glow, transition to active Violet on hover */}
-                <div className="absolute -left-[15px] top-1 flex h-8 w-8 items-center justify-center rounded-full bg-[#10143A] border-2 border-[#F5D000] text-white shadow-[0_0_15px_rgba(245,208,0,0.3)] hover:border-[#F5D000] hover:shadow-[0_0_20px_rgba(245,208,0,0.5)] transition-all duration-300 z-10">
+                <div className="absolute -left-[15px] top-1 flex h-8 w-8 items-center justify-center rounded-full bg-[#10143A] border-2 border-[#DCE135] text-white shadow-[0_0_15px_rgba(245,208,0,0.3)] hover:border-[#DCE135] hover:shadow-[0_0_20px_rgba(245,208,0,0.5)] transition-all duration-300 z-10">
                   <Icon className="h-3.5 w-3.5" />
                 </div>
 
@@ -243,11 +243,11 @@ export default function About() {
         />
         <div className="absolute inset-0 bg-secondary-navy/40 mix-blend-overlay" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 flex flex-col gap-6 items-center">
-          <span className="text-[10px] font-bold uppercase tracking-widest text-[#F5D000]">Core Creed</span>
+          <span className="text-[10px] font-bold uppercase tracking-widest text-[#DCE135]">Core Creed</span>
           <h2 className="font-display text-4xl sm:text-5xl font-black uppercase tracking-tight leading-none">
             Together Everyone Achieves More
           </h2>
-          <div className="h-1 w-16 bg-[#F5D000] mt-2" />
+          <div className="h-1 w-16 bg-[#DCE135] mt-2" />
         </div>
       </section>
     </div>

@@ -7,14 +7,14 @@
   /* Brand Color System */
   --primary-navy: #10143A;
   --secondary-navy: #1B2255;
-  --accent-gold: #F5D000;
+  --accent-gold: #DCE135;
   --background-soft: #F4F6FA;
   --text-body: #4B5563;
 
   /* Legacy/compatibility mappings to prevent breaking existing classes */
-  --primary-sky: #F5D000;      /* Championship Gold replaces old light blue */
-  --accent-violet: #F5D000;    /* Gold replaces violet accents */
-  --highlight-blue: #F5D000;   /* Gold replaces electric highlights */
+  --primary-sky: #DCE135;      /* Championship Gold replaces old light blue */
+  --accent-violet: #DCE135;    /* Gold replaces violet accents */
+  --highlight-blue: #DCE135;   /* Gold replaces electric highlights */
   
   --font-inter: var(--font-inter);
   --font-outfit: var(--font-outfit);

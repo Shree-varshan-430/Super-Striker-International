@@ -50,7 +50,7 @@ export default function News() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="group grid grid-cols-1 lg:grid-cols-12 border border-[#F5D000]/15 hover:border-[#F5D000]/35 rounded-2xl overflow-hidden shadow-sm hover:shadow-[0_15px_30px_rgba(245,208,0,0.05)] transition-all duration-300 mb-16 bg-white"
+            className="group grid grid-cols-1 lg:grid-cols-12 border border-[#DCE135]/15 hover:border-[#DCE135]/35 rounded-2xl overflow-hidden shadow-sm hover:shadow-[0_15px_30px_rgba(245,208,0,0.05)] transition-all duration-300 mb-16 bg-white"
           >
             <div className="lg:col-span-7 relative h-80 lg:h-[450px] overflow-hidden">
               <Image
@@ -78,7 +78,7 @@ export default function News() {
                   </span>
                 </div>
                 
-                <h2 className="font-display text-2xl lg:text-3xl font-bold uppercase tracking-tight text-secondary-navy group-hover:text-[#F5D000] transition-colors leading-tight">
+                <h2 className="font-display text-2xl lg:text-3xl font-bold uppercase tracking-tight text-secondary-navy group-hover:text-[#DCE135] transition-colors leading-tight">
                   <Link href={`/news/${featuredArticle.id}`}>
                     {featuredArticle.title}
                   </Link>
@@ -107,7 +107,7 @@ export default function News() {
 
                 <Link
                   href={`/news/${featuredArticle.id}`}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-[#10143A] text-white hover:bg-[#F5D000] hover:text-[#10143A] hover:scale-105 active:scale-95 transition-all"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-[#10143A] text-white hover:bg-[#DCE135] hover:text-[#10143A] hover:scale-105 active:scale-95 transition-all"
                   aria-label="Read full article"
                 >
                   <ArrowRight className="h-4 w-4" />
@@ -134,7 +134,7 @@ export default function News() {
                 className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${
                   selectedCategory === cat
                     ? "bg-[#10143A] text-white shadow-md shadow-[#10143A]/20"
-                    : "bg-background-soft text-secondary-navy hover:bg-[#F5D000]/10 hover:text-[#0A1028]"
+                    : "bg-background-soft text-secondary-navy hover:bg-[#DCE135]/10 hover:text-[#0A1028]"
                 }`}
               >
                 {cat}
@@ -153,7 +153,7 @@ export default function News() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="group flex flex-col bg-white border border-[#F5D000]/15 hover:border-[#F5D000]/35 rounded-xl overflow-hidden hover:shadow-[0_12px_25px_rgba(245,208,0,0.04)] transition-all duration-300 flex-grow"
+                className="group flex flex-col bg-white border border-[#DCE135]/15 hover:border-[#DCE135]/35 rounded-xl overflow-hidden hover:shadow-[0_12px_25px_rgba(245,208,0,0.04)] transition-all duration-300 flex-grow"
               >
                 <div className="relative h-52 overflow-hidden">
                   <Image
@@ -169,7 +169,7 @@ export default function News() {
 
                 <div className="p-6 flex flex-col flex-1 justify-between gap-6">
                   <div className="flex flex-col gap-3">
-                    <h3 className="font-display text-lg font-bold uppercase tracking-tight leading-snug text-secondary-navy group-hover:text-[#F5D000] transition-colors">
+                    <h3 className="font-display text-lg font-bold uppercase tracking-tight leading-snug text-secondary-navy group-hover:text-[#DCE135] transition-colors">
                       <Link href={`/news/${article.id}`}>
                         {article.title}
                       </Link>
@@ -198,7 +198,7 @@ export default function News() {
             <p className="text-sm font-semibold text-secondary-navy/60">No articles found in this category.</p>
             <button
               onClick={() => setSelectedCategory("All")}
-              className="mt-4 inline-flex text-xs font-bold uppercase tracking-wider text-[#F5D000] hover:underline"
+              className="mt-4 inline-flex text-xs font-bold uppercase tracking-wider text-[#DCE135] hover:underline"
             >
               Reset Filters
             </button>

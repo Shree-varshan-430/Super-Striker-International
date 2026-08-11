@@ -14,6 +14,7 @@ interface ClubDetails {
   focus: string;
   description: string;
   highlights: string[];
+  logo: string;
 }
 
 const clubsData: Record<string, ClubDetails> = {
@@ -32,7 +33,8 @@ const clubsData: Record<string, ClubDetails> = {
       "Regular competitive tournament calendars and senior cups",
       "Professional standard fitness trackers and analytics",
       "Dedicated scouting network spanning multiple Karnataka districts"
-    ]
+    ],
+    logo: "/bangalore-super-strikers-fc.png"
   },
   "pondicherry-super-strikers-fc": {
     name: "Pondicherry Super Strikers FC",
@@ -49,7 +51,8 @@ const clubsData: Record<string, ClubDetails> = {
       "Local community turf clinics and night league festivals",
       "Structured technical growth benchmarks for junior teams",
       "Direct scouting progression pipeline to Bangalore first team"
-    ]
+    ],
+    logo: "/pondicherry-super-strikers-fc.png"
   },
   "chennai-super-strikers-fc": {
     name: "Chennai Super Strikers FC",
@@ -66,7 +69,8 @@ const clubsData: Record<string, ClubDetails> = {
       "Partnership pitches for local youth tournament access",
       "Clear pathway registry to national scouting events",
       "Focus on technical ball mastery and positional play standards"
-    ]
+    ],
+    logo: "/chennai-super-strikers-fc.png"
   }
 };
 
@@ -107,15 +111,28 @@ export default async function ClubPage({ params }: PageProps) {
 
       {/* Main Content */}
       <div className="max-w-4xl mx-auto px-4 py-16 sm:px-6">
-        {/* Title and Location */}
-        <div className="flex flex-col gap-4 text-center sm:text-left mb-8">
-          <div className="inline-flex items-center gap-1.5 self-center sm:self-start bg-primary-sky/20 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-secondary-navy">
-            <MapPin className="h-3.5 w-3.5 text-secondary-navy" />
-            {club.location}
+        {/* Title, Logo and Location */}
+        <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-6 mb-8 border-b border-gray-100 pb-8">
+          <div className="flex flex-col gap-4 text-center sm:text-left">
+            <div className="inline-flex items-center gap-1.5 self-center sm:self-start bg-primary-sky/20 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-secondary-navy">
+              <MapPin className="h-3.5 w-3.5 text-secondary-navy" />
+              {club.location}
+            </div>
+            <h1 className="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight text-secondary-navy leading-none">
+              {club.name}
+            </h1>
           </div>
-          <h1 className="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight text-secondary-navy leading-none">
-            {club.name}
-          </h1>
+          {club.logo && (
+            <div className="relative w-24 h-24 sm:w-28 sm:h-28 shrink-0 select-none">
+              <Image
+                src={club.logo}
+                alt={`${club.name} badge`}
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+          )}
         </div>
 
         {/* Club image */}

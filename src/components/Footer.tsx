@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Shield } from "lucide-react";
 import NewsletterForm from "./NewsletterForm";
 
@@ -40,15 +41,20 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-5 md:grid-cols-2">
           {/* Brand Col */}
           <div className="lg:col-span-2 flex flex-col gap-6">
-            <Link href="/" className="flex items-center gap-2 group self-start">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#F5D000] text-[#10143A] font-bold shadow-sm">
-                <Shield className="h-5 w-5 fill-[#10143A] text-[#10143A]" />
+            <Link href="/" className="flex items-center gap-3 group self-start">
+              <div className="relative w-10 h-10 transition-transform group-hover:scale-105">
+                <Image
+                  src="/super-strikers-international.png"
+                  alt="SuperStrikers International Logo"
+                  fill
+                  className="object-contain"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="font-display text-lg font-extrabold tracking-tight text-white uppercase leading-none">
                   SuperStriker
                 </span>
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-[#F5D000] leading-none mt-0.5">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#DCE135] leading-none mt-0.5">
                   International
                 </span>
               </div>
@@ -57,16 +63,16 @@ export default function Footer() {
               SuperStriker International Pvt Ltd is dedicated to developing the football ecosystem in India, connecting grassroots clinics to professional leagues and national talent pathways.
             </p>
             <div className="flex items-center gap-4 text-white/60">
-              <a href="#" className="hover:text-[#F5D000] transition-colors" aria-label="Twitter">
+              <a href="#" className="hover:text-[#DCE135] transition-colors" aria-label="Twitter">
                 <TwitterIcon className="h-5 w-5" />
               </a>
-              <a href="#" className="hover:text-[#F5D000] transition-colors" aria-label="Instagram">
+              <a href="#" className="hover:text-[#DCE135] transition-colors" aria-label="Instagram">
                 <InstagramIcon className="h-5 w-5" />
               </a>
-              <a href="#" className="hover:text-[#F5D000] transition-colors" aria-label="LinkedIn">
+              <a href="#" className="hover:text-[#DCE135] transition-colors" aria-label="LinkedIn">
                 <LinkedinIcon className="h-5 w-5" />
               </a>
-              <a href="#" className="hover:text-[#F5D000] transition-colors" aria-label="YouTube">
+              <a href="#" className="hover:text-[#DCE135] transition-colors" aria-label="YouTube">
                 <YoutubeIcon className="h-5 w-5" />
               </a>
             </div>
@@ -79,19 +85,19 @@ export default function Footer() {
             </h3>
             <ul className="mt-6 space-y-4">
               <li>
-                <div className="text-sm font-semibold text-white hover:text-[#F5D000] transition-colors">
+                <div className="text-sm font-semibold text-white hover:text-[#DCE135] transition-colors">
                   Bangalore Super Strikers FC
                   <span className="block text-[11px] font-normal text-white/50">Bangalore, Karnataka</span>
                 </div>
               </li>
               <li>
-                <div className="text-sm font-semibold text-white hover:text-[#F5D000] transition-colors">
+                <div className="text-sm font-semibold text-white hover:text-[#DCE135] transition-colors">
                   Pondicherry Super Strikers FC
                   <span className="block text-[11px] font-normal text-white/50">Pondicherry</span>
                 </div>
               </li>
               <li>
-                <div className="text-sm font-semibold text-white hover:text-[#F5D000] transition-colors">
+                <div className="text-sm font-semibold text-white hover:text-[#DCE135] transition-colors">
                   Chennai Super Strikers FC
                   <span className="block text-[11px] font-normal text-white/50">Chennai, Tamil Nadu</span>
                 </div>
@@ -106,7 +112,7 @@ export default function Footer() {
             </h3>
             <ul className="mt-6 space-y-4">
               <li>
-                <div className="text-sm font-semibold text-white hover:text-[#F5D000] transition-colors">
+                <div className="text-sm font-semibold text-white hover:text-[#DCE135] transition-colors">
                   Bangalore Football School
                   <span className="block text-[11px] font-normal text-white/60 mt-2">
                     • Youth development<br />
@@ -134,7 +140,7 @@ export default function Footer() {
               <h3 className="font-display text-sm font-bold uppercase tracking-wider text-white mb-3">
                 Quick Navigation
               </h3>
-              <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs font-semibold text-[#F5D000]">
+              <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs font-semibold text-[#DCE135]">
                 <Link href="/about" className="hover:text-white transition-colors">About</Link>
                 <Link href="/news" className="hover:text-white transition-colors">News</Link>
                 <Link href="/investors" className="hover:text-white transition-colors">Investors</Link>
