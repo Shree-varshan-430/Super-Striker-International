@@ -305,7 +305,7 @@ export default function Home() {
           gsap.fromTo(logoWrap,
             { opacity: 0, scale: 0.8, rotateY: 30 },
             {
-              opacity: 0.25,
+              opacity: 0.9,
               scale: 1,
               rotateY: 0,
               duration: 0.8,
@@ -608,7 +608,7 @@ export default function Home() {
 
                 {/* Right Side Brand Logos (hidden on mobile to prevent viewport overflow) */}
                 <div className="hidden lg:flex lg:col-span-5 justify-center items-center h-full relative pointer-events-none select-none">
-                  <div className="foundation-logo-wrap relative w-48 h-48 sm:w-72 sm:h-72 opacity-80 transition-all duration-700 hover:scale-105 hover:opacity-100">
+                  <div className="foundation-logo-wrap relative w-48 h-48 sm:w-72 sm:h-72 opacity-90 transition-all duration-700 hover:scale-105 hover:opacity-100">
                     <Image
                       src={slide.logoImg}
                       alt={`${slide.title} brand logo`}
