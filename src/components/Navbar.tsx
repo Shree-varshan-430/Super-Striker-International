@@ -49,7 +49,9 @@ export default function Navbar() {
         }`}>
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group shrink-0">
-            <div className="relative w-10 h-10 transition-transform group-hover:scale-105">
+            <div className={`relative transition-all duration-300 group-hover:scale-105 ${
+              scrolled ? "w-11 h-11" : "w-14 h-14 sm:w-16 sm:h-16"
+            }`}>
               <Image
                 src="/super-strikers-international.png"
                 alt="SuperStrikers International Logo"

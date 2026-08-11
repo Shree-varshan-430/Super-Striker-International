@@ -22,7 +22,7 @@ interface StoryArticle {
 const STORIES_DATA: StoryArticle[] = [
   {
     id: "building-next-generation",
-    image: "/images/training-1.jpg",
+    image: "/images/news-player-development.jpg",
     category: "ACADEMY",
     title: "Building India's Next Generation Of Football Champions",
     description: "Discover how SuperStriker International is creating pathways for young footballers through clubs, academies, and grassroots development.",
@@ -33,7 +33,7 @@ const STORIES_DATA: StoryArticle[] = [
   },
   {
     id: "bss-new-chapter",
-    image: "/images/team-2.jpg",
+    image: "/images/news-chennai-league.jpg",
     category: "CLUB",
     title: "Bangalore Super Strikers begins a new football chapter",
     description: "Establishing new training schedules, expanding senior squads, and targeting national league registrations.",
@@ -44,7 +44,7 @@ const STORIES_DATA: StoryArticle[] = [
   },
   {
     id: "philosophy-pathways",
-    image: "/images/training-2.jpg",
+    image: "/images/news-scouting.jpg",
     category: "ACADEMY",
     title: "Inside our player development philosophy",
     description: "A deep dive into how structured drills, athletic profiling, and sports nutrition form our syllabus.",
@@ -66,7 +66,7 @@ const STORIES_DATA: StoryArticle[] = [
   },
   {
     id: "creating-opportunities",
-    image: "/images/match-2.jpg",
+    image: "/images/news-grassroots.jpg",
     category: "FOUNDATION",
     title: "Creating opportunities through football",
     description: "Unlocking regional talent grids, setting up matches in rural clusters, and local club registrations.",
@@ -77,7 +77,7 @@ const STORIES_DATA: StoryArticle[] = [
   },
   {
     id: "investor-milestones-q3",
-    image: "/images/match-1.jpg",
+    image: "/images/news-pitch-sponsorship.jpg",
     category: "INVESTORS",
     title: "Unlocking structural expansion models for South India",
     description: "Announcing new infrastructure turf blueprints and commercial sponsorship packages for investors.",
@@ -88,7 +88,7 @@ const STORIES_DATA: StoryArticle[] = [
   },
   {
     id: "community-impact-pitch",
-    image: "/images/training-2.jpg",
+    image: "/images/news-underpriv-camp.jpg",
     category: "COMMUNITY",
     title: "Deploying training camps for underprivileged children",
     description: "Partnering with state councils to provide boots, kits, and professional licensed training guidelines.",
@@ -99,7 +99,7 @@ const STORIES_DATA: StoryArticle[] = [
   },
   {
     id: "pondicherry-blueprints",
-    image: "/images/match-2.jpg",
+    image: "/images/news-pondicherry-scout.jpg",
     category: "ACADEMY",
     title: "Pondicherry youth development scouting blueprint",
     description: "Establishing district-wide training clinics to discover promising sub-junior candidates and draft them directly into the state leagues.",
@@ -121,7 +121,7 @@ const STORIES_DATA: StoryArticle[] = [
   },
   {
     id: "tactical-goalkeeper-coaching",
-    image: "/images/training-2.jpg",
+    image: "/images/news-goalkeeping.jpg",
     category: "ACADEMY",
     title: "Modern goalkeeper coaching advancements",
     description: "Integrating high-speed video feedback, reaction-time sensory drills, and positioning algorithms for BSS FC keepers.",

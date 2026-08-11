@@ -42,7 +42,7 @@ export default function Footer() {
           {/* Brand Col */}
           <div className="lg:col-span-2 flex flex-col gap-6">
             <Link href="/" className="flex items-center gap-3 group self-start">
-              <div className="relative w-10 h-10 transition-transform group-hover:scale-105">
+              <div className="relative w-16 h-16 sm:w-20 sm:h-20 transition-all duration-300 group-hover:scale-105">
                 <Image
                   src="/super-strikers-international.png"
                   alt="SuperStrikers International Logo"
