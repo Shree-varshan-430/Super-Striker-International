@@ -195,12 +195,146 @@ export default function Home() {
           <InvestorBanner />
         </motion.div>
 
-        {/* 6. SUB-BRAND SPOTLIGHT MODULE (Sequential Full Width Blocks) */}
+        {/* 6. INVESTOR PROPOSITION & COMMERCIAL RETURNS */}
+        <motion.section 
+          {...sectionAnimProps}
+          className="py-20 bg-gray-50 border-b border-gray-150 select-none"
+        >
+          <div className="max-w-[95%] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col items-start gap-1 border-l-4 border-[#10143A] pl-4 mb-12 text-left">
+              <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-2.5 py-0.5 rounded">
+                THE COMMERCIAL EQUATION
+              </span>
+              <h2 className="font-display text-2xl sm:text-4xl font-black uppercase tracking-tight text-[#0A1028] mt-1">
+                INVESTOR PROPOSITION & YIELDS
+              </h2>
+              <p className="text-xs sm:text-sm text-[#4B5563] mt-2 max-w-xl leading-relaxed">
+                SuperStriker International provides structured, high-value sports development partnerships. Here is exactly what you fund and how the returns accrue.
+              </p>
+            </div>
+
+            {/* Split Grid for Funding vs Yield */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              
+              {/* Column 1: What You Invest In */}
+              <div className="flex flex-col gap-6 text-left">
+                <div className="flex items-center gap-2 mb-2 pb-2 border-b border-gray-200">
+                  <div className="w-3 h-3 rounded-full bg-[#10143A]" />
+                  <h3 className="font-display text-lg font-black uppercase tracking-tight text-[#10143A]">
+                    1. What You Invest In (The Assets)
+                  </h3>
+                </div>
+
+                <div className="space-y-4">
+                  {[
+                    {
+                      title: "Regional Club Franchises",
+                      desc: "Direct capital funding for Bangalore, Chennai, and Pondicherry senior squads to build rosters, fund travel, and register for KSFA/AIFF tournaments.",
+                      sub: "Assets: Player registrations, stadium contracts, live-broadcast inventory."
+                    },
+                    {
+                      title: "Smart Telemetry Infrastructures",
+                      desc: "Construction of digitized, smart-turf community arenas equipped with telemetry sensors, camera rigs, and high-yield hourly training facilities.",
+                      sub: "Assets: Property development rights, sensory hardware, arena lease yields."
+                    },
+                    {
+                      title: "Fully-Funded Residential Cohorts",
+                      desc: "Sponsorship of elite Under-15 and Under-18 player batches to cover high-performance tutoring, tactical coaching, scientific nutrition, and kit gear.",
+                      sub: "Assets: Direct academy contract pipelines, domestic league registry rights."
+                    }
+                  ].map((asset, idx) => (
+                    <div key={idx} className="bg-white rounded-xl p-6 border border-gray-200 border-l-4 border-[#10143A] shadow-sm flex flex-col gap-2 hover:border-[#DCE135] transition-colors">
+                      <h4 className="font-display text-base font-extrabold uppercase text-[#10143A]">
+                        {asset.title}
+                      </h4>
+                      <p className="text-xs text-[#4B5563] leading-relaxed">
+                        {asset.desc}
+                      </p>
+                      <span className="text-[10px] font-bold text-[#10143A]/60 uppercase tracking-wide mt-1">
+                        {asset.sub}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Column 2: What You Get In Return */}
+              <div className="flex flex-col gap-6 text-left">
+                <div className="flex items-center gap-2 mb-2 pb-2 border-b border-gray-200">
+                  <div className="w-3 h-3 rounded-full bg-[#DCE135]" />
+                  <h3 className="font-display text-lg font-black uppercase tracking-tight text-[#10143A]">
+                    2. What You Get In Return (The Yields)
+                  </h3>
+                </div>
+
+                <div className="space-y-4">
+                  {[
+                    {
+                      title: "Guaranteed Branding & Media Rights",
+                      desc: "Front-of-shirt branding across state squads, stadium name rights, digital stream banner ads, and high-visibility placements on academy kits and scout files.",
+                      returnVal: "Yield: Corporate exposure, brand affinity, public goodwill."
+                    },
+                    {
+                      title: "Player Transfer Revenue Shares",
+                      desc: "Acquire pre-negotiated revenue percentages on transfer fees and professional registration sales of rostered athletes scouted via Bangalore Football School.",
+                      returnVal: "Yield: Direct revenue shares on domestic and international contract sales."
+                    },
+                    {
+                      title: "Physical Real-Estate Rental Splits",
+                      desc: "Receive recurring financial splits from smart-turf hourly rentals, commercial leagues, school tourney hosting, and BFS academy membership dues.",
+                      returnVal: "Yield: Predictable cash flow from facility utilization and operations."
+                    },
+                    {
+                      title: "Equity in Parent Network",
+                      desc: "Strategic equity options in SuperStriker International Pvt Ltd's parent sports group, capturing valuation hikes as we expand regionally.",
+                      returnVal: "Yield: Long-term corporate valuation growth & capital gains."
+                    }
+                  ].map((ret, idx) => (
+                    <div key={idx} className="bg-white rounded-xl p-6 border border-gray-200 border-l-4 border-[#DCE135] shadow-sm flex flex-col gap-2 hover:border-[#10143A] transition-colors">
+                      <h4 className="font-display text-base font-extrabold uppercase text-[#10143A]">
+                        {ret.title}
+                      </h4>
+                      <p className="text-xs text-[#4B5563] leading-relaxed">
+                        {ret.desc}
+                      </p>
+                      <span className="text-[10px] font-bold text-[#10143A] uppercase tracking-wide mt-1">
+                        {ret.returnVal}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+
+            {/* Quick Enquiry Prompt */}
+            <div className="mt-12 bg-[#10143A] rounded-2xl p-8 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-lg">
+              <div className="text-left flex flex-col gap-1.5">
+                <h3 className="font-display text-lg sm:text-xl font-black uppercase text-white">
+                  Ready to partner with SuperStriker?
+                </h3>
+                <p className="text-xs text-white/80 max-w-md">
+                  Inquire today to schedule a telemetry demo and receive our detailed investment prospectus deck.
+                </p>
+              </div>
+              <Link
+                href="/investors#enquire"
+                className="inline-flex items-center gap-1.5 rounded-full bg-[#DCE135] text-[#10143A] px-6 py-3.5 text-xs font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-[#10143A] hover:scale-105 active:scale-95 shadow-md shrink-0"
+              >
+                Inquire Sponsorship
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+
+          </div>
+        </motion.section>
+
+        {/* 7. SUB-BRAND SPOTLIGHT MODULE (Sequential Full Width Blocks) */}
         <motion.div {...sectionAnimProps}>
           <SubBrandSpotlight />
         </motion.div>
 
-        {/* 7. INFRASTRUCTURE & VISION BANNER (PARALLAX ZOOM STADIUM) */}
+        {/* 8. INFRASTRUCTURE & VISION BANNER (PARALLAX ZOOM STADIUM) */}
         <section 
           ref={featureBannerRef} 
           className="relative h-[65vh] min-h-[400px] flex items-center justify-start overflow-hidden bg-[#10143A] text-white px-8 sm:px-16 lg:px-24 select-none border-b border-gray-150"
@@ -234,7 +368,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 8. FOUNDER & HERITAGE PROFILE NOTE (MAGAZINE INTERVIEW) */}
+        {/* 9. FOUNDER & HERITAGE PROFILE NOTE (MAGAZINE INTERVIEW) */}
         <motion.section 
           {...sectionAnimProps}
           className="py-24 px-4 sm:px-6 lg:px-8 max-w-[95%] mx-auto bg-white border-b border-gray-100 select-none"
@@ -304,12 +438,12 @@ export default function Home() {
           </div>
         </motion.section>
 
-        {/* 9. ACADEMY BANNER MODULE (FULL WIDTH - SECONDARY PLACEMENT) */}
+        {/* 10. ACADEMY BANNER MODULE (FULL WIDTH - SECONDARY PLACEMENT) */}
         <motion.div {...sectionAnimProps}>
           <AcademyBanner />
         </motion.div>
 
-        {/* 10. PLAYER JOURNEYS SECTION */}
+        {/* 11. PLAYER JOURNEYS SECTION */}
         <motion.section 
           {...sectionAnimProps}
           className="py-24 px-4 sm:px-6 lg:px-8 max-w-[95%] mx-auto bg-white select-none border-b border-gray-150"
@@ -336,18 +470,18 @@ export default function Home() {
           </div>
         </motion.section>
 
-        {/* 11. LATEST MOMENTS ON THE PITCH (HORIZONTAL PHOTO STRIP) */}
+        {/* 12. LATEST MOMENTS ON THE PITCH (HORIZONTAL PHOTO STRIP) */}
         <motion.div {...sectionAnimProps}>
           <PhotoStrip />
         </motion.div>
 
-        {/* 12. LIVE SOCIAL EMBED MODULE (Mock Instagram Gallery) */}
+        {/* 13. LIVE SOCIAL EMBED MODULE (Mock Instagram Gallery) */}
         <motion.section 
           {...sectionAnimProps}
           className="py-20 bg-gray-50 border-b border-gray-150 select-none"
         >
           <div className="max-w-[95%] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col items-start gap-1 border-l-4 border-[#10143A] pl-4 mb-12">
+            <div className="flex flex-col items-start gap-1 border-l-4 border-[#10143A] pl-4 mb-12 text-left">
               <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-2.5 py-0.5 rounded">
                 SOCIAL
               </span>
@@ -381,12 +515,12 @@ export default function Home() {
           </div>
         </motion.section>
 
-        {/* 13. SPONSORS LOGO STRIP */}
+        {/* 14. SPONSORS LOGO STRIP */}
         <motion.div {...sectionAnimProps}>
           <PartnerLogos />
         </motion.div>
 
-        {/* 14. NEWSLETTER SIGNUP */}
+        {/* 15. NEWSLETTER SIGNUP */}
         <motion.section 
           {...sectionAnimProps}
           className="py-20 bg-gray-50 border-t border-gray-150 px-4"
