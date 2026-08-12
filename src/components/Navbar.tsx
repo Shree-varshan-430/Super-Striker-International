@@ -45,12 +45,12 @@ export default function Navbar() {
     }`}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className={`flex items-center justify-between transition-all duration-300 ${
-          scrolled ? "h-16" : "h-20"
+          scrolled ? "h-20" : "h-26"
         }`}>
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group shrink-0">
             <div className={`relative transition-all duration-300 group-hover:scale-105 ${
-              scrolled ? "w-11 h-11" : "w-14 h-14 sm:w-16 sm:h-16"
+              scrolled ? "w-14 h-14" : "w-18 h-18 sm:w-20 sm:h-20"
             }`}>
               <Image
                 src="/super-strikers-international.png"
@@ -61,12 +61,12 @@ export default function Navbar() {
               />
             </div>
             <div className="flex flex-col">
-              <span className={`font-display text-base sm:text-lg font-extrabold tracking-tight uppercase leading-none transition-colors ${
+              <span className={`font-display text-lg sm:text-xl font-extrabold tracking-tight uppercase leading-none transition-colors ${
                 useDarkTheme ? "text-white" : "text-[#0A1028]"
               }`}>
                 SuperStriker
               </span>
-              <span className="text-[10px] font-bold uppercase tracking-wider leading-none mt-0.5 text-[#DCE135]">
+              <span className="text-[11px] font-bold uppercase tracking-wider leading-none mt-1 text-[#DCE135]">
                 International
               </span>
             </div>

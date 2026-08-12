@@ -3,115 +3,57 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { ArrowRight, Shield } from "lucide-react";
+import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ArrowRight, ArrowUpRight, Shield, ChevronLeft, ChevronRight } from "lucide-react";
-import NewsroomFeed from "@/components/NewsroomFeed";
+
 import FootballLoader from "@/components/FootballLoader";
-import { motion } from "framer-motion";
+import HeroCarousel from "@/components/home/HeroCarousel";
+import PromoStrip from "@/components/home/PromoStrip";
+import LatestFeed from "@/components/home/LatestFeed";
+import SplitBanner from "@/components/home/SplitBanner";
+import SubBrandSpotlight from "@/components/home/SubBrandSpotlight";
+import PhotoStrip from "@/components/home/PhotoStrip";
+import PartnerLogos from "@/components/home/PartnerLogos";
+import NewsCard from "@/components/home/NewsCard";
+import { NewsItem } from "@/types/news";
 
-interface HeroSlide {
+interface PlayerJourney {
+  name: string;
+  role: string;
   image: string;
-  category: string;
-  title: string;
-  description: string;
-  ctaText: string;
-  ctaLink: string;
+  excerpt: string;
+  slug: string;
 }
 
-const HERO_SLIDES: HeroSlide[] = [
+const PLAYER_JOURNEYS: PlayerJourney[] = [
   {
-    image: "https://images.unsplash.com/photo-1622659097972-68f1d8c1829f?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    category: "FEATURED",
-    title: "Building The Future Of Indian Football",
-    description: "Creating opportunities, developing talent, and building a football ecosystem for the next generation.",
-    ctaText: "Explore Our Journey",
-    ctaLink: "/about"
+    name: "Aditya Kumar",
+    role: "Midfielder, U-15 Elite Cohort",
+    image: "/images/training-1.jpg",
+    excerpt: "Scouted during regional school games in Karnataka, Aditya is now preparing for state division selections.",
+    slug: "aditya-kumar-journey"
   },
   {
-    image: "https://images.unsplash.com/photo-1600250395178-40fe752e5189?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    category: "FOUNDATION",
-    title: "From Grassroots To Greatness",
-    description: "Discover our football foundations, academies, and player development pathway.",
-    ctaText: "Explore Ecosystem",
-    ctaLink: "/ecosystem"
+    name: "Sanjay Raj",
+    role: "Striker, Bangalore Super Strikers senior squad",
+    image: "/images/match-1.jpg",
+    excerpt: "Sanjay rose through the grassroots tournaments to lead the senior team's state division tournament campaign.",
+    slug: "sanjay-raj-journey"
   },
   {
-    image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1293&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    category: "OUR VISION",
-    title: "Investing In The Future Of Indian Football",
-    description: "Building sustainable football pathways through clubs, academies, partnerships, and community development.",
-    ctaText: "Partner With Us",
-    ctaLink: "/investors#enquire"
-  }
-];
-
-interface FoundationSlide {
-  num: string;
-  label: string;
-  title: string;
-  description: string;
-  detailsLabel?: string;
-  detailsValue?: string;
-  ctaText: string;
-  ctaLink: string;
-  image: string;
-  logoImg: string;
-}
-
-const FOUNDATION_SLIDES: FoundationSlide[] = [
-  {
-    num: "01",
-    label: "FOUNDATION 01",
-    title: "BANGALORE SUPER STRIKERS FC",
-    description: "The flagship football club building pathways for young players through professional coaching, competitive opportunities, and grassroots development.",
-    detailsLabel: "AFFILIATED WITH",
-    detailsValue: "Karnataka State Football Association",
-    ctaText: "EXPLORE CLUB",
-    ctaLink: "/clubs/bangalore-super-strikers-fc",
-    image: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1600&auto=format&fit=crop",
-    logoImg: "/bangalore-super-strikers-fc.png"
-  },
-  {
-    num: "02",
-    label: "FOUNDATION 02",
-    title: "PONDICHERRY SUPER STRIKERS FC",
-    description: "Expanding the SuperStriker football vision by creating new opportunities for players and communities through structured football development.",
-    detailsLabel: "DEVELOPMENT COHORT",
-    detailsValue: "Residential U-15 Academy Program",
-    ctaText: "EXPLORE CLUB",
-    ctaLink: "/clubs/pondicherry-super-strikers-fc",
-    image: "https://images.unsplash.com/photo-1518063319789-7217e6706b04?q=80&w=1600&auto=format&fit=crop",
-    logoImg: "/pondicherry-super-strikers-fc.png"
-  },
-  {
-    num: "03",
-    label: "FOUNDATION 03",
-    title: "CHENNAI SUPER STRIKERS FC",
-    description: "Developing football talent and building a connected football ecosystem across South India.",
-    detailsLabel: "REPRESENTING DIVISION",
-    detailsValue: "Metro League Registry representation",
-    ctaText: "EXPLORE CLUB",
-    ctaLink: "/clubs/chennai-super-strikers-fc",
-    image: "https://images.unsplash.com/photo-1529900748604-07564a03e7a6?q=80&w=1600&auto=format&fit=crop",
-    logoImg: "/chennai-super-strikers-fc.png"
-  },
-  {
-    num: "04",
-    label: "FOUNDATION 04",
-    title: "BANGALORE FOOTBALL SCHOOL",
-    description: "Creating the foundation for young footballers through quality coaching, technical development, and a positive learning environment.",
-    detailsLabel: "TRAINING AGE BRACKETS",
-    detailsValue: "Under-9, Under-12 & Under-15 Category",
-    ctaText: "VISIT ACADEMY",
-    ctaLink: "/football-school/bangalore-football-school",
-    image: "https://images.unsplash.com/photo-1431324155629-1a6edd1d141e?q=80&w=1600&auto=format&fit=crop",
-    logoImg: "/foundation.png"
+    name: "Vikram Seth",
+    role: "Goalkeeper, Pondicherry U-15 Resident Academy",
+    image: "/images/match-2.jpg",
+    excerpt: "Our goalkeeping telemetry tracking scouted Vikram from Chennai schools, launching his path into state division camps.",
+    slug: "vikram-seth-journey"
   }
 ];
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
+  const featureBannerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (sessionStorage.getItem("loader-complete")) {
@@ -120,271 +62,55 @@ export default function Home() {
     }
   }, []);
 
-  // DOM Refs for GSAP
-  const chaptersTriggerRef = useRef<HTMLDivElement>(null);
-  const chaptersContainerRef = useRef<HTMLDivElement>(null);
-  const businessSectionRef = useRef<HTMLDivElement>(null);
-  const featureBannerRef = useRef<HTMLDivElement>(null);
-
-  // Carousel slider state & interaction refs
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [touchStart, setTouchStart] = useState<number | null>(null);
-  const [touchEnd, setTouchEnd] = useState<number | null>(null);
-  const progressTweenRef = useRef<gsap.core.Tween | null>(null);
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
-  };
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStart(e.targetTouches[0].clientX);
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    setTouchEnd(e.targetTouches[0].clientX);
-  };
-
-  const handleTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
-    const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > 50;
-    const isRightSwipe = distance < -50;
-    if (isLeftSwipe) {
-      nextSlide();
-    } else if (isRightSwipe) {
-      prevSlide();
-    }
-    setTouchStart(null);
-    setTouchEnd(null);
-  };
-
-  // Carousel slider animations and progress timeline
+  // Initialize GSAP Parallax zoom for the Vision Stadium Banner
   useEffect(() => {
-    const progressBar = document.getElementById("hero-progress-bar");
-    if (progressBar) {
-      gsap.set(progressBar, { width: "0%" });
-      if (progressTweenRef.current) progressTweenRef.current.kill();
-      
-      progressTweenRef.current = gsap.to(progressBar, {
-        width: "100%",
-        duration: 6,
-        ease: "none",
-        onComplete: nextSlide
-      });
-    }
-
-    const activeSlideEl = document.querySelector(`.slide-text-content-${currentSlide}`);
-    if (activeSlideEl) {
-      const category = activeSlideEl.querySelector(".slide-category");
-      const headlineWords = activeSlideEl.querySelectorAll(".slide-headline .word-wrap span");
-      const description = activeSlideEl.querySelector(".slide-description");
-      const ctaButtons = activeSlideEl.querySelectorAll(".slide-cta");
-
-      gsap.fromTo(category,
-        { y: 15, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.6, ease: "power2.out" }
-      );
-
-      gsap.fromTo(headlineWords,
-        { y: "100%", opacity: 0 },
-        { y: "0%", opacity: 1, duration: 0.8, stagger: 0.03, ease: "power3.out" }
-      );
-
-      gsap.fromTo(description,
-        { y: 15, opacity: 0 },
-        { y: 0, opacity: 0.85, duration: 0.6, delay: 0.3, ease: "power2.out" }
-      );
-
-      gsap.fromTo(ctaButtons,
-        { y: 15, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.6, delay: 0.4, stagger: 0.05, ease: "power2.out" }
-      );
-    }
-
-    const activeImgWrap = document.querySelector(`.slide-img-wrap-${currentSlide}`);
-    if (activeImgWrap) {
-      const activeImg = activeImgWrap.querySelector("img");
-      if (activeImg) {
-        gsap.fromTo(activeImg,
-          { scale: 1.05, xPercent: -1, yPercent: -1 },
-          { scale: 1.15, xPercent: 1, yPercent: 1, duration: 6, ease: "sine.out" }
-        );
-      }
-    }
-  }, [currentSlide]);
-
-  // Initialize GSAP Scroll animations
-  useEffect(() => {
-    // Register ScrollTrigger plugin
     gsap.registerPlugin(ScrollTrigger);
 
-    // 3. Horizontal Scroll Pinning for Chapters (Clubs & School) - Full Screen Redesign
-    if (chaptersTriggerRef.current && chaptersContainerRef.current) {
-      const track = chaptersContainerRef.current;
-      const trigger = chaptersTriggerRef.current;
-
-      const pin = gsap.to(track, {
-        x: () => -(track.scrollWidth - window.innerWidth),
-        ease: "none",
-        scrollTrigger: {
-          trigger: trigger,
-          pin: true,
-          scrub: 1,
-          start: "top top",
-          end: () => `+=${track.scrollWidth}`,
-          invalidateOnRefresh: true,
-          snap: {
-            snapTo: 1 / 3, // 4 slides total (0, 0.33, 0.66, 1.0)
-            duration: 0.4,
-            ease: "power2.out",
-            delay: 0.02,
-          },
-          onUpdate: (self) => {
-            const progress = self.progress;
-            const slideIndex = Math.min(Math.floor(progress * 4), 3);
-            
-            const progressNum = document.getElementById("foundation-progress-num");
-            const progressName = document.getElementById("foundation-progress-name");
-            const progressLine = document.getElementById("foundation-progress-line");
-            
-            if (progressNum) progressNum.innerText = `0${slideIndex + 1} / 04`;
-            if (progressName) progressName.innerText = FOUNDATION_SLIDES[slideIndex].title;
-            if (progressLine) progressLine.style.width = `${progress * 100}%`;
-          }
-        },
-      });
-
-      // Entrance animations for each full-screen chapter slide
-      const slides = track.querySelectorAll(".foundation-slide");
-      slides.forEach((slide) => {
-        const img = slide.querySelector("img");
-        const textBlock = slide.querySelector(".foundation-text-block");
-        const logoWrap = slide.querySelector(".foundation-logo-wrap");
-
-        if (img) {
-          gsap.fromTo(img,
-            { scale: 1.15, xPercent: 8 },
-            {
-              scale: 1,
-              xPercent: -8,
-              ease: "none",
-              scrollTrigger: {
-                trigger: slide,
-                containerAnimation: pin,
-                start: "left right",
-                end: "right left",
-                scrub: true
-              }
-            }
-          );
-        }
-
-        if (textBlock) {
-          gsap.fromTo(textBlock,
-            { opacity: 0, y: 50 },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 0.8,
-              ease: "power3.out",
-              scrollTrigger: {
-                trigger: slide,
-                containerAnimation: pin,
-                start: "left 60%",
-                toggleActions: "play none none reverse"
-              }
-            }
-          );
-        }
-
-        if (logoWrap) {
-          gsap.fromTo(logoWrap,
-            { opacity: 0, scale: 0.8, rotateY: 30 },
-            {
-              opacity: 0.9,
-              scale: 1,
-              rotateY: 0,
-              duration: 0.8,
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: slide,
-                containerAnimation: pin,
-                start: "left 60%",
-                toggleActions: "play none none reverse"
-              }
-            }
-          );
-        }
-      });
-    }
-
-
-
-    // 4. Feature Banner Zoom Parallax
     if (featureBannerRef.current) {
-      gsap.to(featureBannerRef.current.querySelector("img"), {
-        scale: 1.15,
-        ease: "none",
-        scrollTrigger: {
-          trigger: featureBannerRef.current,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        },
-      });
-    }
-
-    // 5. Business Numbers Count Up
-    if (businessSectionRef.current) {
-      const counters = businessSectionRef.current.querySelectorAll(".stat-counter");
-      counters.forEach((counter) => {
-        const htmlCounter = counter as HTMLElement;
-        const targetVal = parseInt(htmlCounter.getAttribute("data-target") || "0", 10);
-        const obj = { value: 0 };
-        gsap.to(obj, {
-          value: targetVal,
-          duration: 2.2,
-          ease: "power2.out",
+      const img = featureBannerRef.current.querySelector("img");
+      if (img) {
+        gsap.to(img, {
+          scale: 1.15,
+          ease: "none",
           scrollTrigger: {
-            trigger: htmlCounter,
-            start: "top 90%",
-            toggleActions: "play none none none",
-          },
-          onUpdate: () => {
-            htmlCounter.textContent = Math.floor(obj.value).toLocaleString();
+            trigger: featureBannerRef.current,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
           },
         });
-      });
+      }
     }
 
-    // 6. Grid Cards Reveal (Moved to NewsroomFeed)
-
-    // Recalculate ScrollTrigger parameters once images load and components settle
     const refreshTimer = setTimeout(() => {
       ScrollTrigger.refresh();
     }, 600);
 
     return () => {
       clearTimeout(refreshTimer);
-      // Clean up all GSAP bindings to avoid memory leaks
       ScrollTrigger.getAll().forEach((t) => t.kill());
       gsap.killTweensOf("*");
     };
   }, []);
 
-  // Filter list & logic moved to NewsroomFeed
+  // Map Player Journeys to standard NewsItem model for component visual consistency
+  const playerNewsItems: NewsItem[] = PLAYER_JOURNEYS.map((player) => ({
+    slug: player.slug,
+    type: "article",
+    title: `${player.name}: ${player.role}`,
+    category: "player-journeys",
+    thumbnail: player.image,
+    excerpt: player.excerpt,
+    publishedAt: "Spotlight Profile",
+    author: "Academy Scouts"
+  }));
 
-  const tickerText = [
-    "BANGALORE SUPER STRIKERS FC COMPETING IN KSFA SENIOR DIVISION",
-    "CHENNAI SUPER STRIKERS REGISTERED FOR METRO LEAGUE",
-    "PONDICHERRY ACADEMY residential U-15 cohort launching",
-    "INVESTOR PARTNERSHIP HUB OPENS FOR DISTRICT Infrastructure PROJECTS",
-    "BANGALORE FOOTBALL SCHOOL INTRODUCES SMART TELEMETRY FOR ATHLETES",
-  ];
+  const sectionAnimProps = {
+    initial: { opacity: 0, y: 30 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, margin: "-100px" },
+    transition: { duration: 0.6, ease: "easeOut" }
+  } as const;
 
   return (
     <>
@@ -393,7 +119,6 @@ export default function Home() {
           onComplete={() => {
             setLoading(false);
             sessionStorage.setItem("loader-complete", "true");
-            // Force a global refresh of ScrollTrigger once the loader completes
             setTimeout(() => {
               ScrollTrigger.refresh();
             }, 100);
@@ -401,485 +126,243 @@ export default function Home() {
         />
       )}
 
-      <div className="w-full bg-white text-[#0A1028] font-sans select-none">
-      {/* 1. EDITORIAL HERO CAROUSEL */}
-      <section 
-        className="relative h-[90vh] min-h-[600px] w-full bg-[#10143A] text-white overflow-hidden select-none"
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-      >
-        {/* Full-bleed Slides Track */}
-        <div className="absolute inset-0 w-full h-full">
-          {HERO_SLIDES.map((slide, idx) => (
-            <div
-              key={idx}
-              className={`slide-img-wrap-${idx} absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
-                idx === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
-              }`}
-            >
-              <Image
-                src={slide.image}
-                alt={slide.title}
-                fill
-                priority={idx === 0}
-                className="object-cover"
-              />
-            </div>
-          ))}
-        </div>
+      <div className="w-full bg-white text-[#0A1028] font-sans select-none overflow-x-hidden">
+        
+        {/* 1. HERO CAROUSEL */}
+        <HeroCarousel />
 
-        {/* Cinematic Gradient Overlays */}
-        {/* Deep Navy overlay blending from transparent at top to solid Navy at bottom */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#10143A]/10 via-[#10143A]/45 to-[#10143A] z-20 pointer-events-none" />
+        {/* 2. PROMO ANNOUNCEMENT STRIP */}
+        <PromoStrip />
 
-        {/* Centered Editorial Content Area */}
-        <div className="max-w-7xl mx-auto w-full h-full px-4 sm:px-6 lg:px-8 flex flex-col justify-center items-start pb-12 relative z-30 pointer-events-none">
-          <div className="w-full max-w-3xl relative h-[380px] sm:h-[300px]">
-            {HERO_SLIDES.map((slide, idx) => (
-              <div
-                key={idx}
-                className={`slide-text-content-${idx} absolute top-0 left-0 w-full max-w-2xl flex flex-col gap-4 sm:gap-6 text-left items-start transition-opacity duration-500 pointer-events-auto ${
-                  idx === currentSlide ? "opacity-100 z-20" : "opacity-0 z-0 pointer-events-none"
-                }`}
-              >
-                <span className="slide-category text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#DCE135] leading-none">
-                  {slide.category}
-                </span>
-                
-                <h1 className="slide-headline font-display text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white leading-[1.05] max-w-xl sm:max-w-2xl">
-                  {slide.title.split(" ").map((word, wIdx) => (
-                    <span key={wIdx} className="word-wrap inline-block overflow-hidden mr-2.5 sm:mr-3.5">
-                      <span className="inline-block">{word}</span>
-                    </span>
-                  ))}
-                </h1>
+        {/* 3. LATEST MODULE (HORIZONTAL SCROLL snap-x Feed) */}
+        <motion.div {...sectionAnimProps}>
+          <LatestFeed />
+        </motion.div>
 
-                <p className="slide-description text-xs sm:text-sm lg:text-base text-white/80 leading-relaxed max-w-md sm:max-w-xl text-left">
-                  {slide.description}
-                </p>
+        {/* 4. SPLIT BANNER MODULE */}
+        <motion.div {...sectionAnimProps}>
+          <SplitBanner />
+        </motion.div>
 
-                <div className="slide-cta flex flex-wrap items-center justify-start gap-3 sm:gap-4 mt-1 sm:mt-2">
-                  <Link 
-                    href={slide.ctaLink} 
-                    className="inline-flex items-center gap-2 rounded-full bg-[#DCE135] px-5 sm:px-6 py-3 sm:py-3.5 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#10143A] hover:bg-white hover:text-[#10143A] transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#DCE135]/15"
-                  >
-                    {slide.ctaText}
-                    <ArrowRight className="h-3.5 sm:h-4 w-3.5 sm:w-4" />
-                  </Link>
-                  <Link 
-                    href="/investors" 
-                    className="inline-flex items-center gap-2 rounded-full border border-white/30 px-5 sm:px-6 py-3 sm:py-3.5 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-white hover:bg-white/10 transition-all hover:scale-105 active:scale-95"
-                  >
-                    Partner With Us
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        {/* 5. SUB-BRAND SPOTLIGHT MODULE (Sequential Full Width Blocks) */}
+        <motion.div {...sectionAnimProps}>
+          <SubBrandSpotlight />
+        </motion.div>
 
-        {/* Carousel Bottom Control Bar: Progress bar, current index info, manual navs */}
-        <div className="absolute bottom-6 left-0 right-0 z-35 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between pointer-events-none">
-          {/* Progress Indicator */}
-          <div className="flex items-center gap-4 pointer-events-auto">
-            <span className="font-display text-sm font-bold text-white tracking-widest">
-              0{currentSlide + 1} / 0{HERO_SLIDES.length}
-            </span>
-            <div className="w-32 h-1 bg-white/20 rounded-full overflow-hidden relative">
-              <div 
-                id="hero-progress-bar" 
-                className="absolute left-0 top-0 bottom-0 bg-[#DCE135] w-0" 
-              />
-            </div>
-          </div>
-
-          {/* Manual Arrow Buttons */}
-          <div className="flex items-center gap-2 pointer-events-auto">
-            <button
-              onClick={prevSlide}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-[#10143A]/40 text-white hover:bg-white hover:text-[#10143A] hover:border-white transition-all active:scale-95"
-              aria-label="Previous slide"
-            >
-              <ChevronLeft className="h-5 w-5" />
-            </button>
-            <button
-              onClick={nextSlide}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-[#10143A]/40 text-white hover:bg-white hover:text-[#10143A] hover:border-white transition-all active:scale-95"
-              aria-label="Next slide"
-            >
-              <ChevronRight className="h-5 w-5" />
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Latest Stories Marquee Ticker */}
-      <div className="w-full bg-secondary-navy text-white py-4 border-y border-white/10 overflow-hidden relative">
-        <div className="absolute left-0 top-0 bottom-0 bg-secondary-navy px-6 flex items-center gap-2 z-10 border-r border-white/10">
-          <span className="flex h-2 w-2 rounded-full bg-primary-sky animate-pulse" />
-          <span className="text-xs font-bold uppercase tracking-widest text-primary-sky whitespace-nowrap">Latest Stories</span>
-        </div>
-        <div className="flex items-center pl-48 animate-marquee-slow">
-          {tickerText.concat(tickerText).map((text, idx) => (
-            <span key={idx} className="text-xs font-extrabold uppercase tracking-wider mx-8 text-white/80 whitespace-nowrap">
-              {text} <span className="text-primary-sky ml-4">•</span>
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* 2. SUPERSTRIKER NEWSROOM (OPTIMIZED EDITORIAL FEED) */}
-      <NewsroomFeed />
-
-      {/* 3. OUR FOOTBALL FOUNDATION & ECOSYSTEM (GSAP SCROLLTRIGGER PINNING) */}
-      <section 
-        ref={chaptersTriggerRef} 
-        className="relative w-full h-screen overflow-hidden bg-[#10143A]"
-      >
-        {/* Persistent progress bar & name indicator overlay */}
-        <div className="absolute top-8 left-6 sm:top-12 sm:left-16 z-30 flex gap-6 sm:gap-12 items-center pointer-events-none select-none">
-          <div className="flex flex-col text-left">
-            <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] leading-none">CHAPTER</span>
-            <span id="foundation-progress-num" className="font-display text-2xl sm:text-4xl font-black text-white leading-none mt-2">01 / 04</span>
-          </div>
-          
-          {/* Progress Indicator line */}
-          <div className="w-20 sm:w-48 h-1 bg-white/20 rounded-full overflow-hidden relative">
-            <div id="foundation-progress-line" className="absolute left-0 top-0 bottom-0 bg-[#DCE135] w-0 transition-all duration-100" />
-          </div>
-
-          <div className="flex items-center gap-2 sm:gap-4 border-l border-white/10 pl-4 sm:pl-8 text-left">
-            <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135]/60 leading-none">ACTIVE STORY</span>
-            <span id="foundation-progress-name" className="font-display text-sm sm:text-lg font-extrabold text-white leading-none uppercase tracking-tight truncate max-w-[120px] sm:max-w-xs">
-              BANGALORE SUPER STRIKERS FC
-            </span>
-          </div>
-        </div>
-
-        {/* Main Horizontal Track */}
-        <div ref={chaptersContainerRef} className="flex h-full w-[400vw] relative">
-          {FOUNDATION_SLIDES.map((slide, idx) => (
-            <div
-              key={idx}
-              className="foundation-slide w-screen h-screen flex-shrink-0 relative overflow-hidden flex items-center justify-center"
-            >
-              {/* Background Image with Cinematic Crop & Overlay */}
-              <div className="absolute inset-0 w-full h-full pointer-events-none">
-                <Image
-                  src={slide.image}
-                  alt={slide.title}
-                  fill
-                  priority={idx === 0}
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-[#10143A]/85 z-10" />
-              </div>
-
-              {/* Slide Content layout */}
-              <div className="max-w-7xl mx-auto w-full h-full px-6 sm:px-16 lg:px-24 grid grid-cols-1 lg:grid-cols-12 items-center relative z-20">
-                {/* Left Side Info */}
-                <div className="lg:col-span-7 flex flex-col gap-4 sm:gap-6 text-left foundation-text-block mt-16 sm:mt-0">
-                  <span className="text-[10px] sm:text-sm font-bold uppercase tracking-widest text-[#DCE135]">
-                    {slide.label}
-                  </span>
-                  <h2 className="font-display text-2xl sm:text-4xl lg:text-6xl font-black uppercase tracking-tight text-white leading-[1.05] max-w-2xl">
-                    {slide.title}
-                  </h2>
-                  <p className="text-xs sm:text-base text-white/80 leading-relaxed max-w-xl">
-                    {slide.description}
-                  </p>
-                  {slide.detailsLabel && (
-                    <div className="flex flex-col border-t border-white/10 pt-3 sm:pt-4">
-                      <span className="text-[8px] sm:text-[10px] uppercase tracking-wider text-white/50 font-bold">{slide.detailsLabel}</span>
-                      <span className="text-xs sm:text-sm text-white font-bold mt-1">{slide.detailsValue}</span>
-                    </div>
-                  )}
-                  <div className="pt-2">
-                    <Link
-                      href={slide.ctaLink}
-                      className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-[#DCE135] px-5 sm:px-6 py-2.5 sm:py-3.5 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#10143A] hover:bg-white hover:text-[#10143A] transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#DCE135]/15"
-                    >
-                      {slide.ctaText}
-                      <ArrowRight className="h-4 w-4" />
-                    </Link>
-                  </div>
-                </div>
-
-                {/* Right Side Brand Logos (hidden on mobile to prevent viewport overflow) */}
-                <div className="hidden lg:flex lg:col-span-5 justify-center items-center h-full relative pointer-events-none select-none">
-                  <div className="foundation-logo-wrap relative w-48 h-48 sm:w-72 sm:h-72 opacity-90 transition-all duration-700 hover:scale-105 hover:opacity-100">
-                    <Image
-                      src={slide.logoImg}
-                      alt={`${slide.title} brand logo`}
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* 4. FEATURE ARTICLE EXPERIENCE (FULL WIDTH ZOOM PARALLAX) */}
-      <section ref={featureBannerRef} className="relative h-[70vh] flex items-center justify-center overflow-hidden bg-secondary-navy text-white text-center">
-        <Image
-          src="https://images.unsplash.com/photo-1529900748604-07564a03e7a6?q=80&w=1600&auto=format&fit=crop"
-          alt="Parallax Stadium lights"
-          fill
-          className="object-cover opacity-20"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-secondary-navy via-transparent to-secondary-navy" />
-        <div className="relative z-10 max-w-4xl mx-auto px-4 flex flex-col items-center gap-4">
-          <span className="text-xs font-bold uppercase tracking-widest text-primary-sky">Exclusive Feature Story</span>
-          <h2 className="font-display text-3xl sm:text-6xl font-black uppercase tracking-tight leading-none max-w-2xl">
-            Creating The Total Footballer
-          </h2>
-          <div className="flex items-center gap-4 text-xs font-semibold text-white/70 mt-2">
-            <span>By Ramakrishnan</span>
-            <span>•</span>
-            <span>5 min read</span>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. FOUNDER & ORGANIZATION STORIES (MAGAZINE INTERVIEW) */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white">
-        <div className="text-center mb-16">
-          <span className="text-[10px] font-bold uppercase tracking-widest text-[#10143A]">Heritage Interviews</span>
-          <h2 className="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight text-[#10143A] mt-1">
-            Stories Behind The Vision
-          </h2>
-          <div className="h-1 w-12 bg-[#10143A] mx-auto mt-4" />
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Portrait Image with floating hover effect */}
-          <div className="lg:col-span-5 flex justify-center">
-            <motion.div
-              whileHover={{ y: -6, rotate: -1 }}
-              transition={{ type: "spring", stiffness: 200 }}
-              className="relative h-[450px] w-full max-w-[360px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white"
-            >
-              <Image
-                src="/images/founder-portrait.jpg"
-                alt="Ramakrishnan President Portrait"
-                fill
-                className="object-cover object-top"
-              />
-            </motion.div>
-          </div>
-
-          {/* Quote details */}
-          <div className="lg:col-span-7 flex flex-col gap-6 text-left relative pl-4 lg:pl-10">
-            <div className="absolute left-0 top-0 text-[#10143A]/10 font-serif text-9xl pointer-events-none select-none -translate-x-4 -translate-y-8">
-              “
-            </div>
-            
-            <p className="font-display text-2xl sm:text-3xl font-bold uppercase tracking-tight text-[#10143A] relative z-10 leading-snug">
-              Football is not only about creating players. It is about creating opportunities and dreams.
-            </p>
-            
-            <div className="flex flex-col text-xs font-bold uppercase tracking-wider text-[#10143A]/60 border-b border-[#10143A]/10 pb-4 mb-2">
-              <span className="text-[#10143A] text-sm font-extrabold">Ramakrishnan (Ram)</span>
-              <span className="mt-1 font-semibold">President, Bangalore Super Strikers FC</span>
-            </div>
-
-            <div className="space-y-4 text-sm text-[#4B5563] leading-relaxed">
-              <p>
-                Inspired by his parents, Mr. Devaraj and Mrs. Rajammal Devaraj, who dreamed of seeing their grandson play for India, Ram carried the passion forward.
-              </p>
-              <p>
-                As a former athlete who experienced the struggles of middle-class sports development due to lacking resources, he constructed a professional infrastructure where young athletes receive tutoring, scientific conditioning, and KSFA / AIFF league exposure. Today, Ram serves as an AIFF-C coach and active KSFA referee.
-              </p>
-            </div>
-            
-            <div className="mt-4">
-              <Link
-                href="/about"
-                className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#10143A] hover:opacity-80 transition-opacity"
-              >
-                Read Heritage Interview
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 6. INVESTOR & BUSINESS STORIES (INSIDE SUPERSTRIKER) */}
-      <section ref={businessSectionRef} className="py-24 bg-[#10143A] text-white border-y border-white/10 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        {/* Glow backdrop effects */}
-        <div className="absolute top-1/2 left-1/3 w-[300px] h-[300px] bg-[#DCE135]/5 rounded-full blur-[80px] pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto relative z-10">
+        {/* 6. FOUNDER & HERITAGE PROFILE NOTE (MAGAZINE INTERVIEW) */}
+        <motion.section 
+          {...sectionAnimProps}
+          className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white border-b border-gray-100 select-none"
+        >
           <div className="text-center mb-16">
-            <span className="text-[10px] font-bold uppercase tracking-widest text-[#DCE135]">Venture & Infrastructure</span>
-            <h2 className="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight text-white mt-1">
-              Inside SuperStriker International
+            <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-2.5 py-0.5 rounded">
+              HERITAGE INTERVIEWS
+            </span>
+            <h2 className="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight text-[#10143A] mt-2">
+              Stories Behind The Vision
             </h2>
-            <div className="h-1 w-12 bg-[#DCE135] mx-auto mt-4" />
+            <div className="h-1 w-12 bg-[#10143A] mx-auto mt-4" />
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Business news write-up */}
-            <div className="lg:col-span-7 flex flex-col gap-6 text-left">
-              <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-[#DCE135]">Forbes-Style Business Showcase</span>
-                <h3 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight text-white mt-1">
-                  Investing in the Next Multi-Billion Football Market
-                </h3>
+            {/* Portrait Image with floating hover effect */}
+            <div className="lg:col-span-5 flex justify-center">
+              <motion.div
+                whileHover={{ y: -6, rotate: -1 }}
+                transition={{ type: "spring", stiffness: 200 }}
+                className="relative h-[450px] w-full max-w-[360px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white"
+              >
+                <Image
+                  src="/images/founder-portrait.jpg"
+                  alt="Ramakrishnan President Portrait"
+                  fill
+                  className="object-cover object-top"
+                  sizes="360px"
+                />
+              </motion.div>
+            </div>
+
+            {/* Quote details */}
+            <div className="lg:col-span-7 flex flex-col gap-6 text-left relative pl-4 lg:pl-10">
+              <div className="absolute left-0 top-0 text-[#10143A]/10 font-serif text-9xl pointer-events-none select-none -translate-x-4 -translate-y-8">
+                “
               </div>
-              <p className="text-sm text-white/80 leading-relaxed">
-                SuperStriker International is building a scalable business model connecting grassroots scouting, infrastructure assets (turfs, residential dorms), and elite player registries. By targeting district markets in South India, we unlock high-margin partnerships and transfer fee options.
+              
+              <p className="font-display text-2xl sm:text-3xl font-bold uppercase tracking-tight text-[#10143A] relative z-10 leading-snug">
+                Football is not only about creating players. It is about creating opportunities and dreams.
               </p>
-
-              {/* Counters Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 my-4 border-y border-white/10 py-6">
-                {[
-                  { target: 1500, suffix: "+", label: "Grassroots Players" },
-                  { target: 5, suffix: "", label: "Professional Fields" },
-                  { target: 3, suffix: "", label: "Regional Clubs" },
-                  { target: 100, suffix: "%", label: "Talent Pathway" }
-                ].map((item, idx) => (
-                  <div key={idx} className="flex flex-col items-center text-center">
-                    <span className="text-3xl sm:text-4xl font-display font-black text-[#DCE135]">
-                      <span className="stat-counter" data-target={item.target}>0</span>
-                      {item.suffix}
-                    </span>
-                    <span className="text-[9px] font-bold uppercase tracking-wider text-white/60 mt-1">
-                      {item.label}
-                    </span>
-                  </div>
-                ))}
+              
+              <div className="flex flex-col text-xs font-bold uppercase tracking-wider text-[#10143A]/60 border-b border-[#10143A]/10 pb-4 mb-2">
+                <span className="text-[#10143A] text-sm font-extrabold">Ramakrishnan (Ram)</span>
+                <span className="mt-1 font-semibold">President, Bangalore Super Strikers FC</span>
               </div>
 
-              <div className="flex gap-4">
+              <div className="space-y-4 text-sm text-[#4B5563] leading-relaxed">
+                <p>
+                  Inspired by his parents, Mr. Devaraj and Mrs. Rajammal Devaraj, who dreamed of seeing their grandson play for India, Ram carried the passion forward.
+                </p>
+                <p>
+                  As a former athlete who experienced the struggles of middle-class sports development due to lacking resources, he constructed a professional infrastructure where young athletes receive tutoring, scientific conditioning, and KSFA / AIFF league exposure. Today, Ram serves as an active AIFF-C coach and KSFA referee.
+                </p>
+              </div>
+              
+              <div className="mt-4">
                 <Link
-                  href="/investors"
-                  className="inline-flex items-center gap-2 rounded-full bg-[#DCE135] px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-[#10143A] hover:bg-white hover:text-[#10143A] transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#DCE135]/15"
+                  href="/about"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#10143A] hover:opacity-85 transition-opacity"
                 >
-                  Invest In Future Champions
-                  <ArrowUpRight className="h-4 w-4" />
+                  Read Heritage Interview
+                  <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
             </div>
-
-            {/* Mock Financial/Talent growth area SVG chart */}
-            <div className="lg:col-span-5 bg-white/5 border border-white/15 backdrop-blur-md p-6 rounded-2xl shadow-2xl flex flex-col gap-6">
-              <div>
-                <h4 className="font-display text-xs font-bold uppercase tracking-widest text-white">
-                  Talent Roster Growth Projection
-                </h4>
-                <p className="text-[10px] text-white/50 uppercase tracking-wider mt-0.5">
-                  Grassroots Discovery Base vs Academy Cohorts
-                </p>
-              </div>
-
-              {/* Chart SVG */}
-              <div className="h-56 w-full relative">
-                <svg viewBox="0 0 400 200" className="w-full h-full">
-                  {/* Grid Lines */}
-                  <line x1="0" y1="50" x2="400" y2="50" stroke="rgba(255,255,255,0.06)" strokeWidth="1" />
-                  <line x1="0" y1="100" x2="400" y2="100" stroke="rgba(255,255,255,0.06)" strokeWidth="1" />
-                  <line x1="0" y1="150" x2="400" y2="150" stroke="rgba(255,255,255,0.06)" strokeWidth="1" />
-                  
-                  {/* Area fill */}
-                  <path
-                    d="M0 200 L0 180 Q100 130 200 100 T400 40 L400 200 Z"
-                    fill="url(#goldGradient)"
-                    opacity="0.25"
-                  />
-                  
-                  {/* Trend line */}
-                  <path
-                    d="M0 180 Q100 130 200 100 T400 40"
-                    fill="none"
-                    stroke="#DCE135"
-                    strokeWidth="4"
-                    strokeLinecap="round"
-                  />
-                  
-                  {/* Key highlights dots */}
-                  <circle cx="200" cy="100" r="5" fill="#DCE135" stroke="#ffffff" strokeWidth="2" />
-                  <circle cx="400" cy="40" r="5" fill="#DCE135" stroke="#ffffff" strokeWidth="2" />
-
-                  {/* Gradient definition */}
-                  <defs>
-                    <linearGradient id="goldGradient" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#DCE135" />
-                      <stop offset="100%" stopColor="rgba(245,208,0,0)" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-              </div>
-
-              <div className="flex justify-between items-center text-[9px] font-bold uppercase tracking-wider text-white/50 pt-2 border-t border-white/10">
-                <span>Phase 1 (2023)</span>
-                <span>Phase 3 (2025)</span>
-                <span>Phase 5 (2026+)</span>
-              </div>
-            </div>
           </div>
-        </div>
-      </section>
+        </motion.section>
 
-      {/* 7. PARTNERS & SPONSORS SECTION */}
-      <section className="py-20 px-4 text-center bg-white">
-        <div className="max-w-7xl mx-auto border-b border-gray-150 pb-16">
-          <span className="text-[10px] font-bold uppercase tracking-widest text-[#DCE135]">Alliance Network</span>
-          <h3 className="font-display text-sm font-bold uppercase tracking-wider text-[#0A1028] mt-1">
-            Partners Who Support Our Journey
-          </h3>
-          
-          {/* Logo Scroll Grid */}
-          <div className="w-full mt-10">
-            <div className="flex flex-wrap items-center justify-center gap-6 py-4">
-              {["KSFA Federation", "AIFF Scout Panel", "Bangalore School Board", "Pondicherry Sports Ministry"].map((logo, index) => (
-                <div 
-                  key={index} 
-                  className="flex items-center gap-3 bg-[#F4F6FA] border border-[#DCE135]/10 px-8 py-4 rounded-xl shadow-sm hover:border-[#DCE135]/35 hover:shadow-[0_0_20px_rgba(245,208,0,0.06)] transition-all duration-300 group"
-                >
-                  <Shield className="h-5 w-5 fill-[#10143A] text-[#10143A] transition-transform duration-300 group-hover:scale-110" />
-                  <span className="font-display text-xs font-black uppercase tracking-tight text-[#0A1028] whitespace-nowrap">
-                    {logo}
-                  </span>
+        {/* 7. LATEST MOMENTS ON THE PITCH (HORIZONTAL PHOTO STRIP) */}
+        <motion.div {...sectionAnimProps}>
+          <PhotoStrip />
+        </motion.div>
+
+        {/* 8. LIVE SOCIAL EMBED MODULE (Mock Instagram Gallery) */}
+        <motion.section 
+          {...sectionAnimProps}
+          className="py-20 bg-gray-50 border-b border-gray-150 select-none"
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col items-start gap-1 border-l-4 border-[#10143A] pl-4 mb-12">
+              <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-2.5 py-0.5 rounded">
+                SOCIAL
+              </span>
+              <h2 className="font-display text-2xl sm:text-4xl font-black uppercase tracking-tight text-[#0A1028] mt-1">
+                LATEST ON INSTAGRAM
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {[
+                { img: "/images/training-1.jpg", likes: "1,240", caption: "Hard work on the turf today. 💪 #SuperStriker" },
+                { img: "/images/training-2.jpg", likes: "890", caption: "Clean sheets only. Goalkeepers getting active! 🧤" },
+                { img: "/images/match-1.jpg", likes: "2,050", caption: "Matchday memories. Three points locked in! 🏆" },
+                { img: "/images/match-2.jpg", likes: "1,560", caption: "Grassroots scouting in Karnataka begins now. ⚽" }
+              ].map((post, idx) => (
+                <div key={idx} className="relative rounded-xl overflow-hidden aspect-square group shadow-sm bg-white border border-gray-100">
+                  <Image
+                    src={post.img}
+                    alt="Instagram Post"
+                    fill
+                    className="object-cover transition-transform duration-750 group-hover:scale-103"
+                    sizes="(max-w-768px) 50vw, 25vw"
+                  />
+                  <div className="absolute inset-0 bg-[#10143A]/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 text-left text-white">
+                    <span className="text-[10px] font-bold tracking-wider text-[#DCE135]">♥ {post.likes} likes</span>
+                    <p className="text-[11px] leading-relaxed mt-1 font-medium">{post.caption}</p>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
-        </div>
-      </section>
+        </motion.section>
 
-      {/* 8. EDITORIAL FEATURED NEWSLETTER */}
-      <section className="py-20 bg-background-soft border-t border-gray-150 px-4">
-        <div className="max-w-4xl mx-auto text-center flex flex-col gap-6 items-center">
-          <span className="text-[10px] font-bold uppercase tracking-widest text-[#DCE135]">Weekly Dispatch</span>
-          <h2 className="font-display text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#0A1028]">
-            Subscribe To SuperStriker Football Stories
-          </h2>
-          <p className="text-xs sm:text-sm text-[#4B5563] max-w-md leading-relaxed">
-            Get tactical insights, scout reviews, matching brief analytics, and strategic investment options sent to your corporate mail twice a month.
-          </p>
-
-          <form onSubmit={(e) => { e.preventDefault(); alert("Subscription successful!"); }} className="flex flex-col sm:flex-row gap-2 w-full max-w-md mt-4">
-            <input
-              type="email"
-              placeholder="Business email address"
-              required
-              className="bg-white rounded-full border border-gray-200 px-5 py-3 text-xs text-[#0A1028] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#DCE135]/20 flex-grow"
-            />
-            <button
-              type="submit"
-              className="rounded-full bg-[#10143A] px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white hover:bg-[#DCE135] hover:text-[#10143A] transition-all hover:scale-103 shrink-0"
+        {/* 9. INFRASTRUCTURE & VISION BANNER (PARALLAX ZOOM STADIUM) */}
+        <section 
+          ref={featureBannerRef} 
+          className="relative h-[65vh] min-h-[400px] flex items-center justify-start overflow-hidden bg-[#10143A] text-white px-8 sm:px-16 lg:px-24 select-none border-b border-gray-150"
+        >
+          <Image
+            src="https://images.unsplash.com/photo-1529900748604-07564a03e7a6?q=80&w=1600&auto=format&fit=crop"
+            alt="SuperStriker Stadium Future Vision"
+            fill
+            className="object-cover opacity-25"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#10143A] via-[#10143A]/80 to-transparent z-10" />
+          
+          <div className="relative z-20 max-w-2xl text-left flex flex-col gap-4">
+            <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#DCE135]/15 px-3 py-1 rounded w-fit">
+              Future Vision
+            </span>
+            <h2 className="font-display text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-none">
+              Planning for the Future of South Indian Football
+            </h2>
+            <p className="text-xs sm:text-sm text-white/75 leading-relaxed max-w-xl">
+              SuperStriker International is spearheading smart turf developments and regional training hubs to modernize local football facilities and raise physical literacy.
+            </p>
+            <Link
+              href="/about"
+              className="inline-flex items-center gap-1.5 rounded-full bg-[#DCE135] text-[#10143A] px-6 py-3 text-xs font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-[#10143A] hover:scale-105 active:scale-95 shadow-md w-fit mt-2"
             >
-              Subscribe Stories
-            </button>
-          </form>
-        </div>
-      </section>
+              Read More
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </section>
+
+        {/* 10. PLAYER JOURNEYS SECTION */}
+        <motion.section 
+          {...sectionAnimProps}
+          className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white select-none border-b border-gray-150"
+        >
+          <div className="text-left mb-16 flex flex-col gap-1 border-l-4 border-[#10143A] pl-6">
+            <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-2.5 py-0.5 rounded w-fit">
+              PLAYER PATHWAYS
+            </span>
+            <h2 className="font-display text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#0A1028] mt-2">
+              Every player has a story before becoming a champion.
+            </h2>
+            <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed max-w-xl">
+              Tracing the path from local training fields to senior competitive platforms and state league rosters.
+            </p>
+          </div>
+
+          {/* Render Player Journeys using standardized NewsCard to match Latest module */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {playerNewsItems.map((item) => (
+              <div key={item.slug} className="flex">
+                <NewsCard item={item} />
+              </div>
+            ))}
+          </div>
+        </motion.section>
+
+        {/* 11. SPONSORS LOGO STRIP */}
+        <motion.div {...sectionAnimProps}>
+          <PartnerLogos />
+        </motion.div>
+
+        {/* 12. NEWSLETTER SIGNUP */}
+        <motion.section 
+          {...sectionAnimProps}
+          className="py-20 bg-gray-50 border-t border-gray-150 px-4"
+        >
+          <div className="max-w-4xl mx-auto text-center flex flex-col gap-6 items-center">
+            <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-2.5 py-0.5 rounded">
+              WEEKLY DISPATCH
+            </span>
+            <h2 className="font-display text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#0A1028]">
+              Subscribe To SuperStriker Football Stories
+            </h2>
+            <p className="text-xs sm:text-sm text-[#4B5563] max-w-md leading-relaxed">
+              Get tactical insights, scout reviews, matching brief analytics, and strategic investment options sent to your corporate mail twice a month.
+            </p>
+
+            <form onSubmit={(e) => { e.preventDefault(); alert("Subscription successful!"); }} className="flex flex-col sm:flex-row gap-2 w-full max-w-md mt-4">
+              <input
+                type="email"
+                placeholder="Business email address"
+                required
+                className="bg-white rounded-full border border-gray-200 px-5 py-3 text-xs text-[#0A1028] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#DCE135]/20 flex-grow"
+              />
+              <button
+                type="submit"
+                className="rounded-full bg-[#10143A] px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white hover:bg-[#DCE135] hover:text-[#10143A] transition-all hover:scale-103 shrink-0"
+              >
+                Subscribe Stories
+              </button>
+            </form>
+          </div>
+        </motion.section>
+
       </div>
     </>
   );

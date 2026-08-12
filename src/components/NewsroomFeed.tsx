@@ -369,15 +369,15 @@ export default function NewsroomFeed() {
                     href={leftFeaturedCard.articleUrl}
                     className="group flex flex-col gap-4 text-left"
                   >
-                    <div className="relative aspect-[16/9] w-full overflow-hidden rounded-md shrink-0">
-                      <Image
-                        src={leftFeaturedCard.image}
-                        alt={leftFeaturedCard.title}
-                        fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-105"
-                        sizes="(max-w-768px) 100vw, 600px"
-                      />
-                    </div>
+                    <div className="w-full overflow-hidden rounded-md shrink-0 aspect-[16/9]">
+                    <Image
+                      src={leftFeaturedCard.image}
+                      alt={leftFeaturedCard.title}
+                      width={600}
+                      height={338}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
 
                     <div className="flex flex-col gap-2">
                       <span className="text-[10px] font-black uppercase tracking-widest text-[#10143A] leading-none mb-1 block">
@@ -407,13 +407,13 @@ export default function NewsroomFeed() {
                       href={card.articleUrl}
                       className="group flex flex-col gap-4 text-left"
                     >
-                      <div className="relative aspect-[16/9] w-full overflow-hidden rounded-md shrink-0">
+                      <div className="w-full overflow-hidden rounded-md shrink-0 aspect-[16/9]">
                         <Image
                           src={card.image}
                           alt={card.title}
-                          fill
-                          className="object-cover transition-transform duration-700 group-hover:scale-105"
-                          sizes="(max-w-768px) 100vw, 300px"
+                          width={320}
+                          height={180}
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                       </div>
 
@@ -488,13 +488,13 @@ export default function NewsroomFeed() {
                       href={card.articleUrl}
                       className="group flex flex-col gap-4 text-left"
                     >
-                      <div className="relative aspect-[16/9] w-full overflow-hidden rounded-md shrink-0">
+                      <div className="w-full overflow-hidden rounded-md shrink-0 aspect-[16/9]">
                         <Image
                           src={card.image}
                           alt={card.title}
-                          fill
-                          className="object-cover transition-transform duration-700 group-hover:scale-105"
-                          sizes="(max-w-768px) 100vw, 300px"
+                          width={320}
+                          height={180}
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                       </div>
 
@@ -574,13 +574,13 @@ export default function NewsroomFeed() {
                       href={card.articleUrl}
                       className="group flex flex-col gap-4 text-left"
                     >
-                      <div className="relative aspect-[16/9] w-full overflow-hidden rounded-md shrink-0">
+                      <div className="w-full overflow-hidden rounded-md shrink-0 aspect-[16/9]">
                         <Image
                           src={card.image}
                           alt={card.title}
-                          fill
-                          className="object-cover transition-transform duration-700 group-hover:scale-105"
-                          sizes="(max-w-768px) 100vw, 300px"
+                          width={320}
+                          height={180}
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                       </div>
 
@@ -630,13 +630,13 @@ export default function NewsroomFeed() {
                       href={card.articleUrl}
                       className="group flex flex-col gap-4 text-left"
                     >
-                      <div className="relative aspect-[16/9] w-full overflow-hidden rounded-md shrink-0">
+                      <div className="w-full overflow-hidden rounded-md shrink-0 aspect-[16/9]">
                         <Image
                           src={card.image}
                           alt={card.title}
-                          fill
-                          className="object-cover transition-transform duration-700 group-hover:scale-105"
-                          sizes="(max-w-768px) 100vw, 300px"
+                          width={320}
+                          height={180}
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                       </div>
 
@@ -698,12 +698,13 @@ export default function NewsroomFeed() {
                 className="player-portrait-card group flex flex-col gap-4 text-left"
               >
                 {/* Player image aspect 3:4, rounded-md */}
-                <div className="relative aspect-[3/4] w-full overflow-hidden rounded-md shrink-0">
+                <div className="relative w-full overflow-hidden rounded-md shrink-0 aspect-[3/4]">
                   <Image
                     src={player.image}
                     alt={player.name}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    width={360}
+                    height={480}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#10143A]/40 to-transparent z-10" />
                 </div>
@@ -761,12 +762,13 @@ export default function NewsroomFeed() {
                 className="media-video-card group flex flex-col gap-4 text-left relative cursor-pointer"
               >
                 {/* Thumbnail aspect 16:9 */}
-                <div className="relative aspect-[16/9] w-full overflow-hidden rounded-md shrink-0">
+                <div className="w-full overflow-hidden rounded-md shrink-0 aspect-[16/9]">
                   <Image
                     src={video.image}
                     alt={video.title}
-                    fill
-                    className="object-cover opacity-70 group-hover:opacity-50 transition-all duration-500"
+                    width={320}
+                    height={180}
+                    className="w-full h-full object-cover opacity-70 group-hover:opacity-50 transition-all duration-500"
                   />
                   
                   {/* Pulsing Play Button overlay */}
