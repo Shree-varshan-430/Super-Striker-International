@@ -159,7 +159,7 @@ export default function HeroCarousel() {
       <div className="absolute inset-0 bg-gradient-to-b from-[#10143A]/20 via-[#10143A]/50 to-[#10143A] z-20 pointer-events-none" />
 
       {/* Centered Editorial Content Area */}
-      <div className="max-w-7xl mx-auto w-full h-full px-4 sm:px-6 lg:px-8 flex flex-col justify-center items-start pb-12 relative z-30 pointer-events-none">
+      <div className="max-w-[95%] mx-auto w-full h-full px-4 sm:px-6 lg:px-8 flex flex-col justify-center items-start pb-12 relative z-30 pointer-events-none">
         <div className="w-full max-w-3xl relative h-[380px] sm:h-[300px]">
           {HERO_SLIDES.map((slide, idx) => (
             <div
@@ -205,7 +205,7 @@ export default function HeroCarousel() {
       </div>
 
       {/* Carousel Control Bar */}
-      <div className="absolute bottom-6 left-0 right-0 z-35 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between pointer-events-none">
+      <div className="absolute bottom-6 left-0 right-0 z-35 max-w-[95%] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between pointer-events-none">
         {/* Progress Indicator */}
         <div className="flex items-center gap-4 pointer-events-auto">
           <span className="font-display text-sm font-bold text-white tracking-widest">

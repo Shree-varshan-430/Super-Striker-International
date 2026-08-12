@@ -22,7 +22,7 @@ const LATEST_ITEMS: NewsItem[] = [
     type: "video",
     title: "Behind The Training Ground: First Team Squad Drills",
     category: "club",
-    thumbnail: "/images/training-1.jpg",
+    thumbnail: "/images/team-2.jpg",
     publishedAt: "11 AUG 2026",
     duration: "12:45",
     excerpt: "Go inside the tactical training session of Bangalore Super Strikers FC as coaches run pressing drills.",
@@ -69,6 +69,48 @@ const LATEST_ITEMS: NewsItem[] = [
     duration: "15:30",
     excerpt: "An exclusive documentary highlighting the legacy and dream of Mr. Devaraj and Mrs. Rajammal Devaraj.",
     author: "Heritage Media"
+  },
+  {
+    slug: "pondicherry-scout-trials",
+    type: "article",
+    title: "Grassroots Talent Identification camp launching in Pondicherry",
+    category: "academy",
+    thumbnail: "/images/news-pondicherry-scout.jpg",
+    publishedAt: "05 AUG 2026",
+    excerpt: "Our scouts head to Pondicherry to evaluate U-15 candidates for our residential academy slots.",
+    author: "Technical Director"
+  },
+  {
+    slug: "video-goalkeeping-telemetry",
+    type: "video",
+    title: "Goalkeeper telemetry: Scientific tracking on the turf",
+    category: "academy",
+    thumbnail: "/images/news-goalkeeping.jpg",
+    publishedAt: "03 AUG 2026",
+    duration: "05:40",
+    excerpt: "See how goalkeeper reaction times and angles are tracked in real-time using GPS sensors.",
+    author: "GK Coach"
+  },
+  {
+    slug: "academy-u15-trials",
+    type: "article",
+    title: "Under-15 Selection Trials announced for Residential Cohorts",
+    category: "academy",
+    thumbnail: "/images/news-academy-u15.jpg",
+    publishedAt: "01 AUG 2026",
+    excerpt: "SuperStriker launches open selection trials across 4 centers for the fully-funded residential batch.",
+    author: "Academy Staff"
+  },
+  {
+    slug: "video-grassroots-expansion",
+    type: "video",
+    title: "Ecosystem Growth & Turfs: Inside the Smart Arena",
+    category: "community",
+    thumbnail: "/images/news-coaches-talk.jpg",
+    publishedAt: "28 JUL 2026",
+    duration: "10:15",
+    excerpt: "An inside look at our smart turf facilities, showcasing GPS tracking vest integrations.",
+    author: "Arena Team"
   }
 ];
 
@@ -97,7 +139,7 @@ export default function LatestFeed() {
 
   return (
     <section className="py-20 bg-white border-b border-gray-100 select-none">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-16">
+      <div className="max-w-[95%] mx-auto flex flex-col gap-16">
         
         {/* ROW 1: ARTICLES */}
         <div className="flex flex-col gap-8">

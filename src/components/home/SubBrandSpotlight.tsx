@@ -74,7 +74,7 @@ export default function SubBrandSpotlight() {
     <section className="w-full bg-[#F4F6FA] select-none">
       
       {/* Section Header */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10 text-left">
+      <div className="max-w-[95%] mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10 text-left">
         <div className="flex flex-col items-start gap-1 border-l-4 border-[#10143A] pl-4">
           <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-2.5 py-0.5 rounded">
             OUR ECOSYSTEM
@@ -94,7 +94,7 @@ export default function SubBrandSpotlight() {
               key={item.id}
               className="w-full border-t border-b border-gray-200/50 bg-white"
             >
-              <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 items-center min-h-[460px]">
+              <div className="max-w-[95%] mx-auto grid grid-cols-1 lg:grid-cols-12 items-center min-h-[460px]">
                 
                 {/* Text Content Column */}
                 <div className={`col-span-1 lg:col-span-6 p-8 sm:p-16 flex flex-col gap-6 text-left ${

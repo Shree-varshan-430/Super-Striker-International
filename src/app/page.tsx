@@ -12,7 +12,8 @@ import FootballLoader from "@/components/FootballLoader";
 import HeroCarousel from "@/components/home/HeroCarousel";
 import PromoStrip from "@/components/home/PromoStrip";
 import LatestFeed from "@/components/home/LatestFeed";
-import SplitBanner from "@/components/home/SplitBanner";
+import AcademyBanner from "@/components/home/AcademyBanner";
+import InvestorBanner from "@/components/home/InvestorBanner";
 import SubBrandSpotlight from "@/components/home/SubBrandSpotlight";
 import PhotoStrip from "@/components/home/PhotoStrip";
 import PartnerLogos from "@/components/home/PartnerLogos";
@@ -31,14 +32,14 @@ const PLAYER_JOURNEYS: PlayerJourney[] = [
   {
     name: "Aditya Kumar",
     role: "Midfielder, U-15 Elite Cohort",
-    image: "/images/training-1.jpg",
+    image: "/images/match-1.jpg",
     excerpt: "Scouted during regional school games in Karnataka, Aditya is now preparing for state division selections.",
     slug: "aditya-kumar-journey"
   },
   {
     name: "Sanjay Raj",
     role: "Striker, Bangalore Super Strikers senior squad",
-    image: "/images/match-1.jpg",
+    image: "/images/news-grassroots.jpg",
     excerpt: "Sanjay rose through the grassroots tournaments to lead the senior team's state division tournament campaign.",
     slug: "sanjay-raj-journey"
   },
@@ -134,14 +135,14 @@ export default function Home() {
         {/* 2. PROMO ANNOUNCEMENT STRIP */}
         <PromoStrip />
 
-        {/* 3. LATEST MODULE (HORIZONTAL SCROLL snap-x Feed) */}
+        {/* 3. LATEST MODULE (2 ROW HORIZONTAL SCROLL Feed) */}
         <motion.div {...sectionAnimProps}>
           <LatestFeed />
         </motion.div>
 
-        {/* 4. SPLIT BANNER MODULE */}
+        {/* 4. ACADEMY BANNER MODULE (FULL WIDTH) */}
         <motion.div {...sectionAnimProps}>
-          <SplitBanner />
+          <AcademyBanner />
         </motion.div>
 
         {/* 5. SUB-BRAND SPOTLIGHT MODULE (Sequential Full Width Blocks) */}
@@ -152,7 +153,7 @@ export default function Home() {
         {/* 6. FOUNDER & HERITAGE PROFILE NOTE (MAGAZINE INTERVIEW) */}
         <motion.section 
           {...sectionAnimProps}
-          className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white border-b border-gray-100 select-none"
+          className="py-24 px-4 sm:px-6 lg:px-8 max-w-[95%] mx-auto bg-white border-b border-gray-100 select-none"
         >
           <div className="text-center mb-16">
             <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-2.5 py-0.5 rounded">
@@ -229,7 +230,7 @@ export default function Home() {
           {...sectionAnimProps}
           className="py-20 bg-gray-50 border-b border-gray-150 select-none"
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-[95%] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col items-start gap-1 border-l-4 border-[#10143A] pl-4 mb-12">
               <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-2.5 py-0.5 rounded">
                 SOCIAL
@@ -241,17 +242,17 @@ export default function Home() {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {[
-                { img: "/images/training-1.jpg", likes: "1,240", caption: "Hard work on the turf today. 💪 #SuperStriker" },
-                { img: "/images/training-2.jpg", likes: "890", caption: "Clean sheets only. Goalkeepers getting active! 🧤" },
-                { img: "/images/match-1.jpg", likes: "2,050", caption: "Matchday memories. Three points locked in! 🏆" },
-                { img: "/images/match-2.jpg", likes: "1,560", caption: "Grassroots scouting in Karnataka begins now. ⚽" }
+                { img: "/images/news-underpriv-camp.jpg", likes: "1,240", caption: "Hard work on the turf today. 💪 #SuperStriker" },
+                { img: "/images/news-pathways.jpg", likes: "890", caption: "Developing youth pathways step-by-step. ⚽" },
+                { img: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=600", likes: "2,050", caption: "Matchday memories. Three points locked in! 🏆" },
+                { img: "https://images.unsplash.com/photo-1518063319789-7217e6706b04?q=80&w=600", likes: "1,560", caption: "Grassroots scouting festivals active in school clusters. 🧤" }
               ].map((post, idx) => (
                 <div key={idx} className="relative rounded-xl overflow-hidden aspect-square group shadow-sm bg-white border border-gray-100">
                   <Image
                     src={post.img}
                     alt="Instagram Post"
                     fill
-                    className="object-cover transition-transform duration-750 group-hover:scale-103"
+                    className="object-cover transition-transform duration-700 group-hover:scale-103"
                     sizes="(max-w-768px) 50vw, 25vw"
                   />
                   <div className="absolute inset-0 bg-[#10143A]/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 text-left text-white">
@@ -301,7 +302,7 @@ export default function Home() {
         {/* 10. PLAYER JOURNEYS SECTION */}
         <motion.section 
           {...sectionAnimProps}
-          className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white select-none border-b border-gray-150"
+          className="py-24 px-4 sm:px-6 lg:px-8 max-w-[95%] mx-auto bg-white select-none border-b border-gray-150"
         >
           <div className="text-left mb-16 flex flex-col gap-1 border-l-4 border-[#10143A] pl-6">
             <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-2.5 py-0.5 rounded w-fit">
@@ -325,12 +326,17 @@ export default function Home() {
           </div>
         </motion.section>
 
-        {/* 11. SPONSORS LOGO STRIP */}
+        {/* 11. INVESTOR BANNER MODULE (FULL WIDTH RELOCATED TO BOTTOM) */}
+        <motion.div {...sectionAnimProps}>
+          <InvestorBanner />
+        </motion.div>
+
+        {/* 12. SPONSORS LOGO STRIP */}
         <motion.div {...sectionAnimProps}>
           <PartnerLogos />
         </motion.div>
 
-        {/* 12. NEWSLETTER SIGNUP */}
+        {/* 13. NEWSLETTER SIGNUP */}
         <motion.section 
           {...sectionAnimProps}
           className="py-20 bg-gray-50 border-t border-gray-150 px-4"
