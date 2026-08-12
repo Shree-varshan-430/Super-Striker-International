@@ -73,89 +73,161 @@ const LATEST_ITEMS: NewsItem[] = [
 ];
 
 export default function LatestFeed() {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const articleScrollRef = useRef<HTMLDivElement>(null);
+  const videoScrollRef = useRef<HTMLDivElement>(null);
 
-  const scroll = (direction: "left" | "right") => {
-    if (scrollContainerRef.current) {
-      const { scrollLeft, clientWidth } = scrollContainerRef.current;
+  const scroll = (ref: React.RefObject<HTMLDivElement | null>, direction: "left" | "right") => {
+    if (ref.current) {
+      const { scrollLeft, clientWidth } = ref.current;
       const scrollAmount = clientWidth * 0.75;
       const targetScroll =
         direction === "left"
           ? scrollLeft - scrollAmount
           : scrollLeft + scrollAmount;
       
-      scrollContainerRef.current.scrollTo({
+      ref.current.scrollTo({
         left: targetScroll,
         behavior: "smooth"
       });
     }
   };
 
+  const articleItems = LATEST_ITEMS.filter((item) => item.type === "article");
+  const videoItems = LATEST_ITEMS.filter((item) => item.type === "video");
+
   return (
     <section className="py-20 bg-white border-b border-gray-100 select-none">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-16">
         
-        {/* Header with section title and manual navigation controls */}
-        <div className="flex justify-between items-end mb-10 pb-4 border-b border-gray-150">
-          <div className="flex flex-col items-start gap-1 text-left border-l-4 border-[#10143A] pl-4">
-            <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-2.5 py-0.5 rounded">
-              LATEST STORIES
-            </span>
-            <h2 className="font-display text-2xl sm:text-4xl font-black uppercase tracking-tight text-[#0A1028] mt-1">
-              NEWS & MEDIA COVERAGE
-            </h2>
+        {/* ROW 1: ARTICLES */}
+        <div className="flex flex-col gap-8">
+          <div className="flex justify-between items-end pb-4 border-b border-gray-150">
+            <div className="flex flex-col items-start gap-1 text-left border-l-4 border-[#10143A] pl-4">
+              <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-2.5 py-0.5 rounded">
+                LATEST ARTICLES
+              </span>
+              <h2 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight text-[#0A1028] mt-1">
+                NEWS & READS
+              </h2>
+            </div>
+            
+            {/* Scroll Buttons */}
+            <div className="hidden sm:flex items-center gap-2">
+              <button
+                onClick={() => scroll(articleScrollRef, "left")}
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white text-[#10143A] hover:bg-[#10143A] hover:text-white transition-all active:scale-95 shadow-sm"
+                aria-label="Scroll left"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+              <button
+                onClick={() => scroll(articleScrollRef, "right")}
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white text-[#10143A] hover:bg-[#10143A] hover:text-white transition-all active:scale-95 shadow-sm"
+                aria-label="Scroll right"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
+            </div>
           </div>
-          
-          {/* Scroll Buttons */}
-          <div className="hidden sm:flex items-center gap-2">
-            <button
-              onClick={() => scroll("left")}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white text-[#10143A] hover:bg-[#10143A] hover:text-white transition-all active:scale-95 shadow-sm"
-              aria-label="Scroll left"
-            >
-              <ChevronLeft className="h-5 w-5" />
-            </button>
-            <button
-              onClick={() => scroll("right")}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white text-[#10143A] hover:bg-[#10143A] hover:text-white transition-all active:scale-95 shadow-sm"
-              aria-label="Scroll right"
-            >
-              <ChevronRight className="h-5 w-5" />
-            </button>
+
+          {/* Scroll Container */}
+          <div 
+            ref={articleScrollRef}
+            className="flex overflow-x-auto gap-6 pb-6 snap-x snap-mandatory scrollbar-none select-none scroll-smooth"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
+            {articleItems.map((item) => (
+              <div 
+                key={item.slug} 
+                className="w-[280px] sm:w-[320px] md:w-[360px] flex-shrink-0 snap-start"
+              >
+                <NewsCard item={item} />
+              </div>
+            ))}
+
+            {/* "View More" Card */}
+            <div className="w-[280px] sm:w-[320px] md:w-[360px] flex-shrink-0 snap-start">
+              <Link 
+                href="/news"
+                className="flex flex-col items-center justify-center h-full min-h-[300px] border-2 border-dashed border-gray-200 rounded-lg group p-6 text-center hover:border-[#10143A] transition-all hover:bg-gray-50/50"
+              >
+                <div className="w-12 h-12 rounded-full bg-[#10143A]/5 text-[#10143A] flex items-center justify-center mb-4 group-hover:bg-[#DCE135] transition-all">
+                  <ArrowRight className="h-5 w-5 group-hover:scale-110 transition-transform" />
+                </div>
+                <h3 className="font-display text-base font-black uppercase tracking-tight text-[#0A1028]">
+                  Explore All News
+                </h3>
+                <p className="text-xs text-[#4B5563] mt-2 max-w-[200px]">
+                  Read full articles, matches, and regional scouting reviews.
+                </p>
+              </Link>
+            </div>
           </div>
         </div>
 
-        {/* Scroll Container */}
-        <div 
-          ref={scrollContainerRef}
-          className="flex overflow-x-auto gap-6 pb-6 snap-x snap-mandatory scrollbar-none select-none scroll-smooth"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-        >
-          {LATEST_ITEMS.map((item) => (
-            <div 
-              key={item.slug} 
-              className="w-[280px] sm:w-[320px] md:w-[360px] flex-shrink-0 snap-start"
-            >
-              <NewsCard item={item} />
+        {/* ROW 2: VIDEOS */}
+        <div className="flex flex-col gap-8">
+          <div className="flex justify-between items-end pb-4 border-b border-gray-150">
+            <div className="flex flex-col items-start gap-1 text-left border-l-4 border-[#10143A] pl-4">
+              <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-2.5 py-0.5 rounded">
+                VIDEO CHANNELS
+              </span>
+              <h2 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight text-[#0A1028] mt-1">
+                TACTICAL telemetry & INTERVIEWS
+              </h2>
             </div>
-          ))}
+            
+            {/* Scroll Buttons */}
+            <div className="hidden sm:flex items-center gap-2">
+              <button
+                onClick={() => scroll(videoScrollRef, "left")}
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white text-[#10143A] hover:bg-[#10143A] hover:text-white transition-all active:scale-95 shadow-sm"
+                aria-label="Scroll left"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+              <button
+                onClick={() => scroll(videoScrollRef, "right")}
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white text-[#10143A] hover:bg-[#10143A] hover:text-white transition-all active:scale-95 shadow-sm"
+                aria-label="Scroll right"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
+            </div>
+          </div>
 
-          {/* "View More" Final Card */}
-          <div className="w-[280px] sm:w-[320px] md:w-[360px] flex-shrink-0 snap-start">
-            <Link 
-              href="/news"
-              className="flex flex-col items-center justify-center h-full min-h-[300px] border-2 border-dashed border-gray-200 rounded-lg group p-6 text-center hover:border-[#10143A] transition-all hover:bg-gray-50/50"
-            >
-              <div className="w-12 h-12 rounded-full bg-[#10143A]/5 text-[#10143A] flex items-center justify-center mb-4 group-hover:bg-[#DCE135] transition-all">
-                <ArrowRight className="h-5 w-5 group-hover:scale-110 transition-transform" />
+          {/* Scroll Container */}
+          <div 
+            ref={videoScrollRef}
+            className="flex overflow-x-auto gap-6 pb-6 snap-x snap-mandatory scrollbar-none select-none scroll-smooth"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
+            {videoItems.map((item) => (
+              <div 
+                key={item.slug} 
+                className="w-[280px] sm:w-[320px] md:w-[360px] flex-shrink-0 snap-start"
+              >
+                <NewsCard item={item} />
               </div>
-              <h3 className="font-display text-base font-black uppercase tracking-tight text-[#0A1028]">
-                Explore All News
-              </h3>
-              <p className="text-xs text-[#4B5563] mt-2 max-w-[200px]">
-                Read full articles, match statistics, and watch training telemetry reviews.
-              </p>
-            </Link>
+            ))}
+
+            {/* "Watch More" Card */}
+            <div className="w-[280px] sm:w-[320px] md:w-[360px] flex-shrink-0 snap-start">
+              <Link 
+                href="/news"
+                className="flex flex-col items-center justify-center h-full min-h-[300px] border-2 border-dashed border-gray-200 rounded-lg group p-6 text-center hover:border-[#10143A] transition-all hover:bg-gray-50/50"
+              >
+                <div className="w-12 h-12 rounded-full bg-[#10143A]/5 text-[#10143A] flex items-center justify-center mb-4 group-hover:bg-[#DCE135] transition-all">
+                  <ArrowRight className="h-5 w-5 group-hover:scale-110 transition-transform" />
+                </div>
+                <h3 className="font-display text-base font-black uppercase tracking-tight text-[#0A1028]">
+                  Watch More Clips
+                </h3>
+                <p className="text-xs text-[#4B5563] mt-2 max-w-[200px]">
+                  Explore goalkeeper telemetry reviews and coach highlights.
+                </p>
+              </Link>
+            </div>
           </div>
         </div>
 
