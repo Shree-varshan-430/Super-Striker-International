@@ -71,11 +71,11 @@ const SPOTLIGHTS: SpotlightItem[] = [
 
 export default function SubBrandSpotlight() {
   return (
-    <section className="w-full bg-[#F4F6FA] select-none">
-      
-      {/* Section Header */}
-      <div className="max-w-[95%] mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10 text-left">
-        <div className="flex flex-col items-start gap-1 border-l-4 border-[#10143A] pl-4">
+    <section className="py-20 bg-[#F4F6FA] select-none border-b border-gray-150">
+      <div className="max-w-[95%] mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Header */}
+        <div className="flex flex-col items-start gap-1 border-l-4 border-[#10143A] pl-4 mb-12 text-left">
           <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-2.5 py-0.5 rounded">
             OUR ECOSYSTEM
           </span>
@@ -83,96 +83,83 @@ export default function SubBrandSpotlight() {
             CLUBS & DEVELOPMENTS
           </h2>
         </div>
-      </div>
 
-      {/* Spotlights Loop */}
-      <div className="flex flex-col">
-        {SPOTLIGHTS.map((item, index) => {
-          const isEven = index % 2 === 0;
-          return (
+        {/* 4-Column Grid of Foundation Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {SPOTLIGHTS.map((item) => (
             <div 
               key={item.id}
-              className="w-full border-t border-b border-gray-200/50 bg-white"
+              className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden flex flex-col justify-between group hover:shadow-md hover:border-gray-300 transition-all duration-300 select-none text-left"
             >
-              <div className="max-w-[95%] mx-auto grid grid-cols-1 lg:grid-cols-12 items-center min-h-[460px]">
-                
-                {/* Text Content Column */}
-                <div className={`col-span-1 lg:col-span-6 p-8 sm:p-16 flex flex-col gap-6 text-left ${
-                  isEven ? "order-1 lg:order-1 border-r border-gray-100" : "order-1 lg:order-2 border-l border-gray-100"
-                }`}>
-                  <div className="flex items-center gap-3">
-                    <span className="text-xs font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-2.5 py-1 rounded">
-                      {item.num}
-                    </span>
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#4B5563] uppercase">
-                      SuperStriker Unit
-                    </span>
-                  </div>
-
-                  <h3 className="font-display text-xl sm:text-3xl font-black uppercase tracking-tight text-[#10143A] leading-tight">
-                    {item.title}
-                  </h3>
-
-                  <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed">
-                    {item.description}
-                  </p>
-
-                  {/* Affiliation / Badges */}
-                  <div className="flex items-center gap-3 bg-[#F4F6FA] border border-gray-100 rounded-xl p-4 w-fit">
-                    <Shield className="h-5 w-5 text-[#10143A]" />
-                    <div className="flex flex-col text-left">
-                      <span className="text-[9px] font-black uppercase tracking-wider text-[#4B5563]/60 leading-none">
-                        {item.badgeLabel}
-                      </span>
-                      <span className="text-xs font-bold text-[#10143A] mt-1 leading-none">
-                        {item.badgeValue}
-                      </span>
-                    </div>
-                  </div>
-
-                  <Link
-                    href={item.ctaLink}
-                    className="inline-flex items-center gap-2 rounded-full bg-[#10143A] hover:bg-[#DCE135] text-white hover:text-[#10143A] px-6 py-3.5 text-xs font-bold uppercase tracking-wider transition-all w-fit shadow-md hover:scale-105 active:scale-95 mt-2"
-                  >
-                    {item.ctaText}
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </div>
-
-                {/* Cover Image Column */}
-                <div className={`col-span-1 lg:col-span-6 relative h-[320px] sm:h-[460px] w-full overflow-hidden group ${
-                  isEven ? "order-2 lg:order-2" : "order-2 lg:order-1"
-                }`}>
+              <div>
+                {/* Image Aspect Box with Crest Overlay */}
+                <div className="relative aspect-[16/9] w-full overflow-hidden shrink-0 bg-gray-100">
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover transition-transform duration-1000 group-hover:scale-103"
-                    sizes="(max-w-1024px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-103"
+                    sizes="(max-w-768px) 100vw, 320px"
                   />
-                  {/* Subtle vignette layer */}
-                  <div className="absolute inset-0 bg-[#10143A]/10 group-hover:bg-[#10143A]/0 transition-colors duration-500" />
-                  
-                  {/* Floating Crest Overlay */}
-                  <div className="absolute top-6 right-6 z-20 w-16 h-16 sm:w-24 sm:h-24 bg-white/95 backdrop-blur-sm border border-gray-200/50 rounded-xl shadow-lg p-3 flex items-center justify-center transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-1">
+                  {/* Floating logo crest */}
+                  <div className="absolute bottom-3 right-3 z-20 w-12 h-12 bg-white/95 backdrop-blur-sm border border-gray-200/50 rounded-lg shadow p-1.5 flex items-center justify-center transition-all duration-300 group-hover:scale-105">
                     <div className="relative w-full h-full">
                       <Image
                         src={item.logo}
-                        alt={`${item.title} Crest`}
+                        alt={`${item.title} logo`}
                         fill
                         className="object-contain"
-                        sizes="96px"
+                        sizes="48px"
                       />
                     </div>
                   </div>
+
+                  {/* Slide number badge */}
+                  <div className="absolute top-3 left-3 bg-[#10143A] text-[#DCE135] text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full z-20">
+                    {item.num}
+                  </div>
                 </div>
 
+                {/* Content area */}
+                <div className="p-6 flex flex-col gap-4">
+                  <h3 className="font-display text-base sm:text-lg font-black uppercase tracking-tight text-[#10143A] leading-tight line-clamp-1">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-xs text-[#4B5563] leading-relaxed line-clamp-3">
+                    {item.description}
+                  </p>
+
+                  {/* Affiliation / Badge */}
+                  <div className="flex items-center gap-2 bg-[#F4F6FA] border border-gray-100 rounded-lg p-2.5 w-fit">
+                    <Shield className="h-4 w-4 text-[#10143A]" />
+                    <div className="flex flex-col text-left">
+                      <span className="text-[8px] font-black uppercase tracking-wider text-[#4B5563]/60 leading-none">
+                        {item.badgeLabel}
+                      </span>
+                      <span className="text-[10px] font-bold text-[#10143A] mt-0.5 leading-none">
+                        {item.badgeValue}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Button block at bottom */}
+              <div className="p-6 pt-0">
+                <Link
+                  href={item.ctaLink}
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#10143A] hover:bg-[#DCE135] text-white hover:text-[#10143A] py-3 text-xs font-bold uppercase tracking-wider transition-all shadow-sm active:scale-97"
+                >
+                  {item.ctaText}
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
               </div>
             </div>
-          );
-        })}
-      </div>
+          ))}
+        </div>
 
+      </div>
     </section>
   );
 }
