@@ -160,10 +160,10 @@ export default function About() {
             <div className="mt-8 flex items-center gap-4 border-t border-gray-100 pt-6">
               <div className="relative h-12 w-12 rounded-full overflow-hidden shrink-0">
                 <Image
-                  src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=200&auto=format&fit=crop"
+                  src="/images/founder-portrait.jpg"
                   alt="Ramakrishnan"
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
               </div>
               <div>

@@ -664,10 +664,10 @@ export default function Home() {
               className="relative h-[450px] w-full max-w-[360px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white"
             >
               <Image
-                src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=600&auto=format&fit=crop"
+                src="/images/founder-portrait.jpg"
                 alt="Ramakrishnan President Portrait"
                 fill
-                className="object-cover"
+                className="object-cover object-top"
               />
             </motion.div>
           </div>
