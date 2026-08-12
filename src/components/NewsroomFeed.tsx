@@ -325,17 +325,16 @@ export default function NewsroomFeed() {
       
       {/* SECTION IDENTITY & DESCRIPTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
-        <div className="flex flex-col items-start gap-3 text-left">
-          <h2 className="font-display text-4xl sm:text-6xl font-black uppercase tracking-tight text-[#0A1028] mt-2">
+        <div className="flex flex-col items-start gap-3 text-left border-l-8 border-[#DCE135] pl-6 py-2">
+          <span className="text-xs font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-3 py-1 rounded">
+            THE OFFICIAL STORYTELLING PLATFORM
+          </span>
+          <h2 className="font-display text-4xl sm:text-7xl font-black uppercase tracking-tight text-[#10143A] leading-none">
             INSIDE SUPERSTRIKER
           </h2>
-          <h3 className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#10143A] bg-[#10143A]/5 px-4 py-1.5 rounded-full shadow-sm mt-1">
-            THE OFFICIAL STORYTELLING PLATFORM
-          </h3>
-          <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed max-w-2xl mt-2">
-            Stories, journeys, and moments shaping the future of football. Explore the people, teams, and ideas behind SuperStriker International&apos;s mission.
+          <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed max-w-2xl mt-1">
+            Stories, journeys, and match moments shaping the future of football. Explore the players, clubs, and tactical setups behind SuperStriker International&apos;s mission.
           </p>
-          <div className="h-1 w-12 bg-[#10143A] mt-4" />
         </div>
       </section>
 
@@ -346,11 +345,19 @@ export default function NewsroomFeed() {
             
             {/* Section 1: LATEST NEWS */}
             <div className="flex flex-col gap-8">
-              <div className="flex flex-col items-start gap-2 text-left border-b border-gray-100 pb-4 mb-4">
-                <span className="text-[9px] font-black uppercase tracking-widest text-[#10143A]/50">Coverage</span>
-                <h3 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight text-[#10143A]">
-                  LATEST NEWSROOM COVERAGE
-                </h3>
+              <div className="w-full bg-[#10143A] text-white p-6 sm:p-8 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4 border-l-8 border-[#DCE135] shadow-md">
+                <div className="flex flex-col items-start gap-1 text-left">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135]">
+                    Coverage Feed
+                  </span>
+                  <h3 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight text-white">
+                    LATEST NEWSROOM COVERAGE
+                  </h3>
+                </div>
+                <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-[#DCE135]">
+                  <span>Live Feed</span>
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#DCE135] animate-pulse" />
+                </div>
               </div>
               
               {/* Top row asymmetry: Left card is 50% width, two right cards are 25% width each */}
@@ -461,11 +468,18 @@ export default function NewsroomFeed() {
 
             {/* Section 2: CLUB & SQUAD UPDATES */}
             <div className="flex flex-col gap-8">
-              <div className="flex flex-col items-start gap-2 text-left border-b border-gray-100 pb-4 mb-4">
-                <span className="text-[9px] font-black uppercase tracking-widest text-[#10143A]/50">Affiliated Clubs</span>
-                <h3 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight text-[#10143A]">
-                  CLUB & SQUAD UPDATES
-                </h3>
+              <div className="w-full bg-[#10143A] text-white p-6 sm:p-8 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4 border-l-8 border-[#DCE135] shadow-md">
+                <div className="flex flex-col items-start gap-1 text-left">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135]">
+                    Affiliated Clubs
+                  </span>
+                  <h3 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight text-white">
+                    CLUB & SQUAD UPDATES
+                  </h3>
+                </div>
+                <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-white/50">
+                  <span>Matchday Central</span>
+                </div>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 text-left">
                 {clubUpdatesList.map((card) => (
@@ -540,11 +554,18 @@ export default function NewsroomFeed() {
 
             {/* Section 3: ACADEMY FOCUS */}
             <div className="flex flex-col gap-8">
-              <div className="flex flex-col items-start gap-2 text-left border-b border-gray-100 pb-4 mb-4">
-                <span className="text-[9px] font-black uppercase tracking-widest text-[#10143A]/50">Development Syllabuses</span>
-                <h3 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight text-[#10143A]">
-                  ACADEMY & TRAINING FOCUS
-                </h3>
+              <div className="w-full bg-[#10143A] text-white p-6 sm:p-8 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4 border-l-8 border-[#DCE135] shadow-md">
+                <div className="flex flex-col items-start gap-1 text-left">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135]">
+                    Development Syllabuses
+                  </span>
+                  <h3 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight text-white">
+                    ACADEMY & TRAINING FOCUS
+                  </h3>
+                </div>
+                <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-white/50">
+                  <span>Under-9 to Under-15</span>
+                </div>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 text-left">
                 {academyFocusList.map((card) => (
@@ -589,11 +610,18 @@ export default function NewsroomFeed() {
 
             {/* Section 4: CORPORATE & COMMUNITY IMPACT */}
             <div className="flex flex-col gap-8">
-              <div className="flex flex-col items-start gap-2 text-left border-b border-gray-100 pb-4 mb-4">
-                <span className="text-[9px] font-black uppercase tracking-widest text-[#10143A]/50">Ecosystem growth</span>
-                <h3 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight text-[#10143A]">
-                  CORPORATE & COMMUNITY IMPACT
-                </h3>
+              <div className="w-full bg-[#10143A] text-white p-6 sm:p-8 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4 border-l-8 border-[#DCE135] shadow-md">
+                <div className="flex flex-col items-start gap-1 text-left">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135]">
+                    Ecosystem growth
+                  </span>
+                  <h3 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight text-white">
+                    CORPORATE & COMMUNITY IMPACT
+                  </h3>
+                </div>
+                <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-white/50">
+                  <span>Future Expansion</span>
+                </div>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 text-left">
                 {corporateCommunityList.map((card) => (
@@ -623,7 +651,7 @@ export default function NewsroomFeed() {
                           {card.description}
                         </p>
                         <div className="flex items-center gap-3 text-[9px] font-bold text-[#4B5563]/60 uppercase tracking-wider mt-2">
-                          <span className="flex items-center gap-1"><User className="h-3 w-3 text-[#10143A]" /> {card.author}</span>
+                          <span className="flex items-center gap-1"><User className="h-3.5 w-3.5 text-[#10143A]" /> {card.author}</span>
                           <span>•</span>
                           <span>{card.date}</span>
                           <span>•</span>
