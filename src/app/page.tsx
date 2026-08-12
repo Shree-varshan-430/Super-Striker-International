@@ -55,6 +55,7 @@ const PLAYER_JOURNEYS: PlayerJourney[] = [
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const featureBannerRef = useRef<HTMLDivElement>(null);
+  const businessSectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (sessionStorage.getItem("loader-complete")) {
@@ -63,10 +64,11 @@ export default function Home() {
     }
   }, []);
 
-  // Initialize GSAP Parallax zoom for the Vision Stadium Banner
+  // Initialize GSAP animations
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
+    // Zoom Parallax for Vision Stadium Banner
     if (featureBannerRef.current) {
       const img = featureBannerRef.current.querySelector("img");
       if (img) {
@@ -81,6 +83,29 @@ export default function Home() {
           },
         });
       }
+    }
+
+    // Business Numbers Count Up Animation
+    if (businessSectionRef.current) {
+      const counters = businessSectionRef.current.querySelectorAll(".stat-counter");
+      counters.forEach((counter) => {
+        const htmlCounter = counter as HTMLElement;
+        const targetVal = parseInt(htmlCounter.getAttribute("data-target") || "0", 10);
+        const obj = { value: 0 };
+        gsap.to(obj, {
+          value: targetVal,
+          duration: 2.2,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: htmlCounter,
+            start: "top 90%",
+            toggleActions: "play none none none",
+          },
+          onUpdate: () => {
+            htmlCounter.textContent = Math.floor(obj.value).toLocaleString();
+          },
+        });
+      });
     }
 
     const refreshTimer = setTimeout(() => {
@@ -135,22 +160,81 @@ export default function Home() {
         {/* 2. PROMO ANNOUNCEMENT STRIP */}
         <PromoStrip />
 
-        {/* 3. LATEST MODULE (2 ROW HORIZONTAL SCROLL Feed) */}
+        {/* 3. VENTURE SCALE & GROWTH METRICS (BUSINESS COUNT UP BAR) */}
+        <section 
+          ref={businessSectionRef} 
+          className="py-12 bg-[#10143A] text-white border-b border-white/10 px-4 sm:px-6 lg:px-8 select-none"
+        >
+          <div className="max-w-[95%] mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              { target: 1500, suffix: "+", label: "Grassroots Discovered Base" },
+              { target: 5, suffix: "", label: "Smart Telemetry Fields" },
+              { target: 3, suffix: "", label: "Affiliated State Clubs" },
+              { target: 100, suffix: "%", label: "Talent Pathway Flow" }
+            ].map((item, idx) => (
+              <div key={idx} className="flex flex-col items-center text-center py-2 border-r last:border-r-0 border-white/10">
+                <span className="text-3xl sm:text-5xl font-display font-black text-[#DCE135] leading-none">
+                  <span className="stat-counter" data-target={item.target}>0</span>
+                  {item.suffix}
+                </span>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-white/70 mt-2 max-w-[150px]">
+                  {item.label}
+                </span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* 4. LATEST MODULE (2 ROW HORIZONTAL SCROLL Feed) */}
         <motion.div {...sectionAnimProps}>
           <LatestFeed />
         </motion.div>
 
-        {/* 4. ACADEMY BANNER MODULE (FULL WIDTH) */}
+        {/* 5. INVESTOR BANNER MODULE (FULL WIDTH ELEVATED FOR INVESTOR CONVERSION) */}
         <motion.div {...sectionAnimProps}>
-          <AcademyBanner />
+          <InvestorBanner />
         </motion.div>
 
-        {/* 5. SUB-BRAND SPOTLIGHT MODULE (Sequential Full Width Blocks) */}
+        {/* 6. SUB-BRAND SPOTLIGHT MODULE (Sequential Full Width Blocks) */}
         <motion.div {...sectionAnimProps}>
           <SubBrandSpotlight />
         </motion.div>
 
-        {/* 6. FOUNDER & HERITAGE PROFILE NOTE (MAGAZINE INTERVIEW) */}
+        {/* 7. INFRASTRUCTURE & VISION BANNER (PARALLAX ZOOM STADIUM) */}
+        <section 
+          ref={featureBannerRef} 
+          className="relative h-[65vh] min-h-[400px] flex items-center justify-start overflow-hidden bg-[#10143A] text-white px-8 sm:px-16 lg:px-24 select-none border-b border-gray-150"
+        >
+          <Image
+            src="https://images.unsplash.com/photo-1529900748604-07564a03e7a6?q=80&w=1600&auto=format&fit=crop"
+            alt="SuperStriker Stadium Future Vision"
+            fill
+            className="object-cover opacity-25"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#10143A] via-[#10143A]/80 to-transparent z-10" />
+          
+          <div className="relative z-20 max-w-2xl text-left flex flex-col gap-4">
+            <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#DCE135]/15 px-3 py-1 rounded w-fit">
+              Future Vision
+            </span>
+            <h2 className="font-display text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-none">
+              Planning for the Future of South Indian Football
+            </h2>
+            <p className="text-xs sm:text-sm text-white/75 leading-relaxed max-w-xl">
+              SuperStriker International is spearheading smart turf developments and regional training hubs to modernize local football facilities and raise physical literacy.
+            </p>
+            <Link
+              href="/about"
+              className="inline-flex items-center gap-1.5 rounded-full bg-[#DCE135] text-[#10143A] px-6 py-3 text-xs font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-[#10143A] hover:scale-105 active:scale-95 shadow-md w-fit mt-2"
+            >
+              Read More
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </section>
+
+        {/* 8. FOUNDER & HERITAGE PROFILE NOTE (MAGAZINE INTERVIEW) */}
         <motion.section 
           {...sectionAnimProps}
           className="py-24 px-4 sm:px-6 lg:px-8 max-w-[95%] mx-auto bg-white border-b border-gray-100 select-none"
@@ -220,12 +304,44 @@ export default function Home() {
           </div>
         </motion.section>
 
-        {/* 7. LATEST MOMENTS ON THE PITCH (HORIZONTAL PHOTO STRIP) */}
+        {/* 9. ACADEMY BANNER MODULE (FULL WIDTH - SECONDARY PLACEMENT) */}
+        <motion.div {...sectionAnimProps}>
+          <AcademyBanner />
+        </motion.div>
+
+        {/* 10. PLAYER JOURNEYS SECTION */}
+        <motion.section 
+          {...sectionAnimProps}
+          className="py-24 px-4 sm:px-6 lg:px-8 max-w-[95%] mx-auto bg-white select-none border-b border-gray-150"
+        >
+          <div className="text-left mb-16 flex flex-col gap-1 border-l-4 border-[#10143A] pl-6">
+            <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-2.5 py-0.5 rounded w-fit">
+              PLAYER PATHWAYS
+            </span>
+            <h2 className="font-display text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#0A1028] mt-2">
+              Every player has a story before becoming a champion.
+            </h2>
+            <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed max-w-xl">
+              Tracing the path from local training fields to senior competitive platforms and state league rosters.
+            </p>
+          </div>
+
+          {/* Render Player Journeys using standardized NewsCard to match Latest module */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {playerNewsItems.map((item) => (
+              <div key={item.slug} className="flex">
+                <NewsCard item={item} />
+              </div>
+            ))}
+          </div>
+        </motion.section>
+
+        {/* 11. LATEST MOMENTS ON THE PITCH (HORIZONTAL PHOTO STRIP) */}
         <motion.div {...sectionAnimProps}>
           <PhotoStrip />
         </motion.div>
 
-        {/* 8. LIVE SOCIAL EMBED MODULE (Mock Instagram Gallery) */}
+        {/* 12. LIVE SOCIAL EMBED MODULE (Mock Instagram Gallery) */}
         <motion.section 
           {...sectionAnimProps}
           className="py-20 bg-gray-50 border-b border-gray-150 select-none"
@@ -265,78 +381,12 @@ export default function Home() {
           </div>
         </motion.section>
 
-        {/* 9. INFRASTRUCTURE & VISION BANNER (PARALLAX ZOOM STADIUM) */}
-        <section 
-          ref={featureBannerRef} 
-          className="relative h-[65vh] min-h-[400px] flex items-center justify-start overflow-hidden bg-[#10143A] text-white px-8 sm:px-16 lg:px-24 select-none border-b border-gray-150"
-        >
-          <Image
-            src="https://images.unsplash.com/photo-1529900748604-07564a03e7a6?q=80&w=1600&auto=format&fit=crop"
-            alt="SuperStriker Stadium Future Vision"
-            fill
-            className="object-cover opacity-25"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#10143A] via-[#10143A]/80 to-transparent z-10" />
-          
-          <div className="relative z-20 max-w-2xl text-left flex flex-col gap-4">
-            <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#DCE135]/15 px-3 py-1 rounded w-fit">
-              Future Vision
-            </span>
-            <h2 className="font-display text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-none">
-              Planning for the Future of South Indian Football
-            </h2>
-            <p className="text-xs sm:text-sm text-white/75 leading-relaxed max-w-xl">
-              SuperStriker International is spearheading smart turf developments and regional training hubs to modernize local football facilities and raise physical literacy.
-            </p>
-            <Link
-              href="/about"
-              className="inline-flex items-center gap-1.5 rounded-full bg-[#DCE135] text-[#10143A] px-6 py-3 text-xs font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-[#10143A] hover:scale-105 active:scale-95 shadow-md w-fit mt-2"
-            >
-              Read More
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-        </section>
-
-        {/* 10. PLAYER JOURNEYS SECTION */}
-        <motion.section 
-          {...sectionAnimProps}
-          className="py-24 px-4 sm:px-6 lg:px-8 max-w-[95%] mx-auto bg-white select-none border-b border-gray-150"
-        >
-          <div className="text-left mb-16 flex flex-col gap-1 border-l-4 border-[#10143A] pl-6">
-            <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-2.5 py-0.5 rounded w-fit">
-              PLAYER PATHWAYS
-            </span>
-            <h2 className="font-display text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#0A1028] mt-2">
-              Every player has a story before becoming a champion.
-            </h2>
-            <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed max-w-xl">
-              Tracing the path from local training fields to senior competitive platforms and state league rosters.
-            </p>
-          </div>
-
-          {/* Render Player Journeys using standardized NewsCard to match Latest module */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {playerNewsItems.map((item) => (
-              <div key={item.slug} className="flex">
-                <NewsCard item={item} />
-              </div>
-            ))}
-          </div>
-        </motion.section>
-
-        {/* 11. INVESTOR BANNER MODULE (FULL WIDTH RELOCATED TO BOTTOM) */}
-        <motion.div {...sectionAnimProps}>
-          <InvestorBanner />
-        </motion.div>
-
-        {/* 12. SPONSORS LOGO STRIP */}
+        {/* 13. SPONSORS LOGO STRIP */}
         <motion.div {...sectionAnimProps}>
           <PartnerLogos />
         </motion.div>
 
-        {/* 13. NEWSLETTER SIGNUP */}
+        {/* 14. NEWSLETTER SIGNUP */}
         <motion.section 
           {...sectionAnimProps}
           className="py-20 bg-gray-50 border-t border-gray-150 px-4"
