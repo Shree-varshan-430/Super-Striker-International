@@ -207,7 +207,6 @@ const MEDIA_VIDEOS: MediaVideo[] = [
 ];
 
 export default function NewsroomFeed() {
-  const [activeFilter, setActiveFilter] = useState("ALL");
   const sectionRef = useRef<HTMLDivElement>(null);
   
   const gridContainerRef = useRef<HTMLDivElement>(null);
@@ -285,47 +284,14 @@ export default function NewsroomFeed() {
     return () => {
       ScrollTrigger.getAll().forEach((t) => t.kill());
     };
-  }, [activeFilter]);
+  }, []);
 
-  const filterOptions = [
-    "ALL", 
-    "CLUB", 
-    "ACADEMY", 
-    "PLAYER JOURNEYS", 
-    "FOUNDATION", 
-    "COMMUNITY", 
-    "INVESTORS", 
-    "VIDEOS"
-  ];
-
-  // Resolve filter category mapping
-  const getFilteredArticles = () => {
-    if (activeFilter === "ALL") return STORIES_DATA;
-    if (activeFilter === "VIDEOS") {
-      return MEDIA_VIDEOS.map((vid, idx) => ({
-        id: `video-${idx}`,
-        image: vid.image,
-        category: "VIDEOS" as const,
-        title: vid.title,
-        description: `SuperStriker media release - watch behind the scenes training sessions, highlights, and coach talks. Duration: ${vid.duration}`,
-        author: vid.category,
-        date: "LATEST RELEASE",
-        readingTime: vid.duration,
-        articleUrl: vid.youtubeUrl
-      }));
-    }
-    return STORIES_DATA.filter((story) => story.category === activeFilter);
-  };
-
-  const filteredList = getFilteredArticles();
-
-  // Asymmetric Grid layout mappings:
+  // Asymmetric Grid layout mappings (Man City style):
   // Large Big story card (50% width / col-span-2)
   // Two smaller stories (25% width each / col-span-1 each)
-  const leftFeaturedCard = filteredList[0] || STORIES_DATA[0];
-  const rightColumnStack = filteredList.slice(1, 3);
-  const bottomRowGrid = filteredList.slice(3, 6);
-  const thirdRowGrid = filteredList.slice(6, 9);
+  const leftFeaturedCard = STORIES_DATA[0];
+  const rightColumnStack = STORIES_DATA.slice(1, 3);
+  const bottomGridList = STORIES_DATA.slice(3);
 
   const trendingTopics = [
     "Bangalore Super Strikers FC season launch",
@@ -339,41 +305,23 @@ export default function NewsroomFeed() {
       
       {/* SECTION IDENTITY & DESCRIPTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-        <div className="text-center flex flex-col items-center gap-3">
+        <div className="flex flex-col items-start gap-3 text-left">
           <h2 className="font-display text-4xl sm:text-6xl font-black uppercase tracking-tight text-[#0A1028] mt-2">
             INSIDE SUPERSTRIKER
           </h2>
           <h3 className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#10143A] bg-[#10143A]/5 px-4 py-1.5 rounded-full shadow-sm mt-1">
             THE OFFICIAL STORYTELLING PLATFORM
           </h3>
-          <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed max-w-2xl text-center mt-2">
+          <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed max-w-2xl mt-2">
             Stories, journeys, and moments shaping the future of football. Explore the people, teams, and ideas behind SuperStriker International&apos;s mission.
           </p>
           <div className="h-1 w-12 bg-[#10143A] mt-4" />
         </div>
       </section>
 
-      {/* PART 3: CATEGORY FILTER SYSTEM */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-8 border-b border-gray-150 pb-4">
-          {filterOptions.map((opt) => (
-            <button
-              key={opt}
-              onClick={() => setActiveFilter(opt)}
-              className="relative px-2 py-2 text-xs font-bold uppercase tracking-widest transition-colors duration-300 text-[#10143A]/70 hover:text-[#10143A]"
-            >
-              {opt}
-              {activeFilter === opt && (
-                <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#10143A] rounded-full animate-underline-grow" />
-              )}
-            </button>
-          ))}
-        </div>
-      </section>
-
       {/* PART 2: LATEST STORIES EDITORIAL GRID */}
       <section ref={gridContainerRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
-        {filteredList.length > 0 ? (
+        {STORIES_DATA.length > 0 ? (
           <div className="flex flex-col gap-12">
             
             {/* Top row asymmetry: Left card is 50% width, two right cards are 25% width each */}
@@ -452,53 +400,10 @@ export default function NewsroomFeed() {
 
             </div>
 
-            {/* Bottom Row: Three additional spotlight story blocks */}
-            {bottomRowGrid.length > 0 && (
+            {/* Bottom Grid: All remaining story blocks in 3 columns */}
+            {bottomGridList.length > 0 && (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 mt-4 text-left">
-                {bottomRowGrid.map((card) => (
-                  <div key={card.id} className="magazine-grid-card">
-                    <Link
-                      href={card.articleUrl}
-                      className="group flex flex-col gap-4 text-left"
-                    >
-                      {/* Image with 16:9 aspect ratio */}
-                      <div className="relative aspect-[16/9] w-full overflow-hidden rounded-md shrink-0">
-                        <Image
-                          src={card.image}
-                          alt={card.title}
-                          fill
-                          className="object-cover transition-transform duration-700 group-hover:scale-105"
-                        />
-                      </div>
-
-                      <div className="flex flex-col gap-2">
-                        <span className="text-[10px] font-black uppercase tracking-widest text-[#10143A] leading-none mb-1 block">
-                          {card.category}
-                        </span>
-                        <h4 className="font-display text-base sm:text-lg font-black uppercase tracking-tight text-[#10143A] leading-snug line-clamp-2 group-hover:opacity-85 transition-opacity">
-                          {card.title}
-                        </h4>
-                        <p className="text-xs text-[#4B5563] leading-relaxed line-clamp-2">
-                          {card.description}
-                        </p>
-                        <div className="flex items-center gap-3 text-[9px] font-bold text-[#4B5563]/60 uppercase tracking-wider mt-2">
-                          <span className="flex items-center gap-1"><User className="h-3 w-3 text-[#10143A]" /> {card.author}</span>
-                          <span>•</span>
-                          <span>{card.date}</span>
-                          <span>•</span>
-                          <span>{card.readingTime}</span>
-                        </div>
-                      </div>
-                    </Link>
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {/* Third Row (New): Three more spotlight story blocks */}
-            {thirdRowGrid.length > 0 && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 mt-12 text-left">
-                {thirdRowGrid.map((card) => (
+                {bottomGridList.map((card) => (
                   <div key={card.id} className="magazine-grid-card">
                     <Link
                       href={card.articleUrl}
@@ -541,7 +446,7 @@ export default function NewsroomFeed() {
           </div>
         ) : (
           <div className="text-center py-16 border border-dashed border-gray-200 rounded-2xl text-sm text-[#4B5563]/50 font-semibold">
-            No articles found matching this filter category.
+            No articles found.
           </div>
         )}
       </section>
