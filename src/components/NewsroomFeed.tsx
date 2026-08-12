@@ -287,11 +287,31 @@ export default function NewsroomFeed() {
   }, []);
 
   // Asymmetric Grid layout mappings (Man City style):
-  // Large Big story card (50% width / col-span-2)
-  // Two smaller stories (25% width each / col-span-1 each)
-  const leftFeaturedCard = STORIES_DATA[0];
-  const rightColumnStack = STORIES_DATA.slice(1, 3);
-  const bottomGridList = STORIES_DATA.slice(3);
+  const latestNewsList = STORIES_DATA.slice(0, 3);
+  const leftFeaturedCard = latestNewsList[0];
+  const rightColumnStack = latestNewsList.slice(1, 3);
+
+  const clubUpdatesList = STORIES_DATA.filter(
+    (story) => 
+      story.id === "from-grassroots-to-pro" || 
+      story.id === "creating-opportunities" ||
+      story.id === "bss-new-chapter"
+  );
+
+  const academyFocusList = STORIES_DATA.filter(
+    (story) => 
+      story.id === "pondicherry-blueprints" || 
+      story.id === "tactical-goalkeeper-coaching" ||
+      story.id === "building-next-generation" ||
+      story.id === "philosophy-pathways"
+  );
+
+  const corporateCommunityList = STORIES_DATA.filter(
+    (story) => 
+      story.id === "investor-milestones-q3" || 
+      story.id === "community-impact-pitch" || 
+      story.id === "commercial-expansion-2026"
+  );
 
   const trendingTopics = [
     "Bangalore Super Strikers FC season launch",
@@ -304,7 +324,7 @@ export default function NewsroomFeed() {
     <div ref={sectionRef} className="w-full bg-white text-[#0A1028] pt-24 pb-0">
       
       {/* SECTION IDENTITY & DESCRIPTION */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
         <div className="flex flex-col items-start gap-3 text-left">
           <h2 className="font-display text-4xl sm:text-6xl font-black uppercase tracking-tight text-[#0A1028] mt-2">
             INSIDE SUPERSTRIKER
@@ -322,100 +342,145 @@ export default function NewsroomFeed() {
       {/* PART 2: LATEST STORIES EDITORIAL GRID */}
       <section ref={gridContainerRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
         {STORIES_DATA.length > 0 ? (
-          <div className="flex flex-col gap-12">
+          <div className="flex flex-col gap-20">
             
-            {/* Top row asymmetry: Left card is 50% width, two right cards are 25% width each */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-              
-              {/* Left Column (50%): Large big story block (No borders, No background wrapper) */}
-              <div className="md:col-span-2 magazine-grid-card">
-                <Link
-                  href={leftFeaturedCard.articleUrl}
-                  className="group flex flex-col gap-4 text-left"
-                >
-                  {/* Image with 16:9 aspect ratio, subtle rounding */}
-                  <div className="relative aspect-[16/9] w-full overflow-hidden rounded-md shrink-0">
-                    <Image
-                      src={leftFeaturedCard.image}
-                      alt={leftFeaturedCard.title}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                  </div>
-
-                  <div className="flex flex-col gap-2">
-                    <span className="text-[10px] font-black uppercase tracking-widest text-[#10143A] leading-none mb-1 block">
-                      {leftFeaturedCard.category}
-                    </span>
-                    <h4 className="font-display text-xl sm:text-2xl font-black uppercase tracking-tight text-[#10143A] leading-snug group-hover:opacity-85 transition-opacity">
-                      {leftFeaturedCard.title}
-                    </h4>
-                    <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed line-clamp-3 mt-1">
-                      {leftFeaturedCard.description}
-                    </p>
-                    <div className="flex items-center gap-3 text-[10px] font-bold text-[#4B5563]/60 uppercase tracking-wider mt-3">
-                      <span className="flex items-center gap-1"><User className="h-3.5 w-3.5 text-[#10143A]" /> {leftFeaturedCard.author}</span>
-                      <span>•</span>
-                      <span>{leftFeaturedCard.date}</span>
-                      <span>•</span>
-                      <span>{leftFeaturedCard.readingTime}</span>
-                    </div>
-                  </div>
-                </Link>
+            {/* Section 1: LATEST NEWS */}
+            <div className="flex flex-col gap-8">
+              <div className="flex flex-col items-start gap-2 text-left border-b border-gray-100 pb-4 mb-4">
+                <span className="text-[9px] font-black uppercase tracking-widest text-[#10143A]/50">Coverage</span>
+                <h3 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight text-[#10143A]">
+                  LATEST NEWSROOM COVERAGE
+                </h3>
               </div>
-
-              {/* Right Columns (25% each): Two smaller story blocks */}
-              {rightColumnStack.map((card, idx) => (
-                <div key={idx} className="md:col-span-1 magazine-grid-card">
+              
+              {/* Top row asymmetry: Left card is 50% width, two right cards are 25% width each */}
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+                
+                {/* Left Column (50%): Large big story block */}
+                <div className="md:col-span-2 magazine-grid-card">
                   <Link
-                    href={card.articleUrl}
+                    href={leftFeaturedCard.articleUrl}
                     className="group flex flex-col gap-4 text-left"
                   >
-                    {/* Image with 16:9 aspect ratio */}
                     <div className="relative aspect-[16/9] w-full overflow-hidden rounded-md shrink-0">
                       <Image
-                        src={card.image}
-                        alt={card.title}
+                        src={leftFeaturedCard.image}
+                        alt={leftFeaturedCard.title}
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        sizes="(max-w-768px) 100vw, 600px"
                       />
                     </div>
 
                     <div className="flex flex-col gap-2">
                       <span className="text-[10px] font-black uppercase tracking-widest text-[#10143A] leading-none mb-1 block">
-                        {card.category}
+                        {leftFeaturedCard.category}
                       </span>
-                      <h4 className="font-display text-base sm:text-lg font-black uppercase tracking-tight text-[#10143A] leading-snug line-clamp-3 group-hover:opacity-85 transition-opacity">
-                        {card.title}
+                      <h4 className="font-display text-xl sm:text-2xl font-black uppercase tracking-tight text-[#10143A] leading-snug group-hover:opacity-85 transition-opacity">
+                        {leftFeaturedCard.title}
                       </h4>
-                      <div className="flex items-center gap-2 text-[9px] font-bold text-[#4B5563]/60 uppercase tracking-wider mt-2">
-                        <span>{card.date}</span>
+                      <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed line-clamp-3 mt-1">
+                        {leftFeaturedCard.description}
+                      </p>
+                      <div className="flex items-center gap-3 text-[10px] font-bold text-[#4B5563]/60 uppercase tracking-wider mt-3">
+                        <span className="flex items-center gap-1"><User className="h-3.5 w-3.5 text-[#10143A]" /> {leftFeaturedCard.author}</span>
                         <span>•</span>
-                        <span>{card.readingTime}</span>
+                        <span>{leftFeaturedCard.date}</span>
+                        <span>•</span>
+                        <span>{leftFeaturedCard.readingTime}</span>
                       </div>
                     </div>
                   </Link>
                 </div>
-              ))}
 
-            </div>
-
-            {/* Bottom Grid: All remaining story blocks in 3 columns */}
-            {bottomGridList.length > 0 && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 mt-4 text-left">
-                {bottomGridList.map((card) => (
-                  <div key={card.id} className="magazine-grid-card">
+                {/* Right Columns (25% each): Two smaller story blocks */}
+                {rightColumnStack.map((card, idx) => (
+                  <div key={idx} className="md:col-span-1 magazine-grid-card">
                     <Link
                       href={card.articleUrl}
                       className="group flex flex-col gap-4 text-left"
                     >
-                      {/* Image with 16:9 aspect ratio */}
                       <div className="relative aspect-[16/9] w-full overflow-hidden rounded-md shrink-0">
                         <Image
                           src={card.image}
                           alt={card.title}
                           fill
                           className="object-cover transition-transform duration-700 group-hover:scale-105"
+                          sizes="(max-w-768px) 100vw, 300px"
+                        />
+                      </div>
+
+                      <div className="flex flex-col gap-2">
+                        <span className="text-[10px] font-black uppercase tracking-widest text-[#10143A] leading-none mb-1 block">
+                          {card.category}
+                        </span>
+                        <h4 className="font-display text-base sm:text-lg font-black uppercase tracking-tight text-[#10143A] leading-snug line-clamp-3 group-hover:opacity-85 transition-opacity">
+                          {card.title}
+                        </h4>
+                        <div className="flex items-center gap-2 text-[9px] font-bold text-[#4B5563]/60 uppercase tracking-wider mt-2">
+                          <span>{card.date}</span>
+                          <span>•</span>
+                          <span>{card.readingTime}</span>
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* POSTER 1: Academy & Development */}
+            <div className="relative w-full h-[320px] rounded-2xl overflow-hidden shadow-lg group">
+              <Image
+                src="/images/training-1.jpg"
+                alt="Academy Development"
+                fill
+                className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                sizes="(max-w-1200px) 100vw, 1200px"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#10143A] via-[#10143A]/80 to-transparent" />
+              <div className="absolute inset-0 flex flex-col justify-center items-start p-8 sm:p-12 max-w-xl text-left gap-4">
+                <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#DCE135]/15 px-3 py-1 rounded-full">
+                  Elite Academy
+                </span>
+                <h3 className="font-display text-2xl sm:text-4xl font-black uppercase tracking-tight text-white leading-tight">
+                  TRAIN WITH THE BEST
+                </h3>
+                <p className="text-xs sm:text-sm text-white/70 leading-relaxed line-clamp-2">
+                  Bangalore Football School residential academies are scout-compliant pathways to national leagues and first-team selection.
+                </p>
+                <Link
+                  href="/football-school/bangalore-football-school"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-white border-b-2 border-[#DCE135] pb-0.5 hover:text-[#DCE135] transition-colors mt-2"
+                >
+                  Explore Academy Pathways
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Section 2: CLUB & SQUAD UPDATES */}
+            <div className="flex flex-col gap-8">
+              <div className="flex flex-col items-start gap-2 text-left border-b border-gray-100 pb-4 mb-4">
+                <span className="text-[9px] font-black uppercase tracking-widest text-[#10143A]/50">Affiliated Clubs</span>
+                <h3 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight text-[#10143A]">
+                  CLUB & SQUAD UPDATES
+                </h3>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 text-left">
+                {clubUpdatesList.map((card) => (
+                  <div key={card.id} className="magazine-grid-card">
+                    <Link
+                      href={card.articleUrl}
+                      className="group flex flex-col gap-4 text-left"
+                    >
+                      <div className="relative aspect-[16/9] w-full overflow-hidden rounded-md shrink-0">
+                        <Image
+                          src={card.image}
+                          alt={card.title}
+                          fill
+                          className="object-cover transition-transform duration-700 group-hover:scale-105"
+                          sizes="(max-w-768px) 100vw, 300px"
                         />
                       </div>
 
@@ -441,7 +506,135 @@ export default function NewsroomFeed() {
                   </div>
                 ))}
               </div>
-            )}
+            </div>
+
+            {/* POSTER 2: Investor & Expansion */}
+            <div className="relative w-full h-[320px] rounded-2xl overflow-hidden shadow-lg group">
+              <Image
+                src="/images/news-pitch-sponsorship.jpg"
+                alt="Corporate Investment"
+                fill
+                className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                sizes="(max-w-1200px) 100vw, 1200px"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#10143A] via-[#10143A]/80 to-transparent" />
+              <div className="absolute inset-0 flex flex-col justify-center items-start p-8 sm:p-12 max-w-xl text-left gap-4">
+                <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#DCE135]/15 px-3 py-1 rounded-full">
+                  Investments
+                </span>
+                <h3 className="font-display text-2xl sm:text-4xl font-black uppercase tracking-tight text-white leading-tight">
+                  INVEST IN FOOTBALL WEALTH
+                </h3>
+                <p className="text-xs sm:text-sm text-white/70 leading-relaxed line-clamp-2">
+                  Discover franchise ownership and commercial sponsorship opportunities in South India&apos;s fastest-growing football club league network.
+                </p>
+                <Link
+                  href="/investors#enquire"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-white border-b-2 border-[#DCE135] pb-0.5 hover:text-[#DCE135] transition-colors mt-2"
+                >
+                  Inquire Now
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Section 3: ACADEMY FOCUS */}
+            <div className="flex flex-col gap-8">
+              <div className="flex flex-col items-start gap-2 text-left border-b border-gray-100 pb-4 mb-4">
+                <span className="text-[9px] font-black uppercase tracking-widest text-[#10143A]/50">Development Syllabuses</span>
+                <h3 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight text-[#10143A]">
+                  ACADEMY & TRAINING FOCUS
+                </h3>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 text-left">
+                {academyFocusList.map((card) => (
+                  <div key={card.id} className="magazine-grid-card">
+                    <Link
+                      href={card.articleUrl}
+                      className="group flex flex-col gap-4 text-left"
+                    >
+                      <div className="relative aspect-[16/9] w-full overflow-hidden rounded-md shrink-0">
+                        <Image
+                          src={card.image}
+                          alt={card.title}
+                          fill
+                          className="object-cover transition-transform duration-700 group-hover:scale-105"
+                          sizes="(max-w-768px) 100vw, 300px"
+                        />
+                      </div>
+
+                      <div className="flex flex-col gap-2">
+                        <span className="text-[10px] font-black uppercase tracking-widest text-[#10143A] leading-none mb-1 block">
+                          {card.category}
+                        </span>
+                        <h4 className="font-display text-base sm:text-lg font-black uppercase tracking-tight text-[#10143A] leading-snug line-clamp-2 group-hover:opacity-85 transition-opacity">
+                          {card.title}
+                        </h4>
+                        <p className="text-xs text-[#4B5563] leading-relaxed line-clamp-2">
+                          {card.description}
+                        </p>
+                        <div className="flex items-center gap-3 text-[9px] font-bold text-[#4B5563]/60 uppercase tracking-wider mt-2">
+                          <span className="flex items-center gap-1"><User className="h-3.5 w-3.5 text-[#10143A]" /> {card.author}</span>
+                          <span>•</span>
+                          <span>{card.date}</span>
+                          <span>•</span>
+                          <span>{card.readingTime}</span>
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Section 4: CORPORATE & COMMUNITY IMPACT */}
+            <div className="flex flex-col gap-8">
+              <div className="flex flex-col items-start gap-2 text-left border-b border-gray-100 pb-4 mb-4">
+                <span className="text-[9px] font-black uppercase tracking-widest text-[#10143A]/50">Ecosystem growth</span>
+                <h3 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight text-[#10143A]">
+                  CORPORATE & COMMUNITY IMPACT
+                </h3>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 text-left">
+                {corporateCommunityList.map((card) => (
+                  <div key={card.id} className="magazine-grid-card">
+                    <Link
+                      href={card.articleUrl}
+                      className="group flex flex-col gap-4 text-left"
+                    >
+                      <div className="relative aspect-[16/9] w-full overflow-hidden rounded-md shrink-0">
+                        <Image
+                          src={card.image}
+                          alt={card.title}
+                          fill
+                          className="object-cover transition-transform duration-700 group-hover:scale-105"
+                          sizes="(max-w-768px) 100vw, 300px"
+                        />
+                      </div>
+
+                      <div className="flex flex-col gap-2">
+                        <span className="text-[10px] font-black uppercase tracking-widest text-[#10143A] leading-none mb-1 block">
+                          {card.category}
+                        </span>
+                        <h4 className="font-display text-base sm:text-lg font-black uppercase tracking-tight text-[#10143A] leading-snug line-clamp-2 group-hover:opacity-85 transition-opacity">
+                          {card.title}
+                        </h4>
+                        <p className="text-xs text-[#4B5563] leading-relaxed line-clamp-2">
+                          {card.description}
+                        </p>
+                        <div className="flex items-center gap-3 text-[9px] font-bold text-[#4B5563]/60 uppercase tracking-wider mt-2">
+                          <span className="flex items-center gap-1"><User className="h-3 w-3 text-[#10143A]" /> {card.author}</span>
+                          <span>•</span>
+                          <span>{card.date}</span>
+                          <span>•</span>
+                          <span>{card.readingTime}</span>
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            </div>
 
           </div>
         ) : (
