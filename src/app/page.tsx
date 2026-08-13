@@ -9,7 +9,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import FootballLoader from "@/components/FootballLoader";
-import ManUtdHero from "@/components/home/ManUtdHero";
+import HeroCarousel from "@/components/home/HeroCarousel";
 import LiveTicker from "@/components/home/LiveTicker";
 import LatestFeed from "@/components/home/LatestFeed";
 import AcademyBanner from "@/components/home/AcademyBanner";
@@ -142,8 +142,8 @@ export default function Home() {
 
       <div className="w-full bg-white text-[#0A1028] font-sans select-none overflow-x-hidden">
         
-        {/* 1. HERO CAROUSEL (ASYMMETRIC GRID) */}
-        <ManUtdHero />
+        {/* 1. HERO CAROUSEL (FULL SIZE CAROUSEL) */}
+        <HeroCarousel />
 
         {/* 2. PROMO ANNOUNCEMENT STRIP (LIVE SCROLLING TICKER) */}
         <LiveTicker />
