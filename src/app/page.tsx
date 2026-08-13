@@ -9,8 +9,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import FootballLoader from "@/components/FootballLoader";
-import HeroCarousel from "@/components/home/HeroCarousel";
-import PromoStrip from "@/components/home/PromoStrip";
+import ManUtdHero from "@/components/home/ManUtdHero";
+import LiveTicker from "@/components/home/LiveTicker";
 import LatestFeed from "@/components/home/LatestFeed";
 import AcademyBanner from "@/components/home/AcademyBanner";
 import InvestorBanner from "@/components/home/InvestorBanner";
@@ -119,18 +119,6 @@ export default function Home() {
     };
   }, []);
 
-  // Map Player Journeys to standard NewsItem model for component visual consistency
-  const playerNewsItems: NewsItem[] = PLAYER_JOURNEYS.map((player) => ({
-    slug: player.slug,
-    type: "article",
-    title: `${player.name}: ${player.role}`,
-    category: "player-journeys",
-    thumbnail: player.image,
-    excerpt: player.excerpt,
-    publishedAt: "Spotlight Profile",
-    author: "Academy Scouts"
-  }));
-
   const sectionAnimProps = {
     initial: { opacity: 0, y: 30 },
     whileInView: { opacity: 1, y: 0 },
@@ -154,11 +142,11 @@ export default function Home() {
 
       <div className="w-full bg-white text-[#0A1028] font-sans select-none overflow-x-hidden">
         
-        {/* 1. HERO CAROUSEL */}
-        <HeroCarousel />
+        {/* 1. HERO CAROUSEL (ASYMMETRIC GRID) */}
+        <ManUtdHero />
 
-        {/* 2. PROMO ANNOUNCEMENT STRIP */}
-        <PromoStrip />
+        {/* 2. PROMO ANNOUNCEMENT STRIP (LIVE SCROLLING TICKER) */}
+        <LiveTicker />
 
         {/* 3. VENTURE SCALE & GROWTH METRICS (BUSINESS COUNT UP BAR) */}
         <section 
@@ -185,7 +173,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 4. LATEST MODULE (2 ROW HORIZONTAL SCROLL Feed) */}
+        {/* 4. LATEST MODULE (NEWS ASYMMETRIC GRID & VIDEO MUTV-CAROUSEL) */}
         <motion.div {...sectionAnimProps}>
           <LatestFeed />
         </motion.div>
@@ -329,7 +317,7 @@ export default function Home() {
           </div>
         </motion.section>
 
-        {/* 7. SUB-BRAND SPOTLIGHT MODULE (Sequential Full Width Blocks) */}
+        {/* 7. SUB-BRAND SPOTLIGHT MODULE */}
         <motion.div {...sectionAnimProps}>
           <SubBrandSpotlight />
         </motion.div>
@@ -443,7 +431,7 @@ export default function Home() {
           <AcademyBanner />
         </motion.div>
 
-        {/* 11. PLAYER JOURNEYS SECTION */}
+        {/* 11. PLAYER PATHWAYS SQUAD SHOWCASE (MAN UTD TALL VERTICAL CARDS) */}
         <motion.section 
           {...sectionAnimProps}
           className="py-24 px-4 sm:px-6 lg:px-8 max-w-[95%] mx-auto bg-white select-none border-b border-gray-150"
@@ -460,11 +448,60 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Render Player Journeys using standardized NewsCard to match Latest module */}
+          {/* Render Player Journeys using watermarked Squad Profile Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {playerNewsItems.map((item) => (
-              <div key={item.slug} className="flex">
-                <NewsCard item={item} />
+            {[
+              { name: "Aditya Kumar", role: "Midfielder", cohort: "U-15 Elite Cohort", number: "10", image: "/images/match-1.jpg", stats: "Pass Accuracy: 88% | Assist Leader" },
+              { name: "Sanjay Raj", role: "Striker", cohort: "BSS Senior Squad", number: "09", image: "/images/news-grassroots.jpg", stats: "Goals: 12 | Shots conversion: 24%" },
+              { name: "Vikram Seth", role: "Goalkeeper", cohort: "Pondicherry Resident Academy", number: "01", image: "/images/match-2.jpg", stats: "Clean Sheets: 8 | Penalty Saves: 2" }
+            ].map((player) => (
+              <div 
+                key={player.name}
+                className="relative rounded-2xl overflow-hidden aspect-[3/4] group shadow-sm bg-gradient-to-b from-gray-50 to-gray-150 border border-gray-200/50 flex flex-col justify-end p-6 select-none"
+              >
+                {/* Large Background Watermark Number */}
+                <div className="absolute inset-0 flex items-center justify-center select-none pointer-events-none z-0 overflow-hidden">
+                  <span className="font-display text-[140px] sm:text-[180px] font-black text-gray-200/40 tracking-tighter leading-none transition-all duration-700 group-hover:scale-110 group-hover:text-[#DCE135]/15">
+                    {player.number}
+                  </span>
+                </div>
+
+                {/* Player image overlay */}
+                <div className="absolute inset-0 z-10">
+                  <Image
+                    src={player.image}
+                    alt={player.name}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-102 opacity-85 group-hover:opacity-95"
+                    sizes="(max-w-768px) 100vw, 360px"
+                  />
+                  {/* Subtle dark bottom vignette */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#10143A] via-[#10143A]/20 to-transparent z-15" />
+                </div>
+
+                {/* Content info overlay */}
+                <div className="relative z-20 text-left text-white flex flex-col gap-1">
+                  <span className="text-[9px] font-black uppercase tracking-widest text-[#10143A] bg-[#DCE135] px-2 py-0.5 rounded w-fit">
+                    #{player.number} {player.role}
+                  </span>
+                  <h3 className="font-display text-xl sm:text-2xl font-black uppercase tracking-tight leading-none mt-1">
+                    {player.name}
+                  </h3>
+                  <span className="text-[10px] font-bold text-white/70 uppercase tracking-wider">
+                    {player.cohort}
+                  </span>
+
+                  {/* Hover stats reveal bar */}
+                  <div className="h-0 opacity-0 overflow-hidden group-hover:h-auto group-hover:opacity-100 transition-all duration-500 flex flex-col gap-1 mt-2 pt-2 border-t border-white/10">
+                    <span className="text-[8px] font-black tracking-widest text-[#DCE135] uppercase">
+                      TELEMETRY INDEX
+                    </span>
+                    <span className="text-[10px] font-bold text-white/90">
+                      {player.stats}
+                    </span>
+                  </div>
+                </div>
+
               </div>
             ))}
           </div>
