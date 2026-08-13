@@ -272,7 +272,7 @@ export default function LatestFeed() {
                 key={item.slug} 
                 className="w-[280px] sm:w-[320px] md:w-[360px] flex-shrink-0 snap-start group"
               >
-                <NewsCard item={item} />
+                <NewsCard item={item} darkTheme={true} />
               </div>
             ))}
 

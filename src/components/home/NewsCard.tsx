@@ -8,9 +8,10 @@ import { NewsItem } from "@/types/news";
 
 interface NewsCardProps {
   item: NewsItem;
+  darkTheme?: boolean;
 }
 
-export default function NewsCard({ item }: NewsCardProps) {
+export default function NewsCard({ item, darkTheme }: NewsCardProps) {
   const [showModal, setShowModal] = useState(false);
 
   const articleLink = `/news/${item.slug}`;
@@ -30,7 +31,7 @@ export default function NewsCard({ item }: NewsCardProps) {
   return (
     <>
       <div className="flex flex-col gap-4 text-left w-full group select-none">
-        {/* Media Container */}
+        {/* Media Container (16:9 Aspect Box with reserved dimensions for 0 CLS) */}
         <Link 
           href={targetLink} 
           onClick={handleClick}
@@ -41,9 +42,8 @@ export default function NewsCard({ item }: NewsCardProps) {
           <Image
             src={item.thumbnail}
             alt={item.title}
-            width={380}
-            height={214}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            fill
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
             sizes="(max-w-768px) 100vw, 380px"
           />
 
@@ -86,19 +86,27 @@ export default function NewsCard({ item }: NewsCardProps) {
             target={hasVideoUrl ? "_blank" : undefined}
             rel={hasVideoUrl ? "noopener noreferrer" : undefined}
           >
-            <h4 className="font-display text-base sm:text-lg font-black uppercase tracking-tight text-[#0A1028] leading-tight line-clamp-2 hover:text-[#10143A] transition-colors">
+            <h4 className={`font-display text-base sm:text-lg font-black uppercase tracking-tight leading-tight line-clamp-2 transition-colors ${
+              darkTheme 
+                ? "text-white hover:text-[#DCE135]" 
+                : "text-[#0A1028] hover:text-[#10143A]"
+            }`}>
               {item.title}
             </h4>
           </Link>
 
           {/* Excerpt / Date */}
           {item.excerpt && (
-            <p className="text-xs text-[#4B5563] leading-relaxed line-clamp-2">
+            <p className={`text-xs leading-relaxed line-clamp-2 ${
+              darkTheme ? "text-white/70" : "text-[#4B5563]"
+            }`}>
               {item.excerpt}
             </p>
           )}
 
-          <div className="text-[9px] font-bold text-[#4B5563]/60 uppercase tracking-wider mt-1">
+          <div className={`text-[9px] font-bold uppercase tracking-wider mt-1 ${
+            darkTheme ? "text-white/50" : "text-[#4B5563]/60"
+          }`}>
             {item.publishedAt} {item.author && `• By ${item.author}`}
           </div>
         </div>

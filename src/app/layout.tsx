@@ -20,26 +20,33 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: {
-    default: "SuperStriker International | Football Ecosystem & Development",
+    default: "SuperStriker International | Football Ecosystem & Franchise Investment",
     template: "%s | SuperStriker International",
   },
   description:
-    "SuperStriker International Pvt Ltd is building India's future football champions through professional clubs (Bangalore, Pondicherry, Chennai Super Strikers), football schools, grassroots clinics, and strategic partner investment opportunities.",
+    "SuperStriker International Pvt Ltd offers high-yield commercial sports real estate, football club franchise investments, and elite youth academy sponsorships in India. Partner with us to scale grassroots soccer infrastructure, smart turf developments, and telemetry-driven player scouting networks.",
   keywords: [
     "SuperStriker International",
     "Bangalore Super Strikers FC",
     "Pondicherry Super Strikers FC",
     "Chennai Super Strikers FC",
     "Bangalore Football School",
-    "Indian Football Academy",
-    "Football Investment India",
-    "Grassroots Football India",
+    "football franchise investment India",
+    "sports real estate yield Bangalore",
+    "smart turf property returns",
+    "grassroots sports venture funding Karnataka",
+    "invest in Indian football academy",
+    "commercial sports sponsorship Pondicherry",
+    "KSFA league franchise equity",
+    "sports business franchise India",
+    "football academy investment opportunities",
+    "athletic telemetry startup"
   ],
   authors: [{ name: "SuperStriker Editorial Team" }],
   openGraph: {
-    title: "SuperStriker International | Football Ecosystem & Development",
+    title: "SuperStriker International | Football Franchise & Infrastructure Investment",
     description:
-      "Creating India's next football champions. Connecting grassroots clinics, academy training, and professional football leagues under a unified ecosystem.",
+      "High-yield sports real estate property returns, professional football club franchise investments, and elite telemetry-driven youth player academy sponsorships in India.",
     url: "https://superstriker.in",
     siteName: "SuperStriker International",
     images: [
@@ -55,8 +62,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SuperStriker International | Football Ecosystem",
-    description: "Building India's future football champions from grassroots to professional leagues.",
+    title: "SuperStriker International | Football Franchise & Infrastructure Investment",
+    description: "Sponsor grassroots turf property developments and regional professional football franchises in India.",
     images: ["https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1200&h=630&auto=format&fit=crop"],
   },
   robots: {
