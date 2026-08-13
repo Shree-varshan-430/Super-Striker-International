@@ -28,16 +28,16 @@ const LATEST_ITEMS: NewsItem[] = [
     duration: "12:45",
     excerpt: "Watch the exciting junior division match highlights of Bangalore Super Strikers FC battling Jogo Bonito in the Youth Premier League.",
     author: "BSSFC Media",
-    videoUrl: "https://www.youtube.com/watch?v=Q-1y9wD6sL4"
+    videoUrl: "https://www.youtube.com/@bangaloresuperstrikersfoot9463/videos"
   },
   {
-    slug: "bss-new-chapter",
+    slug: "grassroots-revolution",
     type: "article",
-    title: "Bangalore Super Strikers begins a new football chapter",
-    category: "club",
-    thumbnail: "/images/news-chennai-league.jpg",
+    title: "Grassroots Football Revolution In South India",
+    category: "academy",
+    thumbnail: "/images/news-grassroots.jpg",
     publishedAt: "10 AUG 2026",
-    excerpt: "Establishing new training schedules, expanding senior squads, and targeting national league registrations.",
+    excerpt: "An inside look at our grassroots festivals and clinics bringing football education to thousands of school children in Karnataka and Tamil Nadu.",
     author: "Editorial Team"
   },
   {
@@ -50,16 +50,16 @@ const LATEST_ITEMS: NewsItem[] = [
     duration: "08:15",
     excerpt: "Explore our residential campus trials, student athlete accommodations, UEFA coaching syllabus, and physical conditioning drills.",
     author: "Admissions Team",
-    videoUrl: "https://www.youtube.com/watch?v=VnExk9OQyVw"
+    videoUrl: "https://www.youtube.com/@bangaloresuperstrikersfoot9463/videos"
   },
   {
-    slug: "philosophy-pathways",
+    slug: "creating-football-pathways",
     type: "article",
-    title: "Inside our player development philosophy",
-    category: "academy",
-    thumbnail: "/images/news-scouting.jpg",
+    title: "How SuperStriker International Is Creating Football Pathways",
+    category: "club",
+    thumbnail: "/images/news-pathways.jpg",
     publishedAt: "08 AUG 2026",
-    excerpt: "A deep dive into how structured drills, athletic profiling, and sports nutrition form our syllabus.",
+    excerpt: "From school leagues to senior teams, our comprehensive pathway model bridges the gap between recreational play and professional contracts.",
     author: "Technical Director"
   },
   {
@@ -72,16 +72,16 @@ const LATEST_ITEMS: NewsItem[] = [
     duration: "15:30",
     excerpt: "A high-performance documentary tracking our senior athletes' telemetry tests, gym workouts, and tactical training sessions.",
     author: "Striker TV",
-    videoUrl: "https://www.youtube.com/watch?v=H74c2eE8fCw"
+    videoUrl: "https://www.youtube.com/@bangaloresuperstrikersfoot9463/videos"
   },
   {
-    slug: "pondicherry-scout-trials",
+    slug: "turf-sponsorship-deal",
     type: "article",
-    title: "Grassroots Talent Identification camp launching in Pondicherry",
-    category: "academy",
-    thumbnail: "/images/news-pondicherry-scout.jpg",
+    title: "Bangalore Super Strikers FC Secure Turf Sponsorship",
+    category: "investors",
+    thumbnail: "/images/news-pitch-sponsorship.jpg",
     publishedAt: "05 AUG 2026",
-    excerpt: "Our scouts head to Pondicherry to evaluate U-15 candidates for our residential academy slots.",
+    excerpt: "A landmark partnership that guarantees upgraded facilities, new training pitches, and advanced sports-tech telemetry for senior and youth squads.",
     author: "Technical Director"
   },
   {
@@ -94,16 +94,16 @@ const LATEST_ITEMS: NewsItem[] = [
     duration: "05:40",
     excerpt: "Our tactical coaches outline the key physical literacy drills, passing metrics, and shooting telemetry required for matchday prep.",
     author: "GK Panel",
-    videoUrl: "https://www.youtube.com/watch?v=Q5Z5oE8xT7w"
+    videoUrl: "https://www.youtube.com/@bangaloresuperstrikersfoot9463/videos"
   },
   {
-    slug: "academy-u15-trials",
+    slug: "pondicherry-academy-expands",
     type: "article",
-    title: "Under-15 Selection Trials announced for Residential Cohorts",
+    title: "Pondicherry Academy Expands to Under-15 Category",
     category: "academy",
     thumbnail: "/images/news-academy-u15.jpg",
     publishedAt: "01 AUG 2026",
-    excerpt: "SuperStriker launches open selection trials across 4 centers for the fully-funded residential batch.",
+    excerpt: "Responding to growing demand, Pondicherry Super Strikers FC launches its new residential U-15 cohort to develop regional talent.",
     author: "Academy Staff"
   },
   {
@@ -116,7 +116,7 @@ const LATEST_ITEMS: NewsItem[] = [
     duration: "10:15",
     excerpt: "Watch the tactical session blueprints and key match highlights from the Development Premier Division League.",
     author: "Technical Team",
-    videoUrl: "https://www.youtube.com/watch?v=yY3D2nNnE1s"
+    videoUrl: "https://www.youtube.com/@bangaloresuperstrikersfoot9463/videos"
   }
 ];
 
@@ -152,14 +152,24 @@ export default function LatestFeed() {
       <section className="py-20 bg-white border-b border-gray-150 text-left">
         <div className="max-w-[95%] mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Header */}
-          <div className="flex flex-col items-start gap-1 border-l-4 border-[#10143A] pl-4 mb-12">
-            <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-2.5 py-0.5 rounded">
-              LATEST STORIES
-            </span>
-            <h2 className="font-display text-2xl sm:text-4xl font-black uppercase tracking-tight text-[#0A1028] mt-1">
-              NEWS & EDITORIAL READS
-            </h2>
+          {/* Header with Navigation Link */}
+          <div className="flex justify-between items-end pb-4 border-b border-gray-150 mb-12">
+            <div className="flex flex-col items-start gap-1 text-left border-l-4 border-[#10143A] pl-4">
+              <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-2.5 py-0.5 rounded">
+                LATEST STORIES
+              </span>
+              <h2 className="font-display text-2xl sm:text-4xl font-black uppercase tracking-tight text-[#0A1028] mt-1">
+                NEWS & EDITORIAL READS
+              </h2>
+            </div>
+            
+            <Link
+              href="/news"
+              className="inline-flex items-center gap-1.5 rounded-full bg-[#10143A] text-white hover:bg-[#DCE135] hover:text-[#10143A] px-5 py-2.5 text-xs font-bold uppercase tracking-wider transition-all hover:scale-103 active:scale-95 shadow-sm border border-gray-150"
+            >
+              Explore All News
+              <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
 
           {/* Asymmetric Grid */}
@@ -203,24 +213,6 @@ export default function LatestFeed() {
                 <NewsCard item={item} />
               </div>
             ))}
-
-            {/* "View More" Grid Link Block */}
-            <div className="flex">
-              <Link 
-                href="/news"
-                className="flex flex-col items-center justify-center w-full min-h-[360px] border-2 border-dashed border-gray-200 rounded-2xl group p-6 text-center hover:border-[#10143A] transition-all hover:bg-gray-50/50"
-              >
-                <div className="w-12 h-12 rounded-full bg-[#10143A]/5 text-[#10143A] flex items-center justify-center mb-4 group-hover:bg-[#DCE135] transition-all">
-                  <ArrowRight className="h-5 w-5 group-hover:scale-110 transition-transform" />
-                </div>
-                <h3 className="font-display text-base font-black uppercase tracking-tight text-[#0A1028]">
-                  Explore All News
-                </h3>
-                <p className="text-xs text-[#4B5563] mt-2 max-w-[200px] leading-relaxed">
-                  Read full articles, match statistics, and watch training telemetry reviews.
-                </p>
-              </Link>
-            </div>
 
           </div>
 
