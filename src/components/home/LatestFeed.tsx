@@ -21,13 +21,14 @@ const LATEST_ITEMS: NewsItem[] = [
   {
     slug: "video-behind-training",
     type: "video",
-    title: "Behind The Training Ground: First Team Squad Drills",
+    title: "KSFA YPL Under-9: BSSFC vs Jogo Bonito Match Highlights",
     category: "club",
     thumbnail: "/images/team-2.jpg",
     publishedAt: "11 AUG 2026",
     duration: "12:45",
-    excerpt: "Go inside the tactical training session of Bangalore Super Strikers FC as coaches run pressing drills.",
-    author: "Technical Team"
+    excerpt: "Watch the exciting junior division match highlights of Bangalore Super Strikers FC battling Jogo Bonito in the Youth Premier League.",
+    author: "BSSFC Media",
+    videoUrl: "https://www.youtube.com/watch?v=Q-1y9wD6sL4"
   },
   {
     slug: "bss-new-chapter",
@@ -42,13 +43,14 @@ const LATEST_ITEMS: NewsItem[] = [
   {
     slug: "video-coach-convo",
     type: "video",
-    title: "Coach Conversations: Modern Grassroots Scouting Models",
+    title: "BSSFC and Maharishi School Residential Program Showcase",
     category: "academy",
     thumbnail: "/images/training-2.jpg",
     publishedAt: "09 AUG 2026",
     duration: "08:15",
-    excerpt: "AIFF-C coach Ram discusses physical literacy and technical profiling guidelines for scout panels.",
-    author: "Ram Team"
+    excerpt: "Explore our residential campus trials, student athlete accommodations, UEFA coaching syllabus, and physical conditioning drills.",
+    author: "Admissions Team",
+    videoUrl: "https://www.youtube.com/watch?v=VnExk9OQyVw"
   },
   {
     slug: "philosophy-pathways",
@@ -63,13 +65,14 @@ const LATEST_ITEMS: NewsItem[] = [
   {
     slug: "video-founder-stories",
     type: "video",
-    title: "Heritage Stories: Building the Ecosystem Vision",
+    title: "Push Your Limits with Bangalore Super Strikers FC",
     category: "community",
     thumbnail: "/images/team-1.jpg",
     publishedAt: "07 AUG 2026",
     duration: "15:30",
-    excerpt: "An exclusive documentary highlighting the legacy and dream of Mr. Devaraj and Mrs. Rajammal Devaraj.",
-    author: "Heritage Media"
+    excerpt: "A high-performance documentary tracking our senior athletes' telemetry tests, gym workouts, and tactical training sessions.",
+    author: "Striker TV",
+    videoUrl: "https://www.youtube.com/watch?v=H74c2eE8fCw"
   },
   {
     slug: "pondicherry-scout-trials",
@@ -84,13 +87,14 @@ const LATEST_ITEMS: NewsItem[] = [
   {
     slug: "video-goalkeeping-telemetry",
     type: "video",
-    title: "Goalkeeper telemetry: Scientific tracking on the turf",
+    title: "How to train for a football match: Grassroots skills",
     category: "academy",
     thumbnail: "/images/news-goalkeeping.jpg",
     publishedAt: "03 AUG 2026",
     duration: "05:40",
-    excerpt: "See how goalkeeper reaction times and angles are tracked in real-time using GPS sensors.",
-    author: "GK Coach"
+    excerpt: "Our tactical coaches outline the key physical literacy drills, passing metrics, and shooting telemetry required for matchday prep.",
+    author: "GK Panel",
+    videoUrl: "https://www.youtube.com/watch?v=Q5Z5oE8xT7w"
   },
   {
     slug: "academy-u15-trials",
@@ -105,13 +109,14 @@ const LATEST_ITEMS: NewsItem[] = [
   {
     slug: "video-grassroots-expansion",
     type: "video",
-    title: "Ecosystem Growth & Turfs: Inside the Smart Arena",
+    title: "Smart Sessions & DPDL Under 9 Match highlights",
     category: "community",
     thumbnail: "/images/news-coaches-talk.jpg",
     publishedAt: "28 JUL 2026",
     duration: "10:15",
-    excerpt: "An inside look at our smart turf facilities, showcasing GPS tracking vest integrations.",
-    author: "Arena Team"
+    excerpt: "Watch the tactical session blueprints and key match highlights from the Development Premier Division League.",
+    author: "Technical Team",
+    videoUrl: "https://www.youtube.com/watch?v=yY3D2nNnE1s"
   }
 ];
 

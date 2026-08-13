@@ -13,22 +13,29 @@ interface NewsCardProps {
 export default function NewsCard({ item }: NewsCardProps) {
   const [showModal, setShowModal] = useState(false);
 
+  const articleLink = `/news/${item.slug}`;
+  const hasVideoUrl = item.type === "video" && !!item.videoUrl;
+  const targetLink = (item.type === "video" && item.videoUrl) ? item.videoUrl : articleLink;
+
   const handleClick = (e: React.MouseEvent) => {
+    if (hasVideoUrl) {
+      return; // let link handle direct youtube tab opening
+    }
     if (item.type === "video") {
       e.preventDefault();
       setShowModal(true);
     }
   };
 
-  const articleLink = `/news/${item.slug}`;
-
   return (
     <>
       <div className="flex flex-col gap-4 text-left w-full group select-none">
         {/* Media Container */}
         <Link 
-          href={articleLink} 
+          href={targetLink} 
           onClick={handleClick}
+          target={hasVideoUrl ? "_blank" : undefined}
+          rel={hasVideoUrl ? "noopener noreferrer" : undefined}
           className="relative w-full overflow-hidden rounded-lg aspect-[16/9] block bg-gray-100"
         >
           <Image
@@ -73,7 +80,12 @@ export default function NewsCard({ item }: NewsCardProps) {
           </div>
 
           {/* Title */}
-          <Link href={articleLink} onClick={handleClick}>
+          <Link 
+            href={targetLink} 
+            onClick={handleClick}
+            target={hasVideoUrl ? "_blank" : undefined}
+            rel={hasVideoUrl ? "noopener noreferrer" : undefined}
+          >
             <h4 className="font-display text-base sm:text-lg font-black uppercase tracking-tight text-[#0A1028] leading-tight line-clamp-2 hover:text-[#10143A] transition-colors">
               {item.title}
             </h4>
