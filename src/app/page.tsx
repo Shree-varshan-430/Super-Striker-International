@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Shield } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -119,6 +119,18 @@ export default function Home() {
     };
   }, []);
 
+  // Map Player Journeys to standard NewsItem model for component visual consistency
+  const playerNewsItems: NewsItem[] = PLAYER_JOURNEYS.map((player) => ({
+    slug: player.slug,
+    type: "article",
+    title: `${player.name}: ${player.role}`,
+    category: "player-journeys",
+    thumbnail: player.image,
+    excerpt: player.excerpt,
+    publishedAt: "Spotlight Profile",
+    author: "Academy Scouts"
+  }));
+
   const sectionAnimProps = {
     initial: { opacity: 0, y: 30 },
     whileInView: { opacity: 1, y: 0 },
@@ -142,13 +154,13 @@ export default function Home() {
 
       <div className="w-full bg-white text-[#0A1028] font-sans select-none overflow-x-hidden">
         
-        {/* 1. HERO CAROUSEL (FULL SIZE CAROUSEL) */}
+        {/* 1. HERO CAROUSEL (FULL SIZE CAROUSEL - DARK) */}
         <HeroCarousel />
 
-        {/* 2. PROMO ANNOUNCEMENT STRIP (LIVE SCROLLING TICKER) */}
+        {/* 2. PROMO ANNOUNCEMENT STRIP (LIVE SCROLLING TICKER - YELLOW) */}
         <LiveTicker />
 
-        {/* 3. VENTURE SCALE & GROWTH METRICS (BUSINESS COUNT UP BAR) */}
+        {/* 3. VENTURE SCALE & GROWTH METRICS (BUSINESS COUNT UP BAR - DARK) */}
         <section 
           ref={businessSectionRef} 
           className="py-12 bg-[#10143A] text-white border-b border-white/10 px-4 sm:px-6 lg:px-8 select-none"
@@ -173,20 +185,15 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 4. LATEST MODULE (NEWS ASYMMETRIC GRID & VIDEO MUTV-CAROUSEL) */}
+        {/* 4. LATEST MODULE (NEWS ARTICLES - LIGHT & VIDEOS - DARK) */}
         <motion.div {...sectionAnimProps}>
           <LatestFeed />
         </motion.div>
 
-        {/* 5. INVESTOR BANNER MODULE (FULL WIDTH ELEVATED FOR INVESTOR CONVERSION) */}
-        <motion.div {...sectionAnimProps}>
-          <InvestorBanner />
-        </motion.div>
-
-        {/* 6. INVESTOR PROPOSITION & COMMERCIAL RETURNS */}
+        {/* 5. INVESTOR PROPOSITION & COMMERCIAL RETURNS (LIGHT) */}
         <motion.section 
           {...sectionAnimProps}
-          className="py-20 bg-gray-50 border-b border-gray-150 select-none"
+          className="py-20 bg-white border-b border-gray-150 select-none"
         >
           <div className="max-w-[95%] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col items-start gap-1 border-l-4 border-[#10143A] pl-4 mb-12 text-left">
@@ -317,12 +324,17 @@ export default function Home() {
           </div>
         </motion.section>
 
-        {/* 7. SUB-BRAND SPOTLIGHT MODULE */}
+        {/* 6. INVESTOR BANNER MODULE (FULL WIDTH - DARK) */}
+        <motion.div {...sectionAnimProps}>
+          <InvestorBanner />
+        </motion.div>
+
+        {/* 7. SUB-BRAND SPOTLIGHT MODULE (GRID - LIGHT) */}
         <motion.div {...sectionAnimProps}>
           <SubBrandSpotlight />
         </motion.div>
 
-        {/* 8. INFRASTRUCTURE & VISION BANNER (PARALLAX ZOOM STADIUM) */}
+        {/* 8. INFRASTRUCTURE & VISION BANNER (PARALLAX ZOOM STADIUM - DARK) */}
         <section 
           ref={featureBannerRef} 
           className="relative h-[65vh] min-h-[400px] flex items-center justify-start overflow-hidden bg-[#10143A] text-white px-8 sm:px-16 lg:px-24 select-none border-b border-gray-150"
@@ -356,7 +368,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 9. FOUNDER & HERITAGE PROFILE NOTE (MAGAZINE INTERVIEW) */}
+        {/* 9. FOUNDER & HERITAGE PROFILE NOTE (MAGAZINE INTERVIEW - LIGHT & ENLARGED PORTRAIT) */}
         <motion.section 
           {...sectionAnimProps}
           className="py-24 px-4 sm:px-6 lg:px-8 max-w-[95%] mx-auto bg-white border-b border-gray-100 select-none"
@@ -372,25 +384,25 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Portrait Image with floating hover effect */}
-            <div className="lg:col-span-5 flex justify-center">
+            {/* Portrait Image with floating hover effect - ENLARGED to lg:col-span-6 */}
+            <div className="lg:col-span-6 flex justify-center">
               <motion.div
                 whileHover={{ y: -6, rotate: -1 }}
                 transition={{ type: "spring", stiffness: 200 }}
-                className="relative h-[450px] w-full max-w-[360px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white"
+                className="relative h-[520px] w-full max-w-[440px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white"
               >
                 <Image
                   src="/images/founder-portrait.jpg"
                   alt="Ramakrishnan President Portrait"
                   fill
                   className="object-cover object-top"
-                  sizes="360px"
+                  sizes="440px"
                 />
               </motion.div>
             </div>
 
-            {/* Quote details */}
-            <div className="lg:col-span-7 flex flex-col gap-6 text-left relative pl-4 lg:pl-10">
+            {/* Quote details - lg:col-span-6 */}
+            <div className="lg:col-span-6 flex flex-col gap-6 text-left relative pl-4 lg:pl-10">
               <div className="absolute left-0 top-0 text-[#10143A]/10 font-serif text-9xl pointer-events-none select-none -translate-x-4 -translate-y-8">
                 “
               </div>
@@ -426,12 +438,12 @@ export default function Home() {
           </div>
         </motion.section>
 
-        {/* 10. ACADEMY BANNER MODULE (FULL WIDTH - SECONDARY PLACEMENT) */}
+        {/* 10. ACADEMY BANNER MODULE (FULL WIDTH - DARK) */}
         <motion.div {...sectionAnimProps}>
           <AcademyBanner />
         </motion.div>
 
-        {/* 11. PLAYER PATHWAYS SQUAD SHOWCASE (MAN UTD TALL VERTICAL CARDS) */}
+        {/* 11. PLAYER PATHWAYS SQUAD SHOWCASE (MAN UTD TALL VERTICAL CARDS - LIGHT) */}
         <motion.section 
           {...sectionAnimProps}
           className="py-24 px-4 sm:px-6 lg:px-8 max-w-[95%] mx-auto bg-white select-none border-b border-gray-150"
@@ -507,22 +519,17 @@ export default function Home() {
           </div>
         </motion.section>
 
-        {/* 12. LATEST MOMENTS ON THE PITCH (HORIZONTAL PHOTO STRIP) */}
-        <motion.div {...sectionAnimProps}>
-          <PhotoStrip />
-        </motion.div>
-
-        {/* 13. LIVE SOCIAL EMBED MODULE (Mock Instagram Gallery) */}
+        {/* 12. LIVE SOCIAL EMBED MODULE (Mock Instagram Gallery - DARK THEME) */}
         <motion.section 
           {...sectionAnimProps}
-          className="py-20 bg-gray-50 border-b border-gray-150 select-none"
+          className="py-20 bg-[#0F1227] text-white border-b border-white/5 select-none"
         >
           <div className="max-w-[95%] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col items-start gap-1 border-l-4 border-[#10143A] pl-4 mb-12 text-left">
-              <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-2.5 py-0.5 rounded">
+            <div className="flex flex-col items-start gap-1 border-l-4 border-[#DCE135] pl-4 mb-12 text-left">
+              <span className="text-[10px] font-black uppercase tracking-widest text-[#10143A] bg-[#DCE135] px-2.5 py-0.5 rounded">
                 SOCIAL
               </span>
-              <h2 className="font-display text-2xl sm:text-4xl font-black uppercase tracking-tight text-[#0A1028] mt-1">
+              <h2 className="font-display text-2xl sm:text-4xl font-black uppercase tracking-tight text-white mt-1">
                 LATEST ON INSTAGRAM
               </h2>
             </div>
@@ -534,12 +541,12 @@ export default function Home() {
                 { img: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=600", likes: "2,050", caption: "Matchday memories. Three points locked in! 🏆" },
                 { img: "https://images.unsplash.com/photo-1518063319789-7217e6706b04?q=80&w=600", likes: "1,560", caption: "Grassroots scouting festivals active in school clusters. 🧤" }
               ].map((post, idx) => (
-                <div key={idx} className="relative rounded-xl overflow-hidden aspect-square group shadow-sm bg-white border border-gray-100">
+                <div key={idx} className="relative rounded-xl overflow-hidden aspect-square group shadow-sm bg-[#10143A]/40 border border-white/5">
                   <Image
                     src={post.img}
                     alt="Instagram Post"
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-103"
+                    className="object-cover transition-transform duration-700 group-hover:scale-103 opacity-90 group-hover:opacity-100"
                     sizes="(max-w-768px) 50vw, 25vw"
                   />
                   <div className="absolute inset-0 bg-[#10143A]/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 text-left text-white">
@@ -552,12 +559,17 @@ export default function Home() {
           </div>
         </motion.section>
 
-        {/* 14. SPONSORS LOGO STRIP */}
+        {/* 13. LATEST MOMENTS ON THE PITCH (HORIZONTAL PHOTO STRIP - LIGHT) */}
+        <motion.div {...sectionAnimProps}>
+          <PhotoStrip />
+        </motion.div>
+
+        {/* 14. SPONSORS LOGO STRIP (DARK) */}
         <motion.div {...sectionAnimProps}>
           <PartnerLogos />
         </motion.div>
 
-        {/* 15. NEWSLETTER SIGNUP */}
+        {/* 15. NEWSLETTER SIGNUP (LIGHT) */}
         <motion.section 
           {...sectionAnimProps}
           className="py-20 bg-gray-50 border-t border-gray-150 px-4"
