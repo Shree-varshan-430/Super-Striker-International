@@ -4,6 +4,20 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Calendar, Clock, ChevronLeft, ArrowRight, Share2 } from "lucide-react";
 import { articles } from "@/lib/newsData";
+import type { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params;
+  const article = articles.find((a) => a.id === id);
+  if (!article) return {};
+  return {
+    title: article.title,
+    description: article.description,
+    alternates: {
+      canonical: `/news/${id}`,
+    },
+  };
+}
 
 // Pre-render static paths for optimal speed and static hosting compatibility
 export async function generateStaticParams() {

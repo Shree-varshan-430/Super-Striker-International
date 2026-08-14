@@ -3,6 +3,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ChevronLeft, GraduationCap } from "lucide-react";
+import type { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const school = schoolsData[slug];
+  if (!school) return {};
+  return {
+    title: school.name,
+    description: `${school.focus} Learn about curriculum models and telemetry analytics in ${school.location}.`,
+    alternates: {
+      canonical: `/football-school/${slug}`,
+    },
+  };
+}
 
 interface SchoolDetails {
   name: string;

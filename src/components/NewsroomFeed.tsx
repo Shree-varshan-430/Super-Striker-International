@@ -84,7 +84,7 @@ const STORIES_DATA: StoryArticle[] = [
     author: "CFO SuperStriker",
     date: "28 JUL 2026",
     readingTime: "5 MIN READ",
-    articleUrl: "/news/creating-football-pathways"
+    articleUrl: "/news/turf-sponsorship-deal"
   },
   {
     id: "community-impact-pitch",
@@ -106,7 +106,7 @@ const STORIES_DATA: StoryArticle[] = [
     author: "Regional Director",
     date: "15 JUL 2026",
     readingTime: "4 MIN READ",
-    articleUrl: "/news/grassroots-revolution"
+    articleUrl: "/news/pondicherry-academy-expands"
   },
   {
     id: "commercial-expansion-2026",
@@ -117,7 +117,7 @@ const STORIES_DATA: StoryArticle[] = [
     author: "Commercial Manager",
     date: "10 JUL 2026",
     readingTime: "5 MIN READ",
-    articleUrl: "/news/creating-football-pathways"
+    articleUrl: "/news/turf-sponsorship-deal"
   },
   {
     id: "tactical-goalkeeper-coaching",
@@ -128,7 +128,7 @@ const STORIES_DATA: StoryArticle[] = [
     author: "Lead Goalkeeping Coach",
     date: "05 JUL 2026",
     readingTime: "4 MIN READ",
-    articleUrl: "/news/building-next-generation"
+    articleUrl: "/news/chennai-super-strikers-ksfa"
   }
 ];
 

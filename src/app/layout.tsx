@@ -19,6 +19,10 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://superstriker.in"),
+  alternates: {
+    canonical: "/",
+  },
   title: {
     default: "SuperStriker International | Football Ecosystem & Franchise Investment",
     template: "%s | SuperStriker International",

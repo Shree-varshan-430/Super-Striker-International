@@ -2,6 +2,15 @@ import React from "react";
 import Image from "next/image";
 import { Shield, Target, Eye, Trophy, Award, Heart, Sparkles, Users, GraduationCap, Activity, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description: "Learn about the heritage of Bangalore Super Strikers Football Club & Soccer School, our president's vision for grassroots sports, and our four pillars of player development.",
+  alternates: {
+    canonical: "/about",
+  },
+};
 
 export default function AboutPage() {
   return (

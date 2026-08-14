@@ -3,6 +3,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ChevronLeft, MapPin } from "lucide-react";
+import type { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const club = clubsData[slug];
+  if (!club) return {};
+  return {
+    title: club.name,
+    description: `${club.focus} Learn about foundation registry and squad developments in ${club.location}.`,
+    alternates: {
+      canonical: `/clubs/${slug}`,
+    },
+  };
+}
 
 interface ClubDetails {
   name: string;
