@@ -73,7 +73,7 @@ export default function NewsCard({ item, darkTheme }: NewsCardProps) {
         <div className="p-5 flex flex-col gap-2 flex-grow justify-between">
           <div className="flex flex-col gap-2">
             {/* Date */}
-            <div className={`text-[10px] sm:text-xs font-bold uppercase tracking-wider ${
+            <div className={`text-xs sm:text-sm font-bold uppercase tracking-wider ${
               darkTheme ? "text-white/40" : "text-gray-400"
             }`}>
               {item.publishedAt}
@@ -86,7 +86,7 @@ export default function NewsCard({ item, darkTheme }: NewsCardProps) {
               target={hasVideoUrl ? "_blank" : undefined}
               rel={hasVideoUrl ? "noopener noreferrer" : undefined}
             >
-              <h4 className={`font-display text-sm sm:text-base font-black uppercase tracking-tight leading-snug line-clamp-3 transition-colors ${
+              <h4 className={`font-display text-lg sm:text-xl lg:text-2xl font-black uppercase tracking-tight leading-tight line-clamp-3 transition-colors ${
                 darkTheme 
                   ? "text-white group-hover:text-white/80" 
                   : "text-[#0A1028] group-hover:text-black"
