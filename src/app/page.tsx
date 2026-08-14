@@ -390,33 +390,33 @@ export default function Home() {
         {/* 9. FOUNDER & HERITAGE PROFILE NOTE (MAGAZINE INTERVIEW - LIGHT & ENLARGED PORTRAIT) */}
         <motion.section 
           {...sectionAnimProps}
-          className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-6xl 2xl:max-w-7xl mx-auto bg-white border-b border-gray-100 select-none"
+          className="py-20 sm:py-24 px-4 sm:px-6 lg:px-10 xl:px-12 max-w-7xl 2xl:max-w-[1440px] mx-auto bg-white border-b border-gray-100 select-none"
         >
           <div className="text-center mb-12 sm:mb-16">
             <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-3 py-1 rounded">
               HERITAGE INTERVIEWS
             </span>
-            <h2 className="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight text-[#10143A] mt-2">
+            <h2 className="font-display text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#10143A] mt-2">
               Stories Behind The Vision
             </h2>
             <div className="h-1.5 w-16 bg-[#10143A] mx-auto mt-4" />
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center bg-gray-50 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-sm">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center bg-gray-50 rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-14 shadow-sm">
             {/* Portrait Image with crisp 4K rendering */}
             <div className="lg:col-span-5 flex justify-center w-full">
               <motion.div
                 whileHover={{ y: -4 }}
                 transition={{ type: "spring", stiffness: 200 }}
-                className="relative aspect-[3/4] w-full max-w-[440px] min-h-[380px] sm:min-h-[460px] rounded-2xl overflow-hidden shadow-xl"
+                className="relative aspect-[4/3] sm:aspect-[4/5] lg:aspect-[3/4] w-full max-w-[520px] rounded-2xl overflow-hidden shadow-2xl"
               >
                 <Image
-                  src="/images/founder-pitch-standing.jpg"
+                  src="/images/founder-portrait.jpg"
                   alt="Ramakrishnan President Portrait"
                   fill
                   unoptimized
                   className="object-cover object-top"
-                  sizes="(max-w-768px) 100vw, 440px"
+                  sizes="(max-w-768px) 100vw, 520px"
                   priority
                 />
               </motion.div>
@@ -449,14 +449,14 @@ export default function Home() {
               <div className="pt-2 flex flex-wrap gap-4 items-center">
                 <Link
                   href="/about"
-                  className="inline-flex items-center gap-2 rounded-full bg-[#10143A] text-white px-7 py-3.5 text-xs font-bold uppercase tracking-wider hover:bg-[#DCE135] hover:text-[#10143A] transition-all shadow-sm"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#10143A] text-white px-8 py-4 text-xs sm:text-sm font-bold uppercase tracking-wider hover:bg-[#DCE135] hover:text-[#10143A] transition-all shadow-sm"
                 >
                   Read Full Heritage Story
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 rounded-full bg-white text-[#10143A] border border-[#10143A]/15 px-7 py-3.5 text-xs font-bold uppercase tracking-wider hover:bg-gray-100 transition-all shadow-xs"
+                  className="inline-flex items-center gap-2 rounded-full bg-white text-[#10143A] border border-[#10143A]/15 px-8 py-4 text-xs sm:text-sm font-bold uppercase tracking-wider hover:bg-gray-100 transition-all shadow-xs"
                 >
                   Join The Academy
                 </Link>
