@@ -125,13 +125,13 @@ export default function HeroCarousel() {
         style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }} 
       />
 
-      {/* 4. Structured Main Content Container */}
-      <div className="max-w-7xl 2xl:max-w-[1440px] mx-auto w-full h-full px-4 sm:px-6 lg:px-10 xl:px-12 flex flex-col justify-end pb-16 sm:pb-20 pt-28 sm:pt-36 items-start relative z-30 pointer-events-none">
-        <div className="w-full max-w-3xl relative min-h-[340px] sm:min-h-[380px]">
+      {/* 4. Structured Main Content Container (Left-Aligned, Vertically Centered) */}
+      <div className="max-w-7xl 2xl:max-w-[1440px] mx-auto w-full h-full px-4 sm:px-6 lg:px-10 xl:px-12 flex flex-col justify-center items-start pt-20 sm:pt-24 pb-8 sm:pb-12 relative z-30 pointer-events-none">
+        <div className="w-full max-w-3xl relative min-h-[380px] sm:min-h-[420px] flex items-center">
           {HERO_SLIDES.map((slide, idx) => (
             <div
               key={idx}
-              className={`slide-text-content-${idx} absolute top-0 left-0 w-full flex flex-col gap-4 sm:gap-5 text-left items-start transition-opacity duration-500 pointer-events-auto ${
+              className={`slide-text-content-${idx} absolute top-1/2 -translate-y-1/2 left-0 w-full flex flex-col gap-3.5 sm:gap-5 text-left items-start transition-opacity duration-500 pointer-events-auto ${
                 idx === currentSlide ? "opacity-100 z-20" : "opacity-0 z-0 pointer-events-none"
               }`}
             >
@@ -156,7 +156,7 @@ export default function HeroCarousel() {
               </span>
 
               {/* CTA Action Button */}
-              <div className="slide-cta-btn mt-2">
+              <div className="slide-cta-btn mt-1">
                 <Link 
                   href={slide.ctaLink} 
                   className="inline-flex items-center gap-2 rounded-full bg-[#DCE135] px-8 py-4 text-xs font-bold uppercase tracking-wider text-[#10143A] hover:bg-white hover:text-[#10143A] transition-all hover:scale-103 active:scale-95 shadow-xl"
@@ -170,8 +170,8 @@ export default function HeroCarousel() {
         </div>
       </div>
 
-      {/* 5. Frosted Glass Arrow Navigation on Right Edge */}
-      <div className="absolute right-4 sm:right-8 lg:right-12 bottom-12 sm:bottom-16 lg:bottom-20 z-40 flex items-center gap-3">
+      {/* 5. Frosted Glass Arrow Navigation Vertically Centered on Right Edge */}
+      <div className="absolute right-4 sm:right-8 lg:right-12 top-1/2 -translate-y-1/2 z-40 flex items-center gap-3">
         <button
           onClick={prevSlide}
           className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-[#DCE135] hover:text-[#10143A] hover:border-[#DCE135] transition-all duration-300 shadow-xl active:scale-95 group"
