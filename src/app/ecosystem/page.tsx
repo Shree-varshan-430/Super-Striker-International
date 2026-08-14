@@ -2,121 +2,121 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowDown, Shield, Trophy, GraduationCap, Compass, Users, Award, MapPin } from "lucide-react";
+import { ArrowRight, ChevronRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
-interface NodeDetail {
+interface TierInfo {
+  tier: string;
   title: string;
   subtitle: string;
   description: string;
+  image: string;
   highlights: string[];
-  clubsOrEntities?: { name: string; loc: string; details?: string }[];
+  entities?: { name: string; loc: string; details: string }[];
 }
 
 export default function Ecosystem() {
-  const [activeStep, setActiveStep] = useState<number>(0);
+  const [activeTier, setActiveTier] = useState<number>(0);
 
-  const steps = [
-    { id: 0, label: "SuperStriker Corporate", icon: Compass },
-    { id: 1, label: "Professional Clubs", icon: Shield },
-    { id: 2, label: "Football Academies", icon: GraduationCap },
-    { id: 3, label: "Grassroots Programs", icon: Users },
-    { id: 4, label: "Youth Players", icon: Award },
-    { id: 5, label: "National Talent Pipeline", icon: Trophy }
-  ];
-
-  const detailsMap: Record<number, NodeDetail> = {
-    0: {
-      title: "SuperStriker International",
-      subtitle: "The Corporate Ecosystem Framework",
-      description: "The overarching corporate parent coordinating financing, land acquisition, sponsor relationships, licensing compliance, and strategic vision for all sub-entities.",
+  const tiers: TierInfo[] = [
+    {
+      tier: "Tier 01",
+      title: "Corporate Parent & Strategic Capital",
+      subtitle: "SuperStriker International Governance",
+      description: "SuperStriker International coordinates multi-region club ownership, FIFA-standard sports infrastructure financing, corporate governance, player rights management, and international developmental partnerships.",
+      image: "/images/news-pitch-sponsorship.jpg",
       highlights: [
-        "Corporate governance & capital deployment",
-        "FIFA standard infrastructure procurement",
-        "International club partnerships & exchanges",
-        "Sports data and telemetry systems integration"
+        "Corporate financing and smart sports infrastructure deployment",
+        "FIFA-standard turf acquisition and regional hub modernization",
+        "International exchange programs and global scout connectivity",
+        "Centralized sports analytics and performance telemetry"
       ]
     },
-    1: {
+    {
+      tier: "Tier 02",
       title: "Professional Football Clubs",
-      subtitle: "State & National League Squads",
-      description: "Our professional sports clubs compete in regional and state leagues, providing the ultimate platform for elite academy graduates and senior players.",
+      subtitle: "Senior State & National League Teams",
+      description: "Our professional clubs provide the competitive pinnacle for academy graduates and senior professional footballers, competing in state leagues, regional tournaments, and national qualifiers.",
+      image: "/images/match-1.jpg",
       highlights: [
-        "Structured league calendar and squad registries",
-        "Affiliation with state football associations",
-        "Direct pathway to professional player contracts"
+        "Full-time professional coaching and tactical match staffs",
+        "Official affiliation with State Football Associations (KSFA, TFA, PFA)",
+        "Direct pathways to domestic top-flight football contracts"
       ],
-      clubsOrEntities: [
-        { name: "Bangalore Super Strikers FC", loc: "Bangalore, Karnataka", details: "Competing in local KSFA leagues; senior first team squad." },
-        { name: "Pondicherry Super Strikers FC", loc: "Pondicherry", details: "Regional squad focusing on territorial talent scouting." },
-        { name: "Chennai Super Strikers FC", loc: "Chennai, Tamil Nadu", details: "Tamil Nadu competitive registry; scouting cohort integration." }
+      entities: [
+        { name: "Bangalore Super Strikers FC", loc: "Bangalore, Karnataka", details: "Flagship senior squad competing in premier state divisions." },
+        { name: "Pondicherry Super Strikers FC", loc: "Pondicherry UT", details: "Territorial development squad driving coastal talent scouting." },
+        { name: "Chennai Super Strikers FC", loc: "Chennai, Tamil Nadu", details: "Competitive league squad and youth feeder hub." }
       ]
     },
-    2: {
-      title: "Football Academies & Schools",
-      subtitle: "High-Performance Technical Development",
-      description: "Our elite training academies deliver licensed coaching, sport nutrition programs, and structural skills benchmarks to shape raw athletic talent.",
+    {
+      tier: "Tier 03",
+      title: "Bangalore Football School & Elite Academies",
+      subtitle: "High-Performance Technical Centers",
+      description: "Delivering licensed AIFF and international curriculum training, sports science, injury prevention, and competitive match exposure for junior age cohorts.",
+      image: "/images/team-1.jpg",
       highlights: [
-        "Elite player pathway curricula",
-        "Sports science, biomechanics, and telemetry metrics",
-        "Residential training facilities for U-13 and U-15 boys & girls"
+        "Age-specific progressive technical coaching from U-7 to U-19",
+        "State-of-the-art turf training complexes and fitness monitoring",
+        "Residential training options and athletic scholarship tracks"
       ],
-      clubsOrEntities: [
-        {
-          name: "Bangalore Football School",
-          loc: "Bangalore, Karnataka",
-          details: "Elite development focal point; player development metrics; licensed AIFF coaching personnel."
-        }
+      entities: [
+        { name: "Bangalore Football School", loc: "Bangalore, Karnataka", details: "Premier youth soccer school nurturing over 500+ student athletes." }
       ]
     },
-    3: {
-      title: "Grassroots Football Programs",
-      subtitle: "Broad-Base Community Engagement",
-      description: "Physical literacy and sports introduction clinics hosted inside municipal and private schools, generating a wide scout capture base.",
+    {
+      tier: "Tier 04",
+      title: "Grassroots & School Outreach Programs",
+      subtitle: "Broad-Based Community Inclusion",
+      description: "Our foundational programs take football directly into public and private schools, democratizing athletic access and discovering raw talent across municipal districts.",
+      image: "/images/founder-with-football.jpg",
       highlights: [
-        "Free municipal school coaching camps",
-        "School tournament festivals and weekend leagues",
-        "Coach-the-coach clinics for local school physical instructors",
-        "Scouting networks across South India districts"
+        "Free coaching clinics in municipal and government schools",
+        "Weekend inter-school community leagues and youth festivals",
+        "Local coach-the-coach certification and instructor workshops"
       ]
     },
-    4: {
-      title: "Youth Talent Identification",
-      subtitle: "Scouted Youth Player Registry",
-      description: "Fostering highly selected players through scholarship packages, advanced physical therapy, and video analysis loops to refine game mechanics.",
+    {
+      tier: "Tier 05",
+      title: "Youth Talent Identification & Registry",
+      subtitle: "Scientific Player Mentorship",
+      description: "Selected prodigies receive full athletic scholarships, dietary and hydration plans, and video telemetry analysis loops to accelerate their sporting maturity.",
+      image: "/images/founder-turf-pose.jpg",
       highlights: [
-        "Full talent scholarship systems",
-        "Player database profiles for international agent review",
-        "Personalized tactical development plans"
+        "100% merit-based kit, gear, and travel sponsorships",
+        "Individualized tactical growth plans and video reviews",
+        "Exposure to visiting national and international scouts"
       ]
     },
-    5: {
-      title: "National & International Talent Pipeline",
+    {
+      tier: "Tier 06",
+      title: "National & Global Player Pathways",
       subtitle: "The Elite Graduation Goal",
-      description: "The peak of our ecosystem. Elevating elite athletes into national squad rosters, national leagues (I-League, ISL), and international leagues.",
+      description: "The culmination of our vertical ecosystem: elevating standout talent into national teams (India U-17, U-20, Senior), top national leagues (ISL, I-League), and overseas partner clubs.",
+      image: "/images/team-2.jpg",
       highlights: [
-        "Direct registry to senior league scouting",
-        "Global partner trials and overseas development contracts",
-        "Fulfilling the dream of representing India at national levels"
+        "Direct showcase fixtures before senior league managers",
+        "International trials and collegiate sports scholarship guidance",
+        "Fulfilling the dream of representing India at the highest levels"
       ]
     }
-  };
-
-  const activeDetails = detailsMap[activeStep];
+  ];
 
   return (
-    <div className="w-full bg-white text-secondary-navy min-h-screen">
-      {/* Small Hero Banner */}
-      <div className="relative w-full h-[220px] sm:h-[260px] bg-[#10143A] flex items-center justify-start overflow-hidden group select-none mt-20">
+    <div className="w-full bg-white text-[#10143A] min-h-screen pb-20 select-none text-left">
+      
+      {/* 1. Small Hero Banner */}
+      <div className="relative w-full h-[240px] sm:h-[300px] bg-[#10143A] flex items-center justify-start overflow-hidden group select-none mt-20">
         <Image
           src="/images/match-1.jpg"
-          alt="Our Football Ecosystem"
+          alt="SuperStriker Ecosystem"
           fill
-          className="object-cover opacity-45 transition-transform duration-1000 group-hover:scale-103"
+          unoptimized
+          className="object-cover object-center opacity-75 transition-transform duration-1000 group-hover:scale-102"
           priority
         />
-        {/* Black full accent overlay & Cinematic gradient overlay */}
-        <div className="absolute inset-0 bg-black/40 z-10" />
+        {/* Subtle contrast gradient */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-[#10143A]/60 to-transparent z-10" />
         
         {/* Brand accent wedges on bottom right */}
@@ -130,152 +130,243 @@ export default function Ecosystem() {
         />
 
         <div className="relative z-20 max-w-6xl mx-auto w-full px-4 sm:px-6 lg:px-8 text-left flex flex-col gap-2">
-          <span className="text-[9px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-2 py-0.5 rounded w-fit">
-            ECOSYSTEM MAPPING
+          <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-3 py-1 rounded w-fit">
+            VERTICAL INTEGRATION
           </span>
           <h1 className="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-none">
             Our Football Ecosystem
           </h1>
-          <p className="text-xs sm:text-sm text-white/80 max-w-xl leading-relaxed mt-1 font-medium">
-            Explore the vertical integration of SuperStriker International, tracing the path from raw grassroots discovery to professional contracts and national dreams.
+          <p className="text-sm sm:text-base text-white/80 max-w-xl leading-relaxed mt-1 font-medium">
+            Explore our end-to-end framework, spanning grassroots discovery, high-performance academies, and professional league clubs.
           </p>
         </div>
       </div>
 
-      {/* Diagram Layout */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-          
-          {/* Left column - The interactive animated pipeline */}
-          <div className="lg:col-span-6 flex flex-col gap-4">
-            <h2 className="font-display text-sm font-bold uppercase tracking-wider text-secondary-navy/60 border-b border-gray-100 pb-3 mb-6">
-              Click pipeline nodes to investigate
-            </h2>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
 
-            <div className="flex flex-col items-center sm:items-stretch gap-2">
-              {steps.map((step, idx) => {
-                const Icon = step.icon;
-                const isActive = activeStep === idx;
-                
-                return (
-                  <div key={step.id} className="flex flex-col items-center sm:items-stretch">
-                    <motion.button
-                      onClick={() => setActiveStep(idx)}
-                      whileHover={{ x: 4 }}
-                      whileTap={{ scale: 0.98 }}
-                      className={`w-full max-w-md sm:max-w-none flex items-center gap-4 rounded-xl p-5 border text-left transition-all ${
-                        isActive
-                          ? "bg-[#10143A] text-white border-[#10143A]/30 shadow-lg shadow-[#10143A]/20"
-                          : "bg-background-soft text-secondary-navy border-gray-100 hover:bg-[#10143A]/10"
-                      }`}
-                    >
-                      <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg ${
-                        isActive ? "bg-white text-[#10143A]" : "bg-white text-secondary-navy border border-gray-100"
-                      }`}>
-                        <Icon className="h-5 w-5" />
-                      </div>
-                      <div className="flex-grow">
-                        <span className="block text-[9px] uppercase font-bold tracking-widest leading-none opacity-50">
-                          Tier 0{idx + 1}
-                        </span>
-                        <h3 className="font-display text-sm sm:text-base font-bold uppercase tracking-tight mt-1">
-                          {step.label}
-                        </h3>
-                      </div>
-                    </motion.button>
-
-                    {idx < steps.length - 1 && (
-                      <div className="flex justify-center sm:justify-start sm:pl-10 py-1">
-                        <motion.div 
-                          animate={{ y: [0, 4, 0] }}
-                          transition={{ repeat: Infinity, duration: 1.5 }}
-                          className="text-[#10143A] py-1"
-                        >
-                          <ArrowDown className="h-5 w-5" />
-                        </motion.div>
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Right column - The dynamic detail cards */}
-          <div className="lg:col-span-6 bg-white border border-[#10143A]/10 rounded-2xl shadow-[0_12px_24px_rgba(16,20,58,0.05)] hover:border-[#10143A]/30 transition-all duration-300 p-8 lg:p-12 sticky top-28">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeStep}
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.3 }}
-                className="flex flex-col gap-6"
-              >
-                <div>
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-[#10143A]">
-                    Tier 0{activeStep + 1} Details
-                  </span>
-                  <h2 className="font-display text-2xl lg:text-3xl font-black uppercase tracking-tight text-secondary-navy mt-1">
-                    {activeDetails.title}
-                  </h2>
-                  <p className="text-xs font-bold uppercase tracking-wider text-secondary-navy/50 mt-1">
-                    {activeDetails.subtitle}
-                  </p>
-                </div>
-
-                <p className="text-sm leading-relaxed text-secondary-navy/70">
-                  {activeDetails.description}
-                </p>
-
-                <div>
-                  <h4 className="text-xs font-bold uppercase tracking-widest text-secondary-navy mb-3">
-                    Key Operations
-                  </h4>
-                  <ul className="space-y-2">
-                    {activeDetails.highlights.map((h, i) => (
-                      <li key={i} className="flex items-start gap-2.5 text-xs text-secondary-navy/80 leading-relaxed">
-                        <span className="h-1.5 w-1.5 rounded-full bg-[#10143A] mt-1.5 shrink-0" />
-                        {h}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Sub-clubs or schools detail section */}
-                {activeDetails.clubsOrEntities && (
-                  <div className="border-t border-gray-100 pt-6 mt-2">
-                    <h4 className="text-xs font-bold uppercase tracking-widest text-secondary-navy mb-4">
-                      Associated Entities
-                    </h4>
-                    <div className="flex flex-col gap-4">
-                      {activeDetails.clubsOrEntities.map((entity, i) => (
-                        <div key={i} className="bg-[#F4F6FA] border border-[#10143A]/10 p-4 rounded-xl flex flex-col gap-1.5 hover:border-[#10143A]/30 transition-all duration-300">
-                          <div className="flex items-center justify-between gap-2">
-                            <h5 className="text-xs font-bold uppercase tracking-wide text-secondary-navy">
-                              {entity.name}
-                            </h5>
-                            <span className="flex items-center gap-1 text-[10px] font-semibold text-secondary-navy/50 whitespace-nowrap">
-                              <MapPin className="h-3 w-3" />
-                              {entity.loc}
-                            </span>
-                          </div>
-                          {entity.details && (
-                            <p className="text-[11px] text-secondary-navy/60 leading-relaxed">
-                              {entity.details}
-                            </p>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
+        {/* 2. Interactive Tier Inspector Header */}
+        <div className="mb-16 text-left flex flex-col gap-4">
+          <span className="text-[10px] font-black uppercase tracking-widest text-[#10143A] bg-[#DCE135] px-3 py-1 rounded w-fit">
+            EXPLORE THE PIPELINE
+          </span>
+          <h2 className="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight text-[#10143A] leading-tight">
+            Six Tiers of Sustainable Player Development
+          </h2>
+          <div className="h-1.5 w-16 bg-[#10143A]" />
+          <p className="text-base sm:text-lg text-[#374151] max-w-3xl leading-relaxed">
+            SuperStriker International operates a seamless vertical pathway ensuring every aspiring young player receives the appropriate coaching, nutrition, and competitive stage at each step of their footballing journey.
+          </p>
         </div>
-      </section>
+
+        {/* 3. Interactive Tier Switcher Tabs */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-12">
+          {tiers.map((t, idx) => {
+            const isActive = activeTier === idx;
+            return (
+              <button
+                key={idx}
+                onClick={() => setActiveTier(idx)}
+                className={`flex flex-col text-left p-4 rounded-2xl transition-all duration-300 ${
+                  isActive
+                    ? "bg-[#10143A] text-white shadow-lg scale-102"
+                    : "bg-gray-50 text-[#10143A] hover:bg-gray-100 shadow-xs"
+                }`}
+              >
+                <span className={`text-[10px] font-black uppercase tracking-wider ${
+                  isActive ? "text-[#DCE135]" : "text-gray-400"
+                }`}>
+                  {t.tier}
+                </span>
+                <span className="font-display text-xs sm:text-sm font-black uppercase tracking-tight mt-1 line-clamp-2">
+                  {t.title}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* 4. Active Tier Feature Card (Full-Width, 4K Image on Side, No Overlays) */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTier}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.25 }}
+            className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-24 bg-gray-50 rounded-3xl p-6 sm:p-12 shadow-sm relative overflow-hidden"
+          >
+            {/* Image Side */}
+            <div className="lg:col-span-5 flex justify-center relative z-10 w-full order-1 lg:order-1">
+              <div className="relative aspect-[3/4] w-full max-w-[450px] rounded-2xl overflow-hidden shadow-xl">
+                <Image
+                  src={tiers[activeTier].image}
+                  alt={tiers[activeTier].title}
+                  fill
+                  unoptimized
+                  className="object-cover object-center transition-transform duration-700 hover:scale-102"
+                  sizes="(max-w-768px) 100vw, 450px"
+                  priority
+                />
+              </div>
+            </div>
+
+            {/* Content Side */}
+            <div className="lg:col-span-7 flex flex-col gap-6 text-left relative z-10 order-2 lg:order-2">
+              <div className="flex items-center gap-3">
+                <span className="text-[10px] font-black uppercase tracking-widest text-[#10143A] bg-[#DCE135] px-3 py-1 rounded">
+                  {tiers[activeTier].tier}
+                </span>
+                <span className="text-xs font-bold uppercase tracking-wider text-[#6B7280]">
+                  {tiers[activeTier].subtitle}
+                </span>
+              </div>
+
+              <h3 className="font-display text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#10143A] leading-tight">
+                {tiers[activeTier].title}
+              </h3>
+              <div className="h-1.5 w-16 bg-[#10143A]" />
+
+              <p className="text-base sm:text-lg text-[#374151] leading-relaxed font-normal">
+                {tiers[activeTier].description}
+              </p>
+
+              {/* Key Operations List */}
+              <div className="flex flex-col gap-3">
+                <span className="text-xs font-black uppercase tracking-wider text-[#10143A]">
+                  Core Functions & Strategic Operations:
+                </span>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {tiers[activeTier].highlights.map((h, i) => (
+                    <div key={i} className="bg-white rounded-xl p-3.5 shadow-xs border-l-3 border-[#10143A]">
+                      <p className="text-xs sm:text-sm font-semibold text-[#10143A] leading-snug">
+                        {h}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Associated Entities if any */}
+              {tiers[activeTier].entities && (
+                <div className="flex flex-col gap-3 pt-2">
+                  <span className="text-xs font-black uppercase tracking-wider text-[#10143A]">
+                    Key Affiliated Clubs & Entities:
+                  </span>
+                  <div className="grid grid-cols-1 gap-2.5">
+                    {tiers[activeTier].entities?.map((ent, i) => (
+                      <div key={i} className="bg-white rounded-xl p-4 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                        <div>
+                          <h4 className="font-display text-sm font-black uppercase tracking-tight text-[#10143A]">
+                            {ent.name}
+                          </h4>
+                          <p className="text-xs text-[#4B5563] mt-0.5">{ent.details}</p>
+                        </div>
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-[#10143A] bg-gray-100 px-2.5 py-1 rounded w-fit shrink-0">
+                          {ent.loc}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* 5. Complete Vertical Architecture Showcase (Alternating Story Cards) */}
+        <div className="mb-20 text-left flex flex-col gap-4">
+          <span className="text-[10px] font-black uppercase tracking-widest text-[#10143A] bg-[#DCE135] px-3 py-1 rounded w-fit">
+            ALL TIERS SUMMARY
+          </span>
+          <h2 className="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight text-[#10143A] leading-tight">
+            Comprehensive Developmental Journey
+          </h2>
+          <div className="h-1.5 w-16 bg-[#10143A]" />
+        </div>
+
+        {/* Tier Cards Stack */}
+        <div className="flex flex-col gap-12">
+          {tiers.map((t, idx) => {
+            const isEven = idx % 2 === 0;
+            return (
+              <div
+                key={idx}
+                className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center bg-gray-50 rounded-3xl p-6 sm:p-12 shadow-sm relative overflow-hidden"
+              >
+                {/* Image */}
+                <div className={`lg:col-span-5 flex justify-center relative z-10 w-full ${
+                  isEven ? "order-1 lg:order-1" : "order-1 lg:order-2"
+                }`}>
+                  <div className="relative aspect-[3/4] w-full max-w-[450px] rounded-2xl overflow-hidden shadow-xl">
+                    <Image
+                      src={t.image}
+                      alt={t.title}
+                      fill
+                      unoptimized
+                      className="object-cover object-center transition-transform duration-700 hover:scale-102"
+                      sizes="(max-w-768px) 100vw, 450px"
+                    />
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className={`lg:col-span-7 flex flex-col gap-6 text-left relative z-10 ${
+                  isEven ? "order-2 lg:order-2" : "order-2 lg:order-1"
+                }`}>
+                  <span className="text-[10px] font-black uppercase tracking-widest text-[#10143A] bg-[#DCE135] px-3 py-1 rounded w-fit">
+                    {t.tier}
+                  </span>
+
+                  <h3 className="font-display text-2xl sm:text-4xl font-black uppercase tracking-tight text-[#10143A] leading-tight">
+                    {t.title}
+                  </h3>
+                  <div className="h-1.5 w-16 bg-[#10143A]" />
+
+                  <p className="text-base sm:text-lg text-[#374151] leading-relaxed font-normal">
+                    {t.description}
+                  </p>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {t.highlights.slice(0, 2).map((h, i) => (
+                      <div key={i} className="bg-white rounded-xl p-3.5 shadow-xs border-l-3 border-[#10143A]">
+                        <p className="text-xs sm:text-sm font-semibold text-[#10143A] leading-snug">
+                          {h}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* 6. Call To Action Footer Banner */}
+        <div className="mt-20 bg-[#10143A] text-white rounded-3xl p-8 sm:p-12 relative overflow-hidden text-left shadow-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8">
+          <div className="flex flex-col gap-2 max-w-2xl">
+            <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135]">
+              PARTNER WITH US
+            </span>
+            <h3 className="font-display text-2xl sm:text-4xl font-black uppercase tracking-tight leading-tight">
+              Ready to Join or Invest in Our Ecosystem?
+            </h3>
+            <p className="text-sm sm:text-base text-white/80 leading-relaxed font-normal">
+              Whether you are an aspiring player, an educational institution seeking football coaching, or a commercial partner, connect with our directors.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap gap-4 shrink-0">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 rounded-full bg-[#DCE135] text-[#10143A] px-8 py-4 text-xs font-bold uppercase tracking-wider hover:bg-white transition-all shadow-md"
+            >
+              Get In Touch
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+
+      </div>
     </div>
   );
 }
