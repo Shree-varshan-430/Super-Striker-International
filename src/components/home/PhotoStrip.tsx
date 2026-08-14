@@ -80,7 +80,7 @@ export default function PhotoStrip() {
                   src={photo.src}
                   alt={photo.title}
                   fill
-                  unoptimized
+                  quality={85}
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   sizes="(max-w-768px) 100vw, 400px"
                 />

@@ -52,7 +52,7 @@ export default async function ArticleDetailsPage({ params }: PageProps) {
           src={article.image}
           alt={article.title}
           fill
-          unoptimized
+          quality={85}
           className="object-cover object-center opacity-70 transition-transform duration-1000 group-hover:scale-102"
           priority
         />
@@ -130,7 +130,7 @@ export default async function ArticleDetailsPage({ params }: PageProps) {
                     src={article.author.avatar}
                     alt={article.author.name}
                     fill
-                    unoptimized
+                    quality={85}
                     className="object-cover"
                   />
                 </div>
@@ -243,7 +243,7 @@ export default async function ArticleDetailsPage({ params }: PageProps) {
                     src={rel.image}
                     alt={rel.title}
                     fill
-                    unoptimized
+                    quality={85}
                     className="object-cover transition-transform duration-700 group-hover:scale-103"
                   />
                   <span className="absolute top-3 left-3 rounded-md bg-[#10143A] px-2.5 py-1 text-[9px] font-black uppercase tracking-wider text-[#DCE135]">

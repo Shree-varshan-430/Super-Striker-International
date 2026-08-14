@@ -22,7 +22,7 @@ export default function AboutPage() {
           src="/images/founder-pitch-side.jpg"
           alt="About Bangalore Super Strikers"
           fill
-          unoptimized
+          quality={85}
           className="object-cover object-top opacity-75 transition-transform duration-1000 group-hover:scale-102"
           priority
         />
@@ -64,10 +64,9 @@ export default function AboutPage() {
                 src="/images/founder-pitch-standing.jpg"
                 alt="Ramakrishnan (Ram) - BSSFC President & AIFF Licensed Coach"
                 fill
-                unoptimized
+                quality={85}
                 className="object-cover object-top transition-transform duration-700 hover:scale-102"
                 sizes="(max-w-768px) 100vw, 540px"
-                priority
               />
             </div>
           </div>
@@ -148,7 +147,7 @@ export default function AboutPage() {
                 src="/images/founder-portrait-fence.jpg"
                 alt="Founder at Grassroots Foundation Field"
                 fill
-                unoptimized
+                quality={85}
                 className="object-cover object-center transition-transform duration-700 hover:scale-102"
                 sizes="(max-w-768px) 100vw, 540px"
               />
@@ -166,7 +165,7 @@ export default function AboutPage() {
                 src="/images/founder-with-football.jpg"
                 alt="Founder with Football on Turf"
                 fill
-                unoptimized
+                quality={85}
                 className="object-cover object-top transition-transform duration-700 hover:scale-102"
                 sizes="(max-w-768px) 100vw, 540px"
               />
@@ -185,55 +184,40 @@ export default function AboutPage() {
             <div className="h-1.5 w-16 bg-[#10143A]" />
 
             <p className="text-base sm:text-xl font-bold text-[#10143A] leading-relaxed">
-              Our initiatives reach deep into regional communities to make sports a driving force for public health, discipline, and personal growth.
+              SuperStriker actively operates free weekly grassroots football clinics, kit donation drives, and public school sports programs across local neighborhoods.
             </p>
             
             <p className="text-sm sm:text-lg text-[#374151] leading-relaxed font-normal">
-              BSSFC actively coordinates with local public schools to integrate physical literacy and basic football training directly into standard school curriculums. We run weekend neighborhood leagues, conduct free health check-ups, and offer certification workshops for local volunteer coaches.
+              Football has the unique power to instill discipline, teamwork, and healthy physical habits in young minds. Through partnerships with local schools and sports bodies, the Foundation regularly hosts youth scouting festivals and developmental tournaments.
             </p>
             
             <p className="text-sm sm:text-lg text-[#374151] leading-relaxed font-normal">
-              Additionally, our specialized holiday camps and residential scout operations actively target both urban zones and rural districts, offering children healthy physical channels and full scholarship opportunities.
+              These community events give aspiring young footballers an authentic match environment, helping coaches identify hidden talent while encouraging physical fitness and sportsmanship in the wider community.
             </p>
           </div>
         </div>
 
-        {/* 4. Training Philosophy & Football Development (Text Left, Image Right) */}
+        {/* 4. Leadership & Football Coaching Philosophy (Text Left, Image Right) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center mb-12 sm:mb-16 bg-gray-50 rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-12 xl:p-14 shadow-sm relative overflow-hidden">
           
-          {/* Left Side: Text & Pillars */}
+          {/* Left Side: Text */}
           <div className="lg:col-span-7 xl:col-span-7 flex flex-col gap-4 sm:gap-6 text-left order-2 lg:order-1 relative z-10">
             <span className="text-[10px] font-black uppercase tracking-widest text-[#10143A] bg-[#DCE135] px-3 py-1 rounded w-fit">
-              COACHING EXCELLENCE
+              COACHING METHODOLOGY
             </span>
             
             <h2 className="font-display text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#10143A] leading-tight">
-              Training Philosophy & Pillars
+              Leadership & Coaching Philosophy
             </h2>
             <div className="h-1.5 w-16 bg-[#10143A]" />
 
             <p className="text-base sm:text-xl font-bold text-[#10143A] leading-relaxed">
-              Our training philosophy focuses on developing <strong className="text-[#10143A]">The Total Footballer</strong> through structured, scientific methodologies aligned with AIFF and international curriculum standards.
+              As an AIFF-C Licensed Coach, certified KSFA Referee, and holder of official Grassroots Certifications, Ram brings a rigorous technical standard to player development.
             </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 my-2">
-              <div className="flex flex-col gap-1 bg-white rounded-xl sm:rounded-2xl p-4 sm:p-5 shadow-xs">
-                <span className="text-sm sm:text-base font-black uppercase text-[#10143A]">1. Progression</span>
-                <span className="text-xs sm:text-sm text-[#4B5563] font-medium">Systematic age-appropriate training curricula</span>
-              </div>
-              <div className="flex flex-col gap-1 bg-white rounded-xl sm:rounded-2xl p-4 sm:p-5 shadow-xs">
-                <span className="text-sm sm:text-base font-black uppercase text-[#10143A]">2. Nutrition</span>
-                <span className="text-xs sm:text-sm text-[#4B5563] font-medium">Hydration and scientific diet guidelines</span>
-              </div>
-              <div className="flex flex-col gap-1 bg-white rounded-xl sm:rounded-2xl p-4 sm:p-5 shadow-xs">
-                <span className="text-sm sm:text-base font-black uppercase text-[#10143A]">3. Tactical Match Play</span>
-                <span className="text-xs sm:text-sm text-[#4B5563] font-medium">UEFA-based match simulation setups</span>
-              </div>
-              <div className="flex flex-col gap-1 bg-white rounded-xl sm:rounded-2xl p-4 sm:p-5 shadow-xs">
-                <span className="text-sm sm:text-base font-black uppercase text-[#10143A]">4. Ball Technique</span>
-                <span className="text-xs sm:text-sm text-[#4B5563] font-medium">Precision ball control and agility drills</span>
-              </div>
-            </div>
+            
+            <p className="text-sm sm:text-lg text-[#374151] leading-relaxed font-normal">
+              His coaching methodology balances tactical awareness, ball mastery, cognitive agility, and physical conditioning. More importantly, he instills sportsmanship, mental toughness, and mutual respect in every athlete who wears the SuperStriker jersey.
+            </p>
 
             <div className="pt-2">
               <Link
@@ -253,7 +237,7 @@ export default function AboutPage() {
                 src="/images/founder-turf-pose.jpg"
                 alt="Founder inspecting professional pitch"
                 fill
-                unoptimized
+                quality={85}
                 className="object-cover object-top transition-transform duration-700 hover:scale-102"
                 sizes="(max-w-768px) 100vw, 540px"
               />

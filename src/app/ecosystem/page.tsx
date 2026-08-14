@@ -112,7 +112,7 @@ export default function Ecosystem() {
           src="/images/match-1.jpg"
           alt="SuperStriker Ecosystem"
           fill
-          unoptimized
+          quality={85}
           className="object-cover object-center opacity-75 transition-transform duration-1000 group-hover:scale-102"
           priority
         />
@@ -129,69 +129,47 @@ export default function Ecosystem() {
           style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }} 
         />
 
-        <div className="relative z-20 max-w-6xl mx-auto w-full px-4 sm:px-6 lg:px-8 text-left flex flex-col gap-2">
-          <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-3 py-1 rounded w-fit">
-            VERTICAL INTEGRATION
+        <div className="relative z-20 max-w-7xl 2xl:max-w-[1440px] mx-auto w-full px-4 sm:px-6 lg:px-10 xl:px-12 text-left flex flex-col gap-2">
+          <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-3 py-1 rounded w-fit">
+            STRATEGIC ARCHITECTURE
           </span>
-          <h1 className="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-none">
-            Our Football Ecosystem
+          <h1 className="font-display text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-none">
+            SuperStriker Ecosystem
           </h1>
-          <p className="text-sm sm:text-base text-white/80 max-w-xl leading-relaxed mt-1 font-medium">
-            Explore our end-to-end framework, spanning grassroots discovery, high-performance academies, and professional league clubs.
+          <p className="text-xs sm:text-base text-white/80 max-w-2xl leading-relaxed mt-1 font-medium">
+            A vertically integrated multi-tier framework linking grassroots discovery to residential elite training, club franchises, and smart infrastructure.
           </p>
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
+      <div className="max-w-7xl 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12 pt-12 sm:pt-16">
 
-        {/* 2. Interactive Tier Inspector Header */}
-        <div className="mb-16 text-left flex flex-col gap-4">
-          <span className="text-[10px] font-black uppercase tracking-widest text-[#10143A] bg-[#DCE135] px-3 py-1 rounded w-fit">
-            EXPLORE THE PIPELINE
-          </span>
-          <h2 className="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight text-[#10143A] leading-tight">
-            Six Tiers of Sustainable Player Development
-          </h2>
-          <div className="h-1.5 w-16 bg-[#10143A]" />
-          <p className="text-base sm:text-lg text-[#374151] max-w-3xl leading-relaxed">
-            SuperStriker International operates a seamless vertical pathway ensuring every aspiring young player receives the appropriate coaching, nutrition, and competitive stage at each step of their footballing journey.
-          </p>
-        </div>
-
-        {/* 3. Interactive Tier Switcher Tabs */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-12">
-          {tiers.map((t, idx) => {
-            const isActive = activeTier === idx;
-            return (
+        {/* 2. Interactive Navigation Pills for the 6 Tiers */}
+        <div className="mb-12">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3 bg-gray-50 p-2 rounded-2xl border border-gray-150 w-fit">
+            {tiers.map((t, idx) => (
               <button
                 key={idx}
                 onClick={() => setActiveTier(idx)}
-                className={`flex flex-col text-left p-4 rounded-2xl transition-all duration-300 ${
-                  isActive
-                    ? "bg-[#10143A] text-white shadow-lg scale-102"
-                    : "bg-gray-50 text-[#10143A] hover:bg-gray-100 shadow-xs"
+                className={`px-4 sm:px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
+                  activeTier === idx
+                    ? "bg-[#10143A] text-[#DCE135] shadow-md scale-102"
+                    : "bg-transparent text-[#4B5563] hover:text-[#10143A] hover:bg-white"
                 }`}
               >
-                <span className={`text-[10px] font-black uppercase tracking-wider ${
-                  isActive ? "text-[#DCE135]" : "text-gray-400"
-                }`}>
-                  {t.tier}
-                </span>
-                <span className="font-display text-xs sm:text-sm font-black uppercase tracking-tight mt-1 line-clamp-2">
-                  {t.title}
-                </span>
+                {t.tier}
               </button>
-            );
-          })}
+            ))}
+          </div>
         </div>
 
-        {/* 4. Active Tier Feature Card (Full-Width, 4K Image on Side, No Overlays) */}
+        {/* 3. Featured Dynamic Tier Spotlight Card */}
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTier}
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
+            exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.25 }}
             className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-24 bg-gray-50 rounded-3xl p-6 sm:p-12 shadow-sm relative overflow-hidden"
           >
@@ -202,10 +180,9 @@ export default function Ecosystem() {
                   src={tiers[activeTier].image}
                   alt={tiers[activeTier].title}
                   fill
-                  unoptimized
+                  quality={85}
                   className="object-cover object-center transition-transform duration-700 hover:scale-102"
                   sizes="(max-w-768px) 100vw, 450px"
-                  priority
                 />
               </div>
             </div>
@@ -302,7 +279,7 @@ export default function Ecosystem() {
                       src={t.image}
                       alt={t.title}
                       fill
-                      unoptimized
+                      quality={85}
                       className="object-cover object-center transition-transform duration-700 hover:scale-102"
                       sizes="(max-w-768px) 100vw, 450px"
                     />

@@ -102,7 +102,7 @@ export default function HeroCarousel() {
               src={slide.image}
               alt={slide.title}
               fill
-              unoptimized
+              quality={85}
               priority={idx === 0}
               className="object-cover object-center"
               sizes="100vw"

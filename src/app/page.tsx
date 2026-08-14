@@ -347,9 +347,8 @@ export default function Home() {
               src="/images/WhatsApp Image 2026-08-07 at 8.29.48 AM (2).jpeg"
               alt="SuperStriker Turf Pitch Infrastructure"
               fill
-              unoptimized
+              quality={85}
               className="object-cover object-center opacity-85"
-              priority
             />
           </div>
           
@@ -414,10 +413,9 @@ export default function Home() {
                   src="/images/founder-portrait.jpg"
                   alt="Ramakrishnan President Portrait"
                   fill
-                  unoptimized
+                  quality={85}
                   className="object-cover object-top"
                   sizes="(max-w-768px) 100vw, 520px"
-                  priority
                 />
               </motion.div>
             </div>
@@ -504,10 +502,9 @@ export default function Home() {
                     src={player.image}
                     alt={player.name}
                     fill
-                    unoptimized
+                    quality={85}
                     className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-w-768px) 100vw, 400px"
-                    priority
                   />
                   {/* Gentle bottom-only vignette to keep text legible while leaving the player face completely 100% crisp & bright */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#10143A]/90 via-[#10143A]/25 to-transparent z-10" />
