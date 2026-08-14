@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { gsap } from "gsap";
-import { ArrowRight, ChevronLeft, ChevronRight, Play } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface HeroSlide {
   image: string;
@@ -48,7 +48,7 @@ const HERO_SLIDES: HeroSlide[] = [
 
 export default function HeroCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const progressTweenRef = useRef<gsap.core.Tween | null>(null);
+  const autoSlideTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
@@ -59,19 +59,13 @@ export default function HeroCarousel() {
   };
 
   useEffect(() => {
-    const progressBar = document.getElementById("hero-progress-bar-inner");
-    if (progressBar) {
-      gsap.set(progressBar, { width: "0%" });
-      if (progressTweenRef.current) progressTweenRef.current.kill();
-      
-      progressTweenRef.current = gsap.to(progressBar, {
-        width: "100%",
-        duration: 7,
-        ease: "none",
-        onComplete: nextSlide
-      });
-    }
+    // Clear existing timer and restart
+    if (autoSlideTimerRef.current) clearInterval(autoSlideTimerRef.current);
+    autoSlideTimerRef.current = setInterval(() => {
+      nextSlide();
+    }, 6000);
 
+    // Animate text elements on slide change
     const activeSlideEl = document.querySelector(`.slide-text-content-${currentSlide}`);
     if (activeSlideEl) {
       const category = activeSlideEl.querySelector(".slide-category");
@@ -80,75 +74,92 @@ export default function HeroCarousel() {
       const cta = activeSlideEl.querySelector(".slide-cta-btn");
       const meta = activeSlideEl.querySelector(".slide-meta-tag");
 
-      gsap.fromTo([category, title, description, meta, cta],
-        { y: 30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.7, stagger: 0.08, ease: "power3.out" }
+      gsap.fromTo(
+        [category, title, description, meta, cta],
+        { y: 24, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.6, stagger: 0.07, ease: "power3.out" }
       );
     }
+
+    return () => {
+      if (autoSlideTimerRef.current) clearInterval(autoSlideTimerRef.current);
+    };
   }, [currentSlide]);
 
   return (
-    <section className="relative h-[85vh] min-h-[580px] w-full bg-[#10143A] text-white overflow-hidden select-none">
+    <section className="relative h-[88vh] min-h-[600px] max-h-[900px] w-full bg-[#10143A] text-white overflow-hidden select-none">
       
-      {/* Background Images */}
+      {/* 1. Full 4K Background Slides */}
       <div className="absolute inset-0 w-full h-full">
         {HERO_SLIDES.map((slide, idx) => (
           <div
             key={idx}
             className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
-              idx === currentSlide ? "opacity-90 z-10 scale-100" : "opacity-0 z-0 pointer-events-none scale-105"
+              idx === currentSlide ? "opacity-100 z-10 scale-100" : "opacity-0 z-0 pointer-events-none scale-105"
             }`}
           >
             <Image
               src={slide.image}
               alt={slide.title}
               fill
+              unoptimized
               priority={idx === 0}
-              className="object-cover"
+              className="object-cover object-center"
               sizes="100vw"
             />
           </div>
         ))}
       </div>
 
-      {/* Cinematic Horizontal Vignette (Inspired by Man Utd layout) */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#10143A] via-[#10143A]/65 to-transparent z-20 pointer-events-none" />
+      {/* 2. Linear Contrast Vignette for Content Readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#10143A]/95 via-[#10143A]/70 to-transparent z-20 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#10143A]/80 via-transparent to-transparent z-20 pointer-events-none" />
 
-      {/* Main Content Area */}
-      <div className="max-w-[95%] mx-auto w-full h-full px-4 sm:px-6 lg:px-8 flex flex-col justify-end pb-16 sm:pb-24 pt-28 sm:pt-36 items-start relative z-30 pointer-events-none">
-        <div className="w-full max-w-3xl relative h-[380px] sm:h-[350px]">
+      {/* 3. Brand Accent Corner Wedges */}
+      <div 
+        className="absolute bottom-0 right-0 w-28 h-28 sm:w-36 sm:h-36 bg-[#10143A] pointer-events-none z-25 translate-x-2 translate-y-2 lg:block hidden" 
+        style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }} 
+      />
+      <div 
+        className="absolute bottom-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-[#DCE135] pointer-events-none z-30 lg:block hidden" 
+        style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }} 
+      />
+
+      {/* 4. Structured Main Content Container */}
+      <div className="max-w-7xl 2xl:max-w-[1440px] mx-auto w-full h-full px-4 sm:px-6 lg:px-10 xl:px-12 flex flex-col justify-end pb-16 sm:pb-20 pt-28 sm:pt-36 items-start relative z-30 pointer-events-none">
+        <div className="w-full max-w-3xl relative min-h-[340px] sm:min-h-[380px]">
           {HERO_SLIDES.map((slide, idx) => (
             <div
               key={idx}
-              className={`slide-text-content-${idx} absolute top-0 left-0 w-full max-w-2xl flex flex-col gap-4 text-left items-start transition-opacity duration-500 pointer-events-auto ${
+              className={`slide-text-content-${idx} absolute top-0 left-0 w-full flex flex-col gap-4 sm:gap-5 text-left items-start transition-opacity duration-500 pointer-events-auto ${
                 idx === currentSlide ? "opacity-100 z-20" : "opacity-0 z-0 pointer-events-none"
               }`}
             >
-              {/* Category tag */}
-              <span className="slide-category text-[9px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-2.5 py-1 rounded">
+              {/* Category Badge */}
+              <span className="slide-category text-[10px] font-black uppercase tracking-widest text-[#10143A] bg-[#DCE135] px-3.5 py-1 rounded-md shadow-xs">
                 {slide.category}
               </span>
               
-              {/* Massive Serif Title */}
-              <h1 className="slide-title font-serif text-2xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] max-w-xl sm:max-w-2xl">
+              {/* Main Headline */}
+              <h1 className="slide-title font-display text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white leading-[1.08] max-w-2xl drop-shadow-sm">
                 {slide.title}
               </h1>
 
-              {/* Description */}
-              <p className="slide-description text-xs sm:text-sm text-white/80 leading-relaxed max-w-md sm:max-w-xl font-medium">
+              {/* Description Paragraph */}
+              <p className="slide-description text-sm sm:text-base text-white/90 leading-relaxed max-w-xl font-normal drop-shadow-xs">
                 {slide.description}
               </p>
 
-              {/* Slide metadata */}
-              <span className="slide-meta-tag text-[10px] font-bold text-white/60 uppercase tracking-wider">
+              {/* Metadata */}
+              <span className="slide-meta-tag text-xs font-semibold text-white/70 uppercase tracking-wider">
                 {slide.meta}
               </span>
 
-              {/* Solid Button */}
+              {/* CTA Action Button */}
               <div className="slide-cta-btn mt-2">
                 <Link 
                   href={slide.ctaLink} 
-                  className="inline-flex items-center gap-2 rounded-full bg-[#DCE135] px-6 py-3.5 text-xs font-black uppercase tracking-wider text-[#10143A] hover:bg-white hover:text-[#10143A] transition-all hover:scale-103 active:scale-95 shadow-lg"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#DCE135] px-8 py-4 text-xs font-bold uppercase tracking-wider text-[#10143A] hover:bg-white hover:text-[#10143A] transition-all hover:scale-103 active:scale-95 shadow-xl"
                 >
                   {slide.ctaText}
                   <ArrowRight className="h-4 w-4" />
@@ -159,22 +170,23 @@ export default function HeroCarousel() {
         </div>
       </div>
 
-      {/* Carousel Control Bar */}
-      <div className="absolute bottom-6 left-0 right-0 z-35 max-w-[95%] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-start pointer-events-none">
-        
-        {/* Navigation Indicator & Progress bar */}
-        <div className="flex items-center gap-4 pointer-events-auto">
-          <span className="font-display text-xs font-bold text-white tracking-widest">
-            0{currentSlide + 1} / 0{HERO_SLIDES.length}
-          </span>
-          <div className="w-24 h-1 bg-white/20 rounded-full overflow-hidden relative">
-            <div 
-              id="hero-progress-bar-inner" 
-              className="absolute left-0 top-0 bottom-0 bg-[#DCE135] w-0" 
-            />
-          </div>
-        </div>
+      {/* 5. Frosted Glass Arrow Navigation on Right Edge */}
+      <div className="absolute right-4 sm:right-8 lg:right-12 bottom-12 sm:bottom-16 lg:bottom-20 z-40 flex items-center gap-3">
+        <button
+          onClick={prevSlide}
+          className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-[#DCE135] hover:text-[#10143A] hover:border-[#DCE135] transition-all duration-300 shadow-xl active:scale-95 group"
+          aria-label="Previous slide"
+        >
+          <ChevronLeft className="h-6 w-6 transition-transform group-hover:-translate-x-0.5" />
+        </button>
 
+        <button
+          onClick={nextSlide}
+          className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-[#DCE135] hover:text-[#10143A] hover:border-[#DCE135] transition-all duration-300 shadow-xl active:scale-95 group"
+          aria-label="Next slide"
+        >
+          <ChevronRight className="h-6 w-6 transition-transform group-hover:translate-x-0.5" />
+        </button>
       </div>
 
     </section>
