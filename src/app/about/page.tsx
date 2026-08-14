@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Shield, Target, Eye, Trophy, Award, Activity, Heart, ArrowRight } from "lucide-react";
+import { Shield, Target, Eye, Trophy, Award, Heart, Sparkles, Users, GraduationCap, Activity, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export default function AboutPage() {
@@ -11,204 +11,193 @@ export default function AboutPage() {
         {/* Editorial Heading */}
         <div className="border-l-4 border-[#10143A] pl-6 mb-12">
           <span className="text-[10px] font-black uppercase tracking-widest text-white bg-[#10143A] px-2.5 py-0.5 rounded">
-            THE BSSFC STORY
+            ABOUT THE PLATFORM
           </span>
           <h1 className="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight text-[#10143A] mt-2">
-            Background Of The Club
+            Bangalore Super Strikers FC
           </h1>
           <p className="text-xs sm:text-sm text-gray-500 leading-relaxed max-w-xl mt-2">
-            Discover the legacy, dreams, and commitment behind the Bangalore Super Strikers Football Club and Soccer School.
+            A comprehensive look into our foundation, developmental vision, coaching philosophies, and community-driven actions.
           </p>
         </div>
 
-        {/* Club Legacy Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-20">
+        {/* Founder Spotlights & Vision for Young Players (Image Integration) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20 bg-gray-50 rounded-3xl p-6 sm:p-10 border border-gray-150 shadow-sm relative overflow-hidden">
           
-          {/* Left Column - Detailed narrative */}
-          <div className="lg:col-span-7 flex flex-col gap-6 text-sm text-[#4B5563] leading-relaxed font-medium">
-            <p>
-              Bangalore Super Strikers Football Club was inspired by the vision of{" "}
-              <strong className="text-[#10143A]">Mr. Devaraj and Mrs. Rajammal Devaraj</strong>, who dreamed of seeing
-              their grandson represent India. Their son, Ramakrishnan (Ram), now the club’s president, shares this
-              vision and adds his own lifelong dedication to football. As a passionate player, Ram experienced firsthand
-              the challenges and limited resources available for middle-class athletes, which motivated him to create a
-              supportive platform for young players.
-            </p>
-            <p>
-              Ram’s commitment began by coaching his son, <strong className="text-[#10143A]">Sabari</strong>, who
-              recently played in the <strong className="text-[#10143A]">Karnataka sub-juniors and contributed to the
-              team’s victory</strong>. Along this journey, Ram encountered various obstacles in helping Sabari reach
-              competitive levels, realizing that many other children face similar potential barriers. This understanding
-              fueled Ram’s determination to establish <strong className="text-[#10143A]">Bangalore Super Strikers Football
-              Club</strong> as a means to provide the mentorship, guidance, and opportunities that many young, aspiring
-              players lack.
-            </p>
-            <p>
-              Today, as an AIFF-C licensed coach and KSFA referee, Ram leads the club in developing one of the largest
-              grassroots football communities in South India, emphasizing team spirit, sportsmanship, and inclusivity.
-              Through scholarships and sponsorships, the club supports underprivileged children, fostering a meaningful
-              impact in grassroots football and empowering young talent to pursue their dreams at national and international
-              levels.
-            </p>
-
-            <div className="bg-gray-50 rounded-2xl p-6 border border-gray-150 mt-4 flex items-start gap-4">
-              <Shield className="h-6 w-6 text-[#10143A] shrink-0 mt-1" />
-              <div className="flex flex-col">
-                <span className="text-xs font-black uppercase text-[#10143A] tracking-wider">
-                  Official Affiliation
+          {/* Left Side: Founder Image */}
+          <div className="lg:col-span-5 flex justify-center relative z-10 w-full">
+            <div className="relative aspect-[3/4] w-full max-w-[360px] rounded-2xl overflow-hidden border border-gray-250 shadow-md bg-white">
+              <Image
+                src="/images/president.jpg"
+                alt="Ramakrishnan (Ram) - BSSFC President & AIFF Licensed Coach"
+                fill
+                className="object-cover object-center"
+                sizes="(max-w-768px) 100vw, 360px"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#10143A]/80 via-[#10143A]/10 to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4 text-white text-left">
+                <span className="text-[9px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-2 py-0.5 rounded">
+                  PRESIDENT & FOUNDER
                 </span>
-                <p className="text-xs text-gray-500 mt-1 leading-relaxed">
-                  The club is officially affiliated to the <strong className="text-[#10143A]">Karnataka State Football Association (KSFA)</strong>. We are committed to innovation, creativity, excellence, and teamwork with an objective of reaching our vision.
+                <h3 className="font-display text-lg font-black uppercase tracking-tight mt-1">
+                  Ramakrishnan (Ram)
+                </h3>
+                <p className="text-[10px] font-bold text-white/80 uppercase mt-0.5">
+                  AIFF-C Licensed Coach & KSFA Referee
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Right Column - Illustrative layout with stats / highlights */}
-          <div className="lg:col-span-5 flex flex-col gap-6">
-            <div className="relative aspect-[4/3] w-full rounded-3xl overflow-hidden border border-gray-150 bg-gray-50 shadow-sm group">
-              <Image
-                src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=800&auto=format&fit=crop"
-                alt="Football coaching on pitch"
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-103"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#10143A]/60 to-transparent" />
-              <div className="absolute bottom-4 left-4 right-4 text-white">
-                <span className="text-[9px] font-black uppercase tracking-widest text-[#DCE135]">
-                  AIFF-C Licensed Coaching
-                </span>
-                <h3 className="font-display text-lg font-black uppercase tracking-tight mt-1 leading-none">
-                  Empowering Grassroots Football
-                </h3>
-              </div>
-            </div>
+          {/* Right Side: His Vision for Young Players & Club Heritage */}
+          <div className="lg:col-span-7 flex flex-col gap-5 text-left relative z-10">
+            <span className="text-[9px] font-black uppercase tracking-widest text-[#10143A] bg-[#DCE135] px-2.5 py-0.5 rounded w-fit">
+              PRESIDENTIAL VISION
+            </span>
+            <h2 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight text-[#10143A] leading-tight">
+              Vision For Young Players
+            </h2>
+            <div className="h-1 w-12 bg-[#10143A] mt-1" />
+            
+            <p className="text-sm text-[#4B5563] leading-relaxed font-semibold">
+              Ramakrishnan envisions a future where young players in India have access to the same structured development pipelines, elite physical resources, and competitive exposure as their international counterparts.
+            </p>
+            <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed font-medium">
+              Inspired by the dream of his parents, Mr. Devaraj and Mrs. Rajammal Devaraj, who wished to see their grandson represent India on the world stage, Ram turned his own experiences as a player with limited resources into a driving force. His vision focuses on cultivating high-performance environments where players receive top-tier tactical training, nutrition advice, and scientific athletic mentoring to transition seamlessly from local fields to professional football leagues.
+            </p>
 
-            {/* Quick fact card */}
-            <div className="bg-gray-50 rounded-3xl p-6 border border-gray-150 shadow-sm flex flex-col gap-4">
-              <div className="flex justify-between items-center border-b border-gray-200 pb-3">
-                <span className="text-xs font-black text-[#10143A] uppercase tracking-wider">
-                  Club Philosophy
-                </span>
-                <span className="text-[8px] font-black uppercase tracking-widest text-[#10143A] bg-[#DCE135] px-2 py-0.5 rounded">
-                  BSSFC
-                </span>
+            <div className="flex flex-wrap gap-4 mt-2">
+              <div className="flex items-center gap-2 text-xs font-bold text-[#10143A]">
+                <Shield className="h-4 w-4 shrink-0 text-[#10143A]" />
+                KSFA Affiliated Pathway
               </div>
-              <p className="text-xs text-gray-500 leading-relaxed font-semibold">
-                &ldquo;We identify and train young talents and guide them to explore themselves in State Level & National Level football competitions.&rdquo;
-              </p>
+              <div className="flex items-center gap-2 text-xs font-bold text-[#10143A]">
+                <GraduationCap className="h-4 w-4 shrink-0 text-[#10143A]" />
+                Structured Career Pathways
+              </div>
             </div>
           </div>
-
         </div>
 
-        {/* Mission & Vision Section */}
-        <div className="bg-gray-50 rounded-[32px] p-8 sm:p-12 border border-gray-150 shadow-sm mb-20 relative overflow-hidden">
-          <div className="absolute top-0 right-0 h-40 w-40 bg-[#10143A]/5 rounded-bl-full pointer-events-none" />
+        {/* Why the Foundation Was Created & Community Initiatives */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
           
-          <div className="text-center mb-10 max-w-xl mx-auto">
-            <span className="text-[10px] font-black uppercase tracking-widest text-white bg-[#10143A] px-2.5 py-0.5 rounded">
-              CORE CREED
-            </span>
-            <h2 className="font-display text-2xl sm:text-4xl font-black uppercase tracking-tight text-[#10143A] mt-3">
-              Together Everyone Achieves More
-            </h2>
-            <div className="h-1 w-12 bg-[#10143A] mx-auto mt-4" />
+          {/* Section 1: Why the Foundation was Created */}
+          <div className="bg-gray-50 rounded-3xl p-6 sm:p-8 border border-gray-150 shadow-sm flex flex-col gap-4 text-left">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-[#10143A]/5 flex items-center justify-center text-[#10143A]">
+                <Heart className="h-5 w-5 text-[#10143A]" />
+              </div>
+              <h3 className="font-display text-lg font-black uppercase tracking-wider text-[#10143A]">
+                Why the Foundation Was Created
+              </h3>
+            </div>
+            <p className="text-xs sm:text-sm text-gray-500 leading-relaxed font-medium">
+              The Bangalore Super Strikers Foundation (BSSFC Foundation) was established to dismantle socioeconomic barriers that prevent children from accessing sports. During his training years, Ram noticed that countless talented, enthusiastic players from middle-class and underprivileged families were locked out of professional pathways due to the high cost of coaching, kits, travel, and tournament fees. The Foundation was created to offer scholarships, kit sponsorships, and free soccer coaching clinics so that any aspiring child—regardless of their financial background—can pursue their sporting dreams.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
-            {/* Mission Card */}
-            <div className="bg-white rounded-2xl p-6 border border-gray-200 flex flex-col gap-4 shadow-sm">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-[#10143A]/5 flex items-center justify-center text-[#10143A]">
-                  <Target className="h-5 w-5" />
-                </div>
-                <h3 className="font-display text-lg font-black uppercase tracking-wider text-[#10143A]">
-                  Our Mission
+          {/* Section 2: Community Initiatives */}
+          <div className="bg-gray-50 rounded-3xl p-6 sm:p-8 border border-gray-150 shadow-sm flex flex-col gap-4 text-left">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-[#10143A]/5 flex items-center justify-center text-[#10143A]">
+                <Users className="h-5 w-5 text-[#10143A]" />
+              </div>
+              <div className="flex flex-col">
+                <h3 className="font-display text-lg font-black uppercase tracking-wider text-[#10143A] leading-tight">
+                  Community Initiatives
                 </h3>
               </div>
-              <p className="text-xs sm:text-sm text-gray-500 leading-relaxed font-medium">
-                Our mission is to create awareness about football and support each individual by providing opportunity to showcase their skills and to excel in the same. We create the best players by providing them high quality training in a friendly yet challenging environment for those who aspire to become world-class footballers.
-              </p>
             </div>
-
-            {/* Vision Card */}
-            <div className="bg-white rounded-2xl p-6 border border-gray-200 flex flex-col gap-4 shadow-sm">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-[#10143A]/5 flex items-center justify-center text-[#10143A]">
-                  <Eye className="h-5 w-5" />
-                </div>
-                <h3 className="font-display text-lg font-black uppercase tracking-wider text-[#10143A]">
-                  Our Vision
-                </h3>
-              </div>
-              <p className="text-xs sm:text-sm text-gray-500 leading-relaxed font-medium">
-                To develop a good reputation for football by producing well trained players, To help them reach peak levels of performance through good foundation, sporting spirit, maintain high standards of excellence and to produce future talented champions for the country.
-              </p>
-            </div>
+            <p className="text-xs sm:text-sm text-gray-500 leading-relaxed font-medium">
+              Our initiatives reach deep into regional communities to make sports a force for good. BSSFC actively coordinates with local public schools to integrate physical literacy and basic football training directly into standard school curriculums. We run weekend neighborhood leagues, conduct free health check-ups, and offer training workshops for local volunteer coaches. Additionally, our specialized holiday camps and residential scout operations actively target both urban slums and rural zones, offering children healthy physical channels and scholarship options.
+            </p>
           </div>
+
         </div>
 
-        {/* Fluid Section: Creating The Total Footballer */}
-        <div className="mb-20">
-          <div className="border-l-4 border-[#10143A] pl-6 mb-10">
-            <span className="text-[10px] font-black uppercase tracking-widest text-white bg-[#10143A] px-2.5 py-0.5 rounded">
-              DEVELOPMENT PILLARS
-            </span>
-            <h2 className="font-display text-2xl sm:text-4xl font-black uppercase tracking-tight text-[#10143A] mt-2">
-              Creating The Total Footballer
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Left 4 pillars (7 cols) */}
-            <div className="lg:col-span-7 grid grid-cols-2 gap-4">
-              {[
-                { label: "Progression", desc: "Systematic age-appropriate advancement charts.", icon: Award },
-                { label: "Nutrition", desc: "Scientific diet parameters and hydration tips.", icon: Activity },
-                { label: "Training", desc: "UEFA curriculum-based match-situation practices.", icon: Shield },
-                { label: "Technique", desc: "Individually customized ball control & striking drills.", icon: Trophy }
-              ].map((pillar) => {
-                const IconComponent = pillar.icon;
-                return (
-                  <div key={pillar.label} className="bg-gray-50 rounded-2xl p-5 border border-gray-150 flex flex-col gap-3 shadow-sm text-left">
-                    <div className="w-9 h-9 rounded-xl bg-[#10143A] text-white flex items-center justify-center">
-                      <IconComponent className="h-4 w-4" />
-                    </div>
-                    <div>
-                      <h4 className="font-display text-sm sm:text-base font-black uppercase text-[#10143A] tracking-wider leading-none">
-                        {pillar.label}
-                      </h4>
-                      <p className="text-[11px] text-gray-500 mt-1 leading-normal font-medium">
-                        {pillar.desc}
-                      </p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Right text layout (5 cols) */}
-            <div className="lg:col-span-5 flex flex-col gap-4 text-left">
-              <h3 className="font-display text-lg font-black uppercase tracking-tight text-[#10143A] leading-tight">
-                Quality Training & Dedicated Mentorship
+        {/* Training Philosophy & Football Development Sections */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-20 items-stretch">
+          
+          {/* Left Column: Training Philosophy (7 cols) */}
+          <div className="lg:col-span-7 bg-gray-50 rounded-3xl p-6 sm:p-8 border border-gray-150 shadow-sm flex flex-col gap-6 text-left">
+            <div className="flex items-center gap-3 border-b border-gray-200 pb-4">
+              <div className="w-10 h-10 rounded-xl bg-[#10143A]/5 flex items-center justify-center text-[#10143A]">
+                <Activity className="h-5 w-5" />
+              </div>
+              <h3 className="font-display text-lg font-black uppercase tracking-wider text-[#10143A]">
+                Training Philosophy
               </h3>
-              <p className="text-xs sm:text-sm text-gray-500 leading-relaxed font-semibold">
-                We are the football coaching provider with the only motive of quality service and training. We promise superior, consistent, and quality service.
-              </p>
-              <p className="text-xs sm:text-sm text-gray-500 leading-relaxed font-medium">
-                Our main focus is to identify and train young talents and guide them to explore themselves in State Level & National Level football competitions and tournaments. Our ultimate goal is to provide standard coaching and training, thus improving confidence and excitement to enjoy football at its finest level.
-              </p>
-              
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-widest text-[#10143A] hover:text-[#DCE135] transition-colors mt-2"
-              >
-                Enroll In BSSFC Soccer School
-                <ArrowRight className="h-4 w-4" />
-              </Link>
+            </div>
+            
+            <p className="text-xs sm:text-sm text-gray-500 leading-relaxed font-medium">
+              Our training philosophy focuses on developing <strong className="text-[#10143A]">The Total Footballer</strong>. We believe in providing structured, scientific training sessions that are both friendly and competitive. We align our curriculum with AIFF guidelines, focusing on four primary pillars:
+            </p>
+
+            <div className="grid grid-cols-2 gap-4 mt-2">
+              <div className="flex flex-col gap-0.5 bg-white border border-gray-200 rounded-xl p-4">
+                <span className="text-xs font-black uppercase text-[#10143A]">Progression</span>
+                <span className="text-[10px] text-gray-400 font-medium">Systematic age-appropriate curricula</span>
+              </div>
+              <div className="flex flex-col gap-0.5 bg-white border border-gray-200 rounded-xl p-4">
+                <span className="text-xs font-black uppercase text-[#10143A]">Nutrition</span>
+                <span className="text-[10px] text-gray-400 font-medium">Hydration and diet guidelines</span>
+              </div>
+              <div className="flex flex-col gap-0.5 bg-white border border-gray-200 rounded-xl p-4">
+                <span className="text-xs font-black uppercase text-[#10143A]">Training</span>
+                <span className="text-[10px] text-gray-400 font-medium">UEFA-based match setups</span>
+              </div>
+              <div className="flex flex-col gap-0.5 bg-white border border-gray-200 rounded-xl p-4">
+                <span className="text-xs font-black uppercase text-[#10143A]">Technique</span>
+                <span className="text-[10px] text-gray-400 font-medium">Precision ball control drills</span>
+              </div>
             </div>
           </div>
+
+          {/* Right Column: Football Development (5 cols) */}
+          <div className="lg:col-span-5 bg-gray-50 rounded-3xl p-6 sm:p-8 border border-gray-150 shadow-sm flex flex-col gap-4 text-left">
+            <div className="flex items-center gap-3 border-b border-gray-200 pb-4">
+              <div className="w-10 h-10 rounded-xl bg-[#10143A]/5 flex items-center justify-center text-[#10143A]">
+                <Trophy className="h-5 w-5" />
+              </div>
+              <h3 className="font-display text-lg font-black uppercase tracking-wider text-[#10143A]">
+                Football Development
+              </h3>
+            </div>
+            
+            <p className="text-xs sm:text-sm text-gray-500 leading-relaxed font-medium">
+              We manage a complete, structured pathway for player progression:
+            </p>
+
+            <ul className="flex flex-col gap-3 mt-2 text-xs font-bold text-[#4B5563]">
+              <li className="flex items-start gap-2.5">
+                <Sparkles className="h-4 w-4 text-[#10143A] shrink-0 mt-0.5" />
+                <span>Grassroots soccer schools for ages 5 to 12.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <Sparkles className="h-4 w-4 text-[#10143A] shrink-0 mt-0.5" />
+                <span>Elite academy cohorts competing in KSFA youth divisions.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <Sparkles className="h-4 w-4 text-[#10143A] shrink-0 mt-0.5" />
+                <span>Senior professional team divisions (BSSFC) in regional tournaments.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <Sparkles className="h-4 w-4 text-[#10143A] shrink-0 mt-0.5" />
+                <span>International exposure and university athletic scouting connections.</span>
+              </li>
+            </ul>
+
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-1.5 bg-[#10143A] text-white hover:bg-[#DCE135] hover:text-[#10143A] transition-all px-4 py-3 rounded-full text-xs font-bold uppercase tracking-wider mt-auto text-center shadow-sm"
+            >
+              Partner / Join Club
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+
         </div>
 
         {/* Tribute & Dedication Block */}

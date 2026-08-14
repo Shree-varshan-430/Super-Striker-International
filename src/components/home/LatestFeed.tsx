@@ -19,17 +19,18 @@ const LATEST_ITEMS: NewsItem[] = [
     author: "Ramakrishnan"
   },
   {
-    slug: "video-behind-training",
+    slug: "video-grassroots-expansion",
     type: "video",
-    title: "KSFA YPL Under-9: BSSFC vs Jogo Bonito Match Highlights",
-    category: "club",
-    thumbnail: "/images/team-2.jpg",
-    publishedAt: "11 AUG 2026",
-    duration: "12:45",
-    excerpt: "Watch the exciting junior division match highlights of Bangalore Super Strikers FC battling Jogo Bonito in the Youth Premier League.",
-    author: "BSSFC Media",
-    videoUrl: "https://www.youtube.com/@bangaloresuperstrikersfoot9463/videos"
+    title: "Smart Sessions & DPDL Under 9 Match highlights",
+    category: "community",
+    thumbnail: "/images/news-coaches-talk.jpg",
+    publishedAt: "28 JUL 2026",
+    duration: "10:15",
+    excerpt: "Watch the tactical session blueprints and key match highlights from the Development Premier Division League.",
+    author: "Technical Team",
+    videoUrl: "https://youtu.be/gnSLGcBaBSk?si=QL44EAzhWrL1ymB2,"
   },
+  
   {
     slug: "grassroots-revolution",
     type: "article",
@@ -41,6 +42,29 @@ const LATEST_ITEMS: NewsItem[] = [
     author: "Editorial Team"
   },
   {
+    slug: "video-behind-training",
+    type: "video",
+    title: "DPDL Under-9: BSSFC vs Jogo Bonito Match Highlights",
+    category: "club",
+    thumbnail: "/images/team-2.jpg",
+    publishedAt: "11 AUG 2026",
+    duration: "12:45",
+    excerpt: "Watch the exciting junior division match highlights of Bangalore Super Strikers FC battling Jogo Bonito in the Youth Premier League.",
+    author: "BSSFC Media",
+    videoUrl: "https://youtu.be/KWglIwKCp2s?si=s9CnPhob0-D7JSAA"
+  },
+  
+  {
+    slug: "creating-football-pathways",
+    type: "article",
+    title: "How SuperStriker International Is Creating Football Pathways",
+    category: "club",
+    thumbnail: "/images/news-pathways.jpg",
+    publishedAt: "08 AUG 2026",
+    excerpt: "From school leagues to senior teams, our comprehensive pathway model bridges the gap between recreational play and professional contracts.",
+    author: "Technical Director"
+  },
+  {
     slug: "video-coach-convo",
     type: "video",
     title: "BSSFC and Maharishi School Residential Program Showcase",
@@ -50,16 +74,17 @@ const LATEST_ITEMS: NewsItem[] = [
     duration: "08:15",
     excerpt: "Explore our residential campus trials, student athlete accommodations, UEFA coaching syllabus, and physical conditioning drills.",
     author: "Admissions Team",
-    videoUrl: "https://www.youtube.com/@bangaloresuperstrikersfoot9463/videos"
+    videoUrl: "https://youtu.be/J3pYjM4eRIc?si=_uDrzdJws6hJy6gq"
   },
+  
   {
-    slug: "creating-football-pathways",
+    slug: "turf-sponsorship-deal",
     type: "article",
-    title: "How SuperStriker International Is Creating Football Pathways",
-    category: "club",
-    thumbnail: "/images/news-pathways.jpg",
-    publishedAt: "08 AUG 2026",
-    excerpt: "From school leagues to senior teams, our comprehensive pathway model bridges the gap between recreational play and professional contracts.",
+    title: "Bangalore Super Strikers FC Secure Turf Sponsorship",
+    category: "investors",
+    thumbnail: "/images/news-pitch-sponsorship.jpg",
+    publishedAt: "05 AUG 2026",
+    excerpt: "A landmark partnership that guarantees upgraded facilities, new training pitches, and advanced sports-tech telemetry for senior and youth squads.",
     author: "Technical Director"
   },
   {
@@ -72,30 +97,9 @@ const LATEST_ITEMS: NewsItem[] = [
     duration: "15:30",
     excerpt: "A high-performance documentary tracking our senior athletes' telemetry tests, gym workouts, and tactical training sessions.",
     author: "Striker TV",
-    videoUrl: "https://www.youtube.com/@bangaloresuperstrikersfoot9463/videos"
+    videoUrl: "https://youtu.be/bPrZTB5Fcs4?si=_LZU0W1gyRDeQ6Wk"
   },
-  {
-    slug: "turf-sponsorship-deal",
-    type: "article",
-    title: "Bangalore Super Strikers FC Secure Turf Sponsorship",
-    category: "investors",
-    thumbnail: "/images/news-pitch-sponsorship.jpg",
-    publishedAt: "05 AUG 2026",
-    excerpt: "A landmark partnership that guarantees upgraded facilities, new training pitches, and advanced sports-tech telemetry for senior and youth squads.",
-    author: "Technical Director"
-  },
-  {
-    slug: "video-goalkeeping-telemetry",
-    type: "video",
-    title: "How to train for a football match: Grassroots skills",
-    category: "academy",
-    thumbnail: "/images/news-goalkeeping.jpg",
-    publishedAt: "03 AUG 2026",
-    duration: "05:40",
-    excerpt: "Our tactical coaches outline the key physical literacy drills, passing metrics, and shooting telemetry required for matchday prep.",
-    author: "GK Panel",
-    videoUrl: "https://www.youtube.com/@bangaloresuperstrikersfoot9463/videos"
-  },
+  
   {
     slug: "pondicherry-academy-expands",
     type: "article",
@@ -107,17 +111,18 @@ const LATEST_ITEMS: NewsItem[] = [
     author: "Academy Staff"
   },
   {
-    slug: "video-grassroots-expansion",
+    slug: "video-goalkeeping-telemetry",
     type: "video",
-    title: "Smart Sessions & DPDL Under 9 Match highlights",
-    category: "community",
-    thumbnail: "/images/news-coaches-talk.jpg",
-    publishedAt: "28 JUL 2026",
-    duration: "10:15",
-    excerpt: "Watch the tactical session blueprints and key match highlights from the Development Premier Division League.",
-    author: "Technical Team",
-    videoUrl: "https://www.youtube.com/@bangaloresuperstrikersfoot9463/videos"
-  }
+    title: "How to train for a football match: Grassroots skills",
+    category: "academy",
+    thumbnail: "/images/news-goalkeeping.jpg",
+    publishedAt: "03 AUG 2026",
+    duration: "05:40",
+    excerpt: "Our tactical coaches outline the key physical literacy drills, passing metrics, and shooting telemetry required for matchday prep.",
+    author: "GK Panel",
+    videoUrl: "https://youtu.be/fy6YOT-PAQQ?si=wZzh8nv7YAskDt_H"
+  },
+  
 ];
 
 export default function LatestFeed() {
