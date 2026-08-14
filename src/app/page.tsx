@@ -469,7 +469,7 @@ export default function Home() {
             ].map((player) => (
               <div 
                 key={player.name}
-                className="relative rounded-2xl overflow-hidden aspect-[3/4] group shadow-sm bg-gradient-to-b from-gray-50 to-gray-150 border border-gray-200/50 flex flex-col justify-end p-6 select-none"
+                className="relative rounded-2xl overflow-hidden aspect-[3/4] group shadow-sm  border border-gray-200/50 flex flex-col justify-end p-6 select-none"
               >
                 {/* Large Background Watermark Number */}
                 <div className="absolute inset-0 flex items-center justify-center select-none pointer-events-none z-0 overflow-hidden">
