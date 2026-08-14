@@ -26,8 +26,8 @@ const SPOTLIGHTS: SpotlightItem[] = [
     description: "The flagship professional club building elite football pathways through structured training schedules, physical conditioning, and senior team registry options in KSFA division campaigns.",
     badgeLabel: "KSFA LEAGUE AFFILIATION",
     badgeValue: "Senior State Registry",
-    ctaText: "Explore Club Division",
-    ctaLink: "/clubs/bangalore-super-strikers-fc",
+    ctaText: "Visit Website",
+    ctaLink: "https://www.bangaloresuperstrikersfc.com/",
     image: "/images/team-2.jpg",
     logo: "/bangalore-super-strikers-fc.png"
   },
@@ -149,6 +149,7 @@ export default function SubBrandSpotlight() {
               <div className="p-6 pt-0">
                 <Link
                   href={item.ctaLink}
+                  {...(item.ctaLink.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#10143A] hover:bg-[#DCE135] text-white hover:text-[#10143A] py-3 text-xs font-bold uppercase tracking-wider transition-all shadow-sm active:scale-97"
                 >
                   {item.ctaText}

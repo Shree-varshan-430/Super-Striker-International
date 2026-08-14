@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Phone, MapPin, Mail } from "lucide-react";
 import NewsletterForm from "./NewsletterForm";
 
 const FacebookIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -36,11 +37,11 @@ export default function Footer() {
   return (
     <footer className="w-full border-t border-white/10 bg-[#10143A] text-white select-none">
       {/* Upper footer */}
-      <div className="mx-auto max-w-[95%] px-4 py-20 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-5 md:grid-cols-2">
+      <div className="mx-auto max-w-7xl 2xl:max-w-[1440px] px-4 py-20 sm:px-6 lg:px-10 xl:px-12">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 md:grid-cols-2">
           
           {/* Brand Column */}
-          <div className="lg:col-span-2 flex flex-col gap-6">
+          <div className="lg:col-span-4 flex flex-col gap-6">
             <Link href="/" className="flex items-center gap-4 group self-start">
               <div className="relative w-20 h-20 transition-all duration-300 group-hover:scale-105">
                 <Image
@@ -59,7 +60,7 @@ export default function Footer() {
                 </span>
               </div>
             </Link>
-            <p className="text-sm sm:text-base leading-relaxed text-white/70 max-w-sm text-left">
+            <p className="text-sm sm:text-base leading-relaxed text-white/70 text-left">
               SuperStriker International Pvt Ltd is dedicated to developing the football ecosystem in India, connecting grassroots clinics to professional leagues and national talent pathways.
             </p>
             <div className="flex items-center gap-5 text-white/60">
@@ -78,58 +79,74 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Clubs Column */}
-          <div className="text-left">
+          {/* Headquarters & Contact Info Column */}
+          <div className="lg:col-span-3 text-left">
             <h3 className="font-display text-base sm:text-lg font-black uppercase tracking-wider text-[#DCE135] border-b border-white/10 pb-3 mb-6">
-              Our Clubs
+              Headquarters
             </h3>
-            <ul className="space-y-6">
-              <li>
-                <div className="text-sm sm:text-base font-bold text-white hover:text-[#DCE135] transition-colors">
-                  Bangalore Super Strikers FC
-                  <span className="block text-xs font-normal text-white/50 mt-1">Bangalore, Karnataka</span>
+            
+            <div className="space-y-5 text-xs sm:text-sm text-white/80">
+              {/* Location Address */}
+              <div className="flex items-start gap-3">
+                <MapPin className="h-5 w-5 text-[#DCE135] shrink-0 mt-0.5" />
+                <p className="leading-relaxed text-white/85">
+                  Thirumahondanahalli, Near Vakil Whispering Wood Layout, Neraluru Post, Attibele Hobli, Anekal Taluk, Bangalore - 562107
+                </p>
+              </div>
+
+              {/* Phone Numbers */}
+              <div className="flex items-start gap-3 pt-2 border-t border-white/10">
+                <Phone className="h-5 w-5 text-[#DCE135] shrink-0 mt-0.5" />
+                <div className="flex flex-col gap-1.5 font-bold text-white">
+                  <a href="tel:+919591769293" className="hover:text-[#DCE135] transition-colors">
+                    (+91) 95917 69293
+                  </a>
+                  <a href="tel:+919591069293" className="hover:text-[#DCE135] transition-colors">
+                    (+91) 95910 69293
+                  </a>
                 </div>
-              </li>
-              <li>
-                <div className="text-sm sm:text-base font-bold text-white hover:text-[#DCE135] transition-colors">
-                  Pondicherry Super Strikers FC
-                  <span className="block text-xs font-normal text-white/50 mt-1">Pondicherry Academy Hub</span>
-                </div>
-              </li>
-              <li>
-                <div className="text-sm sm:text-base font-bold text-white hover:text-[#DCE135] transition-colors">
-                  Chennai Super Strikers FC
-                  <span className="block text-xs font-normal text-white/50 mt-1">Chennai Metro Division</span>
-                </div>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
 
-          {/* Schools Column */}
-          <div className="text-left">
+          {/* Clubs & Schools Column */}
+          <div className="lg:col-span-2 text-left">
             <h3 className="font-display text-base sm:text-lg font-black uppercase tracking-wider text-[#DCE135] border-b border-white/10 pb-3 mb-6">
-              Football Schools
+              Ecosystem
             </h3>
-            <ul className="space-y-4">
+            <ul className="space-y-4 text-xs sm:text-sm">
               <li>
-                <div className="text-sm sm:text-base font-bold text-white hover:text-[#DCE135] transition-colors">
+                <a href="https://www.bangaloresuperstrikersfc.com/" target="_blank" rel="noopener noreferrer" className="font-bold text-white hover:text-[#DCE135] transition-colors block">
+                  Bangalore Super Strikers FC
+                  <span className="block text-[11px] font-normal text-white/50">Official Website ↗</span>
+                </a>
+              </li>
+              <li>
+                <Link href="/clubs/pondicherry-super-strikers-fc" className="font-bold text-white hover:text-[#DCE135] transition-colors block">
+                  Pondicherry Super Strikers FC
+                  <span className="block text-[11px] font-normal text-white/50">Residential Academy</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/clubs/chennai-super-strikers-fc" className="font-bold text-white hover:text-[#DCE135] transition-colors block">
+                  Chennai Super Strikers FC
+                  <span className="block text-[11px] font-normal text-white/50">Metro State Division</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/football-school/bangalore-football-school" className="font-bold text-white hover:text-[#DCE135] transition-colors block">
                   Bangalore Football School
-                  <span className="block text-xs sm:text-sm font-normal text-white/60 mt-3 space-y-2">
-                    <span className="block">• Youth developmental cohort</span>
-                    <span className="block">• UEFA-compliant curriculum</span>
-                    <span className="block">• Telemetry sensory profiles</span>
-                    <span className="block">• KSFA/AIFF scouting lines</span>
-                  </span>
-                </div>
+                  <span className="block text-[11px] font-normal text-white/50">Grassroots to U-15</span>
+                </Link>
               </li>
             </ul>
           </div>
 
           {/* Links & Newsletter Column */}
-          <div className="flex flex-col gap-8 text-left">
+          <div className="lg:col-span-3 flex flex-col gap-6 text-left">
             <div>
               <h3 className="font-display text-base sm:text-lg font-black uppercase tracking-wider text-[#DCE135] border-b border-white/10 pb-3 mb-4">
-                Corporate
+                Corporate Newsletter
               </h3>
               <p className="text-xs sm:text-sm text-white/70 mb-4 leading-relaxed">
                 Stay updated with corporate announcements, arena turf construction updates, and telemetry stats.
@@ -137,10 +154,10 @@ export default function Footer() {
               <NewsletterForm />
             </div>
             <div>
-              <h3 className="font-display text-sm font-black uppercase tracking-wider text-white mb-3">
+              <h3 className="font-display text-xs font-black uppercase tracking-wider text-white mb-2">
                 Quick Navigation
               </h3>
-              <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs sm:text-sm font-bold text-[#DCE135]">
+              <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs font-bold text-[#DCE135]">
                 <Link href="/about" className="hover:text-white transition-colors">About</Link>
                 <Link href="/news" className="hover:text-white transition-colors">News</Link>
                 <Link href="/investors" className="hover:text-white transition-colors">Investors</Link>
@@ -152,7 +169,7 @@ export default function Footer() {
         </div>
 
         {/* Lower footer */}
-        <div className="mt-20 border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-white/50">
+        <div className="mt-16 border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-white/50">
           <p>© 2026 SuperStriker International Pvt Ltd. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-white">Privacy Policy</a>
