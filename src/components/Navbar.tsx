@@ -21,14 +21,14 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full bg-white border-b border-gray-200 select-none shadow-sm">
       <div className="mx-auto max-w-[95%] px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        
+        {/* Navigation Bar (Single Row, Spacious h-24 on Desktop) */}
+        <div className="flex items-center justify-between h-20 sm:h-24 relative">
           
-          {/* Left Side: Logo & Menu Icon (inspired by Man Utd layout) */}
-          <div className="flex items-center gap-6">
-            
-            {/* Brand Logo */}
-            <Link href="/" className="flex items-center gap-3 group shrink-0">
-              <div className="relative w-14 h-14 transition-transform duration-300 group-hover:scale-103">
+          {/* Left: Logo & Brand Name */}
+          <div className="flex items-center gap-3 shrink-0">
+            <Link href="/" className="flex items-center gap-3 group">
+              <div className="relative w-12 h-12 sm:w-14 sm:h-14 transition-transform duration-300 group-hover:scale-103">
                 <Image
                   src="/super-strikers-international.png"
                   alt="SuperStrikers International Logo"
@@ -38,53 +38,59 @@ export default function Navbar() {
                 />
               </div>
               <div className="flex flex-col text-left">
-                <span className="font-display text-base sm:text-lg font-black tracking-tight uppercase leading-none text-[#10143A]">
+                <span className="font-display text-sm sm:text-base lg:text-lg font-black uppercase tracking-tight leading-none text-[#10143A]">
                   SuperStriker
                 </span>
-                <span className="text-[9px] font-black uppercase tracking-widest leading-none mt-1 text-gray-400">
+                <span className="text-[8px] sm:text-[9px] font-black uppercase tracking-widest leading-none mt-1 text-gray-400">
                   International
                 </span>
               </div>
             </Link>
-
-            {/* Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center gap-6 pl-6 border-l border-gray-200">
-              {navLinks.map((link) => {
-                const isActive = pathname === link.href;
-                return (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    className={`text-xs font-black uppercase tracking-widest transition-colors py-2 ${
-                      isActive 
-                        ? "text-[#10143A]" 
-                        : "text-[#10143A]/60 hover:text-[#10143A]"
-                    }`}
-                  >
-                    {link.name}
-                  </Link>
-                );
-              })}
-            </nav>
           </div>
 
-          {/* Right Side: Profile Icon & Mobile Menu Trigger */}
-          <div className="flex items-center gap-4">
+          {/* Center: Navigation Links (Desktop) */}
+          <nav className="hidden lg:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={`text-xs font-black uppercase tracking-widest transition-colors py-2 relative ${
+                    isActive 
+                      ? "text-[#10143A]" 
+                      : "text-[#10143A]/60 hover:text-[#10143A]"
+                  }`}
+                >
+                  {link.name}
+                  {isActive && (
+                    <motion.span
+                      layoutId="activeBorder"
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#10143A]"
+                    />
+                  )}
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* Right: Profile Trigger & Mobile Menu Toggle */}
+          <div className="flex items-center gap-3 sm:gap-4 shrink-0">
             
-            {/* User Profile Shortcut Icon */}
+            {/* Account Icon */}
             <Link 
               href="/investors#enquire" 
-              className="text-[#10143A] hover:text-gray-500 transition-colors p-2 hover:bg-gray-50 rounded-full"
+              className="text-[#10143A] hover:text-gray-500 transition-colors p-2 hover:bg-gray-50 rounded-full flex items-center justify-center border border-gray-150 shadow-sm"
               aria-label="Profile"
             >
               <User className="h-5 w-5" />
             </Link>
 
-            {/* Mobile / Hamburger Menu Button */}
+            {/* Mobile Menu Button Toggle */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="inline-flex items-center justify-center rounded-md p-2 text-[#10143A] hover:bg-gray-100 focus:outline-none transition-colors"
+              className="lg:hidden p-2.5 text-[#10143A] hover:bg-gray-100 rounded-md transition-colors"
               aria-controls="mobile-menu"
               aria-expanded={isOpen}
             >
@@ -96,7 +102,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Drawer Navigation */}
+      {/* Mobile Menu Drawer */}
       <AnimatePresence>
         {isOpen && (
           <motion.div

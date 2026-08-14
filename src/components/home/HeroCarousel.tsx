@@ -159,8 +159,8 @@ export default function HeroCarousel() {
         </div>
       </div>
 
-      {/* Slider Controls / Thumbnails at the Bottom */}
-      <div className="absolute bottom-6 left-0 right-0 z-35 max-w-[95%] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between pointer-events-none">
+      {/* Carousel Control Bar */}
+      <div className="absolute bottom-6 left-0 right-0 z-35 max-w-[95%] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-start pointer-events-none">
         
         {/* Navigation Indicator & Progress bar */}
         <div className="flex items-center gap-4 pointer-events-auto">
@@ -173,41 +173,6 @@ export default function HeroCarousel() {
               className="absolute left-0 top-0 bottom-0 bg-[#DCE135] w-0" 
             />
           </div>
-        </div>
-
-        {/* Thumbnail Selector Tabs (Desktop only) */}
-        <div className="hidden lg:flex items-center gap-3 pointer-events-auto">
-          {HERO_SLIDES.map((slide, idx) => (
-            <button
-              key={idx}
-              onClick={() => setCurrentSlide(idx)}
-              className={`px-4 py-2 rounded-xl text-left border transition-all text-xs font-black uppercase tracking-wider ${
-                idx === currentSlide
-                  ? "bg-white text-[#10143A] border-white scale-103"
-                  : "bg-[#10143A]/40 text-white/70 border-white/10 hover:border-white/30"
-              }`}
-            >
-              Slide 0{idx + 1}
-            </button>
-          ))}
-        </div>
-
-        {/* Action controls */}
-        <div className="flex items-center gap-2 pointer-events-auto">
-          <button
-            onClick={prevSlide}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-[#10143A]/40 text-white hover:bg-white hover:text-[#10143A] transition-all active:scale-95"
-            aria-label="Previous slide"
-          >
-            <ChevronLeft className="h-5 w-5" />
-          </button>
-          <button
-            onClick={nextSlide}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-[#10143A]/40 text-white hover:bg-white hover:text-[#10143A] transition-all active:scale-95"
-            aria-label="Next slide"
-          >
-            <ChevronRight className="h-5 w-5" />
-          </button>
         </div>
 
       </div>
