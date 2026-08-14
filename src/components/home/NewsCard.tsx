@@ -30,10 +30,10 @@ export default function NewsCard({ item, darkTheme }: NewsCardProps) {
 
   return (
     <>
-      <div className={`rounded-2xl overflow-hidden border shadow-sm hover:shadow-md transition-shadow flex flex-col h-full text-left group w-full select-none ${
+      <div className={`rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col h-full text-left group w-full select-none ${
         darkTheme 
-          ? "bg-[#10143A]/40 border-white/5" 
-          : "bg-white border-gray-150"
+          ? "bg-[#10143A]/40" 
+          : "bg-white"
       }`}>
         {/* Media Container (16:9 Aspect Box) */}
         <Link 
@@ -91,7 +91,17 @@ export default function NewsCard({ item, darkTheme }: NewsCardProps) {
                   ? "text-white group-hover:text-white/80" 
                   : "text-[#0A1028] group-hover:text-black"
               }`}>
-                {item.title}
+                {(() => {
+                  const words = item.title.split(" ");
+                  if (words.length <= 4) return item.title;
+                  return (
+                    <>
+                      {words.slice(0, 4).join(" ")}
+                      <br />
+                      {words.slice(4).join(" ")}
+                    </>
+                  );
+                })()}
               </h4>
             </Link>
           </div>

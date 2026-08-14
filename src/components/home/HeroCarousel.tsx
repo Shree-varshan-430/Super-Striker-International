@@ -115,8 +115,8 @@ export default function HeroCarousel() {
       <div className="absolute inset-0 bg-gradient-to-r from-[#10143A] via-[#10143A]/65 to-transparent z-20 pointer-events-none" />
 
       {/* Main Content Area */}
-      <div className="max-w-[95%] mx-auto w-full h-full px-4 sm:px-6 lg:px-8 flex flex-col justify-center items-start relative z-30 pointer-events-none">
-        <div className="w-full max-w-3xl relative h-[420px] sm:h-[350px]">
+      <div className="max-w-[95%] mx-auto w-full h-full px-4 sm:px-6 lg:px-8 flex flex-col justify-end pb-16 sm:pb-24 pt-28 sm:pt-36 items-start relative z-30 pointer-events-none">
+        <div className="w-full max-w-3xl relative h-[380px] sm:h-[350px]">
           {HERO_SLIDES.map((slide, idx) => (
             <div
               key={idx}
@@ -130,7 +130,7 @@ export default function HeroCarousel() {
               </span>
               
               {/* Massive Serif Title */}
-              <h1 className="slide-title font-serif text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] max-w-xl sm:max-w-2xl">
+              <h1 className="slide-title font-serif text-2xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] max-w-xl sm:max-w-2xl">
                 {slide.title}
               </h1>
 
