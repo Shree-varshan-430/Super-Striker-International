@@ -6,14 +6,14 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight, Image as ImageIcon } from "lucide-react";
 
 const GALLERY_PHOTOS = [
-  { src: "/images/training-1.jpg", alt: "Youth Squad Drills" },
-  { src: "/images/training-2.jpg", alt: "Goalkeeper Practice" },
-  { src: "/images/match-1.jpg", alt: "Championship Match Action" },
-  { src: "/images/match-2.jpg", alt: "Grassroots Scouting Festival" },
-  { src: "/images/news-grassroots.jpg", alt: "Youth Training Program" },
-  { src: "/images/news-academy-u15.jpg", alt: "Academy Team Presentation" },
-  { src: "/images/news-chennai-league.jpg", alt: "State League Lineup" },
-  { src: "/images/news-scouting.jpg", alt: "District Selection Trials" }
+  { src: "/images/WhatsApp Image 2026-08-07 at 8.29.49 AM.jpeg", alt: "Youth Squad Drills" },
+  { src: "/images/WhatsApp Image 2026-08-07 at 8.29.50 AM.jpeg", alt: "Goalkeeper Practice" },
+  { src: "/images/WhatsApp Image 2026-08-07 at 8.29.51 AM.jpeg", alt: "Championship Match Action" },
+  { src: "/images/WhatsApp Image 2026-08-07 at 8.29.52 AM.jpeg", alt: "Grassroots Scouting Festival" },
+  { src: "/images/WhatsApp Image 2026-08-11 at 8.34.01 AM.jpeg", alt: "Youth Training Program" },
+  { src: "/images/WhatsApp Image 2026-08-11 at 8.34.05 AM.jpeg", alt: "Academy Team Presentation" },
+  { src: "/images/WhatsApp Image 2026-08-11 at 8.34.07 AM.jpeg", alt: "State League Lineup" },
+  { src: "/images/WhatsApp Image 2026-08-11 at 8.34.08 AM.jpeg", alt: "District Selection Trials" }
 ];
 
 export default function PhotoStrip() {

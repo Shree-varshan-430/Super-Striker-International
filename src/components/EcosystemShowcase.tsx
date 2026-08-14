@@ -36,7 +36,7 @@ export default function EcosystemShowcase() {
       name: "Bangalore Super Strikers FC",
       url: "/clubs/bangalore-super-strikers-fc",
       location: "Bangalore, Karnataka",
-      image: "/images/match-1.jpg",
+      image: "/images/WhatsApp Image 2026-08-11 at 8.34.15 AM.jpeg",
       desc: "The foundation of our football journey, Bangalore Super Strikers FC focuses on grassroots development, professional training, competitive football, and creating opportunities for young athletes.",
       highlights: [
         "AIFF & KSFA football ecosystem",
@@ -50,7 +50,7 @@ export default function EcosystemShowcase() {
       name: "Pondicherry Super Strikers FC",
       url: "/clubs/pondicherry-super-strikers-fc",
       location: "Pondicherry",
-      image: "/images/news-pondicherry-scout.jpg",
+      image: "/images/WhatsApp Image 2026-08-11 at 8.34.21 AM.jpeg",
       desc: "Pondicherry Super Strikers FC represents our mission of expanding football opportunities across regions by developing players through structured training, competition, and community engagement.",
       highlights: [
         "Regional football development",
@@ -64,7 +64,7 @@ export default function EcosystemShowcase() {
       name: "Chennai Super Strikers FC",
       url: "/clubs/chennai-super-strikers-fc",
       location: "Chennai, Tamil Nadu",
-      image: "/images/news-chennai-league.jpg",
+      image: "/images/WhatsApp Image 2026-08-11 at 8.34.26 AM.jpeg",
       desc: "Chennai Super Strikers FC strengthens our football ecosystem by discovering talented players and providing pathways towards state, national, and international football opportunities.",
       highlights: [
         "Talent identification",
@@ -312,7 +312,7 @@ export default function EcosystemShowcase() {
             {/* School image block column */}
             <div className="lg:col-span-5 relative min-h-[300px] bg-secondary-navy overflow-hidden">
               <Image
-                src="/images/news-academy-u15.jpg"
+                src="/images/WhatsApp Image 2026-08-11 at 8.34.20 AM.jpeg"
                 alt="Children Football School Training"
                 fill
                 className="object-cover opacity-80"
@@ -326,7 +326,7 @@ export default function EcosystemShowcase() {
       {/* 5. FINAL PROMOTIONAL BANNER */}
       <section className="relative py-28 text-center text-white bg-secondary-navy overflow-hidden">
         <Image
-          src="/images/match-2.jpg"
+          src="/images/WhatsApp Image 2026-08-11 at 8.34.19 AM.jpeg"
           alt="Stadium lights overlay"
           fill
           className="object-cover opacity-15"

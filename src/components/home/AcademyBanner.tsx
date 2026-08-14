@@ -9,7 +9,7 @@ export default function AcademyBanner() {
   return (
     <section className="relative w-full min-h-[420px] sm:min-h-[500px] flex items-center justify-start p-8 sm:p-16 lg:p-24 overflow-hidden group select-none border-b border-gray-150">
       <Image
-        src="/images/training-1.jpg"
+        src="/images/WhatsApp Image 2026-08-07 at 8.29.48 AM.jpeg"
         alt="Academy Drills"
         fill
         className="object-cover transition-transform duration-1000 group-hover:scale-103"
