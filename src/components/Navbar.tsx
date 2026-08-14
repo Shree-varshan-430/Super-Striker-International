@@ -12,6 +12,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const navLinks = [
+    { name: "Home", href: "/" },
     { name: "News", href: "/news" },
     { name: "Ecosystem", href: "/ecosystem" },
     { name: "About", href: "/about" },
@@ -28,7 +29,7 @@ export default function Navbar() {
           {/* Left: Logo & Brand Name */}
           <div className="flex items-center gap-3 shrink-0">
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative w-12 h-12 sm:w-14 sm:h-14 transition-transform duration-300 group-hover:scale-103">
+              <div className="relative w-14 h-14 sm:w-18 sm:h-18 transition-transform duration-300 group-hover:scale-103">
                 <Image
                   src="/super-strikers-international.png"
                   alt="SuperStrikers International Logo"
@@ -38,10 +39,10 @@ export default function Navbar() {
                 />
               </div>
               <div className="flex flex-col text-left">
-                <span className="font-display text-sm sm:text-base lg:text-lg font-black uppercase tracking-tight leading-none text-[#10143A]">
+                <span className="font-display text-base sm:text-lg lg:text-xl font-black uppercase tracking-tight leading-none text-[#10143A]">
                   SuperStriker
                 </span>
-                <span className="text-[8px] sm:text-[9px] font-black uppercase tracking-widest leading-none mt-1 text-gray-400">
+                <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest leading-none mt-1 text-gray-400">
                   International
                 </span>
               </div>
@@ -56,7 +57,7 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`text-xs font-black uppercase tracking-widest transition-colors py-2 relative ${
+                  className={`text-xs sm:text-sm font-black uppercase tracking-widest transition-colors py-2 relative ${
                     isActive 
                       ? "text-[#10143A]" 
                       : "text-[#10143A]/60 hover:text-[#10143A]"
