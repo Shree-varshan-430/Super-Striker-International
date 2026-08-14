@@ -16,9 +16,20 @@ export default function AcademyBanner() {
         sizes="100vw"
         priority
       />
-      {/* Cinematic gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#10143A] via-[#10143A]/85 to-transparent z-10" />
+      {/* Black full accent overlay & Cinematic gradient overlay */}
+      <div className="absolute inset-0 bg-black/45 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-[#10143A]/70 to-transparent z-10" />
       
+      {/* Brand accent wedges on bottom right */}
+      <div 
+        className="absolute bottom-0 right-0 w-32 h-32 sm:w-44 sm:h-44 md:w-56 md:h-56 bg-[#10143A] pointer-events-none z-15 translate-x-2 translate-y-2 lg:block hidden" 
+        style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }} 
+      />
+      <div 
+        className="absolute bottom-0 right-0 w-28 h-28 sm:w-40 sm:h-40 md:w-52 md:h-52 bg-[#DCE135] pointer-events-none z-20 lg:block hidden" 
+        style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }} 
+      />
+
       {/* Content */}
       <div className="relative z-20 flex flex-col gap-5 text-left max-w-2xl border-l-8 border-[#DCE135] pl-6 py-2">
         <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#DCE135]/15 px-3.5 py-1 rounded-full w-fit">

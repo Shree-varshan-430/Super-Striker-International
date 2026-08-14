@@ -337,16 +337,28 @@ export default function Home() {
         {/* 8. INFRASTRUCTURE & VISION BANNER (PARALLAX ZOOM STADIUM - DARK) */}
         <section 
           ref={featureBannerRef} 
-          className="relative h-[65vh] min-h-[400px] flex items-center justify-start overflow-hidden bg-[#10143A] text-white px-8 sm:px-16 lg:px-24 select-none border-b border-gray-150"
+          className="relative h-[65vh] min-h-[400px] flex items-center justify-start overflow-hidden bg-[#10143A] text-white px-8 sm:px-16 lg:px-24 select-none border-b border-gray-150 group"
         >
           <Image
             src="/images/match-1.jpg"
             alt="SuperStriker Stadium Future Vision"
             fill
-            className="object-cover opacity-25"
+            className="object-cover opacity-35 transition-transform duration-1000 group-hover:scale-103"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#10143A] via-[#10143A]/80 to-transparent z-10" />
+          {/* Black full accent overlay & Cinematic gradient overlay */}
+          <div className="absolute inset-0 bg-black/45 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-[#10143A]/70 to-transparent z-10" />
+          
+          {/* Brand accent wedges on bottom right */}
+          <div 
+            className="absolute bottom-0 right-0 w-32 h-32 sm:w-44 sm:h-44 md:w-56 md:h-56 bg-[#10143A] pointer-events-none z-15 translate-x-2 translate-y-2 lg:block hidden" 
+            style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }} 
+          />
+          <div 
+            className="absolute bottom-0 right-0 w-28 h-28 sm:w-40 sm:h-40 md:w-52 md:h-52 bg-[#DCE135] pointer-events-none z-20 lg:block hidden" 
+            style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }} 
+          />
           
           <div className="relative z-20 max-w-2xl text-left flex flex-col gap-4">
             <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#DCE135]/15 px-3 py-1 rounded w-fit">
