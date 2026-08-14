@@ -26,20 +26,41 @@ export default function News() {
 
   return (
     <div className="w-full bg-white text-secondary-navy min-h-screen">
-      {/* Magazine Page Header */}
-      <section className="bg-background-soft py-16 border-b border-gray-100 px-4">
-        <div className="max-w-7xl mx-auto flex flex-col gap-4 text-center md:text-left">
-          <span className="text-[10px] font-bold uppercase tracking-widest text-primary-sky self-center md:self-start">
-            SuperStriker Press
+      {/* Small Hero Banner */}
+      <div className="relative w-full h-[220px] sm:h-[260px] bg-[#10143A] flex items-center justify-start overflow-hidden group select-none mt-20 z-20">
+        <Image
+          src="/images/team-2.jpg"
+          alt="Football Editorial Hub"
+          fill
+          className="object-cover opacity-45 transition-transform duration-1000 group-hover:scale-103"
+          priority
+        />
+        {/* Black full accent overlay & Cinematic gradient overlay */}
+        <div className="absolute inset-0 bg-black/45 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-[#10143A]/70 to-transparent z-10" />
+        
+        {/* Brand accent wedges on bottom right */}
+        <div 
+          className="absolute bottom-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-[#10143A] pointer-events-none z-15 translate-x-2 translate-y-2 lg:block hidden" 
+          style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }} 
+        />
+        <div 
+          className="absolute bottom-0 right-0 w-20 h-20 sm:w-28 sm:h-28 bg-[#DCE135] pointer-events-none z-20 lg:block hidden" 
+          style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }} 
+        />
+
+        <div className="relative z-20 max-w-6xl mx-auto w-full px-4 sm:px-6 lg:px-8 text-left flex flex-col gap-2">
+          <span className="text-[9px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-2 py-0.5 rounded w-fit">
+            SUPERSTRIKER PRESS
           </span>
-          <h1 className="font-display text-4xl sm:text-5xl font-extrabold uppercase tracking-tight text-secondary-navy leading-none">
+          <h1 className="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-none">
             Football Editorial Hub
           </h1>
-          <p className="text-sm text-secondary-navy/60 max-w-xl leading-relaxed">
+          <p className="text-xs sm:text-sm text-white/80 max-w-xl leading-relaxed mt-1 font-medium">
             Latest stories, tactical analysis, match summaries, academy pathways, and corporate announcements directly from our teams.
           </p>
         </div>
-      </section>
+      </div>
 
       {/* Main Magazine Layout */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">

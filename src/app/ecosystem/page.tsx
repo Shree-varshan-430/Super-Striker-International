@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowDown, Shield, Trophy, GraduationCap, Compass, Users, Award, MapPin } from "lucide-react";
+import Image from "next/image";
 
 interface NodeDetail {
   title: string;
@@ -105,18 +106,41 @@ export default function Ecosystem() {
 
   return (
     <div className="w-full bg-white text-secondary-navy min-h-screen">
-      {/* Ecosystem Header */}
-      <section className="bg-background-soft py-20 border-b border-gray-100 px-4 text-center">
-        <div className="max-w-4xl mx-auto flex flex-col gap-4">
-          <span className="text-[10px] font-bold uppercase tracking-widest text-[#10143A]">Ecosystem Mapping</span>
-          <h1 className="font-display text-4xl sm:text-5xl font-extrabold uppercase tracking-tight text-secondary-navy leading-none">
+      {/* Small Hero Banner */}
+      <div className="relative w-full h-[220px] sm:h-[260px] bg-[#10143A] flex items-center justify-start overflow-hidden group select-none mt-20">
+        <Image
+          src="/images/match-1.jpg"
+          alt="Our Football Ecosystem"
+          fill
+          className="object-cover opacity-45 transition-transform duration-1000 group-hover:scale-103"
+          priority
+        />
+        {/* Black full accent overlay & Cinematic gradient overlay */}
+        <div className="absolute inset-0 bg-black/40 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-[#10143A]/60 to-transparent z-10" />
+        
+        {/* Brand accent wedges on bottom right */}
+        <div 
+          className="absolute bottom-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-[#10143A] pointer-events-none z-15 translate-x-2 translate-y-2 lg:block hidden" 
+          style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }} 
+        />
+        <div 
+          className="absolute bottom-0 right-0 w-20 h-20 sm:w-28 sm:h-28 bg-[#DCE135] pointer-events-none z-20 lg:block hidden" 
+          style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }} 
+        />
+
+        <div className="relative z-20 max-w-6xl mx-auto w-full px-4 sm:px-6 lg:px-8 text-left flex flex-col gap-2">
+          <span className="text-[9px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-2 py-0.5 rounded w-fit">
+            ECOSYSTEM MAPPING
+          </span>
+          <h1 className="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-none">
             Our Football Ecosystem
           </h1>
-          <p className="text-sm text-secondary-navy/70 max-w-xl mx-auto leading-relaxed mt-2">
+          <p className="text-xs sm:text-sm text-white/80 max-w-xl leading-relaxed mt-1 font-medium">
             Explore the vertical integration of SuperStriker International, tracing the path from raw grassroots discovery to professional contracts and national dreams.
           </p>
         </div>
-      </section>
+      </div>
 
       {/* Diagram Layout */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">

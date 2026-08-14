@@ -14,21 +14,45 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="w-full bg-white text-[#10143A] min-h-screen pt-28 pb-20 select-none text-left">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="w-full bg-white text-[#10143A] min-h-screen pb-20 select-none text-left">
+      
+      {/* Small Hero Banner */}
+      <div className="relative w-full h-[220px] sm:h-[260px] bg-[#10143A] flex items-center justify-start overflow-hidden group select-none mt-20">
+        <Image
+          src="/images/team-1.jpg"
+          alt="About Us"
+          fill
+          className="object-cover opacity-45 transition-transform duration-1000 group-hover:scale-103"
+          priority
+        />
+        {/* Black full accent overlay & Cinematic gradient overlay */}
+        <div className="absolute inset-0 bg-black/40 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-[#10143A]/60 to-transparent z-10" />
         
-        {/* Editorial Heading */}
-        <div className="border-l-4 border-[#10143A] pl-6 mb-12">
-          <span className="text-[10px] font-black uppercase tracking-widest text-white bg-[#10143A] px-2.5 py-0.5 rounded">
+        {/* Brand accent wedges on bottom right */}
+        <div 
+          className="absolute bottom-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-[#10143A] pointer-events-none z-15 translate-x-2 translate-y-2 lg:block hidden" 
+          style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }} 
+        />
+        <div 
+          className="absolute bottom-0 right-0 w-20 h-20 sm:w-28 sm:h-28 bg-[#DCE135] pointer-events-none z-20 lg:block hidden" 
+          style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }} 
+        />
+
+        <div className="relative z-20 max-w-6xl mx-auto w-full px-4 sm:px-6 lg:px-8 text-left flex flex-col gap-2">
+          <span className="text-[9px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-2 py-0.5 rounded w-fit">
             ABOUT THE PLATFORM
           </span>
-          <h1 className="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight text-[#10143A] mt-2">
+          <h1 className="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-none">
             Bangalore Super Strikers FC
           </h1>
-          <p className="text-xs sm:text-sm text-gray-500 leading-relaxed max-w-xl mt-2">
+          <p className="text-xs sm:text-sm text-white/80 max-w-xl leading-relaxed mt-1 font-medium">
             A comprehensive look into our foundation, developmental vision, coaching philosophies, and community-driven actions.
           </p>
         </div>
+      </div>
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
 
         {/* Founder Spotlights & Vision for Young Players (Image Integration) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20 bg-gray-50 rounded-3xl p-6 sm:p-10 border border-gray-150 shadow-sm relative overflow-hidden">

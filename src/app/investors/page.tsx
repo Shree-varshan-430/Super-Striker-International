@@ -73,18 +73,41 @@ export default function Investors() {
       <div className="absolute top-10 left-10 w-[500px] h-[500px] bg-[#DCE135]/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-40 right-10 w-[400px] h-[400px] bg-[#1B2255]/40 rounded-full blur-[100px] pointer-events-none" />
 
-      {/* Premium Header */}
-      <section className="py-24 border-b border-white/10 px-4 text-center relative z-10">
-        <div className="max-w-4xl mx-auto flex flex-col gap-4">
-          <span className="text-[10px] font-bold uppercase tracking-widest text-[#DCE135]">Partnerships & Capital</span>
-          <h1 className="font-display text-4xl sm:text-5xl font-extrabold uppercase tracking-tight text-white leading-none">
-            Invest In The Future Of Indian Football
+      {/* Small Hero Banner */}
+      <div className="relative w-full h-[220px] sm:h-[260px] bg-[#10143A] flex items-center justify-start overflow-hidden group select-none mt-20 z-20">
+        <Image
+          src="/images/news-pitch-sponsorship.jpg"
+          alt="Partnerships & Capital"
+          fill
+          className="object-cover opacity-45 transition-transform duration-1000 group-hover:scale-103"
+          priority
+        />
+        {/* Black full accent overlay & Cinematic gradient overlay */}
+        <div className="absolute inset-0 bg-black/45 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-[#10143A]/70 to-transparent z-10" />
+        
+        {/* Brand accent wedges on bottom right */}
+        <div 
+          className="absolute bottom-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-[#10143A] pointer-events-none z-15 translate-x-2 translate-y-2 lg:block hidden" 
+          style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }} 
+        />
+        <div 
+          className="absolute bottom-0 right-0 w-20 h-20 sm:w-28 sm:h-28 bg-[#DCE135] pointer-events-none z-20 lg:block hidden" 
+          style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }} 
+        />
+
+        <div className="relative z-20 max-w-6xl mx-auto w-full px-4 sm:px-6 lg:px-8 text-left flex flex-col gap-2">
+          <span className="text-[9px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-2 py-0.5 rounded w-fit">
+            PARTNERSHIPS & CAPITAL
+          </span>
+          <h1 className="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-none">
+            Invest In Indian Football
           </h1>
-          <p className="text-sm text-white/80 max-w-xl mx-auto leading-relaxed mt-2">
+          <p className="text-xs sm:text-sm text-white/80 max-w-xl leading-relaxed mt-1 font-medium">
             SuperStriker International is building a scalable, professional football ecosystem combining senior league clubs, youth academies, and grassroots systems.
           </p>
         </div>
-      </section>
+      </div>
 
       {/* Grid of 5 Investment Cards */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
