@@ -463,9 +463,9 @@ export default function Home() {
           {/* Render Player Journeys using watermarked Squad Profile Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
-              { name: "Aditya Kumar", role: "Midfielder", cohort: "U-15 Elite Cohort", number: "10", image: "/images/match-1.jpg", stats: "Pass Accuracy: 88% | Assist Leader" },
-              { name: "Sanjay Raj", role: "Striker", cohort: "BSS Senior Squad", number: "09", image: "/images/news-grassroots.jpg", stats: "Goals: 12 | Shots conversion: 24%" },
-              { name: "Vikram Seth", role: "Goalkeeper", cohort: "Pondicherry Resident Academy", number: "01", image: "/images/match-2.jpg", stats: "Clean Sheets: 8 | Penalty Saves: 2" }
+              { name: "Aditya Kumar", role: "Midfielder", cohort: "U-15 Elite Cohort", number: "10", image: "/images/Player1.jpeg", stats: "Pass Accuracy: 88% | Assist Leader" },
+              { name: "Sanjay Raj", role: "Striker", cohort: "BSS Senior Squad", number: "09", image: "/images/Player2.jpeg", stats: "Goals: 12 | Shots conversion: 24%" },
+              { name: "Vikram Seth", role: "Goalkeeper", cohort: "Pondicherry Resident Academy", number: "01", image: "/images/Player3.jpeg", stats: "Clean Sheets: 8 | Penalty Saves: 2" }
             ].map((player) => (
               <div 
                 key={player.name}
