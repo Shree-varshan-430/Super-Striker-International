@@ -54,36 +54,36 @@ export default function AboutPage() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
 
-        {/* 1. Founder Spotlight & Vision for Young Players (BORDERLESS CARD) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20 bg-gray-50 rounded-3xl p-6 sm:p-12 shadow-sm relative overflow-hidden">
+        {/* 1. Founder Spotlight & Vision for Young Players (Image Left, Text Right) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-16 bg-gray-50 rounded-3xl p-6 sm:p-12 shadow-sm relative overflow-hidden">
           
-          {/* Left Side: Founder Image (No Border) */}
+          {/* Left Side: Founder Image (Enlarged) */}
           <div className="lg:col-span-5 flex justify-center relative z-10 w-full">
-            <div className="relative aspect-[3/4] w-full max-w-[380px] rounded-2xl overflow-hidden shadow-lg bg-gray-100">
+            <div className="relative aspect-[3/4] w-full max-w-[450px] min-h-[380px] sm:min-h-[460px] rounded-2xl overflow-hidden shadow-xl bg-gray-100">
               <Image
                 src="/images/founder-pitch-standing.jpg"
                 alt="Ramakrishnan (Ram) - BSSFC President & AIFF Licensed Coach"
                 fill
                 className="object-cover object-top transition-transform duration-700 hover:scale-103"
-                sizes="(max-w-768px) 100vw, 380px"
+                sizes="(max-w-768px) 100vw, 450px"
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#10143A]/85 via-[#10143A]/20 to-transparent" />
-              <div className="absolute bottom-5 left-5 right-5 text-white text-left">
+              <div className="absolute bottom-6 left-6 right-6 text-white text-left">
                 <span className="text-[9px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-2.5 py-0.5 rounded">
                   PRESIDENT & FOUNDER
                 </span>
-                <h3 className="font-display text-xl font-black uppercase tracking-tight mt-1.5">
+                <h3 className="font-display text-2xl font-black uppercase tracking-tight mt-1.5">
                   Ramakrishnan (Ram)
                 </h3>
-                <p className="text-[10px] font-bold text-white/80 uppercase mt-0.5 tracking-wider">
+                <p className="text-[11px] font-bold text-white/80 uppercase mt-0.5 tracking-wider">
                   AIFF-C Licensed Coach & KSFA Referee
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Right Side: His Vision for Young Players & Club Heritage */}
+          {/* Right Side: His Vision for Young Players */}
           <div className="lg:col-span-7 flex flex-col gap-5 text-left relative z-10">
             <span className="text-[9px] font-black uppercase tracking-widest text-[#10143A] bg-[#DCE135] px-2.5 py-0.5 rounded w-fit">
               PRESIDENTIAL VISION
@@ -93,7 +93,7 @@ export default function AboutPage() {
             </h2>
             <div className="h-1 w-12 bg-[#10143A]" />
             
-            <p className="text-sm text-[#4B5563] leading-relaxed font-semibold">
+            <p className="text-sm sm:text-base text-[#4B5563] leading-relaxed font-semibold">
               Ramakrishnan envisions a future where young players in India have access to the same structured development pipelines, elite physical resources, and competitive exposure as their international counterparts.
             </p>
             <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed font-medium">
@@ -101,11 +101,11 @@ export default function AboutPage() {
             </p>
 
             <div className="flex flex-wrap gap-4 mt-2">
-              <div className="flex items-center gap-2 text-xs font-bold text-[#10143A] bg-white px-3.5 py-2 rounded-xl shadow-xs">
+              <div className="flex items-center gap-2 text-xs font-bold text-[#10143A] bg-white px-4 py-2.5 rounded-xl shadow-xs">
                 <Shield className="h-4 w-4 shrink-0 text-[#10143A]" />
                 KSFA Affiliated Pathway
               </div>
-              <div className="flex items-center gap-2 text-xs font-bold text-[#10143A] bg-white px-3.5 py-2 rounded-xl shadow-xs">
+              <div className="flex items-center gap-2 text-xs font-bold text-[#10143A] bg-white px-4 py-2.5 rounded-xl shadow-xs">
                 <GraduationCap className="h-4 w-4 shrink-0 text-[#10143A]" />
                 Structured Career Pathways
               </div>
@@ -113,154 +113,186 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* 2. Visual Storytelling Grid: Why the Foundation Was Created & Community Initiatives */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
+        {/* 2. Why the Foundation Was Created (Text Left, Image Right) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-16 bg-gray-50 rounded-3xl p-6 sm:p-12 shadow-sm relative overflow-hidden">
           
-          {/* Section 1: Why the Foundation was Created */}
-          <div className="bg-gray-50 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col justify-between gap-6 text-left">
-            <div className="flex flex-col gap-4">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-[#10143A]/5 flex items-center justify-center text-[#10143A]">
-                  <Heart className="h-5 w-5 text-[#10143A]" />
-                </div>
-                <h3 className="font-display text-lg font-black uppercase tracking-wider text-[#10143A]">
-                  Why the Foundation Was Created
-                </h3>
+          {/* Left Side: Text */}
+          <div className="lg:col-span-7 flex flex-col gap-5 text-left order-2 lg:order-1 relative z-10">
+            <span className="text-[9px] font-black uppercase tracking-widest text-[#10143A] bg-[#DCE135] px-2.5 py-0.5 rounded w-fit">
+              FOUNDATION ORIGINS
+            </span>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-[#10143A]/5 flex items-center justify-center text-[#10143A] shrink-0">
+                <Heart className="h-5 w-5 text-[#10143A]" />
               </div>
-              <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed font-medium">
-                The Bangalore Super Strikers Foundation (BSSFC Foundation) was established to dismantle socioeconomic barriers that prevent children from accessing sports. During his training years, Ram noticed that countless talented, enthusiastic players from middle-class and underprivileged families were locked out of professional pathways due to the high cost of coaching, kits, travel, and tournament fees. The Foundation was created to offer scholarships, kit sponsorships, and free soccer coaching clinics so that any aspiring child—regardless of their financial background—can pursue their sporting dreams.
-              </p>
+              <h2 className="font-display text-2xl sm:text-4xl font-black uppercase tracking-tight text-[#10143A] leading-tight">
+                Why the Foundation Was Created
+              </h2>
             </div>
+            <div className="h-1 w-12 bg-[#10143A]" />
 
-            <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden shadow-sm bg-gray-200 mt-2">
+            <p className="text-sm sm:text-base text-[#4B5563] leading-relaxed font-semibold">
+              The Bangalore Super Strikers Foundation (BSSFC Foundation) was established to dismantle socioeconomic barriers that prevent talented children from accessing sports.
+            </p>
+            <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed font-medium">
+              During his formative training years, Ram noticed that countless talented, enthusiastic players from middle-class and underprivileged families were locked out of professional pathways due to the high cost of elite coaching, kits, travel, and tournament fees.
+            </p>
+            <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed font-medium">
+              The Foundation was created to offer comprehensive scholarships, kit sponsorships, and free soccer coaching clinics so that any aspiring child—regardless of their financial background—can pursue their sporting dreams with dignity.
+            </p>
+          </div>
+
+          {/* Right Side: Image (Enlarged) */}
+          <div className="lg:col-span-5 flex justify-center order-1 lg:order-2 relative z-10 w-full">
+            <div className="relative aspect-[3/4] w-full max-w-[450px] min-h-[380px] sm:min-h-[460px] rounded-2xl overflow-hidden shadow-xl bg-gray-100">
               <Image
                 src="/images/founder-portrait-fence.jpg"
                 alt="Founder at Grassroots Foundation Field"
                 fill
-                className="object-cover object-center"
+                className="object-cover object-center transition-transform duration-700 hover:scale-103"
+                sizes="(max-w-768px) 100vw, 450px"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#10143A]/60 via-transparent to-transparent" />
-              <span className="absolute bottom-3 left-3 text-[9px] font-bold text-white uppercase tracking-wider bg-[#10143A]/80 px-2.5 py-1 rounded">
-                Grassroots Action
-              </span>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#10143A]/75 via-transparent to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6 text-white text-left">
+                <span className="text-[9px] font-bold text-white uppercase tracking-wider bg-[#10143A]/80 px-2.5 py-1 rounded">
+                  Grassroots Action
+                </span>
+                <p className="text-sm font-bold text-white/90 uppercase mt-1">
+                  Empowering Underprivileged Talent
+                </p>
+              </div>
             </div>
           </div>
+        </div>
 
-          {/* Section 2: Community Initiatives */}
-          <div className="bg-gray-50 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col justify-between gap-6 text-left">
-            <div className="flex flex-col gap-4">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-[#10143A]/5 flex items-center justify-center text-[#10143A]">
-                  <Users className="h-5 w-5 text-[#10143A]" />
-                </div>
-                <h3 className="font-display text-lg font-black uppercase tracking-wider text-[#10143A]">
-                  Community Initiatives
-                </h3>
-              </div>
-              <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed font-medium">
-                Our initiatives reach deep into regional communities to make sports a force for good. BSSFC actively coordinates with local public schools to integrate physical literacy and basic football training directly into standard school curriculums. We run weekend neighborhood leagues, conduct free health check-ups, and offer training workshops for local volunteer coaches. Additionally, our specialized holiday camps and residential scout operations actively target both urban slums and rural zones, offering children healthy physical channels and scholarship options.
-              </p>
-            </div>
-
-            <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden shadow-sm bg-gray-200 mt-2">
+        {/* 3. Community Initiatives (Image Left, Text Right) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-16 bg-gray-50 rounded-3xl p-6 sm:p-12 shadow-sm relative overflow-hidden">
+          
+          {/* Left Side: Image (Enlarged) */}
+          <div className="lg:col-span-5 flex justify-center relative z-10 w-full">
+            <div className="relative aspect-[3/4] w-full max-w-[450px] min-h-[380px] sm:min-h-[460px] rounded-2xl overflow-hidden shadow-xl bg-gray-100">
               <Image
                 src="/images/founder-with-football.jpg"
                 alt="Founder with Football on Turf"
                 fill
-                className="object-cover object-top"
+                className="object-cover object-top transition-transform duration-700 hover:scale-103"
+                sizes="(max-w-768px) 100vw, 450px"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#10143A]/60 via-transparent to-transparent" />
-              <span className="absolute bottom-3 left-3 text-[9px] font-bold text-white uppercase tracking-wider bg-[#10143A]/80 px-2.5 py-1 rounded">
-                Community Camps
-              </span>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#10143A]/75 via-transparent to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6 text-white text-left">
+                <span className="text-[9px] font-bold text-white uppercase tracking-wider bg-[#10143A]/80 px-2.5 py-1 rounded">
+                  Community Impact
+                </span>
+                <p className="text-sm font-bold text-white/90 uppercase mt-1">
+                  On-Field Mentoring & Clinics
+                </p>
+              </div>
             </div>
           </div>
 
+          {/* Right Side: Text */}
+          <div className="lg:col-span-7 flex flex-col gap-5 text-left relative z-10">
+            <span className="text-[9px] font-black uppercase tracking-widest text-[#10143A] bg-[#DCE135] px-2.5 py-0.5 rounded w-fit">
+              SOCIAL IMPACT
+            </span>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-[#10143A]/5 flex items-center justify-center text-[#10143A] shrink-0">
+                <Users className="h-5 w-5 text-[#10143A]" />
+              </div>
+              <h2 className="font-display text-2xl sm:text-4xl font-black uppercase tracking-tight text-[#10143A] leading-tight">
+                Community Initiatives
+              </h2>
+            </div>
+            <div className="h-1 w-12 bg-[#10143A]" />
+
+            <p className="text-sm sm:text-base text-[#4B5563] leading-relaxed font-semibold">
+              Our initiatives reach deep into regional communities to make sports a driving force for public health, discipline, and personal growth.
+            </p>
+            <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed font-medium">
+              BSSFC actively coordinates with local public schools to integrate physical literacy and basic football training directly into standard school curriculums. We run weekend neighborhood leagues, conduct free health check-ups, and offer certification workshops for local volunteer coaches.
+            </p>
+            <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed font-medium">
+              Additionally, our specialized holiday camps and residential scout operations actively target both urban zones and rural districts, offering children healthy physical channels and full scholarship opportunities.
+            </p>
+          </div>
         </div>
 
-        {/* 3. Training Philosophy & Football Development Sections */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-20 items-stretch">
+        {/* 4. Training Philosophy & Football Development (Text Left, Image Right) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-16 bg-gray-50 rounded-3xl p-6 sm:p-12 shadow-sm relative overflow-hidden">
           
-          {/* Left Column: Training Philosophy (7 cols) */}
-          <div className="lg:col-span-7 bg-gray-50 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col gap-6 text-left">
-            <div className="flex items-center gap-3 border-b border-gray-200 pb-4">
-              <div className="w-10 h-10 rounded-xl bg-[#10143A]/5 flex items-center justify-center text-[#10143A]">
-                <Activity className="h-5 w-5" />
+          {/* Left Side: Text & Pillars */}
+          <div className="lg:col-span-7 flex flex-col gap-5 text-left order-2 lg:order-1 relative z-10">
+            <span className="text-[9px] font-black uppercase tracking-widest text-[#10143A] bg-[#DCE135] px-2.5 py-0.5 rounded w-fit">
+              COACHING EXCELLENCE
+            </span>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-[#10143A]/5 flex items-center justify-center text-[#10143A] shrink-0">
+                <Activity className="h-5 w-5 text-[#10143A]" />
               </div>
-              <h3 className="font-display text-lg font-black uppercase tracking-wider text-[#10143A]">
-                Training Philosophy
-              </h3>
+              <h2 className="font-display text-2xl sm:text-4xl font-black uppercase tracking-tight text-[#10143A] leading-tight">
+                Training Philosophy & Pillars
+              </h2>
             </div>
-            
-            <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed font-medium">
-              Our training philosophy focuses on developing <strong className="text-[#10143A]">The Total Footballer</strong>. We believe in providing structured, scientific training sessions that are both friendly and competitive. We align our curriculum with AIFF guidelines, focusing on four primary pillars:
+            <div className="h-1 w-12 bg-[#10143A]" />
+
+            <p className="text-sm sm:text-base text-[#4B5563] leading-relaxed font-semibold">
+              Our training philosophy focuses on developing <strong className="text-[#10143A]">The Total Footballer</strong> through structured, scientific methodologies aligned with AIFF and international curriculum standards.
             </p>
 
-            <div className="grid grid-cols-2 gap-4 mt-2">
-              <div className="flex flex-col gap-0.5 bg-white rounded-xl p-4 shadow-xs">
+            <div className="grid grid-cols-2 gap-3.5 my-2">
+              <div className="flex flex-col gap-0.5 bg-white rounded-xl p-3.5 shadow-xs">
                 <span className="text-xs font-black uppercase text-[#10143A]">Progression</span>
                 <span className="text-[10px] text-gray-400 font-medium">Systematic age-appropriate curricula</span>
               </div>
-              <div className="flex flex-col gap-0.5 bg-white rounded-xl p-4 shadow-xs">
+              <div className="flex flex-col gap-0.5 bg-white rounded-xl p-3.5 shadow-xs">
                 <span className="text-xs font-black uppercase text-[#10143A]">Nutrition</span>
                 <span className="text-[10px] text-gray-400 font-medium">Hydration and diet guidelines</span>
               </div>
-              <div className="flex flex-col gap-0.5 bg-white rounded-xl p-4 shadow-xs">
+              <div className="flex flex-col gap-0.5 bg-white rounded-xl p-3.5 shadow-xs">
                 <span className="text-xs font-black uppercase text-[#10143A]">Training</span>
                 <span className="text-[10px] text-gray-400 font-medium">UEFA-based match setups</span>
               </div>
-              <div className="flex flex-col gap-0.5 bg-white rounded-xl p-4 shadow-xs">
+              <div className="flex flex-col gap-0.5 bg-white rounded-xl p-3.5 shadow-xs">
                 <span className="text-xs font-black uppercase text-[#10143A]">Technique</span>
                 <span className="text-[10px] text-gray-400 font-medium">Precision ball control drills</span>
               </div>
             </div>
+
+            <div className="pt-2">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 bg-[#10143A] text-white hover:bg-[#DCE135] hover:text-[#10143A] transition-all px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm"
+              >
+                Join Our Academy
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
 
-          {/* Right Column: Football Development with Turf Photo (5 cols) */}
-          <div className="lg:col-span-5 bg-gray-50 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col justify-between gap-6 text-left">
-            <div className="flex flex-col gap-4">
-              <div className="flex items-center gap-3 border-b border-gray-200 pb-4">
-                <div className="w-10 h-10 rounded-xl bg-[#10143A]/5 flex items-center justify-center text-[#10143A]">
-                  <Trophy className="h-5 w-5" />
-                </div>
-                <h3 className="font-display text-lg font-black uppercase tracking-wider text-[#10143A]">
-                  Football Development
-                </h3>
-              </div>
-              
-              <ul className="flex flex-col gap-3 text-xs font-bold text-[#4B5563]">
-                <li className="flex items-start gap-2.5">
-                  <Sparkles className="h-4 w-4 text-[#10143A] shrink-0 mt-0.5" />
-                  <span>Grassroots soccer schools for ages 5 to 12.</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <Sparkles className="h-4 w-4 text-[#10143A] shrink-0 mt-0.5" />
-                  <span>Elite academy cohorts competing in KSFA youth divisions.</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <Sparkles className="h-4 w-4 text-[#10143A] shrink-0 mt-0.5" />
-                  <span>Senior professional team divisions (BSSFC) in state leagues.</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden shadow-sm bg-gray-200">
+          {/* Right Side: Image (Enlarged) */}
+          <div className="lg:col-span-5 flex justify-center order-1 lg:order-2 relative z-10 w-full">
+            <div className="relative aspect-[3/4] w-full max-w-[450px] min-h-[380px] sm:min-h-[460px] rounded-2xl overflow-hidden shadow-xl bg-gray-100">
               <Image
                 src="/images/founder-turf-pose.jpg"
                 alt="Founder inspecting professional pitch"
                 fill
-                className="object-cover object-top"
+                className="object-cover object-top transition-transform duration-700 hover:scale-103"
+                sizes="(max-w-768px) 100vw, 450px"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#10143A]/60 via-transparent to-transparent" />
-              <span className="absolute bottom-3 left-3 text-[9px] font-bold text-white uppercase tracking-wider bg-[#10143A]/80 px-2.5 py-1 rounded">
-                Professional Turf Facilities
-              </span>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#10143A]/75 via-transparent to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6 text-white text-left">
+                <span className="text-[9px] font-bold text-white uppercase tracking-wider bg-[#10143A]/80 px-2.5 py-1 rounded">
+                  Facility Infrastructure
+                </span>
+                <p className="text-sm font-bold text-white/90 uppercase mt-1">
+                  FIFA-Grade Turf & Training Hubs
+                </p>
+              </div>
             </div>
           </div>
-
         </div>
 
-        {/* 4. Tribute & Dedication Block */}
+        {/* 5. Tribute & Dedication Block */}
         <div className="bg-[#10143A] text-white rounded-3xl p-8 sm:p-10 relative overflow-hidden flex flex-col sm:flex-row items-center gap-6 shadow-xl">
           <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center text-[#DCE135] shrink-0">
             <Heart className="h-8 w-8 fill-current" />
