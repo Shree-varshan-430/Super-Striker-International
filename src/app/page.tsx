@@ -383,67 +383,75 @@ export default function Home() {
         {/* 9. FOUNDER & HERITAGE PROFILE NOTE (MAGAZINE INTERVIEW - LIGHT & ENLARGED PORTRAIT) */}
         <motion.section 
           {...sectionAnimProps}
-          className="py-24 px-4 sm:px-6 lg:px-8 max-w-[95%] mx-auto bg-white border-b border-gray-100 select-none"
+          className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-6xl 2xl:max-w-7xl mx-auto bg-white border-b border-gray-100 select-none"
         >
-          <div className="text-center mb-16">
-            <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-2.5 py-0.5 rounded">
+          <div className="text-center mb-12 sm:mb-16">
+            <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-3 py-1 rounded">
               HERITAGE INTERVIEWS
             </span>
             <h2 className="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight text-[#10143A] mt-2">
               Stories Behind The Vision
             </h2>
-            <div className="h-1 w-12 bg-[#10143A] mx-auto mt-4" />
+            <div className="h-1.5 w-16 bg-[#10143A] mx-auto mt-4" />
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Portrait Image with floating hover effect - ENLARGED to lg:col-span-6 */}
-            <div className="lg:col-span-6 flex justify-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center bg-gray-50 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-sm">
+            {/* Portrait Image with crisp 4K rendering */}
+            <div className="lg:col-span-5 flex justify-center w-full">
               <motion.div
-                whileHover={{ y: -6, rotate: -1 }}
+                whileHover={{ y: -4 }}
                 transition={{ type: "spring", stiffness: 200 }}
-                className="relative h-[520px] w-full max-w-[440px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white"
+                className="relative aspect-[3/4] w-full max-w-[440px] min-h-[380px] sm:min-h-[460px] rounded-2xl overflow-hidden shadow-xl"
               >
                 <Image
-                  src="/images/founder-portrait.jpg"
+                  src="/images/founder-pitch-standing.jpg"
                   alt="Ramakrishnan President Portrait"
                   fill
+                  unoptimized
                   className="object-cover object-top"
-                  sizes="440px"
+                  sizes="(max-w-768px) 100vw, 440px"
+                  priority
                 />
               </motion.div>
             </div>
 
-            {/* Quote details - lg:col-span-6 */}
-            <div className="lg:col-span-6 flex flex-col gap-6 text-left relative pl-4 lg:pl-10">
-              <div className="absolute left-0 top-0 text-[#10143A]/10 font-serif text-9xl pointer-events-none select-none -translate-x-4 -translate-y-8">
-                “
-              </div>
-              
-              <p className="font-display text-2xl sm:text-3xl font-bold uppercase tracking-tight text-[#10143A] relative z-10 leading-snug">
-                Football is not only about creating players. It is about creating opportunities and dreams.
+            {/* Quote and Vision Details */}
+            <div className="lg:col-span-7 flex flex-col gap-6 text-left relative">
+              <span className="text-[10px] font-black uppercase tracking-widest text-[#10143A] bg-[#DCE135] px-3 py-1 rounded w-fit">
+                FOUNDER&#39;S MANIFESTO
+              </span>
+
+              <p className="font-display text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-[#10143A] leading-tight">
+                &ldquo;Football is not only about creating players. It is about creating opportunities and dreams.&rdquo;
               </p>
               
-              <div className="flex flex-col text-xs font-bold uppercase tracking-wider text-[#10143A]/60 border-b border-[#10143A]/10 pb-4 mb-2">
-                <span className="text-[#10143A] text-sm font-extrabold">Ramakrishnan (Ram)</span>
-                <span className="mt-1 font-semibold">President, Bangalore Super Strikers FC</span>
+              <div className="flex flex-col text-xs uppercase tracking-wider border-b border-[#10143A]/10 pb-4">
+                <span className="text-[#10143A] text-base font-black">Ramakrishnan (Ram)</span>
+                <span className="text-[#4B5563] text-xs font-bold mt-0.5">President & Founder, Bangalore Super Strikers FC &middot; AIFF-C Licensed Coach & KSFA Referee</span>
               </div>
 
-              <div className="space-y-4 text-sm text-[#4B5563] leading-relaxed">
+              <div className="space-y-4 text-base sm:text-lg text-[#374151] leading-relaxed">
                 <p>
-                  Inspired by his parents, Mr. Devaraj and Mrs. Rajammal Devaraj, who dreamed of seeing their grandson play for India, Ram carried the passion forward.
+                  Inspired by his parents, <strong className="text-[#10143A] font-bold">Mr. Devaraj and Mrs. Rajammal Devaraj</strong>, who dreamed of seeing their grandson represent India on the world stage, Ram turned his own experiences as a player with limited resources into a driving force.
                 </p>
                 <p>
-                  As a former athlete who experienced the struggles of middle-class sports development due to lacking resources, he constructed a professional infrastructure where young athletes receive tutoring, scientific conditioning, and KSFA / AIFF league exposure. Today, Ram serves as an active AIFF-C coach and KSFA referee.
+                  Having witnessed firsthand how <strong className="text-[#10143A] font-bold">talented middle-class and grassroots athletes</strong> were excluded due to prohibitive costs, he built a professional ecosystem offering <strong className="text-[#10143A] font-bold">structured scholarships, scientific physical mentoring, AIFF-C accredited coaching</strong>, and direct pathways to <strong className="text-[#10143A] font-bold">KSFA state division leagues</strong>.
                 </p>
               </div>
               
-              <div className="mt-4">
+              <div className="pt-2 flex flex-wrap gap-4 items-center">
                 <Link
                   href="/about"
-                  className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#10143A] hover:opacity-85 transition-opacity"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#10143A] text-white px-7 py-3.5 text-xs font-bold uppercase tracking-wider hover:bg-[#DCE135] hover:text-[#10143A] transition-all shadow-sm"
                 >
-                  Read Heritage Interview
+                  Read Full Heritage Story
                   <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 rounded-full bg-white text-[#10143A] border border-[#10143A]/15 px-7 py-3.5 text-xs font-bold uppercase tracking-wider hover:bg-gray-100 transition-all shadow-xs"
+                >
+                  Join The Academy
                 </Link>
               </div>
             </div>
