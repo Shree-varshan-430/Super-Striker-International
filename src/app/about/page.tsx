@@ -17,17 +17,17 @@ export default function AboutPage() {
     <div className="w-full bg-white text-[#10143A] min-h-screen pb-20 select-none text-left">
       
       {/* Small Hero Banner */}
-      <div className="relative w-full h-[220px] sm:h-[280px] bg-[#10143A] flex items-center justify-start overflow-hidden group select-none mt-20">
+      <div className="relative w-full h-[240px] sm:h-[300px] bg-[#10143A] flex items-center justify-start overflow-hidden group select-none mt-20">
         <Image
           src="/images/founder-pitch-side.jpg"
           alt="About Bangalore Super Strikers"
           fill
-          className="object-cover opacity-40 transition-transform duration-1000 group-hover:scale-103 object-top"
+          unoptimized
+          className="object-cover object-top opacity-75 transition-transform duration-1000 group-hover:scale-102"
           priority
         />
-        {/* Black full accent overlay & Cinematic gradient overlay */}
-        <div className="absolute inset-0 bg-black/45 z-10" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-[#10143A]/70 to-transparent z-10" />
+        {/* Subtle contrast gradient for typography */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-[#10143A]/60 to-transparent z-10" />
         
         {/* Brand accent wedges on bottom right */}
         <div 
@@ -57,29 +57,31 @@ export default function AboutPage() {
         {/* 1. Founder Spotlight & Vision for Young Players (Image Left, Text Right) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-16 bg-gray-50 rounded-3xl p-6 sm:p-12 shadow-sm relative overflow-hidden">
           
-          {/* Left Side: Founder Image (Enlarged) */}
-          <div className="lg:col-span-5 flex justify-center relative z-10 w-full">
-            <div className="relative aspect-[3/4] w-full max-w-[450px] min-h-[380px] sm:min-h-[460px] rounded-2xl overflow-hidden shadow-xl bg-gray-100">
+          {/* Left Side: Founder Image (100% Pure Crisp 4K, Zero Overlay) */}
+          <div className="lg:col-span-5 flex flex-col items-center justify-center relative z-10 w-full">
+            <div className="relative aspect-[3/4] w-full max-w-[450px] rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/images/founder-pitch-standing.jpg"
                 alt="Ramakrishnan (Ram) - BSSFC President & AIFF Licensed Coach"
                 fill
-                className="object-cover object-top transition-transform duration-700 hover:scale-103"
+                unoptimized
+                className="object-cover object-top transition-transform duration-700 hover:scale-102"
                 sizes="(max-w-768px) 100vw, 450px"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#10143A]/85 via-[#10143A]/20 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 text-white text-left">
-                <span className="text-[9px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-2.5 py-0.5 rounded">
-                  PRESIDENT & FOUNDER
-                </span>
-                <h3 className="font-display text-2xl font-black uppercase tracking-tight mt-1.5">
+            </div>
+            <div className="w-full max-w-[450px] bg-white rounded-xl p-3.5 shadow-sm mt-3 flex items-center justify-between">
+              <div>
+                <h3 className="font-display text-base font-black uppercase tracking-tight text-[#10143A]">
                   Ramakrishnan (Ram)
                 </h3>
-                <p className="text-[11px] font-bold text-white/80 uppercase mt-0.5 tracking-wider">
+                <p className="text-[10px] font-bold text-[#4B5563] uppercase">
                   AIFF-C Licensed Coach & KSFA Referee
                 </p>
               </div>
+              <span className="text-[9px] font-black uppercase tracking-widest text-[#10143A] bg-[#DCE135] px-2.5 py-1 rounded">
+                PRESIDENT & FOUNDER
+              </span>
             </div>
           </div>
 
@@ -142,25 +144,25 @@ export default function AboutPage() {
             </p>
           </div>
 
-          {/* Right Side: Image (Enlarged) */}
-          <div className="lg:col-span-5 flex justify-center order-1 lg:order-2 relative z-10 w-full">
-            <div className="relative aspect-[3/4] w-full max-w-[450px] min-h-[380px] sm:min-h-[460px] rounded-2xl overflow-hidden shadow-xl bg-gray-100">
+          {/* Right Side: Image (100% Pure Crisp 4K, Zero Overlay) */}
+          <div className="lg:col-span-5 flex flex-col items-center justify-center order-1 lg:order-2 relative z-10 w-full">
+            <div className="relative aspect-[3/4] w-full max-w-[450px] rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/images/founder-portrait-fence.jpg"
                 alt="Founder at Grassroots Foundation Field"
                 fill
-                className="object-cover object-center transition-transform duration-700 hover:scale-103"
+                unoptimized
+                className="object-cover object-center transition-transform duration-700 hover:scale-102"
                 sizes="(max-w-768px) 100vw, 450px"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#10143A]/75 via-transparent to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 text-white text-left">
-                <span className="text-[9px] font-bold text-white uppercase tracking-wider bg-[#10143A]/80 px-2.5 py-1 rounded">
-                  Grassroots Action
-                </span>
-                <p className="text-sm font-bold text-white/90 uppercase mt-1">
-                  Empowering Underprivileged Talent
-                </p>
-              </div>
+            </div>
+            <div className="w-full max-w-[450px] bg-white rounded-xl p-3 shadow-sm mt-3 flex items-center justify-between">
+              <p className="text-xs font-bold text-[#10143A] uppercase">
+                Empowering Underprivileged Talent
+              </p>
+              <span className="text-[9px] font-black text-[#10143A] uppercase tracking-wider bg-[#DCE135] px-2 py-0.5 rounded">
+                Grassroots Action
+              </span>
             </div>
           </div>
         </div>
@@ -168,25 +170,25 @@ export default function AboutPage() {
         {/* 3. Community Initiatives (Image Left, Text Right) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-16 bg-gray-50 rounded-3xl p-6 sm:p-12 shadow-sm relative overflow-hidden">
           
-          {/* Left Side: Image (Enlarged) */}
-          <div className="lg:col-span-5 flex justify-center relative z-10 w-full">
-            <div className="relative aspect-[3/4] w-full max-w-[450px] min-h-[380px] sm:min-h-[460px] rounded-2xl overflow-hidden shadow-xl bg-gray-100">
+          {/* Left Side: Image (100% Pure Crisp 4K, Zero Overlay) */}
+          <div className="lg:col-span-5 flex flex-col items-center justify-center relative z-10 w-full">
+            <div className="relative aspect-[3/4] w-full max-w-[450px] rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/images/founder-with-football.jpg"
                 alt="Founder with Football on Turf"
                 fill
-                className="object-cover object-top transition-transform duration-700 hover:scale-103"
+                unoptimized
+                className="object-cover object-top transition-transform duration-700 hover:scale-102"
                 sizes="(max-w-768px) 100vw, 450px"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#10143A]/75 via-transparent to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 text-white text-left">
-                <span className="text-[9px] font-bold text-white uppercase tracking-wider bg-[#10143A]/80 px-2.5 py-1 rounded">
-                  Community Impact
-                </span>
-                <p className="text-sm font-bold text-white/90 uppercase mt-1">
-                  On-Field Mentoring & Clinics
-                </p>
-              </div>
+            </div>
+            <div className="w-full max-w-[450px] bg-white rounded-xl p-3 shadow-sm mt-3 flex items-center justify-between">
+              <p className="text-xs font-bold text-[#10143A] uppercase">
+                On-Field Mentoring & Camps
+              </p>
+              <span className="text-[9px] font-black text-[#10143A] uppercase tracking-wider bg-[#DCE135] px-2 py-0.5 rounded">
+                Community Impact
+              </span>
             </div>
           </div>
 
@@ -269,25 +271,25 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Right Side: Image (Enlarged) */}
-          <div className="lg:col-span-5 flex justify-center order-1 lg:order-2 relative z-10 w-full">
-            <div className="relative aspect-[3/4] w-full max-w-[450px] min-h-[380px] sm:min-h-[460px] rounded-2xl overflow-hidden shadow-xl bg-gray-100">
+          {/* Right Side: Image (100% Pure Crisp 4K, Zero Overlay) */}
+          <div className="lg:col-span-5 flex flex-col items-center justify-center order-1 lg:order-2 relative z-10 w-full">
+            <div className="relative aspect-[3/4] w-full max-w-[450px] rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/images/founder-turf-pose.jpg"
                 alt="Founder inspecting professional pitch"
                 fill
-                className="object-cover object-top transition-transform duration-700 hover:scale-103"
+                unoptimized
+                className="object-cover object-top transition-transform duration-700 hover:scale-102"
                 sizes="(max-w-768px) 100vw, 450px"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#10143A]/75 via-transparent to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 text-white text-left">
-                <span className="text-[9px] font-bold text-white uppercase tracking-wider bg-[#10143A]/80 px-2.5 py-1 rounded">
-                  Facility Infrastructure
-                </span>
-                <p className="text-sm font-bold text-white/90 uppercase mt-1">
-                  FIFA-Grade Turf & Training Hubs
-                </p>
-              </div>
+            </div>
+            <div className="w-full max-w-[450px] bg-white rounded-xl p-3 shadow-sm mt-3 flex items-center justify-between">
+              <p className="text-xs font-bold text-[#10143A] uppercase">
+                FIFA-Grade Turf & Facility
+              </p>
+              <span className="text-[9px] font-black text-[#10143A] uppercase tracking-wider bg-[#DCE135] px-2 py-0.5 rounded">
+                Infrastructure
+              </span>
             </div>
           </div>
         </div>
