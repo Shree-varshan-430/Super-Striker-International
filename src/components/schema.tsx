@@ -6,7 +6,7 @@ export default function SportsOrganizationSchema() {
     "@type": "SportsOrganization",
     "name": "SuperStriker International Pvt Ltd",
     "url": "https://superstriker.in",
-    "logo": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=150&h=150&auto=format&fit=crop",
+    "logo": "/super-strikers-international.png",
     "description": "SuperStriker International Pvt Ltd is a premier sports organization establishing a complete football ecosystem in India through professional clubs, academies, grassroots development, and youth coaching.",
     "foundingDate": "2022",
     "address": {

@@ -18,7 +18,7 @@ interface HeroSlide {
 
 const HERO_SLIDES: HeroSlide[] = [
   {
-    image: "https://images.unsplash.com/photo-1622659097972-68f1d8c1829f?q=80&w=1600&auto=format&fit=crop",
+    image: "/images/team-1.jpg",
     category: "FEATURED NEWS",
     title: "Building The Future Of Indian Football",
     description: "Creating opportunities, developing talent, and building a professional football ecosystem for the next generation of athletes.",
@@ -27,7 +27,7 @@ const HERO_SLIDES: HeroSlide[] = [
     meta: "Ecosystem • 2 hours ago"
   },
   {
-    image: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1600&auto=format&fit=crop",
+    image: "/images/training-1.jpg",
     category: "FOUNDATION ACADEMY",
     title: "From Grassroots To State Division Champions",
     description: "Discover our youth football school, AIFF-C licensed training clinics, and residential academy progression lines.",
@@ -36,7 +36,7 @@ const HERO_SLIDES: HeroSlide[] = [
     meta: "Academy • 1 day ago"
   },
   {
-    image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1600&auto=format&fit=crop",
+    image: "/images/match-2.jpg",
     category: "PARTNERSHIPS",
     title: "Invest In Smart Telemetry Sports Hubs",
     description: "Collaborate with SuperStriker to sponsor smart turf facilities, sensory metrics tools, and school sports programs.",

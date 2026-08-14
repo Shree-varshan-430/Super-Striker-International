@@ -340,7 +340,7 @@ export default function Home() {
           className="relative h-[65vh] min-h-[400px] flex items-center justify-start overflow-hidden bg-[#10143A] text-white px-8 sm:px-16 lg:px-24 select-none border-b border-gray-150"
         >
           <Image
-            src="https://images.unsplash.com/photo-1529900748604-07564a03e7a6?q=80&w=1600&auto=format&fit=crop"
+            src="/images/match-1.jpg"
             alt="SuperStriker Stadium Future Vision"
             fill
             className="object-cover opacity-25"
@@ -538,8 +538,8 @@ export default function Home() {
               {[
                 { img: "/images/news-underpriv-camp.jpg", likes: "1,240", caption: "Hard work on the turf today. 💪 #SuperStriker" },
                 { img: "/images/news-pathways.jpg", likes: "890", caption: "Developing youth pathways step-by-step. ⚽" },
-                { img: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=600", likes: "2,050", caption: "Matchday memories. Three points locked in! 🏆" },
-                { img: "https://images.unsplash.com/photo-1518063319789-7217e6706b04?q=80&w=600", likes: "1,560", caption: "Grassroots scouting festivals active in school clusters. 🧤" }
+                { img: "/images/match-2.jpg", likes: "2,050", caption: "Matchday memories. Three points locked in! 🏆" },
+                { img: "/images/news-grassroots.jpg", likes: "1,560", caption: "Grassroots scouting festivals active in school clusters. 🧤" }
               ].map((post, idx) => (
                 <div key={idx} className="relative rounded-xl overflow-hidden aspect-square group shadow-sm bg-[#10143A]/40 border border-white/5">
                   <Image

@@ -50,7 +50,7 @@ export const articles: Article[] = [
     author: {
       name: "SuperStriker Editorial Team",
       role: "Lead Sports Journalists",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&h=150&auto=format&fit=crop"
+      avatar: "/images/founder-portrait.jpg"
     },
     publishedDate: "August 04, 2026",
     readTime: "4 min read",
@@ -85,7 +85,7 @@ export const articles: Article[] = [
     author: {
       name: "SuperStriker Editorial Team",
       role: "Grassroots Development Coordinator",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&h=150&auto=format&fit=crop"
+      avatar: "/images/founder-portrait.jpg"
     },
     publishedDate: "November 18, 2025",
     readTime: "3 min read",
@@ -127,7 +127,7 @@ export const articles: Article[] = [
     author: {
       name: "SuperStriker Editorial Team",
       role: "Strategic Development Director",
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&h=150&auto=format&fit=crop"
+      avatar: "/images/founder-portrait.jpg"
     },
     publishedDate: "July 15, 2026",
     readTime: "5 min read",
@@ -163,7 +163,7 @@ export const articles: Article[] = [
     author: {
       name: "Investor Relations Team",
       role: "Corporate Finance",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=150&h=150&auto=format&fit=crop"
+      avatar: "/images/founder-portrait.jpg"
     },
     publishedDate: "June 30, 2026",
     readTime: "3 min read",
@@ -195,7 +195,7 @@ export const articles: Article[] = [
     author: {
       name: "SuperStriker Editorial Team",
       role: "Academy Scout",
-      avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150&h=150&auto=format&fit=crop"
+      avatar: "/images/founder-portrait.jpg"
     },
     publishedDate: "October 12, 2025",
     readTime: "3 min read",
@@ -227,7 +227,7 @@ export const articles: Article[] = [
     author: {
       name: "SuperStriker Editorial Team",
       role: "Chennai Team Correspondent",
-      avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=150&h=150&auto=format&fit=crop"
+      avatar: "/images/founder-portrait.jpg"
     },
     publishedDate: "May 20, 2026",
     readTime: "4 min read",

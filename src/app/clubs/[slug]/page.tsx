@@ -21,7 +21,7 @@ const clubsData: Record<string, ClubDetails> = {
   "bangalore-super-strikers-fc": {
     name: "Bangalore Super Strikers FC",
     location: "Bangalore, Karnataka",
-    image: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/match-1.jpg",
     founded: "2023",
     league: "KSFA Senior Division",
     colors: "Sky Blue & White",
@@ -39,7 +39,7 @@ const clubsData: Record<string, ClubDetails> = {
   "pondicherry-super-strikers-fc": {
     name: "Pondicherry Super Strikers FC",
     location: "Pondicherry",
-    image: "https://images.unsplash.com/photo-1518063319789-7217e6706b04?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/news-pondicherry-scout.jpg",
     founded: "2024",
     league: "Pondicherry State League",
     colors: "Sky Blue, Gold & White",
@@ -57,7 +57,7 @@ const clubsData: Record<string, ClubDetails> = {
   "chennai-super-strikers-fc": {
     name: "Chennai Super Strikers FC",
     location: "Chennai, Tamil Nadu",
-    image: "https://images.unsplash.com/photo-1529900748604-07564a03e7a6?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/news-chennai-league.jpg",
     founded: "2025",
     league: "Chennai Football Association Division",
     colors: "Navy Blue, Sky Blue & White",

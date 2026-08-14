@@ -19,7 +19,7 @@ const schoolsData: Record<string, SchoolDetails> = {
   "bangalore-football-school": {
     name: "Bangalore Football School",
     location: "Bangalore, Karnataka",
-    image: "https://images.unsplash.com/photo-1544698310-74ea9d1c8258?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/training-2.jpg",
     curriculum: "AIFF-Youth Development Framework",
     focus: "Developing raw athletic potential, physical literacy, tactical basics, and technical coordination.",
     description: "Bangalore Football School is the premier educational academy within the SuperStriker International network. We focus on training complete athletes, teaching technical competencies, tactical positioning, and core athletic values like teamwork, sportsmanship, and discipline from a very young age.",

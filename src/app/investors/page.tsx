@@ -130,7 +130,7 @@ export default function Investors() {
             </p>
             <div className="flex h-44 relative rounded-xl overflow-hidden shadow-md hidden sm:block border-4 border-white/10 mt-4">
               <Image
-                src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=800&auto=format&fit=crop"
+                src="/images/team-2.jpg"
                 alt="Partnering stadium atmosphere"
                 fill
                 className="object-cover opacity-60"

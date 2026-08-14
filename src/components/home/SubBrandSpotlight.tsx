@@ -28,7 +28,7 @@ const SPOTLIGHTS: SpotlightItem[] = [
     badgeValue: "Senior State Registry",
     ctaText: "Explore Club Division",
     ctaLink: "/clubs/bangalore-super-strikers-fc",
-    image: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/team-2.jpg",
     logo: "/bangalore-super-strikers-fc.png"
   },
   {
@@ -40,7 +40,7 @@ const SPOTLIGHTS: SpotlightItem[] = [
     badgeValue: "Under-15 Elite Dev Cohort",
     ctaText: "Explore Resident Squads",
     ctaLink: "/clubs/pondicherry-super-strikers-fc",
-    image: "https://images.unsplash.com/photo-1518063319789-7217e6706b04?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/news-pondicherry-scout.jpg",
     logo: "/pondicherry-super-strikers-fc.png"
   },
   {
@@ -52,7 +52,7 @@ const SPOTLIGHTS: SpotlightItem[] = [
     badgeValue: "State Tournament Registry",
     ctaText: "Explore Squad Profile",
     ctaLink: "/clubs/chennai-super-strikers-fc",
-    image: "https://images.unsplash.com/photo-1529900748604-07564a03e7a6?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/news-chennai-league.jpg",
     logo: "/chennai-super-strikers-fc.png"
   },
   {
@@ -64,7 +64,7 @@ const SPOTLIGHTS: SpotlightItem[] = [
     badgeValue: "Under-9 to Under-15 brackets",
     ctaText: "Visit Youth Academy",
     ctaLink: "/football-school/bangalore-football-school",
-    image: "https://images.unsplash.com/photo-1431324155629-1a6edd1d141e?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/news-academy-u15.jpg",
     logo: "/foundation.png"
   }
 ];

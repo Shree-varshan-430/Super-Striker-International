@@ -36,7 +36,7 @@ export default function EcosystemShowcase() {
       name: "Bangalore Super Strikers FC",
       url: "/clubs/bangalore-super-strikers-fc",
       location: "Bangalore, Karnataka",
-      image: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=600&auto=format&fit=crop",
+      image: "/images/match-1.jpg",
       desc: "The foundation of our football journey, Bangalore Super Strikers FC focuses on grassroots development, professional training, competitive football, and creating opportunities for young athletes.",
       highlights: [
         "AIFF & KSFA football ecosystem",
@@ -50,7 +50,7 @@ export default function EcosystemShowcase() {
       name: "Pondicherry Super Strikers FC",
       url: "/clubs/pondicherry-super-strikers-fc",
       location: "Pondicherry",
-      image: "https://images.unsplash.com/photo-1518063319789-7217e6706b04?q=80&w=600&auto=format&fit=crop",
+      image: "/images/news-pondicherry-scout.jpg",
       desc: "Pondicherry Super Strikers FC represents our mission of expanding football opportunities across regions by developing players through structured training, competition, and community engagement.",
       highlights: [
         "Regional football development",
@@ -64,7 +64,7 @@ export default function EcosystemShowcase() {
       name: "Chennai Super Strikers FC",
       url: "/clubs/chennai-super-strikers-fc",
       location: "Chennai, Tamil Nadu",
-      image: "https://images.unsplash.com/photo-1529900748604-07564a03e7a6?q=80&w=600&auto=format&fit=crop",
+      image: "/images/news-chennai-league.jpg",
       desc: "Chennai Super Strikers FC strengthens our football ecosystem by discovering talented players and providing pathways towards state, national, and international football opportunities.",
       highlights: [
         "Talent identification",
@@ -312,7 +312,7 @@ export default function EcosystemShowcase() {
             {/* School image block column */}
             <div className="lg:col-span-5 relative min-h-[300px] bg-secondary-navy overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1544698310-74ea9d1c8258?q=80&w=800&auto=format&fit=crop"
+                src="/images/news-academy-u15.jpg"
                 alt="Children Football School Training"
                 fill
                 className="object-cover opacity-80"
@@ -326,7 +326,7 @@ export default function EcosystemShowcase() {
       {/* 5. FINAL PROMOTIONAL BANNER */}
       <section className="relative py-28 text-center text-white bg-secondary-navy overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1600&auto=format&fit=crop"
+          src="/images/match-2.jpg"
           alt="Stadium lights overlay"
           fill
           className="object-cover opacity-15"

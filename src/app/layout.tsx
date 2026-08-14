@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     siteName: "SuperStriker International",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1200&h=630&auto=format&fit=crop",
+        url: "/images/team-1.jpg",
         width: 1200,
         height: 630,
         alt: "SuperStriker International Football Stadium",
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "SuperStriker International | Football Franchise & Infrastructure Investment",
     description: "Sponsor grassroots turf property developments and regional professional football franchises in India.",
-    images: ["https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1200&h=630&auto=format&fit=crop"],
+    images: ["/images/team-1.jpg"],
   },
   robots: {
     index: true,
