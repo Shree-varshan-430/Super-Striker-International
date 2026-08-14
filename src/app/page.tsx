@@ -193,30 +193,30 @@ export default function Home() {
         {/* 5. INVESTOR PROPOSITION & COMMERCIAL RETURNS (LIGHT) */}
         <motion.section 
           {...sectionAnimProps}
-          className="py-20 bg-white border-b border-gray-150 select-none"
+          className="py-20 sm:py-24 bg-white border-b border-gray-100 select-none"
         >
-          <div className="max-w-[95%] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col items-start gap-1 border-l-4 border-[#10143A] pl-4 mb-12 text-left">
-              <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-2.5 py-0.5 rounded">
+          <div className="max-w-7xl 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
+            <div className="flex flex-col items-start gap-1 border-l-4 border-[#10143A] pl-4 sm:pl-6 mb-12 sm:mb-16 text-left">
+              <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-3 py-1 rounded">
                 THE COMMERCIAL EQUATION
               </span>
-              <h2 className="font-display text-2xl sm:text-4xl font-black uppercase tracking-tight text-[#0A1028] mt-1">
-                INVESTOR PROPOSITION & YIELDS
+              <h2 className="font-display text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#10143A] mt-1">
+                Investor Proposition & Commercial Yields
               </h2>
-              <p className="text-xs sm:text-sm text-[#4B5563] mt-2 max-w-xl leading-relaxed">
-                SuperStriker International provides structured, high-value sports development partnerships. Here is exactly what you fund and how the returns accrue.
+              <p className="text-sm sm:text-base text-[#4B5563] mt-2 max-w-2xl font-medium leading-relaxed">
+                SuperStriker International structures institutional sports development investments. Here is an exact breakdown of funded operational assets versus accrued financial yields.
               </p>
             </div>
 
             {/* Split Grid for Funding vs Yield */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
               
               {/* Column 1: What You Invest In */}
-              <div className="flex flex-col gap-6 text-left">
-                <div className="flex items-center gap-2 mb-2 pb-2 border-b border-gray-200">
-                  <div className="w-3 h-3 rounded-full bg-[#10143A]" />
-                  <h3 className="font-display text-lg font-black uppercase tracking-tight text-[#10143A]">
-                    1. What You Invest In (The Assets)
+              <div className="flex flex-col gap-6 text-left bg-gray-50 rounded-2xl sm:rounded-3xl p-6 sm:p-10 shadow-xs border border-gray-150/70">
+                <div className="flex items-center gap-3 pb-4 border-b border-gray-200">
+                  <div className="w-3.5 h-3.5 rounded-full bg-[#10143A]" />
+                  <h3 className="font-display text-xl sm:text-2xl font-black uppercase tracking-tight text-[#10143A]">
+                    1. Strategic Assets You Fund
                   </h3>
                 </div>
 
@@ -224,28 +224,28 @@ export default function Home() {
                   {[
                     {
                       title: "Regional Club Franchises",
-                      desc: "Direct capital funding for Bangalore, Chennai, and Pondicherry senior squads to build rosters, fund travel, and register for KSFA/AIFF tournaments.",
-                      sub: "Assets: Player registrations, stadium contracts, live-broadcast inventory."
+                      desc: "Direct operational funding for senior first-team rosters in Bangalore (KSFA), Chennai, and Pondicherry to secure state league fixtures, player wages, and live broadcasting rights.",
+                      sub: "Asset Backing: Official club registries, stadium match contracts, commercial sponsorships."
                     },
                     {
                       title: "Smart Telemetry Infrastructures",
-                      desc: "Construction of digitized, smart-turf community arenas equipped with telemetry sensors, camera rigs, and high-yield hourly training facilities.",
-                      sub: "Assets: Property development rights, sensory hardware, arena lease yields."
+                      desc: "Acquisition and development of FIFA-grade artificial turf arenas equipped with GPS tracking telemetry, camera analytics rigs, and high-margin hourly public turf booking systems.",
+                      sub: "Asset Backing: Commercial lease agreements, sensory hardware, prime urban property rights."
                     },
                     {
-                      title: "Fully-Funded Residential Cohorts",
-                      desc: "Sponsorship of elite Under-15 and Under-18 player batches to cover high-performance tutoring, tactical coaching, scientific nutrition, and kit gear.",
-                      sub: "Assets: Direct academy contract pipelines, domestic league registry rights."
+                      title: "Elite Residential Academy Batches",
+                      desc: "Underwriting of high-performance Under-15 and Under-18 player cohorts covering licensed AIFF coaching, scientific nutrition plans, high-protein diets, and competitive tournaments.",
+                      sub: "Asset Backing: Direct academy contract pipeline, senior league transfer rights."
                     }
                   ].map((asset, idx) => (
-                    <div key={idx} className="bg-white rounded-xl p-6 border border-gray-200 border-l-4 border-[#10143A] shadow-sm flex flex-col gap-2 hover:border-[#DCE135] transition-colors">
-                      <h4 className="font-display text-base font-extrabold uppercase text-[#10143A]">
+                    <div key={idx} className="bg-white rounded-2xl p-6 border-l-4 border-[#10143A] shadow-xs flex flex-col gap-2 transition-transform duration-300 hover:scale-[1.01]">
+                      <h4 className="font-display text-base sm:text-lg font-black uppercase text-[#10143A]">
                         {asset.title}
                       </h4>
-                      <p className="text-xs text-[#4B5563] leading-relaxed">
+                      <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed font-normal">
                         {asset.desc}
                       </p>
-                      <span className="text-[10px] font-bold text-[#10143A]/60 uppercase tracking-wide mt-1">
+                      <span className="text-[10px] sm:text-xs font-bold text-[#10143A] uppercase tracking-wide mt-1 bg-gray-50 px-2.5 py-1 rounded w-fit">
                         {asset.sub}
                       </span>
                     </div>
@@ -254,45 +254,45 @@ export default function Home() {
               </div>
 
               {/* Column 2: What You Get In Return */}
-              <div className="flex flex-col gap-6 text-left">
-                <div className="flex items-center gap-2 mb-2 pb-2 border-b border-gray-200">
-                  <div className="w-3 h-3 rounded-full bg-[#DCE135]" />
-                  <h3 className="font-display text-lg font-black uppercase tracking-tight text-[#10143A]">
-                    2. What You Get In Return (The Yields)
+              <div className="flex flex-col gap-6 text-left bg-gray-50 rounded-2xl sm:rounded-3xl p-6 sm:p-10 shadow-xs border border-gray-150/70">
+                <div className="flex items-center gap-3 pb-4 border-b border-gray-200">
+                  <div className="w-3.5 h-3.5 rounded-full bg-[#DCE135]" />
+                  <h3 className="font-display text-xl sm:text-2xl font-black uppercase tracking-tight text-[#10143A]">
+                    2. Accrued Commercial Yields
                   </h3>
                 </div>
 
                 <div className="space-y-4">
                   {[
                     {
-                      title: "Guaranteed Branding & Media Rights",
-                      desc: "Front-of-shirt branding across state squads, stadium name rights, digital stream banner ads, and high-visibility placements on academy kits and scout files.",
-                      returnVal: "Yield: Corporate exposure, brand affinity, public goodwill."
+                      title: "Front-of-Shirt & Media Sponsorship",
+                      desc: "Primary kit branding across senior squads, perimeter arena digital board presence, video highlight sponsorships, and prominent exposure on all talent showcase documents.",
+                      returnVal: "Target Yield: High-visibility multi-region corporate awareness & CSR prestige."
                     },
                     {
-                      title: "Player Transfer Revenue Shares",
-                      desc: "Acquire pre-negotiated revenue percentages on transfer fees and professional registration sales of rostered athletes scouted via Bangalore Football School.",
-                      returnVal: "Yield: Direct revenue shares on domestic and international contract sales."
+                      title: "Player Transfer & Registry Shares",
+                      desc: "Contractual percentage rights on domestic (ISL / I-League) and international player sale transfers of talent scouted and nurtured through Bangalore Football School.",
+                      returnVal: "Target Yield: High-upside capital liquidation upon professional league sign-ons."
                     },
                     {
-                      title: "Physical Real-Estate Rental Splits",
-                      desc: "Receive recurring financial splits from smart-turf hourly rentals, commercial leagues, school tourney hosting, and BFS academy membership dues.",
-                      returnVal: "Yield: Predictable cash flow from facility utilization and operations."
+                      title: "Recurring Turf Facility Rental Revenue",
+                      desc: "Monthly cash-flow dividend splits derived from hourly community pitch rentals, weekend adult leagues, corporate tournaments, and BFS academy membership subscriptions.",
+                      returnVal: "Target Yield: Predictable monthly recurring cash dividends."
                     },
                     {
-                      title: "Equity in Parent Network",
-                      desc: "Strategic equity options in SuperStriker International Pvt Ltd's parent sports group, capturing valuation hikes as we expand regionally.",
-                      returnVal: "Yield: Long-term corporate valuation growth & capital gains."
+                      title: "Network Parent Equity Participation",
+                      desc: "Direct strategic equity options in SuperStriker International Pvt Ltd's parent holding corporation as our multi-state football network expands across South India.",
+                      returnVal: "Target Yield: Exponential long-term enterprise valuation growth."
                     }
                   ].map((ret, idx) => (
-                    <div key={idx} className="bg-white rounded-xl p-6 border border-gray-200 border-l-4 border-[#DCE135] shadow-sm flex flex-col gap-2 hover:border-[#10143A] transition-colors">
-                      <h4 className="font-display text-base font-extrabold uppercase text-[#10143A]">
+                    <div key={idx} className="bg-white rounded-2xl p-6 border-l-4 border-[#DCE135] shadow-xs flex flex-col gap-2 transition-transform duration-300 hover:scale-[1.01]">
+                      <h4 className="font-display text-base sm:text-lg font-black uppercase text-[#10143A]">
                         {ret.title}
                       </h4>
-                      <p className="text-xs text-[#4B5563] leading-relaxed">
+                      <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed font-normal">
                         {ret.desc}
                       </p>
-                      <span className="text-[10px] font-bold text-[#10143A] uppercase tracking-wide mt-1">
+                      <span className="text-[10px] sm:text-xs font-bold text-[#10143A] uppercase tracking-wide mt-1 bg-[#DCE135]/20 px-2.5 py-1 rounded w-fit">
                         {ret.returnVal}
                       </span>
                     </div>
@@ -303,18 +303,21 @@ export default function Home() {
             </div>
 
             {/* Quick Enquiry Prompt */}
-            <div className="mt-12 bg-[#10143A] rounded-2xl p-8 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-lg">
-              <div className="text-left flex flex-col gap-1.5">
-                <h3 className="font-display text-lg sm:text-xl font-black uppercase text-white">
-                  Ready to partner with SuperStriker?
+            <div className="mt-12 bg-[#10143A] rounded-3xl p-8 sm:p-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 shadow-xl text-left">
+              <div className="flex flex-col gap-1.5 max-w-xl">
+                <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135]">
+                  PARTNERSHIP CONSULTATION
+                </span>
+                <h3 className="font-display text-xl sm:text-3xl font-black uppercase text-white leading-tight">
+                  Ready To Inspect Our Institutional Deck?
                 </h3>
-                <p className="text-xs text-white/80 max-w-md">
-                  Inquire today to schedule a telemetry demo and receive our detailed investment prospectus deck.
+                <p className="text-xs sm:text-sm text-white/80 font-normal">
+                  Connect directly with our investment directors to review smart turf financial projections, facility blueprints, and franchise prospectus models.
                 </p>
               </div>
               <Link
                 href="/investors#enquire"
-                className="inline-flex items-center gap-1.5 rounded-full bg-[#DCE135] text-[#10143A] px-6 py-3.5 text-xs font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-[#10143A] hover:scale-105 active:scale-95 shadow-md shrink-0"
+                className="inline-flex items-center gap-2 rounded-full bg-[#DCE135] text-[#10143A] px-8 py-4 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-[#10143A] shadow-md shrink-0"
               >
                 Inquire Sponsorship
                 <ArrowRight className="h-4 w-4" />
@@ -336,47 +339,51 @@ export default function Home() {
 
         {/* 8. INFRASTRUCTURE & VISION BANNER (PARALLAX ZOOM STADIUM - DARK) */}
         <section 
-          ref={featureBannerRef} 
-          className="relative h-[65vh] min-h-[400px] flex items-center justify-start overflow-hidden bg-[#10143A] text-white px-8 sm:px-16 lg:px-24 select-none border-b border-gray-150 group"
+          ref={featureBannerRef}
+          className="relative w-full h-[400px] sm:h-[480px] overflow-hidden flex items-center justify-center select-none"
         >
-          <Image
-            src="/images/match-1.jpg"
-            alt="SuperStriker Stadium Future Vision"
-            fill
-            className="object-cover opacity-35 transition-transform duration-1000 group-hover:scale-103"
-            sizes="100vw"
-          />
-          {/* Black full accent overlay & Cinematic gradient overlay */}
-          <div className="absolute inset-0 bg-black/45 z-10" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-[#10143A]/70 to-transparent z-10" />
+          <div className="absolute inset-0 z-0 origin-center">
+            <Image
+              src="/images/stadium-future.jpg"
+              alt="SuperStriker Stadium Future Vision"
+              fill
+              unoptimized
+              className="object-cover object-center brightness-75"
+              priority
+            />
+          </div>
           
+          <div className="absolute inset-0 bg-[#0A1028]/60 z-10" />
+
           {/* Brand accent wedges on bottom right */}
           <div 
-            className="absolute bottom-0 right-0 w-32 h-32 sm:w-44 sm:h-44 md:w-56 md:h-56 bg-[#10143A] pointer-events-none z-15 translate-x-2 translate-y-2 lg:block hidden" 
+            className="absolute bottom-0 right-0 w-28 h-28 sm:w-36 sm:h-36 bg-[#10143A] pointer-events-none z-15 translate-x-2 translate-y-2 lg:block hidden" 
             style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }} 
           />
           <div 
-            className="absolute bottom-0 right-0 w-28 h-28 sm:w-40 sm:h-40 md:w-52 md:h-52 bg-[#DCE135] pointer-events-none z-20 lg:block hidden" 
+            className="absolute bottom-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-[#DCE135] pointer-events-none z-20 lg:block hidden" 
             style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }} 
           />
           
-          <div className="relative z-20 max-w-2xl text-left flex flex-col gap-4">
-            <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#DCE135]/15 px-3 py-1 rounded w-fit">
-              Future Vision
+          <div className="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 text-center text-white flex flex-col items-center gap-4">
+            <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-3 py-1 rounded">
+              INFRASTRUCTURE 2026-2030
             </span>
-            <h2 className="font-display text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-none">
-              Planning for the Future of South Indian Football
+            <h2 className="font-display text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-tight">
+              Future Vision
             </h2>
-            <p className="text-xs sm:text-sm text-white/75 leading-relaxed max-w-xl">
-              SuperStriker International is spearheading smart turf developments and regional training hubs to modernize local football facilities and raise physical literacy.
+            <p className="text-xs sm:text-base text-gray-200 max-w-2xl leading-relaxed font-medium">
+              Developing next-generation smart football arenas across South India featuring FIFA-quality turf, biometric monitoring, and public tournament facilities.
             </p>
-            <Link
-              href="/about"
-              className="inline-flex items-center gap-1.5 rounded-full bg-[#DCE135] text-[#10143A] px-6 py-3 text-xs font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-[#10143A] hover:scale-105 active:scale-95 shadow-md w-fit mt-2"
-            >
-              Read More
-              <ArrowRight className="h-4 w-4" />
-            </Link>
+            <div className="mt-2">
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-2 rounded-full bg-[#DCE135] text-[#10143A] px-8 py-3.5 text-xs font-bold uppercase tracking-wider hover:bg-white transition-all shadow-md"
+              >
+                Learn More About Infrastructure
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
         </section>
 
@@ -463,25 +470,25 @@ export default function Home() {
           <AcademyBanner />
         </motion.div>
 
-        {/* 11. PLAYER PATHWAYS SQUAD SHOWCASE (MAN UTD TALL VERTICAL CARDS - LIGHT) */}
+        {/* 11. PLAYER PATHWAYS SQUAD SHOWCASE (100% Crisp 4K Images, No Grayscale) */}
         <motion.section 
           {...sectionAnimProps}
-          className="py-24 px-4 sm:px-6 lg:px-8 max-w-[95%] mx-auto bg-white select-none border-b border-gray-150"
+          className="py-20 sm:py-24 px-4 sm:px-6 lg:px-10 xl:px-12 max-w-7xl 2xl:max-w-[1440px] mx-auto bg-white select-none border-b border-gray-150"
         >
-          <div className="text-left mb-16 flex flex-col gap-1 border-l-4 border-[#10143A] pl-6">
-            <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-2.5 py-0.5 rounded w-fit">
+          <div className="text-left mb-12 sm:mb-16 flex flex-col gap-1 border-l-4 border-[#10143A] pl-4 sm:pl-6">
+            <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-3 py-1 rounded w-fit">
               PLAYER PATHWAYS
             </span>
-            <h2 className="font-display text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#0A1028] mt-2">
+            <h2 className="font-display text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#10143A] mt-1">
               Every player has a story before becoming a champion.
             </h2>
-            <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed max-w-xl">
-              Tracing the path from local training fields to senior competitive platforms and state league rosters.
+            <p className="text-sm sm:text-base text-[#4B5563] leading-relaxed max-w-2xl font-medium mt-1">
+              Tracing the athletic path from grassroots discovery to elite high-performance academy training and senior league squads.
             </p>
           </div>
 
-          {/* Render Player Journeys using watermarked Squad Profile Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          {/* Render Player Journeys using 100% 4K Clear Profile Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10">
             {[
               { name: "Aditya Kumar", role: "Midfielder", cohort: "U-15 Elite Cohort", number: "10", image: "/images/Player1.jpeg", stats: "Pass Accuracy: 88% | Assist Leader" },
               { name: "Sanjay Raj", role: "Striker", cohort: "BSS Senior Squad", number: "09", image: "/images/Player2.jpeg", stats: "Goals: 12 | Shots conversion: 24%" },
@@ -489,46 +496,48 @@ export default function Home() {
             ].map((player) => (
               <div 
                 key={player.name}
-                className="relative rounded-2xl overflow-hidden aspect-[3/4] group shadow-sm  border border-gray-200/50 flex flex-col justify-end p-6 select-none"
+                className="relative rounded-2xl sm:rounded-3xl overflow-hidden aspect-[3/4] group shadow-xl bg-gray-50 flex flex-col justify-end p-6 sm:p-8 select-none"
               >
-                {/* Large Background Watermark Number */}
-                <div className="absolute inset-0 flex items-center justify-center select-none pointer-events-none z-0 overflow-hidden">
-                  <span className="font-display text-[140px] sm:text-[180px] font-black text-gray-200/40 tracking-tighter leading-none transition-all duration-700 group-hover:scale-110 group-hover:text-[#DCE135]/15">
-                    {player.number}
-                  </span>
-                </div>
-
-                {/* Player image overlay */}
-                <div className="absolute inset-0 z-10">
+                {/* 100% Pure 4K Player Image (Zero Grayscale, Zero Dark Dimming) */}
+                <div className="absolute inset-0 z-0">
                   <Image
                     src={player.image}
                     alt={player.name}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-102 opacity-85 group-hover:opacity-95"
-                    sizes="(max-w-768px) 100vw, 360px"
+                    unoptimized
+                    className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-w-768px) 100vw, 400px"
+                    priority
                   />
-                  {/* Subtle dark bottom vignette */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#10143A] via-[#10143A]/20 to-transparent z-15" />
+                  {/* Gentle bottom-only vignette to keep text legible while leaving the player face completely 100% crisp & bright */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#10143A]/90 via-[#10143A]/25 to-transparent z-10" />
                 </div>
 
-                {/* Content info overlay */}
-                <div className="relative z-20 text-left text-white flex flex-col gap-1">
-                  <span className="text-[9px] font-black uppercase tracking-widest text-[#10143A] bg-[#DCE135] px-2 py-0.5 rounded w-fit">
-                    #{player.number} {player.role}
+                {/* Floating Top Number Badge */}
+                <div className="absolute top-5 right-5 z-20">
+                  <span className="font-display text-xl sm:text-2xl font-black text-[#10143A] bg-[#DCE135] px-3 py-1 rounded-xl shadow-md">
+                    #{player.number}
                   </span>
-                  <h3 className="font-display text-xl sm:text-2xl font-black uppercase tracking-tight leading-none mt-1">
+                </div>
+
+                {/* Content info overlay at bottom */}
+                <div className="relative z-20 text-left text-white flex flex-col gap-1.5">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135]">
+                    {player.role}
+                  </span>
+                  <h3 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight leading-none text-white">
                     {player.name}
                   </h3>
-                  <span className="text-[10px] font-bold text-white/70 uppercase tracking-wider">
+                  <span className="text-xs font-bold text-white/80 uppercase tracking-wider">
                     {player.cohort}
                   </span>
 
-                  {/* Hover stats reveal bar */}
-                  <div className="h-0 opacity-0 overflow-hidden group-hover:h-auto group-hover:opacity-100 transition-all duration-500 flex flex-col gap-1 mt-2 pt-2 border-t border-white/10">
-                    <span className="text-[8px] font-black tracking-widest text-[#DCE135] uppercase">
+                  {/* Telemetry stats pill */}
+                  <div className="mt-2 pt-2 border-t border-white/20 flex flex-col gap-0.5">
+                    <span className="text-[9px] font-black tracking-widest text-[#DCE135] uppercase">
                       TELEMETRY INDEX
                     </span>
-                    <span className="text-[10px] font-bold text-white/90">
+                    <span className="text-xs font-bold text-white">
                       {player.stats}
                     </span>
                   </div>
