@@ -538,8 +538,8 @@ export default function Home() {
               {[
                 { img: "/images/news-underpriv-camp.jpg", likes: "1,240", caption: "Hard work on the turf today. 💪 #SuperStriker" },
                 { img: "/images/news-pathways.jpg", likes: "890", caption: "Developing youth pathways step-by-step. ⚽" },
-                { img: "/images/WhatsApp Image 2026-08-11 at 8.34.12 AM.jpeg", likes: "2,050", caption: "Matchday memories. Three points locked in! 🏆" },
-                { img: "/images/WhatsApp Image 2026-08-11 at 8.34.14 AM.jpeg", likes: "1,560", caption: "Grassroots scouting festivals active in school clusters. 🧤" }
+                { img: "/images/Instagram2.jpeg", likes: "2,050", caption: "Matchday memories. Three points locked in! 🏆" },
+                { img: "/images/Instagram3.jpeg", likes: "1,560", caption: "Grassroots scouting festivals active in school clusters. 🧤" }
               ].map((post, idx) => (
                 <div key={idx} className="relative rounded-xl overflow-hidden aspect-square group shadow-sm bg-[#10143A]/40 border border-white/5">
                   <Image
