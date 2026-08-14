@@ -55,9 +55,10 @@ export default function SportsOrganizationSchema() {
       }
     ],
     "sameAs": [
-      "https://twitter.com/superstriker",
-      "https://instagram.com/superstriker",
-      "https://linkedin.com/company/superstriker"
+      "https://www.facebook.com/bangaloresuperstrikers/",
+      "https://www.instagram.com/bangaloresuperstrikersfc/?hl=en",
+      "https://www.linkedin.com/company/bangalore-super-strikers-football-club/?originalSubdomain=in",
+      "https://www.youtube.com/channel/UC1hf_p-XBtiIO3QyI5U43dQ"
     ]
   };
 

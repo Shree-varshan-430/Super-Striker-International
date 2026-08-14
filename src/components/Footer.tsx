@@ -3,9 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 import NewsletterForm from "./NewsletterForm";
 
-const TwitterIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" {...props}>
-    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+const FacebookIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
   </svg>
 );
 
@@ -63,16 +63,16 @@ export default function Footer() {
               SuperStriker International Pvt Ltd is dedicated to developing the football ecosystem in India, connecting grassroots clinics to professional leagues and national talent pathways.
             </p>
             <div className="flex items-center gap-5 text-white/60">
-              <a href="#" className="hover:text-[#DCE135] transition-colors" aria-label="Twitter">
-                <TwitterIcon className="h-6 w-6" />
+              <a href="https://www.facebook.com/bangaloresuperstrikers/" target="_blank" rel="noopener noreferrer" className="hover:text-[#DCE135] transition-colors" aria-label="Facebook">
+                <FacebookIcon className="h-6 w-6" />
               </a>
-              <a href="#" className="hover:text-[#DCE135] transition-colors" aria-label="Instagram">
+              <a href="https://www.instagram.com/bangaloresuperstrikersfc/?hl=en" target="_blank" rel="noopener noreferrer" className="hover:text-[#DCE135] transition-colors" aria-label="Instagram">
                 <InstagramIcon className="h-6 w-6" />
               </a>
-              <a href="#" className="hover:text-[#DCE135] transition-colors" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/company/bangalore-super-strikers-football-club/?originalSubdomain=in" target="_blank" rel="noopener noreferrer" className="hover:text-[#DCE135] transition-colors" aria-label="LinkedIn">
                 <LinkedinIcon className="h-6 w-6" />
               </a>
-              <a href="#" className="hover:text-[#DCE135] transition-colors" aria-label="YouTube">
+              <a href="https://www.youtube.com/channel/UC1hf_p-XBtiIO3QyI5U43dQ" target="_blank" rel="noopener noreferrer" className="hover:text-[#DCE135] transition-colors" aria-label="YouTube">
                 <YoutubeIcon className="h-6 w-6" />
               </a>
             </div>
