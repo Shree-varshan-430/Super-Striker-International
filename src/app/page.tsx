@@ -344,11 +344,11 @@ export default function Home() {
         >
           <div className="absolute inset-0 z-0 origin-center">
             <Image
-              src="/images/stadium-future.jpg"
-              alt="SuperStriker Stadium Future Vision"
+              src="/images/news-pitch-sponsorship.jpg"
+              alt="SuperStriker Turf Pitch Infrastructure"
               fill
               unoptimized
-              className="object-cover object-center brightness-75"
+              className="object-cover object-center opacity-80"
               priority
             />
           </div>
