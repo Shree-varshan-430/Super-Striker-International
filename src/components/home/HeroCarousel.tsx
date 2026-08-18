@@ -111,11 +111,21 @@ export default function HeroCarousel() {
         ))}
       </div>
 
-      {/* 2. Light Blue Accent Overlay for Crisp Text Contrast */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#11123c]/90 via-[#25265e]/65 to-[#38bdf8]/20 z-20 pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#11123c]/75 via-transparent to-[#1e40af]/20 z-20 pointer-events-none" />
+      {/* 2. Campus & Infrastructure Exact Accent Overlay & Vignette */}
+      <div className="absolute inset-0 bg-[#11123c]/60 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#11123c]/80 via-transparent to-transparent z-15 pointer-events-none" />
 
-      {/* 3. Structured Main Content Container (Left-Aligned, Vertically Centered) */}
+      {/* 3. Brand Accent Corner Wedges on Bottom Right (Exact match with Campus & Infrastructure) */}
+      <div 
+        className="absolute bottom-0 right-0 w-28 h-28 sm:w-36 sm:h-36 bg-[#11123c] pointer-events-none z-25 translate-x-2 translate-y-2 lg:block hidden" 
+        style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }} 
+      />
+      <div 
+        className="absolute bottom-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-[#e9d319] pointer-events-none z-30 lg:block hidden" 
+        style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }} 
+      />
+
+      {/* 4. Structured Main Content Container (Left-Aligned, Vertically Centered) */}
       <div className="max-w-7xl 2xl:max-w-[1440px] mx-auto w-full h-full px-4 sm:px-6 lg:px-10 xl:px-12 flex flex-col justify-center items-start pt-20 sm:pt-24 pb-8 sm:pb-12 relative z-30 pointer-events-none">
         <div className="w-full max-w-3xl relative min-h-[380px] sm:min-h-[420px] flex items-center">
           {HERO_SLIDES.map((slide, idx) => (
