@@ -158,55 +158,76 @@ export default function LatestFeed() {
         <div className="max-w-[95%] mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Header with Navigation Link */}
-          <div className="flex justify-between items-end pb-4 border-b border-gray-150 mb-12">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-gray-150 mb-12">
             <div className="flex flex-col items-start gap-1 text-left border-l-4 border-[#11123c] pl-4">
               <span className="text-[10px] font-black uppercase tracking-widest text-[#e9d319] bg-[#11123c] px-2.5 py-0.5 rounded">
-                LATEST STORIES
+                EDITORIAL DESK
               </span>
               <h2 className="font-display text-2xl sm:text-4xl font-black uppercase tracking-tight text-[#11123c] mt-1">
-                NEWS & EDITORIAL READS
+                News & Football Dispatches
               </h2>
+              <p className="text-xs sm:text-sm text-[#696484] mt-0.5 font-medium max-w-xl">
+                Inside stories, match telemetry analyses, scouting reports, and player pathway milestones.
+              </p>
             </div>
             
             <Link
               href="/news"
-              className="inline-flex items-center gap-1.5 rounded-full bg-[#11123c] text-white hover:bg-[#e9d319] hover:text-[#11123c] px-5 py-2.5 text-xs font-bold uppercase tracking-wider transition-all hover:scale-103 active:scale-95 shadow-sm border border-gray-150"
+              className="inline-flex items-center gap-2 rounded-full bg-[#11123c] text-white hover:bg-[#e9d319] hover:text-[#11123c] px-6 py-3 text-xs font-bold uppercase tracking-wider transition-all hover:scale-103 active:scale-95 shadow-sm border border-gray-150 shrink-0 w-fit"
             >
               Explore All News
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
 
-          {/* Asymmetric Grid */}
+          {/* Asymmetric Editorial Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            {/* Featured Double-Width Article Card */}
+            {/* Featured Double-Width Magazine Cover Card */}
             {featuredArticle && (
               <Link
                 href={`/news/${featuredArticle.slug}`}
-                className="lg:col-span-2 relative aspect-[16/10] lg:aspect-auto lg:h-[460px] rounded-2xl overflow-hidden group shadow-md flex flex-col justify-end border border-gray-100"
+                className="lg:col-span-2 relative aspect-[16/11] lg:aspect-auto lg:h-[480px] rounded-2xl sm:rounded-3xl overflow-hidden group shadow-lg flex flex-col justify-end border border-gray-150 hover:border-[#11123c]/40 transition-all duration-300"
               >
                 <Image
                   src={featuredArticle.thumbnail}
                   alt={featuredArticle.title}
                   fill
-                  className="object-cover transition-transform duration-1000 group-hover:scale-102"
+                  className="object-cover transition-transform duration-700 group-hover:scale-103"
                   sizes="(max-w-1024px) 100vw, 800px"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#11123c] via-[#11123c]/45 to-transparent z-10" />
-                <div className="relative z-20 p-6 sm:p-10 text-left flex flex-col gap-2 max-w-2xl text-white">
-                  <span className="text-[9px] font-black uppercase tracking-widest text-[#11123c] bg-[#e9d319] px-2 py-0.5 rounded w-fit">
-                    FEATURED
+                
+                {/* Clean Editorial Dark Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#11123c] via-[#11123c]/70 to-transparent z-10" />
+                
+                {/* Top Category Badge */}
+                <div className="absolute top-6 left-6 z-20">
+                  <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-[#11123c] bg-[#e9d319] px-3 py-1 rounded-md shadow-md">
+                    FEATURED ESSAY
                   </span>
-                  <h3 className="font-display text-xl sm:text-3xl font-black uppercase tracking-tight leading-tight">
+                </div>
+
+                {/* Content Overlay */}
+                <div className="relative z-20 p-6 sm:p-10 text-left flex flex-col gap-3 max-w-2xl text-white">
+                  <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-wider text-white/70">
+                    <span>{featuredArticle.author || "Ramakrishnan"}</span>
+                    <span>•</span>
+                    <span>{featuredArticle.publishedAt}</span>
+                    <span>•</span>
+                    <span className="text-[#e9d319]">5 MIN READ</span>
+                  </div>
+
+                  <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight leading-tight group-hover:text-[#e9d319] transition-colors">
                     {featuredArticle.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-medium line-clamp-2 mt-1">
+
+                  <p className="text-xs sm:text-sm text-white/85 leading-relaxed font-normal line-clamp-2">
                     {featuredArticle.excerpt}
                   </p>
-                  <div className="inline-flex items-center gap-1.5 text-xs font-bold text-[#e9d319] mt-2">
-                    Read Story
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+
+                  <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-[#e9d319] mt-2 pt-2 border-t border-white/15 w-fit">
+                    <span>Read Full Dispatch</span>
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1.5" />
                   </div>
                 </div>
               </Link>

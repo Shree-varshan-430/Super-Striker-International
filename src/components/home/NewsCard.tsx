@@ -28,40 +28,59 @@ export default function NewsCard({ item, darkTheme }: NewsCardProps) {
     }
   };
 
+  const categoryLabelMap: Record<string, string> = {
+    academy: "Academy Dispatch",
+    club: "First-Team Reel",
+    community: "Grassroots Story",
+    investors: "Commercial & Turf",
+    "player-journeys": "Player Spotlight"
+  };
+
   return (
     <>
-      <div className={`rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col h-full text-left group w-full select-none ${
+      <div className={`rounded-2xl sm:rounded-3xl overflow-hidden transition-all duration-300 flex flex-col h-full text-left group w-full select-none ${
         darkTheme 
-          ? "bg-[#11123c]/40" 
-          : "bg-white"
+          ? "bg-[#18194a] border border-white/10 hover:border-[#e9d319]/40 hover:shadow-xl" 
+          : "bg-white border border-gray-150/80 hover:border-[#11123c]/40 hover:shadow-xl shadow-xs"
       }`}>
-        {/* Media Container (16:9 Aspect Box) */}
+        {/* Media Container (16:10 Aspect Box) */}
         <Link 
           href={targetLink} 
           onClick={handleClick}
           target={hasVideoUrl ? "_blank" : undefined}
           rel={hasVideoUrl ? "noopener noreferrer" : undefined}
-          className="relative w-full overflow-hidden aspect-[16/9] block bg-gray-50 shrink-0"
+          className="relative w-full overflow-hidden aspect-[16/10] block bg-gray-50 shrink-0"
         >
           <Image
             src={item.thumbnail}
             alt={item.title}
             fill
-            className="object-cover transition-transform duration-700 group-hover:scale-103"
-            sizes="(max-w-768px) 100vw, 380px"
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
+            sizes="(max-w-768px) 100vw, 420px"
           />
+
+          {/* Category Ribbon */}
+          <div className="absolute top-3.5 left-3.5 z-10">
+            <span className={`text-[9px] font-black uppercase tracking-wider px-2.5 py-1 rounded-md shadow-xs ${
+              darkTheme 
+                ? "bg-[#e9d319] text-[#11123c]" 
+                : "bg-[#11123c] text-[#e9d319]"
+            }`}>
+              {categoryLabelMap[item.category] || item.category}
+            </span>
+          </div>
 
           {/* Video Overlay */}
           {item.type === "video" && (
-            <div className="absolute inset-0 bg-[#11123c]/30 flex items-center justify-center transition-colors group-hover:bg-[#11123c]/40">
-              <div className="w-12 h-12 rounded-full bg-white text-[#11123c] flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110">
+            <div className="absolute inset-0 bg-[#11123c]/35 flex items-center justify-center transition-colors group-hover:bg-[#11123c]/45">
+              <div className="w-12 h-12 rounded-full bg-white text-[#11123c] flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#e9d319]">
                 <Play className="h-5 w-5 fill-current ml-0.5" />
               </div>
               
               {/* Duration Badge */}
               {item.duration && (
-                <div className="absolute bottom-2 right-2 bg-[#11123c]/80 text-white text-[10px] font-extrabold uppercase px-2 py-1 rounded flex items-center gap-1">
-                  <Clock className="h-3 w-3" />
+                <div className="absolute bottom-3 right-3 bg-[#11123c]/85 text-white text-[10px] font-bold uppercase px-2 py-0.5 rounded flex items-center gap-1">
+                  <Clock className="h-3 w-3 text-[#e9d319]" />
                   <span>{item.duration}</span>
                 </div>
               )}
@@ -70,13 +89,16 @@ export default function NewsCard({ item, darkTheme }: NewsCardProps) {
         </Link>
 
         {/* Content details */}
-        <div className="p-5 flex flex-col gap-2 flex-grow justify-between">
-          <div className="flex flex-col gap-2">
-            {/* Date */}
-            <div className={`text-xs sm:text-sm font-bold uppercase tracking-wider ${
-              darkTheme ? "text-white/40" : "text-gray-400"
-            }`}>
-              {item.publishedAt}
+        <div className="p-6 flex flex-col justify-between flex-grow gap-4">
+          <div className="flex flex-col gap-2.5">
+            {/* Metadata Byline Row */}
+            <div className="flex items-center justify-between text-[11px] font-bold uppercase tracking-wider">
+              <span className={darkTheme ? "text-white/60" : "text-[#696484]"}>
+                {item.author || "Editorial Desk"}
+              </span>
+              <span className={darkTheme ? "text-white/40" : "text-gray-400"}>
+                {item.publishedAt}
+              </span>
             </div>
 
             {/* Title */}
@@ -86,24 +108,35 @@ export default function NewsCard({ item, darkTheme }: NewsCardProps) {
               target={hasVideoUrl ? "_blank" : undefined}
               rel={hasVideoUrl ? "noopener noreferrer" : undefined}
             >
-              <h4 className={`font-display text-lg sm:text-xl lg:text-2xl font-black uppercase tracking-tight leading-tight line-clamp-3 transition-colors ${
+              <h4 className={`font-display text-lg sm:text-xl font-black uppercase tracking-tight leading-snug line-clamp-2 transition-colors ${
                 darkTheme 
-                  ? "text-white group-hover:text-white/80" 
-                  : "text-[#11123c] group-hover:text-black"
+                  ? "text-white group-hover:text-[#e9d319]" 
+                  : "text-[#11123c] group-hover:text-[#11123c]"
               }`}>
-                {(() => {
-                  const words = item.title.split(" ");
-                  if (words.length <= 4) return item.title;
-                  return (
-                    <>
-                      {words.slice(0, 4).join(" ")}
-                      <br />
-                      {words.slice(4).join(" ")}
-                    </>
-                  );
-                })()}
+                {item.title}
               </h4>
             </Link>
+
+            {/* Excerpt if present */}
+            {item.excerpt && (
+              <p className={`text-xs sm:text-sm line-clamp-2 leading-relaxed font-normal ${
+                darkTheme ? "text-white/70" : "text-[#696484]"
+              }`}>
+                {item.excerpt}
+              </p>
+            )}
+          </div>
+
+          {/* Bottom Interactive Read Link */}
+          <div className={`pt-3 border-t flex items-center justify-between text-xs font-black uppercase tracking-wider ${
+            darkTheme 
+              ? "border-white/10 text-[#e9d319]" 
+              : "border-gray-100 text-[#11123c]"
+          }`}>
+            <span className="flex items-center gap-1.5">
+              {item.type === "video" ? "Watch Clip" : "Read Dispatch"}
+              <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+            </span>
           </div>
         </div>
       </div>
