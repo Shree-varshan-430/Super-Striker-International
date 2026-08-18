@@ -157,320 +157,527 @@ export default function Home() {
         {/* 1. HERO CAROUSEL (FULL SIZE CAROUSEL - DARK) */}
         <HeroCarousel />
 
-        {/* 2. PROMO ANNOUNCEMENT STRIP (LIVE SCROLLING TICKER - YELLOW) */}
+        {/* 2. PROMO ANNOUNCEMENT STRIP (LIVE SCROLLING BULLETIN) */}
         <LiveTicker />
 
-        {/* 3. VENTURE SCALE & GROWTH METRICS (BROADCAST SCOREBOARD HUD - DARK) */}
+        {/* 3. VENTURE SCALE & GROWTH METRICS (ARCHITECTURAL SCOREBOARD PLAQUE - DARK) */}
         <section
           ref={businessSectionRef}
-          className="py-14 bg-[#11123c] text-white border-b border-white/10 px-4 sm:px-6 lg:px-8 select-none relative overflow-hidden"
+          className="py-14 sm:py-18 bg-[#11123c] text-white border-b border-white/10 px-4 sm:px-6 lg:px-8 select-none relative overflow-hidden"
         >
-          {/* HUD section divider lines */}
-          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#e9d319]/40 to-transparent" />
-          <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#e9d319]/40 to-transparent" />
-
-          {/* LIVE indicator */}
-          <div className="flex items-center justify-center gap-2 mb-8">
-            <span className="w-2 h-2 rounded-full bg-[#e9d319] animate-pulse shadow-[0_0_8px_rgba(233,211,25,0.8)]" />
-            <span className="text-[9px] font-black uppercase tracking-[0.25em] text-[#e9d319]/80">Live Metrics</span>
+          {/* Subtle faint pitch line */}
+          <div className="absolute inset-0 pointer-events-none opacity-5">
+            <div className="w-full h-full border border-white/20 m-4" />
           </div>
 
-          <div className="max-w-[95%] mx-auto grid grid-cols-2 md:grid-cols-4 gap-0">
-            {[
-              { target: 1500, suffix: "+", label: "Grassroots Discovered Base", icon: "⚽" },
-              { target: 5, suffix: "", label: "Smart Telemetry Fields", icon: "📡" },
-              { target: 3, suffix: "", label: "Affiliated State Clubs", icon: "🏆" },
-              { target: 100, suffix: "%", label: "Talent Pathway Flow", icon: "📈" }
-            ].map((item, idx) => (
-              <div key={idx} className="flex flex-col items-center text-center py-4 px-4 border-r last:border-r-0 border-white/10 relative">
-                {/* Scoreboard number with gold glow */}
-                <span className="text-3xl sm:text-5xl font-display font-black leading-none" style={{ color: "#e9d319", textShadow: "0 0 20px rgba(233,211,25,0.4)" }}>
-                  <span className="stat-counter" data-target={item.target}>0</span>
-                  {item.suffix}
-                </span>
-                {/* Lower-third label */}
-                <span className="text-[10px] font-bold uppercase tracking-wider text-white/60 mt-3 max-w-[140px] leading-tight">
-                  {item.label}
-                </span>
-                {/* HUD accent underline */}
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-[2px] bg-[#e9d319]/30 mt-2" />
-              </div>
-            ))}
+          <div className="max-w-7xl 2xl:max-w-[1440px] mx-auto relative z-10">
+            {/* Header tag */}
+            <div className="flex items-center justify-between mb-8 pb-3 border-b border-white/10">
+              <span className="text-[10px] font-mono font-bold uppercase tracking-[0.25em] text-[#a29142]">
+                SCALE & TELEMETRY REGISTER
+              </span>
+              <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-white/50">
+                SOUTH INDIA FOOTBALL CORRIDOR
+              </span>
+            </div>
+
+            {/* 4-Column Scoreboard Plaque */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-0 divide-y md:divide-y-0 md:divide-x divide-white/10 border-y border-white/10">
+              {[
+                { target: 1500, suffix: "+", label: "Grassroots Discovered Base", detail: "Active Academy Pipeline" },
+                { target: 5, suffix: "", label: "Smart Telemetry Fields", detail: "FIFA-Standard Quality Turf" },
+                { target: 3, suffix: "", label: "Affiliated State Clubs", detail: "Senior First-Team Franchises" },
+                { target: 100, suffix: "%", label: "Talent Pathway Flow", detail: "Direct Promotion Registry" }
+              ].map((item, idx) => (
+                <div key={idx} className="flex flex-col items-start p-6 sm:p-8 text-left bg-white/[0.02]">
+                  <span className="text-3xl sm:text-5xl lg:text-6xl font-display font-black text-[#e9d319] leading-none">
+                    <span className="stat-counter" data-target={item.target}>0</span>
+                    {item.suffix}
+                  </span>
+                  <span className="font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-white mt-3">
+                    {item.label}
+                  </span>
+                  <span className="font-mono text-[9px] uppercase tracking-[0.14em] text-white/50 mt-1">
+                    {item.detail}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
-        {/* 4. LATEST MODULE (NEWS ARTICLES - LIGHT & VIDEOS - DARK) */}
-        <motion.div {...sectionAnimProps}>
-          <LatestFeed />
-        </motion.div>
-
-        {/* 5. INVESTOR PROPOSITION & COMMERCIAL RETURNS (LIGHT) */}
-        <motion.section 
-          {...sectionAnimProps}
-          className="py-20 sm:py-24 bg-white border-b border-gray-100 select-none"
-        >
+        {/* ── 4. THREE PILLARS EDITORIAL CHAPTERS (THUNDERHILL TRACK SYSTEM) ── */}
+        <section className="py-24 sm:py-32 bg-white select-none border-b border-gray-200">
           <div className="max-w-7xl 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
-            <div className="flex flex-col items-start gap-1 border-l-4 border-[#11123c] pl-4 sm:pl-6 mb-12 sm:mb-16 text-left">
-              <span className="text-[10px] font-black uppercase tracking-widest text-[#e9d319] bg-[#11123c] px-3 py-1 rounded">
-                THE COMMERCIAL & ACADEMY EQUATION
+            
+            {/* Section Eyebrow Header */}
+            <div className="flex flex-col items-start gap-2 mb-20 text-left border-l-4 border-[#11123c] pl-4 sm:pl-6">
+              <span className="text-[11px] font-mono font-bold uppercase tracking-[0.25em] text-[#a29142]">
+                CORE PILLARS • THREE CHAPTERS
               </span>
-              <h2 className="font-display text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#11123c] mt-1">
-                State-Of-The-Art Infrastructure & Commercial Yields
+              <h2 className="font-display text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-[#11123c]">
+                A Complete Sporting Ecosystem
               </h2>
-              <p className="text-sm sm:text-base text-[#696484] mt-2 max-w-2xl font-medium leading-relaxed">
-                SuperStriker International structures world-class sports development infrastructure. Here is an exact breakdown of funded operational assets versus accrued commercial returns.
+              <p className="text-sm sm:text-base text-[#4B5563] max-w-2xl font-normal leading-relaxed">
+                From youth physical literacy to professional senior championships and sports real estate equity — built with absolute discipline.
               </p>
             </div>
 
-            {/* Split Grid for Funding vs Yield */}
+            {/* Chapter Stack */}
+            <div className="space-y-20 sm:space-y-28">
+              
+              {/* Chapter 01: The First Team */}
+              <div className="relative bg-white border border-gray-200 p-6 sm:p-10 lg:p-14 shadow-xs">
+                <div className="absolute right-6 top-4 z-0 pointer-events-none opacity-[0.04] select-none hidden sm:block">
+                  <span className="font-display font-black text-[160px] lg:text-[200px] leading-none text-[#11123c]">01</span>
+                </div>
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center relative z-10">
+                  <div className="lg:col-span-5">
+                    <div className="relative aspect-[16/11] w-full overflow-hidden bg-gray-100 border border-gray-200">
+                      <Image
+                        src="/images/team-1.jpg"
+                        alt="Senior First Team"
+                        fill
+                        className="object-cover"
+                        sizes="(max-w-1024px) 100vw, 520px"
+                      />
+                      <div className="absolute top-4 left-4 bg-[#11123c] text-[#e9d319] font-mono text-[10px] font-black uppercase tracking-[0.2em] px-3 py-1">
+                        CHAPTER 01
+                      </div>
+                    </div>
+                  </div>
+                  <div className="lg:col-span-7 flex flex-col gap-4 text-left">
+                    <span className="text-[11px] font-mono font-bold uppercase tracking-[0.22em] text-[#a29142]">
+                      01 / SENIOR STATE CHAMPIONSHIPS
+                    </span>
+                    <h3 className="font-display text-2xl sm:text-4xl font-black uppercase tracking-tight text-[#11123c] leading-tight">
+                      Senior Club Franchises & Professional First-Teams
+                    </h3>
+                    <p className="font-serif text-lg sm:text-xl italic text-[#11123c]/85 leading-snug">
+                      &ldquo;Direct championship exposure in KSFA Super Division and regional state leagues.&rdquo;
+                    </p>
+                    <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed font-normal">
+                      Bangalore Super Strikers FC, Pondicherry Super Strikers FC, and Chennai Super Strikers FC represent the pinnacle of our competitive pyramid, testing senior rosters against India&apos;s toughest state league opposition under full matchday conditions.
+                    </p>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 my-2 pt-4 border-t border-gray-150">
+                      <div className="bg-gray-50 border border-gray-150 p-3">
+                        <span className="text-[9px] font-mono font-bold uppercase tracking-wider text-[#696484]">Primary Tier</span>
+                        <span className="text-xs font-bold text-[#11123c] block mt-1 font-mono">KSFA Super Division</span>
+                      </div>
+                      <div className="bg-gray-50 border border-gray-150 p-3">
+                        <span className="text-[9px] font-mono font-bold uppercase tracking-wider text-[#696484]">Matchday Gate</span>
+                        <span className="text-xs font-bold text-[#11123c] block mt-1 font-mono">Live Broadcast Stream</span>
+                      </div>
+                      <div className="bg-gray-50 border border-gray-150 p-3">
+                        <span className="text-[9px] font-mono font-bold uppercase tracking-wider text-[#696484]">Senior Roster</span>
+                        <span className="text-xs font-bold text-[#11123c] block mt-1 font-mono">28 Registered Players</span>
+                      </div>
+                    </div>
+                    <div className="pt-2">
+                      <Link href="/about" className="thunderhill-btn thunderhill-btn-dark inline-flex">
+                        <span>Discover First-Team</span>
+                        <ArrowRight className="h-4 w-4" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Chapter 02: High Performance Academy (Flipped) */}
+              <div className="relative bg-white border border-gray-200 p-6 sm:p-10 lg:p-14 shadow-xs">
+                <div className="absolute right-6 top-4 z-0 pointer-events-none opacity-[0.04] select-none hidden sm:block">
+                  <span className="font-display font-black text-[160px] lg:text-[200px] leading-none text-[#11123c]">02</span>
+                </div>
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center relative z-10 lg:grid-flow-dense">
+                  <div className="lg:col-span-5 lg:col-start-8">
+                    <div className="relative aspect-[16/11] w-full overflow-hidden bg-gray-100 border border-gray-200">
+                      <Image
+                        src="/images/training-1.jpg"
+                        alt="High Performance Academy"
+                        fill
+                        className="object-cover"
+                        sizes="(max-w-1024px) 100vw, 520px"
+                      />
+                      <div className="absolute top-4 left-4 bg-[#11123c] text-[#e9d319] font-mono text-[10px] font-black uppercase tracking-[0.2em] px-3 py-1">
+                        CHAPTER 02
+                      </div>
+                    </div>
+                  </div>
+                  <div className="lg:col-span-7 lg:col-start-1 flex flex-col gap-4 text-left">
+                    <span className="text-[11px] font-mono font-bold uppercase tracking-[0.22em] text-[#a29142]">
+                      02 / RESIDENTIAL YOUTH DEVELOPMENT
+                    </span>
+                    <h3 className="font-display text-2xl sm:text-4xl font-black uppercase tracking-tight text-[#11123c] leading-tight">
+                      High-Performance Residential Academy & School
+                    </h3>
+                    <p className="font-serif text-lg sm:text-xl italic text-[#11123c]/85 leading-snug">
+                      &ldquo;European player development standards integrated with formal academic schooling.&rdquo;
+                    </p>
+                    <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed font-normal">
+                      Bangalore Football School delivers licensed AIFF & UEFA coaching curricula, GPS telemetry load tracking, residential player boarding, athletic nutrition, and sports medicine science to forge complete, modern footballers ready for state and national trials.
+                    </p>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 my-2 pt-4 border-t border-gray-150">
+                      <div className="bg-gray-50 border border-gray-150 p-3">
+                        <span className="text-[9px] font-mono font-bold uppercase tracking-wider text-[#696484]">Age Batches</span>
+                        <span className="text-xs font-bold text-[#11123c] block mt-1 font-mono">U-9 through U-18</span>
+                      </div>
+                      <div className="bg-gray-50 border border-gray-150 p-3">
+                        <span className="text-[9px] font-mono font-bold uppercase tracking-wider text-[#696484]">Coaching License</span>
+                        <span className="text-xs font-bold text-[#11123c] block mt-1 font-mono">AIFF & UEFA Licensed</span>
+                      </div>
+                      <div className="bg-gray-50 border border-gray-150 p-3">
+                        <span className="text-[9px] font-mono font-bold uppercase tracking-wider text-[#696484]">Boarding</span>
+                        <span className="text-xs font-bold text-[#11123c] block mt-1 font-mono">Full Residential Campus</span>
+                      </div>
+                    </div>
+                    <div className="pt-2">
+                      <Link href="/ecosystem" className="thunderhill-btn thunderhill-btn-dark inline-flex">
+                        <span>Explore Academy Pathway</span>
+                        <ArrowRight className="h-4 w-4" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Chapter 03: Commercial Infrastructure */}
+              <div className="relative bg-white border border-gray-200 p-6 sm:p-10 lg:p-14 shadow-xs">
+                <div className="absolute right-6 top-4 z-0 pointer-events-none opacity-[0.04] select-none hidden sm:block">
+                  <span className="font-display font-black text-[160px] lg:text-[200px] leading-none text-[#11123c]">03</span>
+                </div>
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center relative z-10">
+                  <div className="lg:col-span-5">
+                    <div className="relative aspect-[16/11] w-full overflow-hidden bg-gray-100 border border-gray-200">
+                      <Image
+                        src="/images/match-2.jpg"
+                        alt="Smart Turf Infrastructure"
+                        fill
+                        className="object-cover"
+                        sizes="(max-w-1024px) 100vw, 520px"
+                      />
+                      <div className="absolute top-4 left-4 bg-[#11123c] text-[#e9d319] font-mono text-[10px] font-black uppercase tracking-[0.2em] px-3 py-1">
+                        CHAPTER 03
+                      </div>
+                    </div>
+                  </div>
+                  <div className="lg:col-span-7 flex flex-col gap-4 text-left">
+                    <span className="text-[11px] font-mono font-bold uppercase tracking-[0.22em] text-[#a29142]">
+                      03 / COMMERCIAL REAL ESTATE & FRANCHISE
+                    </span>
+                    <h3 className="font-display text-2xl sm:text-4xl font-black uppercase tracking-tight text-[#11123c] leading-tight">
+                      Strategic Sports Infrastructure & Commercial Yields
+                    </h3>
+                    <p className="font-serif text-lg sm:text-xl italic text-[#11123c]/85 leading-snug">
+                      &ldquo;High-yield sports real estate property returns, club franchise equity, and sponsorship asset backing.&rdquo;
+                    </p>
+                    <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed font-normal">
+                      Partner with South India&apos;s fastest-growing football franchise network spanning professional senior clubs, smart artificial turf arenas, high-demand hourly community pitch bookings, and corporate branding equity.
+                    </p>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 my-2 pt-4 border-t border-gray-150">
+                      <div className="bg-gray-50 border border-gray-150 p-3">
+                        <span className="text-[9px] font-mono font-bold uppercase tracking-wider text-[#696484]">Pitch Standard</span>
+                        <span className="text-xs font-bold text-[#11123c] block mt-1 font-mono">FIFA-Grade Quality Turf</span>
+                      </div>
+                      <div className="bg-gray-50 border border-gray-150 p-3">
+                        <span className="text-[9px] font-mono font-bold uppercase tracking-wider text-[#696484]">Cash Flow</span>
+                        <span className="text-xs font-bold text-[#11123c] block mt-1 font-mono">Monthly Rental Dividends</span>
+                      </div>
+                      <div className="bg-gray-50 border border-gray-150 p-3">
+                        <span className="text-[9px] font-mono font-bold uppercase tracking-wider text-[#696484]">Equity Model</span>
+                        <span className="text-xs font-bold text-[#11123c] block mt-1 font-mono">Franchise & Parent Equity</span>
+                      </div>
+                    </div>
+                    <div className="pt-2">
+                      <Link href="/investors#enquire" className="thunderhill-btn thunderhill-btn-gold inline-flex">
+                        <span>Partner With Us</span>
+                        <ArrowRight className="h-4 w-4" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+        {/* 5. LATEST MODULE (NEWS ARTICLES & VIDEOS) */}
+        <div>
+          <LatestFeed />
+        </div>
+
+        {/* 6. INVESTOR PROPOSITION & COMMERCIAL RETURNS (TWO-COLUMN FINANCIAL PROSPECTUS LEDGER) */}
+        <section className="py-24 sm:py-32 bg-[#F8F9FB] border-b border-gray-200 select-none">
+          <div className="max-w-7xl 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
+            
+            {/* Header */}
+            <div className="flex flex-col items-start gap-2 border-l-4 border-[#11123c] pl-4 sm:pl-6 mb-16 sm:mb-20 text-left">
+              <span className="text-[11px] font-mono font-bold uppercase tracking-[0.25em] text-[#a29142]">
+                INSTITUTIONAL PROSPECTUS • THE EQUATION
+              </span>
+              <h2 className="font-display text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-[#11123c]">
+                Operational Assets vs Commercial Yields
+              </h2>
+              <p className="text-sm sm:text-base text-[#4B5563] max-w-2xl font-normal leading-relaxed">
+                SuperStriker International structures world-class sports development infrastructure. Here is the exact institutional breakdown of funded operational assets versus accrued commercial returns.
+              </p>
+            </div>
+
+            {/* Two-Column Ledger Matrix */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
               
-              {/* Column 1: What You Invest In */}
-              <div className="flex flex-col gap-6 text-left bg-gray-50 rounded-2xl sm:rounded-3xl p-6 sm:p-10 shadow-xs border border-gray-150/70">
-                <div className="flex items-center gap-3 pb-4 border-b border-gray-200">
-                  <div className="w-3.5 h-3.5 rounded-full bg-[#11123c]" />
-                  <h3 className="font-display text-xl sm:text-2xl font-black uppercase tracking-tight text-[#11123c]">
-                    1. Strategic Assets & Facilities You Fund
-                  </h3>
+              {/* Column 1: Strategic Assets & Facilities Funded */}
+              <div className="bg-white border border-gray-200 p-6 sm:p-10 flex flex-col gap-6 text-left shadow-xs">
+                <div className="flex items-center justify-between pb-4 border-b border-gray-200">
+                  <div className="flex items-center gap-3">
+                    <span className="w-3 h-3 bg-[#11123c]" />
+                    <h3 className="font-display text-xl sm:text-2xl font-black uppercase tracking-tight text-[#11123c]">
+                      1. Strategic Assets & Facilities Funded
+                    </h3>
+                  </div>
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#a29142]">
+                    LEDGER / 01
+                  </span>
                 </div>
 
                 <div className="space-y-4">
                   {[
                     {
+                      num: "01",
                       title: "FIFA-Standard Football Pitches & Smart Arenas",
                       desc: "Acquisition and development of FIFA-grade artificial turf and natural grass match fields equipped with floodlit complexes, automated GPS telemetry rigs, and hourly public pitch booking systems.",
                       sub: "Asset Backing: Prime sports corridor leases, sensory tracking hardware, smart facility revenue."
                     },
                     {
+                      num: "02",
                       title: "High-Performance Center & Sports Medicine",
                       desc: "Fully equipped athletic conditioning gymnasiums, sports science telemetry labs, cardiovascular recovery pools, and dedicated on-campus physiotherapy clinics for injury prevention.",
                       sub: "Asset Backing: Advanced biometric telemetry equipment, sports medicine licenses."
                     },
                     {
+                      num: "03",
                       title: "Residential Academy Campus & Hostels",
                       desc: "A Home Away From Home providing secure player dormitories, balanced athletic nutrition dining halls, academic school integration, and certified UEFA/AIFF coaching staffs.",
                       sub: "Asset Backing: Direct multi-year academy registration pipeline, player transfer equity."
                     },
                     {
+                      num: "04",
                       title: "Regional Club Franchises & First-Teams",
                       desc: "Direct operational backing for senior competitive first-teams in Bangalore (KSFA Super Division), Pondicherry, and Chennai to contest state and national championships.",
                       sub: "Asset Backing: Official federation club registry charters, stadium match day gates, broadcast rights."
                     }
                   ].map((asset, idx) => (
-                    <motion.div
+                    <div
                       key={idx}
-                      initial={{ opacity: 0, x: -16 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: idx * 0.1 }}
-                      whileHover={{ scale: 1.01, boxShadow: "0 0 0 1px rgba(233,211,25,0.3), 0 8px 24px rgba(17,18,60,0.12)" }}
-                      className="reticle bg-white rounded-2xl p-6 border-l-4 border-[#11123c] shadow-xs flex flex-col gap-2 transition-all duration-300"
+                      className="bg-gray-50 border border-gray-200 p-5 flex flex-col gap-2 transition-all hover:border-[#11123c]/40"
                     >
+                      <div className="flex items-center justify-between">
+                        <span className="font-mono text-[10px] font-bold uppercase text-[#a29142]">
+                          ASSET #{asset.num}
+                        </span>
+                      </div>
                       <h4 className="font-display text-base sm:text-lg font-black uppercase text-[#11123c]">
                         {asset.title}
                       </h4>
                       <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed font-normal">
                         {asset.desc}
                       </p>
-                      <span className="text-[10px] sm:text-xs font-bold text-[#11123c] uppercase tracking-wide mt-1 bg-gray-50 px-2.5 py-1 rounded w-fit">
+                      <span className="text-[10px] font-mono font-bold text-[#11123c] uppercase tracking-wide mt-1 bg-white px-2.5 py-1 border border-gray-200 w-fit">
                         {asset.sub}
                       </span>
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
               </div>
 
-              {/* Column 2: What You Get In Return */}
-              <div className="flex flex-col gap-6 text-left bg-gray-50 rounded-2xl sm:rounded-3xl p-6 sm:p-10 shadow-xs border border-gray-150/70">
-                <div className="flex items-center gap-3 pb-4 border-b border-gray-200">
-                  <div className="w-3.5 h-3.5 rounded-full bg-[#e9d319]" />
-                  <h3 className="font-display text-xl sm:text-2xl font-black uppercase tracking-tight text-[#11123c]">
-                    2. Accrued Commercial Yields
-                  </h3>
+              {/* Column 2: Accrued Commercial Yields */}
+              <div className="bg-white border border-gray-200 p-6 sm:p-10 flex flex-col gap-6 text-left shadow-xs">
+                <div className="flex items-center justify-between pb-4 border-b border-gray-200">
+                  <div className="flex items-center gap-3">
+                    <span className="w-3 h-3 bg-[#e9d319]" />
+                    <h3 className="font-display text-xl sm:text-2xl font-black uppercase tracking-tight text-[#11123c]">
+                      2. Accrued Commercial Yields
+                    </h3>
+                  </div>
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#a29142]">
+                    RETURNS / 02
+                  </span>
                 </div>
 
                 <div className="space-y-4">
                   {[
                     {
+                      num: "01",
                       title: "Front-of-Shirt & Perimeter Arena Sponsorship",
                       desc: "Primary kit branding across senior club squads, arena digital perimeter board presence, video telemetry documentary sponsorships, and prominent showcase across all scouting trials.",
                       returnVal: "Target Yield: High-visibility multi-region corporate awareness & CSR prestige."
                     },
                     {
+                      num: "02",
                       title: "Player Transfer & Scouting Equity Shares",
                       desc: "Contractual percentage rights on domestic (ISL / I-League) and international player sale transfers of talent discovered and nurtured through Bangalore Football School.",
                       returnVal: "Target Yield: High-upside capital liquidation upon professional league sign-ons."
                     },
                     {
+                      num: "03",
                       title: "Recurring Turf & Facility Rental Dividends",
-                      desc: "Monthly cash-flow dividend splits derived from hourly community pitch rentals, corporate corporate leagues, tournament hosting, and academy tuition subscriptions.",
+                      desc: "Monthly cash-flow dividend splits derived from hourly community pitch rentals, corporate leagues, tournament hosting, and academy tuition subscriptions.",
                       returnVal: "Target Yield: Predictable monthly recurring cash dividends."
                     },
                     {
+                      num: "04",
                       title: "Network Parent Equity & Valuation Upside",
                       desc: "Direct strategic equity options in SuperStriker International Pvt Ltd as our unified multi-state football academy and franchise network expands across South India.",
                       returnVal: "Target Yield: Exponential long-term enterprise valuation growth."
                     }
                   ].map((ret, idx) => (
-                    <motion.div
+                    <div
                       key={idx}
-                      initial={{ opacity: 0, x: 16 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: idx * 0.1 }}
-                      whileHover={{ scale: 1.01, boxShadow: "0 0 0 1px rgba(233,211,25,0.45), 0 8px 24px rgba(233,211,25,0.08)" }}
-                      className="reticle bg-white rounded-2xl p-6 border-l-4 border-[#e9d319] shadow-xs flex flex-col gap-2 transition-all duration-300"
+                      className="bg-gray-50 border border-gray-200 p-5 flex flex-col gap-2 transition-all hover:border-[#e9d319]"
                     >
+                      <div className="flex items-center justify-between">
+                        <span className="font-mono text-[10px] font-bold uppercase text-[#a29142]">
+                          YIELD #{ret.num}
+                        </span>
+                      </div>
                       <h4 className="font-display text-base sm:text-lg font-black uppercase text-[#11123c]">
                         {ret.title}
                       </h4>
                       <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed font-normal">
                         {ret.desc}
                       </p>
-                      <span className="text-[10px] sm:text-xs font-bold text-[#11123c] uppercase tracking-wide mt-1 bg-[#e9d319]/20 px-2.5 py-1 rounded w-fit">
+                      <span className="text-[10px] font-mono font-bold text-[#11123c] uppercase tracking-wide mt-1 bg-[#e9d319] px-2.5 py-1 w-fit">
                         {ret.returnVal}
                       </span>
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
               </div>
 
             </div>
 
-            {/* Quick Enquiry Prompt */}
-            <div className="mt-12 bg-[#11123c] rounded-3xl p-8 sm:p-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 shadow-xl text-left">
-              <div className="flex flex-col gap-1.5 max-w-xl">
-                <span className="text-[10px] font-black uppercase tracking-widest text-[#e9d319]">
-                  PARTNERSHIP CONSULTATION
+            {/* Structured Institutional Consultation Box */}
+            <div className="mt-12 bg-[#11123c] p-8 sm:p-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 text-left border border-white/15">
+              <div className="flex flex-col gap-2 max-w-2xl">
+                <span className="text-[10px] font-mono font-bold uppercase tracking-[0.25em] text-[#e9d319]">
+                  INSTITUTIONAL CONSULTATION
                 </span>
-                <h3 className="font-display text-xl sm:text-3xl font-black uppercase text-white leading-tight">
-                  Ready To Inspect Our Institutional Deck?
+                <h3 className="font-display text-2xl sm:text-3xl font-black uppercase text-white leading-tight">
+                  Inspect Our Institutional Prospectus Deck
                 </h3>
-                <p className="text-xs sm:text-sm text-white/80 font-normal">
+                <p className="text-xs sm:text-sm text-white/80 font-normal leading-relaxed">
                   Connect directly with our investment directors to review smart turf financial projections, facility blueprints, and franchise prospectus models.
                 </p>
               </div>
               <Link
                 href="/investors#enquire"
-                className="inline-flex items-center gap-2 rounded-full bg-[#e9d319] text-[#11123c] px-8 py-4 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-[#11123c] shadow-md shrink-0"
+                className="thunderhill-btn thunderhill-btn-gold shrink-0"
               >
-                Inquire Sponsorship
+                <span>Inquire Sponsorship</span>
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
 
           </div>
-        </motion.section>
+        </section>
 
-        {/* 6. INVESTOR BANNER MODULE (FULL WIDTH - DARK) */}
-        <motion.div {...sectionAnimProps}>
+        {/* 7. INVESTOR BANNER MODULE */}
+        <div>
           <InvestorBanner />
-        </motion.div>
+        </div>
 
-        {/* 7. SUB-BRAND SPOTLIGHT MODULE (GRID - LIGHT) */}
-        <motion.div {...sectionAnimProps}>
+        {/* 8. CLUBS & ECOSYSTEM CHAPTER SHOWCASE (FULL-WIDTH EDITORIAL CARDS) */}
+        <div>
           <SubBrandSpotlight />
-        </motion.div>
+        </div>
 
-        {/* 8. INFRASTRUCTURE & VISION BANNER (PARALLAX ZOOM STADIUM - DARK) */}
+        {/* 9. INFRASTRUCTURE & VISION BANNER */}
         <section 
           ref={featureBannerRef}
-          className="relative w-full h-[400px] sm:h-[480px] overflow-hidden flex items-center justify-center select-none"
+          className="relative w-full h-[440px] sm:h-[500px] overflow-hidden flex items-center justify-center select-none bg-[#11123c]"
         >
-          <div className="absolute inset-0 z-0 origin-center">
+          <div className="absolute inset-0 z-0">
             <Image
               src="/images/WhatsApp Image 2026-08-07 at 8.29.48 AM (2).jpeg"
               alt="SuperStriker Turf Pitch Infrastructure"
               fill
               quality={85}
-              className="object-cover object-center opacity-85"
+              className="object-cover object-center opacity-40"
             />
           </div>
           
-          <div className="absolute inset-0 bg-[#11123c]/60 z-10" />
+          <div className="absolute inset-0 bg-[#11123c]/70 z-10" />
 
-          {/* Brand accent wedges on bottom right */}
-          <div 
-            className="absolute bottom-0 right-0 w-28 h-28 sm:w-36 sm:h-36 bg-[#11123c] pointer-events-none z-15 translate-x-2 translate-y-2 lg:block hidden" 
-            style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }} 
-          />
-          <div 
-            className="absolute bottom-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-[#e9d319] pointer-events-none z-20 lg:block hidden" 
-            style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }} 
-          />
-          
-          <div className="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 text-center text-white flex flex-col items-center gap-4">
-            <span className="text-[10px] font-black uppercase tracking-widest text-[#e9d319] bg-[#11123c] px-3 py-1 rounded">
+          <div className="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 text-center text-white flex flex-col items-center gap-5">
+            <span className="text-[11px] font-mono font-bold uppercase tracking-[0.25em] text-[#e9d319]">
               CAMPUS & INFRASTRUCTURE
             </span>
             <h2 className="font-display text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-tight">
               Where Champions Are Made
             </h2>
-            <p className="text-xs sm:text-base text-gray-200 max-w-2xl leading-relaxed font-medium">
+            <p className="text-xs sm:text-base text-gray-300 max-w-2xl leading-relaxed font-normal">
               Developing world-class sports corridors across South India featuring FIFA-standard natural & artificial turf pitches, high-performance sports science centers, and residential student-athlete campuses.
             </p>
-            <div className="mt-2">
+            <div className="pt-2">
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 rounded-full bg-[#e9d319] text-[#11123c] px-8 py-3.5 text-xs font-bold uppercase tracking-wider hover:bg-white transition-all shadow-md"
+                className="thunderhill-btn thunderhill-btn-gold"
               >
-                Explore Campus Facilities
+                <span>Explore Campus Facilities</span>
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </div>
         </section>
 
-        {/* 9. FOUNDER & HERITAGE PROFILE NOTE (MAGAZINE INTERVIEW - LIGHT & ENLARGED PORTRAIT) */}
-        <motion.section 
-          {...sectionAnimProps}
-          className="py-20 sm:py-24 px-4 sm:px-6 lg:px-10 xl:px-12 max-w-7xl 2xl:max-w-[1440px] mx-auto bg-white border-b border-gray-100 select-none"
-        >
-          <div className="text-center mb-12 sm:mb-16">
-            <span className="text-[10px] font-black uppercase tracking-widest text-[#e9d319] bg-[#11123c] px-3 py-1 rounded">
-              PRESIDENT&#39;S MESSAGE & HERITAGE
+        {/* 10. FOUNDER & HERITAGE PROFILE (QUIET EDITORIAL MOMENT WITH CORMORANT GARAMOND SERIF) */}
+        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-10 xl:px-12 max-w-7xl 2xl:max-w-[1440px] mx-auto bg-white select-none border-b border-gray-200">
+          <div className="flex flex-col items-start gap-2 mb-16 text-left border-l-4 border-[#11123c] pl-4 sm:pl-6">
+            <span className="text-[11px] font-mono font-bold uppercase tracking-[0.25em] text-[#a29142]">
+              HERITAGE & FOUNDATION • STORY 04
             </span>
-            <h2 className="font-display text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#11123c] mt-2">
+            <h2 className="font-display text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-[#11123c]">
               Stories Behind The Vision
             </h2>
-            <div className="h-1.5 w-16 bg-[#11123c] mx-auto mt-4" />
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center bg-gray-50 rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-14 shadow-sm">
-            {/* Portrait Image with crisp 4K rendering */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center bg-[#F8F9FB] border border-gray-200 p-6 sm:p-10 lg:p-14">
+            
+            {/* Portrait Image */}
             <div className="lg:col-span-5 flex justify-center w-full">
-              <motion.div
-                whileHover={{ y: -4 }}
-                transition={{ type: "spring", stiffness: 200 }}
-                className="relative aspect-[4/3] sm:aspect-[4/5] lg:aspect-[3/4] w-full max-w-[520px] rounded-2xl overflow-hidden shadow-2xl"
-              >
+              <div className="relative aspect-[4/5] w-full max-w-[480px] overflow-hidden border border-gray-200 shadow-sm bg-gray-100">
                 <Image
                   src="/images/founder-portrait.jpg"
                   alt="Ramakrishnan President Portrait"
                   fill
                   quality={85}
                   className="object-cover object-top"
-                  sizes="(max-w-768px) 100vw, 520px"
+                  sizes="(max-w-768px) 100vw, 480px"
                 />
-              </motion.div>
+              </div>
             </div>
 
             {/* Quote and Vision Details */}
             <div className="lg:col-span-7 flex flex-col gap-6 text-left relative">
-              <span className="text-[10px] font-black uppercase tracking-widest text-[#11123c] bg-[#e9d319] px-3 py-1 rounded w-fit">
-                FOUNDER&#39;S MANIFESTO
+              <span className="text-[11px] font-mono font-bold uppercase tracking-[0.22em] text-[#a29142]">
+                PRESIDENT&apos;S MANIFESTO
               </span>
 
-              <p className="font-display text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-[#11123c] leading-tight">
+              <p className="font-serif text-2xl sm:text-3xl lg:text-4xl italic text-[#11123c] leading-tight">
                 &ldquo;At SuperStriker, sport is not secondary — it is a fundamental right. We are building the factory of future champions.&rdquo;
               </p>
               
-              <div className="flex flex-col text-xs uppercase tracking-wider border-b border-[#11123c]/10 pb-4">
-                <span className="text-[#11123c] text-base font-black">Ramakrishnan (Ram)</span>
-                <span className="text-[#696484] text-xs font-bold mt-0.5">President & Founder, Bangalore Super Strikers FC &middot; AIFF-C Licensed Coach & KSFA Referee</span>
+              <div className="flex flex-col border-b border-gray-200 pb-4">
+                <span className="font-display text-lg font-black uppercase tracking-tight text-[#11123c]">
+                  Ramakrishnan (Ram)
+                </span>
+                <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#696484] mt-1">
+                  President & Founder, Bangalore Super Strikers FC &middot; AIFF-C Licensed Coach & KSFA Referee
+                </span>
               </div>
 
-              <div className="space-y-4 text-base sm:text-lg text-[#374151] leading-relaxed">
+              <div className="space-y-4 text-sm sm:text-base text-[#4B5563] leading-relaxed font-normal">
                 <p>
                   Inspired by his parents, <strong className="text-[#11123c] font-bold">Mr. Devaraj and Mrs. Rajammal Devaraj</strong>, who dreamed of seeing their grandson represent India on the world stage, Ram turned his own experiences as a player with limited resources into a national-caliber development system.
                 </p>
@@ -482,197 +689,177 @@ export default function Home() {
               <div className="pt-2 flex flex-wrap gap-4 items-center">
                 <Link
                   href="/about"
-                  className="inline-flex items-center gap-2 rounded-full bg-[#11123c] text-white px-8 py-4 text-xs sm:text-sm font-bold uppercase tracking-wider hover:bg-[#e9d319] hover:text-[#11123c] transition-all shadow-sm"
+                  className="thunderhill-btn thunderhill-btn-dark inline-flex"
                 >
-                  Read Full Heritage Story
+                  <span>Read Heritage Story</span>
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 rounded-full bg-white text-[#11123c] border border-[#11123c]/15 px-8 py-4 text-xs sm:text-sm font-bold uppercase tracking-wider hover:bg-gray-100 transition-all shadow-xs"
+                  href="/about"
+                  className="thunderhill-btn thunderhill-btn-outline-dark inline-flex"
                 >
-                  Join The Academy
+                  <span>Join The Academy</span>
                 </Link>
               </div>
             </div>
           </div>
-        </motion.section>
+        </section>
 
-        {/* 10. ACADEMY BANNER MODULE (FULL WIDTH - DARK) */}
-        <motion.div {...sectionAnimProps}>
+        {/* 11. ACADEMY BANNER MODULE */}
+        <div>
           <AcademyBanner />
-        </motion.div>
+        </div>
 
-        {/* 11. PLAYER PATHWAYS SQUAD SHOWCASE (100% Crisp 4K Images, No Grayscale) */}
-        <motion.section 
-          {...sectionAnimProps}
-          className="py-20 sm:py-24 px-4 sm:px-6 lg:px-10 xl:px-12 max-w-7xl 2xl:max-w-[1440px] mx-auto bg-white select-none border-b border-gray-150"
-        >
-          <div className="text-left mb-12 sm:mb-16 flex flex-col gap-1 border-l-4 border-[#11123c] pl-4 sm:pl-6">
-            <span className="text-[10px] font-black uppercase tracking-widest text-[#e9d319] bg-[#11123c] px-3 py-1 rounded w-fit">
-              HONOURS BOARD & TALENT PATHWAYS
+        {/* 12. HONOURS BOARD / CLUB YEARBOOK (ELEGANT PLAYER YEARBOOK CARDS) */}
+        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-10 xl:px-12 max-w-7xl 2xl:max-w-[1440px] mx-auto bg-white select-none border-b border-gray-200">
+          <div className="text-left mb-16 sm:mb-20 flex flex-col gap-2 border-l-4 border-[#11123c] pl-4 sm:pl-6">
+            <span className="text-[11px] font-mono font-bold uppercase tracking-[0.25em] text-[#a29142]">
+              HONOURS BOARD • CLUB YEARBOOK
             </span>
-            <h2 className="font-display text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#11123c] mt-1">
+            <h2 className="font-display text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-[#11123c]">
               Where Champions Are Made
             </h2>
-            <p className="text-sm sm:text-base text-[#696484] leading-relaxed max-w-2xl font-medium mt-1">
+            <p className="text-sm sm:text-base text-[#4B5563] leading-relaxed max-w-2xl font-normal">
               Tracing the athletic journey from grassroots discovery festivals to residential high-performance training, state league campaigns, and national trials.
             </p>
           </div>
 
-          {/* Render Player Cards — EA Sports FIFA style: 3D tilt, jersey glow, scanline */}
+          {/* Render Player Yearbook Cards (Yearbook Design: Thin-Outline Numerals + Serif Names) */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10">
             {[
-              { name: "Aditya Kumar", role: "Midfielder", cohort: "U-15 Elite Cohort", number: "10", image: "/images/Player1.jpeg", stats: "Pass Accuracy: 88% | Assist Leader" },
-              { name: "Sanjay Raj", role: "Striker", cohort: "BSS Senior Squad", number: "09", image: "/images/Player2.jpeg", stats: "Goals: 12 | Shots conversion: 24%" },
-              { name: "Vikram Seth", role: "Goalkeeper", cohort: "Pondicherry Resident Academy", number: "01", image: "/images/Player3.jpeg", stats: "Clean Sheets: 8 | Penalty Saves: 2" }
-            ].map((player, playerIdx) => (
-              <motion.div
+              { name: "Aditya Kumar", role: "Midfielder", cohort: "U-15 Elite Cohort", number: "10", image: "/images/Player1.jpeg", stats: "Pass Accuracy: 88% | Assist Leader", milestone: "Karnataka State U-15 Squad" },
+              { name: "Sanjay Raj", role: "Striker", cohort: "BSS Senior Squad", number: "09", image: "/images/Player2.jpeg", stats: "Goals: 12 | Shots conversion: 24%", milestone: "KSFA Super Division Debut" },
+              { name: "Vikram Seth", role: "Goalkeeper", cohort: "Pondicherry Resident Academy", number: "01", image: "/images/Player3.jpeg", stats: "Clean Sheets: 8 | Penalty Saves: 2", milestone: "All-India Scout Selection" }
+            ].map((player) => (
+              <div 
                 key={player.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: playerIdx * 0.15 }}
-                whileHover={{
-                  rotateY: 4,
-                  rotateX: -2,
-                  scale: 1.02,
-                  boxShadow: "0 0 0 1.5px rgba(233,211,25,0.5), 0 24px 48px rgba(17,18,60,0.25)"
-                }}
-                style={{ perspective: 1000, transformStyle: "preserve-3d" }}
-                className="reticle relative rounded-2xl sm:rounded-3xl overflow-hidden aspect-[3/4] group shadow-xl bg-gray-50 flex flex-col justify-end p-6 sm:p-8 select-none cursor-default transition-all duration-300"
+                className="bg-white border border-gray-200 overflow-hidden flex flex-col text-left group hover:border-[#11123c]/40 transition-all shadow-xs"
               >
-                {/* Player image */}
-                <div className="absolute inset-0 z-0">
+                {/* Player Photo with Thin Outlined Numeral */}
+                <div className="relative aspect-[3/4] w-full overflow-hidden bg-gray-100">
                   <Image
                     src={player.image}
                     alt={player.name}
                     fill
                     quality={85}
-                    className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-103"
                     sizes="(max-w-768px) 100vw, 400px"
                   />
-                  {/* Gentle bottom vignette */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#11123c]/92 via-[#11123c]/25 to-transparent z-10" />
-                </div>
+                  
+                  {/* Scrim */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#11123c] via-[#11123c]/30 to-transparent z-10" />
 
-                {/* Scanline telemetry texture overlay */}
-                <div className="absolute inset-0 z-[11] scanline-overlay pointer-events-none rounded-2xl sm:rounded-3xl" />
-
-                {/* Jersey number badge with gold glow */}
-                <div className="absolute top-5 right-5 z-20">
-                  <span
-                    className="font-display text-xl sm:text-2xl font-black text-[#11123c] bg-[#e9d319] px-3 py-1 rounded-xl shadow-md"
-                    style={{ textShadow: "0 0 12px rgba(233,211,25,0.8)" }}
-                  >
+                  {/* Thin Outlined Jersey Numeral */}
+                  <div className="absolute top-4 right-4 z-20 font-display font-black text-4xl sm:text-5xl text-white/30 tracking-tighter">
                     #{player.number}
-                  </span>
-                </div>
+                  </div>
 
-                {/* Content overlay */}
-                <div className="relative z-20 text-left text-white flex flex-col gap-1.5">
-                  <span className="text-[10px] font-black uppercase tracking-widest text-[#e9d319]">
-                    {player.role}
-                  </span>
-                  <h3 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight leading-none text-white">
-                    {player.name}
-                  </h3>
-                  <span className="text-xs font-bold text-white/80 uppercase tracking-wider">
-                    {player.cohort}
-                  </span>
-
-                  {/* Telemetry readout panel */}
-                  <div className="mt-3 pt-2 border-t border-[#e9d319]/30 flex flex-col gap-0.5">
-                    <span className="text-[9px] font-black tracking-widest text-[#e9d319] uppercase flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#e9d319] animate-pulse" />
-                      Telemetry Index
+                  {/* Player details at bottom of photo */}
+                  <div className="absolute bottom-4 left-4 right-4 z-20 text-white flex flex-col gap-1">
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-[0.22em] text-[#e9d319]">
+                      {player.role}
                     </span>
-                    <span className="text-xs font-bold text-white font-mono tracking-wide">
-                      {player.stats}
+                    <h3 className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-white leading-tight">
+                      {player.name}
+                    </h3>
+                    <span className="text-xs font-mono uppercase tracking-wider text-white/80">
+                      {player.cohort}
                     </span>
                   </div>
                 </div>
 
-              </motion.div>
+                {/* Yearbook Telemetry Card Footer */}
+                <div className="p-5 bg-gray-50 border-t border-gray-200 flex flex-col gap-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[9px] font-mono font-bold uppercase tracking-[0.16em] text-[#696484]">
+                      MILESTONE
+                    </span>
+                    <span className="text-[10px] font-mono font-bold text-[#11123c]">
+                      {player.milestone}
+                    </span>
+                  </div>
+                  <div className="pt-2 border-t border-gray-200 flex items-center justify-between text-xs font-mono font-bold text-[#11123c]">
+                    <span className="text-[9px] uppercase tracking-wider text-[#a29142]">Telemetry</span>
+                    <span className="text-[11px] font-mono text-[#11123c]">{player.stats}</span>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
-        </motion.section>
+        </section>
 
-        {/* 12. LIVE SOCIAL EMBED MODULE (Mock Instagram Gallery - DARK THEME) */}
-        <motion.section 
-          {...sectionAnimProps}
-          className="py-20 bg-[#11123c] text-white border-b border-white/5 select-none"
-        >
-          <div className="max-w-[95%] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col items-start gap-1 border-l-4 border-[#e9d319] pl-4 mb-12 text-left">
-              <span className="text-[10px] font-black uppercase tracking-widest text-[#11123c] bg-[#e9d319] px-2.5 py-0.5 rounded">
-                SOCIAL
-              </span>
-              <h2 className="font-display text-2xl sm:text-4xl font-black uppercase tracking-tight text-white mt-1">
-                LATEST ON INSTAGRAM
-              </h2>
+        {/* 13. LIVE SOCIAL EMBED MODULE (INSTAGRAM DISPATCH GRID - DARK) */}
+        <section className="py-24 bg-[#11123c] text-white border-b border-white/10 select-none">
+          <div className="max-w-7xl 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between mb-12 pb-4 border-b border-white/10 text-left">
+              <div className="flex flex-col items-start gap-1">
+                <span className="text-[10px] font-mono font-bold uppercase tracking-[0.25em] text-[#e9d319]">
+                  DISPATCHES • @BANGALORESUPERSTRIKERSFC
+                </span>
+                <h2 className="font-display text-2xl sm:text-4xl font-black uppercase tracking-tight text-white mt-1">
+                  Social & Pitch Highlights
+                </h2>
+              </div>
+              <a
+                href="https://www.instagram.com/bangaloresuperstrikersfc/?hl=en"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden sm:inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-[#e9d319] hover:text-white transition-colors"
+              >
+                <span>Follow On Instagram</span>
+                <ArrowRight className="h-3.5 w-3.5" />
+              </a>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
               {[
-                { img: "/images/news-underpriv-camp.jpg", likes: "1,240", caption: "Hard work on the turf today. 💪 #SuperStriker" },
+                { img: "/images/news-underpriv-camp.jpg", likes: "1,240", caption: "Tactical training on the turf today. 💪 #SuperStriker" },
                 { img: "/images/news-pathways.jpg", likes: "890", caption: "Developing youth pathways step-by-step. ⚽" },
                 { img: "/images/Instagram2.jpeg", likes: "2,050", caption: "Matchday memories. Three points locked in! 🏆" },
                 { img: "/images/Instagram3.jpeg", likes: "1,560", caption: "Grassroots scouting festivals active in school clusters. 🧤" }
               ].map((post, idx) => (
-                <motion.div
+                <div
                   key={idx}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: idx * 0.08 }}
-                  whileHover={{
-                    scale: 1.03,
-                    boxShadow: "0 0 0 2px rgba(233,211,25,0.5), 0 16px 32px rgba(17,18,60,0.3)"
-                  }}
-                  className="relative rounded-xl overflow-hidden aspect-square group shadow-sm bg-[#11123c]/40 border border-white/5 cursor-pointer transition-all duration-300"
+                  className="relative overflow-hidden aspect-square group bg-white/5 border border-white/10"
                 >
                   <Image
                     src={post.img}
                     alt="Instagram Post"
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-108 opacity-90 group-hover:opacity-100"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105 opacity-90 group-hover:opacity-100"
                     sizes="(max-w-768px) 50vw, 25vw"
                   />
-                  <div className="absolute inset-0 bg-[#11123c]/65 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 text-left text-white">
-                    <span className="text-[10px] font-bold tracking-wider text-[#e9d319]">♥ {post.likes} likes</span>
+                  <div className="absolute inset-0 bg-[#11123c]/75 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex flex-col justify-end p-4 text-left text-white">
+                    <span className="text-[10px] font-mono font-bold tracking-wider text-[#e9d319]">♥ {post.likes} LIKES</span>
                     <p className="text-[11px] leading-relaxed mt-1 font-medium">{post.caption}</p>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
-        </motion.section>
+        </section>
 
-        {/* 13. LATEST MOMENTS ON THE PITCH (HORIZONTAL PHOTO STRIP - LIGHT) */}
-        <motion.div {...sectionAnimProps}>
+        {/* 14. LATEST MOMENTS ON THE PITCH (HORIZONTAL PHOTO STRIP) */}
+        <div>
           <PhotoStrip />
-        </motion.div>
+        </div>
 
-        {/* 14. SPONSORS LOGO STRIP (DARK) */}
-        <motion.div {...sectionAnimProps}>
+        {/* 15. SPONSORS LOGO STRIP */}
+        <div>
           <PartnerLogos />
-        </motion.div>
+        </div>
 
-        {/* 15. NEWSLETTER SIGNUP (LIGHT) */}
-        <motion.section 
-          {...sectionAnimProps}
-          className="py-20 bg-gray-50 border-t border-gray-150 px-4"
-        >
+        {/* 16. NEWSLETTER DISPATCH FORM */}
+        <section className="py-24 bg-[#F8F9FB] border-t border-gray-200 px-4">
           <div className="max-w-4xl mx-auto text-center flex flex-col gap-6 items-center">
-            <span className="text-[10px] font-black uppercase tracking-widest text-[#e9d319] bg-[#11123c] px-2.5 py-0.5 rounded">
+            <span className="text-[11px] font-mono font-bold uppercase tracking-[0.25em] text-[#a29142]">
               WEEKLY DISPATCH
             </span>
-            <h2 className="font-display text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#11123c]">
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#11123c]">
               Subscribe To SuperStriker Football Stories
             </h2>
-            <p className="text-xs sm:text-sm text-[#4B5563] max-w-md leading-relaxed">
-              Get tactical insights, scout reviews, matching brief analytics, and strategic investment options sent to your corporate mail twice a month.
+            <p className="text-xs sm:text-sm text-[#4B5563] max-w-lg leading-relaxed font-normal">
+              Receive tactical insights, scout reviews, match telemetry analytics, and strategic investment options delivered twice a month.
             </p>
 
             <form onSubmit={(e) => { e.preventDefault(); alert("Subscription successful!"); }} className="flex flex-col sm:flex-row gap-2 w-full max-w-md mt-4">
@@ -680,17 +867,17 @@ export default function Home() {
                 type="email"
                 placeholder="Business email address"
                 required
-                className="bg-white rounded-full border border-gray-200 px-5 py-3 text-xs text-[#11123c] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#e9d319]/20 flex-grow"
+                className="bg-white border border-gray-300 px-5 py-3 text-xs text-[#11123c] placeholder-gray-400 focus:outline-none focus:border-[#11123c] flex-grow font-mono"
               />
               <button
                 type="submit"
-                className="rounded-full bg-[#11123c] px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white hover:bg-[#e9d319] hover:text-[#11123c] transition-all hover:scale-103 shrink-0"
+                className="thunderhill-btn thunderhill-btn-dark shrink-0"
               >
-                Subscribe Stories
+                <span>Subscribe</span>
               </button>
             </form>
           </div>
-        </motion.section>
+        </section>
 
       </div>
     </>

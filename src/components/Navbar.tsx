@@ -4,8 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, User } from "lucide-react";
+import { Menu, X, ArrowRight, User } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +12,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 80);
+    const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -28,145 +27,133 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 w-full select-none transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 w-full select-none transition-all duration-300 ${
         scrolled
-          ? "bg-[#11123c]/95 backdrop-blur-md border-b border-white/10 shadow-[0_4px_24px_rgba(17,18,60,0.4)]"
-          : "bg-white border-b border-gray-200 shadow-sm"
+          ? "bg-[#11123c]/98 backdrop-blur-md border-b border-white/15 shadow-2xl py-0"
+          : "bg-[#11123c] border-b border-white/10 py-1 sm:py-2"
       }`}
     >
-      <div className="mx-auto max-w-[95%] px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[95%] 2xl:max-w-[1440px] px-4 sm:px-6 lg:px-8">
         
         {/* Navigation Bar */}
-        <div className="flex items-center justify-between h-20 sm:h-24 relative">
+        <div className="flex items-center justify-between h-20 sm:h-22 relative">
           
-          {/* Left: Logo & Brand Name */}
-          <motion.div
-            className="flex items-center gap-3 shrink-0"
-            initial={{ opacity: 0, x: -12 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-          >
-            <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative w-14 h-14 sm:w-18 sm:h-18 transition-transform duration-300 group-hover:scale-103">
+          {/* Left: Crest & Brand Name (Treated like a Royal Coat of Arms) */}
+          <div className="flex items-center gap-3 shrink-0">
+            <Link href="/" className="flex items-center gap-3.5 group">
+              <div className="relative w-12 h-12 sm:w-14 sm:h-14 transition-transform duration-200 group-hover:scale-105">
                 <Image
                   src="/super-strikers-international.png"
-                  alt="SuperStrikers International Logo"
+                  alt="SuperStrikers International Crest"
                   fill
                   className="object-contain"
                   priority
                 />
               </div>
               <div className="flex flex-col text-left">
-                <span className={`font-display text-base sm:text-lg lg:text-xl font-black uppercase tracking-tight leading-none transition-colors duration-300 ${scrolled ? "text-white" : "text-[#11123c]"}`}>
+                <span className="font-display text-lg sm:text-xl font-black uppercase tracking-tight text-white leading-none">
                   SuperStriker
                 </span>
-                <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest leading-none mt-1 text-[#a29142]">
-                  International
+                <span className="text-[9px] sm:text-[10px] font-mono font-bold uppercase tracking-[0.22em] text-[#a29142] leading-none mt-1">
+                  International • Bangalore
                 </span>
               </div>
             </Link>
-          </motion.div>
+          </div>
 
-          {/* Center: Navigation Links (Desktop) */}
-          <nav className="hidden lg:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
+          {/* Center: Understated Uppercase Navigation Links (Desktop) */}
+          <nav className="hidden lg:flex items-center gap-8 xl:gap-10 absolute left-1/2 -translate-x-1/2">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`text-xs sm:text-sm font-black uppercase tracking-widest transition-colors duration-300 py-2 relative ${
+                  className={`text-xs font-mono font-bold uppercase tracking-[0.2em] transition-colors py-2 relative ${
                     isActive
-                      ? scrolled ? "text-[#e9d319]" : "text-[#11123c]"
-                      : scrolled ? "text-white/70 hover:text-white" : "text-[#696484] hover:text-[#11123c]"
+                      ? "text-[#e9d319]"
+                      : "text-white/70 hover:text-white"
                   }`}
                 >
                   {link.name}
                   {isActive && (
-                    <motion.span
-                      layoutId="activeBorder"
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#e9d319]"
-                    />
+                    <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#e9d319]" />
                   )}
                 </Link>
               );
             })}
           </nav>
 
-          {/* Right: Profile Trigger & Mobile Menu Toggle */}
+          {/* Right: Sharp Graphic CTA + Profile Button */}
           <div className="flex items-center gap-3 sm:gap-4 shrink-0">
-            
-            {/* Account Icon */}
+            <Link
+              href="/investors#enquire"
+              className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 text-[11px] font-mono font-bold uppercase tracking-[0.18em] bg-[#e9d319] text-[#11123c] border border-[#e9d319] hover:bg-white hover:text-[#11123c] hover:border-white transition-colors"
+            >
+              <span>Partner With Us</span>
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+
             <Link 
               href="/investors#enquire" 
-              className={`transition-colors duration-300 p-2 rounded-full flex items-center justify-center border shadow-xs hover:bg-[#e9d319]/20 hover:border-[#a29142]/40 ${
-                scrolled ? "text-white border-white/20" : "text-[#11123c] border-gray-200"
-              }`}
+              className="text-white/80 hover:text-[#e9d319] p-2 transition-colors border border-white/15 hover:border-[#e9d319]"
               aria-label="Profile"
             >
-              <User className="h-5 w-5" />
+              <User className="h-4 w-4" />
             </Link>
 
             {/* Mobile Menu Button Toggle */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className={`lg:hidden p-2.5 rounded-md transition-colors ${
-                scrolled ? "text-white hover:bg-white/10" : "text-[#11123c] hover:bg-gray-100"
-              }`}
+              className="lg:hidden p-2 text-white hover:text-[#e9d319] border border-white/15"
               aria-controls="mobile-menu"
               aria-expanded={isOpen}
             >
               <span className="sr-only">Open main menu</span>
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
-
           </div>
         </div>
       </div>
 
       {/* Mobile Menu Drawer */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2 }}
-            className="border-t border-gray-150 bg-white"
-            id="mobile-menu"
-          >
-            <div className="space-y-1 px-4 pb-6 pt-4 text-left">
-              {navLinks.map((link) => {
-                const isActive = pathname === link.href;
-                return (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className={`block rounded-lg px-4 py-3 text-sm font-bold uppercase tracking-wider transition-colors ${
-                      isActive
-                        ? "bg-[#11123c] text-[#e9d319]"
-                        : "text-[#696484] hover:bg-gray-50 hover:text-[#11123c]"
-                    }`}
-                  >
-                    {link.name}
-                  </Link>
-                );
-              })}
-              <div className="pt-4 border-t border-gray-100 px-4">
+      {isOpen && (
+        <div
+          className="border-t border-white/10 bg-[#11123c] text-white lg:hidden shadow-2xl"
+          id="mobile-menu"
+        >
+          <div className="space-y-1 px-4 pb-6 pt-4 text-left">
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
                 <Link
-                  href="/investors#enquire"
+                  key={link.name}
+                  href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="flex w-full items-center justify-center gap-2 rounded-full py-3 text-center text-xs font-bold uppercase tracking-wider bg-[#11123c] text-[#e9d319] hover:bg-[#e9d319] hover:text-[#11123c] transition-all"
+                  className={`block px-4 py-3 text-xs font-mono font-bold uppercase tracking-[0.2em] transition-colors border-l-2 ${
+                    isActive
+                      ? "border-[#e9d319] bg-white/5 text-[#e9d319]"
+                      : "border-transparent text-white/70 hover:bg-white/5 hover:text-white"
+                  }`}
                 >
-                  Partner With Us
+                  {link.name}
                 </Link>
-              </div>
+              );
+            })}
+            <div className="pt-4 border-t border-white/10 px-4">
+              <Link
+                href="/investors#enquire"
+                onClick={() => setIsOpen(false)}
+                className="flex w-full items-center justify-center gap-2 py-3 text-center text-xs font-mono font-bold uppercase tracking-[0.2em] bg-[#e9d319] text-[#11123c]"
+              >
+                Partner With Us
+                <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
