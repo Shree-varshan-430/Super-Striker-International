@@ -33,19 +33,19 @@ export default function AcademyBanner() {
       {/* Content */}
       <div className="relative z-20 flex flex-col gap-5 text-left max-w-2xl border-l-8 border-[#e9d319] pl-6 py-2">
         <span className="text-[10px] font-black uppercase tracking-widest text-[#e9d319] bg-[#e9d319]/15 px-3.5 py-1 rounded-full w-fit">
-          Elite Academy
+          RESIDENTIAL ACADEMY
         </span>
         <h2 className="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-tight">
-          TRAIN WITH THE BEST
+          WHERE CHAMPIONS ARE MADE
         </h2>
-        <p className="text-xs sm:text-base text-white/80 leading-relaxed max-w-xl">
-          Bangalore Football School residential academies are scout-compliant pathways to national leagues and first-team selection.
+        <p className="text-xs sm:text-base text-white/85 leading-relaxed max-w-xl">
+          Bangalore Football School residential academy seamlessly combines top-tier academic schooling with licensed European-standard training, scientific sports nutrition, and direct pathways to national leagues.
         </p>
         <Link
           href="/football-school/bangalore-football-school"
-          className="inline-flex items-center gap-1.5 rounded-full bg-[#e9d319] text-[#11123c] px-6 py-3.5 text-xs font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-[#11123c] hover:scale-105 active:scale-95 shadow-md w-fit mt-2"
+          className="inline-flex items-center gap-1.5 rounded-full bg-[#e9d319] text-[#11123c] px-7 py-4 text-xs font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-[#11123c] hover:scale-105 active:scale-95 shadow-md w-fit mt-2"
         >
-          Explore Academy Pathways
+          Join The Academy
           <ArrowRight className="h-4 w-4" />
         </Link>
       </div>

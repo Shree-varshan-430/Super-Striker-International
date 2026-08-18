@@ -198,13 +198,13 @@ export default function Home() {
           <div className="max-w-7xl 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
             <div className="flex flex-col items-start gap-1 border-l-4 border-[#11123c] pl-4 sm:pl-6 mb-12 sm:mb-16 text-left">
               <span className="text-[10px] font-black uppercase tracking-widest text-[#e9d319] bg-[#11123c] px-3 py-1 rounded">
-                THE COMMERCIAL EQUATION
+                THE COMMERCIAL & ACADEMY EQUATION
               </span>
               <h2 className="font-display text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#11123c] mt-1">
-                Investor Proposition & Commercial Yields
+                State-Of-The-Art Infrastructure & Commercial Yields
               </h2>
-              <p className="text-sm sm:text-base text-[#4B5563] mt-2 max-w-2xl font-medium leading-relaxed">
-                SuperStriker International structures institutional sports development investments. Here is an exact breakdown of funded operational assets versus accrued financial yields.
+              <p className="text-sm sm:text-base text-[#696484] mt-2 max-w-2xl font-medium leading-relaxed">
+                SuperStriker International structures world-class sports development infrastructure. Here is an exact breakdown of funded operational assets versus accrued commercial returns.
               </p>
             </div>
 
@@ -216,26 +216,31 @@ export default function Home() {
                 <div className="flex items-center gap-3 pb-4 border-b border-gray-200">
                   <div className="w-3.5 h-3.5 rounded-full bg-[#11123c]" />
                   <h3 className="font-display text-xl sm:text-2xl font-black uppercase tracking-tight text-[#11123c]">
-                    1. Strategic Assets You Fund
+                    1. Strategic Assets & Facilities You Fund
                   </h3>
                 </div>
 
                 <div className="space-y-4">
                   {[
                     {
-                      title: "Regional Club Franchises",
-                      desc: "Direct operational funding for senior first-team rosters in Bangalore (KSFA), Chennai, and Pondicherry to secure state league fixtures, player wages, and live broadcasting rights.",
-                      sub: "Asset Backing: Official club registries, stadium match contracts, commercial sponsorships."
+                      title: "FIFA-Standard Football Pitches & Smart Arenas",
+                      desc: "Acquisition and development of FIFA-grade artificial turf and natural grass match fields equipped with floodlit complexes, automated GPS telemetry rigs, and hourly public pitch booking systems.",
+                      sub: "Asset Backing: Prime sports corridor leases, sensory tracking hardware, smart facility revenue."
                     },
                     {
-                      title: "Smart Telemetry Infrastructures",
-                      desc: "Acquisition and development of FIFA-grade artificial turf arenas equipped with GPS tracking telemetry, camera analytics rigs, and high-margin hourly public turf booking systems.",
-                      sub: "Asset Backing: Commercial lease agreements, sensory hardware, prime urban property rights."
+                      title: "High-Performance Center & Sports Medicine",
+                      desc: "Fully equipped athletic conditioning gymnasiums, sports science telemetry labs, cardiovascular recovery pools, and dedicated on-campus physiotherapy clinics for injury prevention.",
+                      sub: "Asset Backing: Advanced biometric telemetry equipment, sports medicine licenses."
                     },
                     {
-                      title: "Elite Residential Academy Batches",
-                      desc: "Underwriting of high-performance Under-15 and Under-18 player cohorts covering licensed AIFF coaching, scientific nutrition plans, high-protein diets, and competitive tournaments.",
-                      sub: "Asset Backing: Direct academy contract pipeline, senior league transfer rights."
+                      title: "Residential Academy Campus & Hostels",
+                      desc: "A Home Away From Home providing secure player dormitories, balanced athletic nutrition dining halls, academic school integration, and certified UEFA/AIFF coaching staffs.",
+                      sub: "Asset Backing: Direct multi-year academy registration pipeline, player transfer equity."
+                    },
+                    {
+                      title: "Regional Club Franchises & First-Teams",
+                      desc: "Direct operational backing for senior competitive first-teams in Bangalore (KSFA Super Division), Pondicherry, and Chennai to contest state and national championships.",
+                      sub: "Asset Backing: Official federation club registry charters, stadium match day gates, broadcast rights."
                     }
                   ].map((asset, idx) => (
                     <div key={idx} className="bg-white rounded-2xl p-6 border-l-4 border-[#11123c] shadow-xs flex flex-col gap-2 transition-transform duration-300 hover:scale-[1.01]">
@@ -265,23 +270,23 @@ export default function Home() {
                 <div className="space-y-4">
                   {[
                     {
-                      title: "Front-of-Shirt & Media Sponsorship",
-                      desc: "Primary kit branding across senior squads, perimeter arena digital board presence, video highlight sponsorships, and prominent exposure on all talent showcase documents.",
+                      title: "Front-of-Shirt & Perimeter Arena Sponsorship",
+                      desc: "Primary kit branding across senior club squads, arena digital perimeter board presence, video telemetry documentary sponsorships, and prominent showcase across all scouting trials.",
                       returnVal: "Target Yield: High-visibility multi-region corporate awareness & CSR prestige."
                     },
                     {
-                      title: "Player Transfer & Registry Shares",
-                      desc: "Contractual percentage rights on domestic (ISL / I-League) and international player sale transfers of talent scouted and nurtured through Bangalore Football School.",
+                      title: "Player Transfer & Scouting Equity Shares",
+                      desc: "Contractual percentage rights on domestic (ISL / I-League) and international player sale transfers of talent discovered and nurtured through Bangalore Football School.",
                       returnVal: "Target Yield: High-upside capital liquidation upon professional league sign-ons."
                     },
                     {
-                      title: "Recurring Turf Facility Rental Revenue",
-                      desc: "Monthly cash-flow dividend splits derived from hourly community pitch rentals, weekend adult leagues, corporate tournaments, and BFS academy membership subscriptions.",
+                      title: "Recurring Turf & Facility Rental Dividends",
+                      desc: "Monthly cash-flow dividend splits derived from hourly community pitch rentals, corporate corporate leagues, tournament hosting, and academy tuition subscriptions.",
                       returnVal: "Target Yield: Predictable monthly recurring cash dividends."
                     },
                     {
-                      title: "Network Parent Equity Participation",
-                      desc: "Direct strategic equity options in SuperStriker International Pvt Ltd's parent holding corporation as our multi-state football network expands across South India.",
+                      title: "Network Parent Equity & Valuation Upside",
+                      desc: "Direct strategic equity options in SuperStriker International Pvt Ltd as our unified multi-state football academy and franchise network expands across South India.",
                       returnVal: "Target Yield: Exponential long-term enterprise valuation growth."
                     }
                   ].map((ret, idx) => (
@@ -366,20 +371,20 @@ export default function Home() {
           
           <div className="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 text-center text-white flex flex-col items-center gap-4">
             <span className="text-[10px] font-black uppercase tracking-widest text-[#e9d319] bg-[#11123c] px-3 py-1 rounded">
-              INFRASTRUCTURE 2026-2030
+              CAMPUS & INFRASTRUCTURE
             </span>
             <h2 className="font-display text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-tight">
-              Future Vision
+              Where Champions Are Made
             </h2>
             <p className="text-xs sm:text-base text-gray-200 max-w-2xl leading-relaxed font-medium">
-              Developing next-generation smart football arenas across South India featuring FIFA-quality turf, biometric monitoring, and public tournament facilities.
+              Developing world-class sports corridors across South India featuring FIFA-standard natural & artificial turf pitches, high-performance sports science centers, and residential student-athlete campuses.
             </p>
             <div className="mt-2">
               <Link
                 href="/about"
                 className="inline-flex items-center gap-2 rounded-full bg-[#e9d319] text-[#11123c] px-8 py-3.5 text-xs font-bold uppercase tracking-wider hover:bg-white transition-all shadow-md"
               >
-                Learn More About Infrastructure
+                Explore Campus Facilities
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -393,7 +398,7 @@ export default function Home() {
         >
           <div className="text-center mb-12 sm:mb-16">
             <span className="text-[10px] font-black uppercase tracking-widest text-[#e9d319] bg-[#11123c] px-3 py-1 rounded">
-              HERITAGE INTERVIEWS
+              PRESIDENT&#39;S MESSAGE & HERITAGE
             </span>
             <h2 className="font-display text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#11123c] mt-2">
               Stories Behind The Vision
@@ -427,20 +432,20 @@ export default function Home() {
               </span>
 
               <p className="font-display text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-[#11123c] leading-tight">
-                &ldquo;Football is not only about creating players. It is about creating opportunities and dreams.&rdquo;
+                &ldquo;At SuperStriker, sport is not secondary — it is a fundamental right. We are building the factory of future champions.&rdquo;
               </p>
               
               <div className="flex flex-col text-xs uppercase tracking-wider border-b border-[#11123c]/10 pb-4">
                 <span className="text-[#11123c] text-base font-black">Ramakrishnan (Ram)</span>
-                <span className="text-[#4B5563] text-xs font-bold mt-0.5">President & Founder, Bangalore Super Strikers FC &middot; AIFF-C Licensed Coach & KSFA Referee</span>
+                <span className="text-[#696484] text-xs font-bold mt-0.5">President & Founder, Bangalore Super Strikers FC &middot; AIFF-C Licensed Coach & KSFA Referee</span>
               </div>
 
               <div className="space-y-4 text-base sm:text-lg text-[#374151] leading-relaxed">
                 <p>
-                  Inspired by his parents, <strong className="text-[#11123c] font-bold">Mr. Devaraj and Mrs. Rajammal Devaraj</strong>, who dreamed of seeing their grandson represent India on the world stage, Ram turned his own experiences as a player with limited resources into a driving force.
+                  Inspired by his parents, <strong className="text-[#11123c] font-bold">Mr. Devaraj and Mrs. Rajammal Devaraj</strong>, who dreamed of seeing their grandson represent India on the world stage, Ram turned his own experiences as a player with limited resources into a national-caliber development system.
                 </p>
                 <p>
-                  Having witnessed firsthand how <strong className="text-[#11123c] font-bold">talented middle-class and grassroots athletes</strong> were excluded due to prohibitive costs, he built a professional ecosystem offering <strong className="text-[#11123c] font-bold">structured scholarships, scientific physical mentoring, AIFF-C accredited coaching</strong>, and direct pathways to <strong className="text-[#11123c] font-bold">KSFA state division leagues</strong>.
+                  Having witnessed firsthand how <strong className="text-[#11123c] font-bold">talented grassroots athletes</strong> were locked out due to high coaching and travel fees, he built an ecosystem offering <strong className="text-[#11123c] font-bold">comprehensive scholarships, AIFF-accredited curricula, GPS telemetry tracking, sports nutrition</strong>, and direct promotion into <strong className="text-[#11123c] font-bold">KSFA Super Division leagues</strong>.
                 </p>
               </div>
               
@@ -475,13 +480,13 @@ export default function Home() {
         >
           <div className="text-left mb-12 sm:mb-16 flex flex-col gap-1 border-l-4 border-[#11123c] pl-4 sm:pl-6">
             <span className="text-[10px] font-black uppercase tracking-widest text-[#e9d319] bg-[#11123c] px-3 py-1 rounded w-fit">
-              PLAYER PATHWAYS
+              HONOURS BOARD & TALENT PATHWAYS
             </span>
             <h2 className="font-display text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#11123c] mt-1">
-              Every player has a story before becoming a champion.
+              Where Champions Are Made
             </h2>
-            <p className="text-sm sm:text-base text-[#4B5563] leading-relaxed max-w-2xl font-medium mt-1">
-              Tracing the athletic path from grassroots discovery to elite high-performance academy training and senior league squads.
+            <p className="text-sm sm:text-base text-[#696484] leading-relaxed max-w-2xl font-medium mt-1">
+              Tracing the athletic journey from grassroots discovery festivals to residential high-performance training, state league campaigns, and national trials.
             </p>
           </div>
 

@@ -24,29 +24,29 @@ export default function Ecosystem() {
       tier: "Tier 01",
       title: "Corporate Parent & Strategic Capital",
       subtitle: "SuperStriker International Governance",
-      description: "SuperStriker International coordinates multi-region club ownership, FIFA-standard sports infrastructure financing, corporate governance, player rights management, and international developmental partnerships.",
+      description: "SuperStriker International coordinates multi-region club ownership, FIFA-standard sports infrastructure financing, corporate governance, player rights management, and national developmental partnerships.",
       image: "/images/news-pitch-sponsorship.jpg",
       highlights: [
-        "Corporate financing and smart sports infrastructure deployment",
-        "FIFA-standard turf acquisition and regional hub modernization",
-        "International exchange programs and global scout connectivity",
-        "Centralized sports analytics and performance telemetry"
+        "Corporate financing and smart FIFA-standard sports infrastructure deployment",
+        "Multi-acre campus master-planning and regional hub modernization",
+        "National tournament hosting and global scout connectivity",
+        "Centralized sports analytics and biometric telemetry systems"
       ]
     },
     {
       tier: "Tier 02",
       title: "Professional Football Clubs",
       subtitle: "Senior State & National League Teams",
-      description: "Our professional clubs provide the competitive pinnacle for academy graduates and senior professional footballers, competing in state leagues, regional tournaments, and national qualifiers.",
+      description: "Our professional clubs provide the competitive pinnacle for academy graduates and senior professional footballers, competing in state super divisions, regional cups, and national league qualifiers.",
       image: "/images/match-1.jpg",
       highlights: [
-        "Full-time professional coaching and tactical match staffs",
+        "Full-time professional coaching staffs and tactical video analysts",
         "Official affiliation with State Football Associations (KSFA, TFA, PFA)",
-        "Direct pathways to domestic top-flight football contracts"
+        "Direct contract pathways to senior domestic and national tournaments"
       ],
       entities: [
-        { name: "Bangalore Super Strikers FC", loc: "Bangalore, Karnataka", details: "Flagship senior squad competing in premier state divisions." },
-        { name: "Pondicherry Super Strikers FC", loc: "Pondicherry UT", details: "Territorial development squad driving coastal talent scouting." },
+        { name: "Bangalore Super Strikers FC", loc: "Bangalore, Karnataka", details: "Flagship senior squad competing in premier KSFA state divisions." },
+        { name: "Pondicherry Super Strikers FC", loc: "Pondicherry UT", details: "Territorial residential squad driving coastal talent development." },
         { name: "Chennai Super Strikers FC", loc: "Chennai, Tamil Nadu", details: "Competitive league squad and youth feeder hub." }
       ]
     },
@@ -54,27 +54,27 @@ export default function Ecosystem() {
       tier: "Tier 03",
       title: "Bangalore Football School & Elite Academies",
       subtitle: "High-Performance Technical Centers",
-      description: "Delivering licensed AIFF and international curriculum training, sports science, injury prevention, and competitive match exposure for junior age cohorts.",
+      description: "Delivering licensed AIFF & UEFA curriculum training, sports science, on-campus physiotherapy, athletic nutrition, and year-round competitive match exposure for junior age cohorts.",
       image: "/images/team-1.jpg",
       highlights: [
-        "Age-specific progressive technical coaching from U-7 to U-19",
-        "State-of-the-art turf training complexes and fitness monitoring",
-        "Residential training options and athletic scholarship tracks"
+        "Age-specific progressive technical coaching from U-5 to U-18",
+        "State-of-the-art turf training complexes and GPS load monitoring",
+        "Residential training options, athlete dormitories, and school integration"
       ],
       entities: [
-        { name: "Bangalore Football School", loc: "Bangalore, Karnataka", details: "Premier youth soccer school nurturing over 500+ student athletes." }
+        { name: "Bangalore Football School", loc: "Bangalore, Karnataka", details: "Premier youth football academy nurturing over 500+ student athletes." }
       ]
     },
     {
       tier: "Tier 04",
       title: "Grassroots & School Outreach Programs",
       subtitle: "Broad-Based Community Inclusion",
-      description: "Our foundational programs take football directly into public and private schools, democratizing athletic access and discovering raw talent across municipal districts.",
+      description: "Our foundational programs take football directly into public and private schools, democratizing athletic access and identifying raw sporting potential across municipal districts.",
       image: "/images/founder-with-football.jpg",
       highlights: [
-        "Free coaching clinics in municipal and government schools",
-        "Weekend inter-school community leagues and youth festivals",
-        "Local coach-the-coach certification and instructor workshops"
+        "Free coaching clinics in municipal and government partner schools",
+        "Weekend inter-school community festivals and scouting tournaments",
+        "Coach-the-coach certification and grass-roots instructor seminars"
       ]
     },
     {
@@ -84,21 +84,21 @@ export default function Ecosystem() {
       description: "Selected prodigies receive full athletic scholarships, dietary and hydration plans, and video telemetry analysis loops to accelerate their sporting maturity.",
       image: "/images/founder-turf-pose.jpg",
       highlights: [
-        "100% merit-based kit, gear, and travel sponsorships",
-        "Individualized tactical growth plans and video reviews",
-        "Exposure to visiting national and international scouts"
+        "100% merit-based kit, gear, and travel tournament sponsorships",
+        "Individualized tactical growth blueprints and performance reviews",
+        "Direct showcase before visiting national scouts and federation panels"
       ]
     },
     {
       tier: "Tier 06",
       title: "National & Global Player Pathways",
       subtitle: "The Elite Graduation Goal",
-      description: "The culmination of our vertical ecosystem: elevating standout talent into national teams (India U-17, U-20, Senior), top national leagues (ISL, I-League), and overseas partner clubs.",
+      description: "The culmination of our vertical ecosystem: elevating standout talent into national youth teams (India U-17, U-20, Senior), top domestic leagues (ISL, I-League), and overseas partner trials.",
       image: "/images/team-2.jpg",
       highlights: [
-        "Direct showcase fixtures before senior league managers",
-        "International trials and collegiate sports scholarship guidance",
-        "Fulfilling the dream of representing India at the highest levels"
+        "Direct showcase fixtures before senior league managers and scouts",
+        "Collegiate sports scholarship pathways and national camp preparation",
+        "Fulfilling the dream of representing India at the highest international stages"
       ]
     }
   ];

@@ -4,10 +4,10 @@ import React, { useState, useEffect } from "react";
 import { Radio } from "lucide-react";
 
 const TICKER_ITEMS = [
-  "BANGALORE SSFC: Pre-season physical telemetry reports show 15% increase in squad cardiovascular recoveries. U-15 selections active.",
-  "PONDICHERRY RESIDENCY: U-15 residency cohort completes state league registration drills. Player contracts locked.",
-  "SQUAD UPDATE: Striker Sanjay Raj returns to full team practice following KSFA tournament selection camp trials.",
-  "BFS ACADEMY: Smart turf arena construction targets complete structural installation by end of next quarter.",
+  "CHAMPIONSHIP TRIALS: All-India Youth Scouting Festivals & Academy Admissions Active across Karnataka and Tamil Nadu.",
+  "BANGALORE SSFC: Senior First-Team completes pre-season GPS telemetry screenings. KSFA Super Division campaign roster locked.",
+  "PONDICHERRY RESIDENCY: High-Performance Center introduces specialized physiotherapy protocols & sports science nutritional plans.",
+  "SMART INFRASTRUCTURE: Phase-1 FIFA-standard turf arena installation reaches structural completion in Bengaluru sports corridor."
 ];
 
 export default function LiveTicker() {

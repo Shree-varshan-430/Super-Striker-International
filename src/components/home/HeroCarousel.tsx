@@ -19,30 +19,30 @@ interface HeroSlide {
 const HERO_SLIDES: HeroSlide[] = [
   {
     image: "/images/team-1.jpg",
-    category: "FEATURED NEWS",
-    title: "Building The Future Of Indian Football",
-    description: "Creating opportunities, developing talent, and building a professional football ecosystem for the next generation of athletes.",
-    ctaText: "Read Story",
+    category: "HOME OF CHAMPIONS",
+    title: "Where Future Football Champions Are Made",
+    description: "Do you have a dream to play professional football for India? SuperStriker International provides structured grassroots-to-league pathways, FIFA-standard training facilities, and elite competitive exposure.",
+    ctaText: "Discover Pathways",
     ctaLink: "/about",
-    meta: "Ecosystem • 2 hours ago"
+    meta: "SuperStriker Ecosystem • All-India Trials Open"
   },
   {
     image: "/images/training-1.jpg",
-    category: "FOUNDATION ACADEMY",
-    title: "From Grassroots To State Division Champions",
-    description: "Discover our youth football school, AIFF-C licensed training clinics, and residential academy progression lines.",
+    category: "HIGH PERFORMANCE ACADEMY",
+    title: "From Grassroots Clinics To State Champions",
+    description: "Integrating licensed AIFF & UEFA coaching curricula, GPS telemetry load tracking, residential player boarding, and sports nutrition science to forge the complete modern athlete.",
     ctaText: "Explore Academy",
     ctaLink: "/ecosystem",
-    meta: "Academy • 1 day ago"
+    meta: "Bangalore Football School • U-9 to U-18 Batches"
   },
   {
     image: "/images/match-2.jpg",
-    category: "PARTNERSHIPS",
-    title: "Invest In Smart Telemetry Sports Hubs",
-    description: "Collaborate with SuperStriker to sponsor smart turf facilities, sensory metrics tools, and school sports programs.",
+    category: "STRATEGIC INFRASTRUCTURE",
+    title: "Invest In FIFA-Standard Sports Hubs & Clubs",
+    description: "Partner with South India's fastest-growing football franchise network spanning professional senior clubs, smart artificial turf arenas, and high-yield commercial sponsorships.",
     ctaText: "Partner With Us",
     ctaLink: "/investors#enquire",
-    meta: "Corporate • 3 days ago"
+    meta: "Corporate Franchise Hub • Institutional Prospectus"
   }
 ];
 
