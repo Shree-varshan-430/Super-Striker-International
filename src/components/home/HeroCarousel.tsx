@@ -111,11 +111,7 @@ export default function HeroCarousel() {
         ))}
       </div>
 
-      {/* 2. Linear Neutral Contrast Vignette for Content Readability (No Blue Tint) */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent z-20 pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-20 pointer-events-none" />
-
-      {/* 3. Structured Main Content Container (Left-Aligned, Vertically Centered) */}
+      {/* 2. Structured Main Content Container (Left-Aligned, Vertically Centered, Zero Tint on Image) */}
       <div className="max-w-7xl 2xl:max-w-[1440px] mx-auto w-full h-full px-4 sm:px-6 lg:px-10 xl:px-12 flex flex-col justify-center items-start pt-20 sm:pt-24 pb-8 sm:pb-12 relative z-30 pointer-events-none">
         <div className="w-full max-w-3xl relative min-h-[380px] sm:min-h-[420px] flex items-center">
           {HERO_SLIDES.map((slide, idx) => (
@@ -126,22 +122,22 @@ export default function HeroCarousel() {
               }`}
             >
               {/* Category Badge */}
-              <span className="slide-category text-[10px] font-black uppercase tracking-widest text-[#11123c] bg-[#e9d319] px-3.5 py-1 rounded-md shadow-xs">
+              <span className="slide-category text-[10px] font-black uppercase tracking-widest text-[#11123c] bg-[#e9d319] px-3.5 py-1 rounded-md shadow-md">
                 {slide.category}
               </span>
               
               {/* Main Headline */}
-              <h1 className="slide-title font-display text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white leading-[1.08] max-w-2xl drop-shadow-sm">
+              <h1 className="slide-title font-display text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white leading-[1.08] max-w-2xl [text-shadow:_0_3px_15px_rgba(0,0,0,0.85)]">
                 {slide.title}
               </h1>
 
               {/* Description Paragraph */}
-              <p className="slide-description text-sm sm:text-base text-white/90 leading-relaxed max-w-xl font-normal drop-shadow-xs">
+              <p className="slide-description text-sm sm:text-base text-white leading-relaxed max-w-xl font-medium [text-shadow:_0_2px_10px_rgba(0,0,0,0.9)]">
                 {slide.description}
               </p>
 
               {/* Metadata */}
-              <span className="slide-meta-tag text-xs font-semibold text-white/70 uppercase tracking-wider">
+              <span className="slide-meta-tag text-xs font-bold text-white uppercase tracking-wider [text-shadow:_0_1px_8px_rgba(0,0,0,0.9)]">
                 {slide.meta}
               </span>
 
@@ -149,7 +145,7 @@ export default function HeroCarousel() {
               <div className="slide-cta-btn mt-1">
                 <Link 
                   href={slide.ctaLink} 
-                  className="inline-flex items-center gap-2 rounded-full bg-[#e9d319] px-8 py-4 text-xs font-bold uppercase tracking-wider text-[#11123c] hover:bg-white hover:text-[#11123c] transition-all hover:scale-103 active:scale-95 shadow-xl"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#e9d319] px-8 py-4 text-xs font-bold uppercase tracking-wider text-[#11123c] hover:bg-white hover:text-[#11123c] transition-all hover:scale-103 active:scale-95 shadow-2xl"
                 >
                   {slide.ctaText}
                   <ArrowRight className="h-4 w-4" />
