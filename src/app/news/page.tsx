@@ -27,7 +27,7 @@ export default function News() {
   return (
     <div className="w-full bg-white text-secondary-navy min-h-screen">
       {/* Small Hero Banner */}
-      <div className="relative w-full h-[220px] sm:h-[260px] bg-[#10143A] flex items-center justify-start overflow-hidden group select-none mt-20 z-20">
+      <div className="relative w-full h-[220px] sm:h-[260px] bg-[#11123c] flex items-center justify-start overflow-hidden group select-none mt-20 z-20">
         <Image
           src="/images/team-2.jpg"
           alt="Football Editorial Hub"
@@ -37,20 +37,20 @@ export default function News() {
         />
         {/* Black full accent overlay & Cinematic gradient overlay */}
         <div className="absolute inset-0 bg-black/45 z-10" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-[#10143A]/70 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-[#11123c]/70 to-transparent z-10" />
         
         {/* Brand accent wedges on bottom right */}
         <div 
-          className="absolute bottom-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-[#10143A] pointer-events-none z-15 translate-x-2 translate-y-2 lg:block hidden" 
+          className="absolute bottom-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-[#11123c] pointer-events-none z-15 translate-x-2 translate-y-2 lg:block hidden" 
           style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }} 
         />
         <div 
-          className="absolute bottom-0 right-0 w-20 h-20 sm:w-28 sm:h-28 bg-[#DCE135] pointer-events-none z-20 lg:block hidden" 
+          className="absolute bottom-0 right-0 w-20 h-20 sm:w-28 sm:h-28 bg-[#e9d319] pointer-events-none z-20 lg:block hidden" 
           style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }} 
         />
 
         <div className="relative z-20 max-w-6xl mx-auto w-full px-4 sm:px-6 lg:px-8 text-left flex flex-col gap-2">
-          <span className="text-[9px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-2 py-0.5 rounded w-fit">
+          <span className="text-[9px] font-black uppercase tracking-widest text-[#e9d319] bg-[#11123c] px-2 py-0.5 rounded w-fit">
             SUPERSTRIKER PRESS
           </span>
           <h1 className="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-none">
@@ -71,7 +71,7 @@ export default function News() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="group grid grid-cols-1 lg:grid-cols-12 border border-[#DCE135]/15 hover:border-[#DCE135]/35 rounded-2xl overflow-hidden shadow-sm hover:shadow-[0_15px_30px_rgba(245,208,0,0.05)] transition-all duration-300 mb-16 bg-white"
+            className="group grid grid-cols-1 lg:grid-cols-12 border border-[#e9d319]/15 hover:border-[#e9d319]/35 rounded-2xl overflow-hidden shadow-sm hover:shadow-[0_15px_30px_rgba(245,208,0,0.05)] transition-all duration-300 mb-16 bg-white"
           >
             <div className="lg:col-span-7 relative h-80 lg:h-[450px] overflow-hidden">
               <Image
@@ -99,7 +99,7 @@ export default function News() {
                   </span>
                 </div>
                 
-                <h2 className="font-display text-2xl lg:text-3xl font-bold uppercase tracking-tight text-secondary-navy group-hover:text-[#DCE135] transition-colors leading-tight">
+                <h2 className="font-display text-2xl lg:text-3xl font-bold uppercase tracking-tight text-secondary-navy group-hover:text-[#e9d319] transition-colors leading-tight">
                   <Link href={`/news/${featuredArticle.id}`}>
                     {featuredArticle.title}
                   </Link>
@@ -128,7 +128,7 @@ export default function News() {
 
                 <Link
                   href={`/news/${featuredArticle.id}`}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-[#10143A] text-white hover:bg-[#DCE135] hover:text-[#10143A] hover:scale-105 active:scale-95 transition-all"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-[#11123c] text-white hover:bg-[#e9d319] hover:text-[#11123c] hover:scale-105 active:scale-95 transition-all"
                   aria-label="Read full article"
                 >
                   <ArrowRight className="h-4 w-4" />
@@ -154,8 +154,8 @@ export default function News() {
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${
                   selectedCategory === cat
-                    ? "bg-[#10143A] text-white shadow-md shadow-[#10143A]/20"
-                    : "bg-background-soft text-secondary-navy hover:bg-[#DCE135]/10 hover:text-[#0A1028]"
+                    ? "bg-[#11123c] text-white shadow-md shadow-[#11123c]/20"
+                    : "bg-background-soft text-secondary-navy hover:bg-[#e9d319]/10 hover:text-[#11123c]"
                 }`}
               >
                 {cat}
@@ -174,7 +174,7 @@ export default function News() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="group flex flex-col bg-white border border-[#DCE135]/15 hover:border-[#DCE135]/35 rounded-xl overflow-hidden hover:shadow-[0_12px_25px_rgba(245,208,0,0.04)] transition-all duration-300 flex-grow"
+                className="group flex flex-col bg-white border border-[#e9d319]/15 hover:border-[#e9d319]/35 rounded-xl overflow-hidden hover:shadow-[0_12px_25px_rgba(245,208,0,0.04)] transition-all duration-300 flex-grow"
               >
                 <div className="relative h-52 overflow-hidden">
                   <Image
@@ -190,7 +190,7 @@ export default function News() {
 
                 <div className="p-6 flex flex-col flex-1 justify-between gap-6">
                   <div className="flex flex-col gap-3">
-                    <h3 className="font-display text-lg font-bold uppercase tracking-tight leading-snug text-secondary-navy group-hover:text-[#DCE135] transition-colors">
+                    <h3 className="font-display text-lg font-bold uppercase tracking-tight leading-snug text-secondary-navy group-hover:text-[#e9d319] transition-colors">
                       <Link href={`/news/${article.id}`}>
                         {article.title}
                       </Link>
@@ -219,7 +219,7 @@ export default function News() {
             <p className="text-sm font-semibold text-secondary-navy/60">No articles found in this category.</p>
             <button
               onClick={() => setSelectedCategory("All")}
-              className="mt-4 inline-flex text-xs font-bold uppercase tracking-wider text-[#DCE135] hover:underline"
+              className="mt-4 inline-flex text-xs font-bold uppercase tracking-wider text-[#e9d319] hover:underline"
             >
               Reset Filters
             </button>

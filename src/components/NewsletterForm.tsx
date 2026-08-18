@@ -53,12 +53,12 @@ export default function NewsletterForm() {
               }}
               disabled={status === "loading"}
               required
-              className="w-full rounded-full border border-gray-200 bg-white px-5 py-3 pr-12 text-sm text-secondary-navy placeholder-gray-400 shadow-sm focus:border-primary-sky focus:outline-none focus:ring-2 focus:ring-primary-sky/20 disabled:bg-gray-50"
+              className="w-full rounded-full border border-gray-200 bg-white px-5 py-3 pr-12 text-sm text-[#11123c] placeholder-[#696484]/60 shadow-sm focus:border-[#e9d319] focus:outline-none focus:ring-2 focus:ring-[#e9d319]/20 disabled:bg-gray-50"
             />
             <button
               type="submit"
               disabled={status === "loading" || !email}
-              className="absolute right-1.5 top-1.5 flex h-9 w-9 items-center justify-center rounded-full bg-secondary-navy text-white hover:bg-secondary-navy/90 active:scale-95 disabled:bg-gray-300 transition-all"
+              className="absolute right-1.5 top-1.5 flex h-9 w-9 items-center justify-center rounded-full bg-[#e9d319] text-[#11123c] hover:bg-[#a29142] hover:text-white active:scale-95 disabled:bg-gray-300 transition-all shadow-xs"
               aria-label="Subscribe"
             >
               {status === "loading" ? (

@@ -38,15 +38,15 @@ export const articles: Article[] = [
       
       <p>Over the last decade, India has seen a massive surge in football passion, yet a structured, continuous player pathway has often been the missing link. SuperStriker's academy system directly addresses this gap by introducing an elite training curriculum inspired by European development standards, adapted specifically for the Indian sporting ecosystem.</p>
 
-      <div class="my-8 rounded-2xl bg-gray-50 p-6 sm:p-8 border-l-4 border-[#10143A]">
-        <h4 class="font-display text-base sm:text-lg font-black uppercase text-[#10143A] mb-2">Pillar 1: Technical & Tactical Precision</h4>
+      <div class="my-8 rounded-2xl bg-gray-50 p-6 sm:p-8 border-l-4 border-[#11123c]">
+        <h4 class="font-display text-base sm:text-lg font-black uppercase text-[#11123c] mb-2">Pillar 1: Technical & Tactical Precision</h4>
         <p class="text-sm sm:text-base text-[#4B5563] leading-relaxed">Our training centers utilize periodic developmental tracking, physical conditioning modules, and video telemetry loops. Rather than focusing solely on match victories, priority is placed on ball control under pressure, spatial intelligence, and rapid decision-making.</p>
       </div>
 
       <img src="/images/training-1.jpg" alt="Scientific football coaching drills on turf" class="w-full rounded-2xl my-8 object-cover shadow-lg aspect-[16/9]" />
 
-      <blockquote class="my-10 border-l-4 border-[#DCE135] bg-[#10143A] text-white p-6 sm:p-8 rounded-2xl">
-        <p class="text-base sm:text-xl font-bold uppercase tracking-tight text-[#DCE135] leading-relaxed">
+      <blockquote class="my-10 border-l-4 border-[#e9d319] bg-[#11123c] text-white p-6 sm:p-8 rounded-2xl">
+        <p class="text-base sm:text-xl font-bold uppercase tracking-tight text-[#e9d319] leading-relaxed">
           "Opportunity is not something you wait for. You seize it every single dawn through relentless repetition, tactical discipline, and unconditional passion for the game."
         </p>
         <cite class="block text-xs uppercase tracking-widest text-white/70 font-semibold mt-3">— Technical Director, Youth Academy</cite>
@@ -91,8 +91,8 @@ export const articles: Article[] = [
       
       <img src="/images/news-underpriv-camp.jpg" alt="Young children participating in grassroots training clinic" class="w-full rounded-2xl my-8 object-cover shadow-lg aspect-[16/9]" />
 
-      <blockquote class="my-10 border-l-4 border-[#10143A] bg-[#10143A] text-white p-6 sm:p-8 rounded-2xl">
-        <p class="text-base sm:text-xl font-bold uppercase tracking-tight text-[#DCE135] leading-relaxed">
+      <blockquote class="my-10 border-l-4 border-[#11123c] bg-[#11123c] text-white p-6 sm:p-8 rounded-2xl">
+        <p class="text-base sm:text-xl font-bold uppercase tracking-tight text-[#e9d319] leading-relaxed">
           "Playing football is about joy, movement, and building character. When children experience the thrill of scoring a goal and working as a unit, they learn lifelong lessons in perseverance and respect."
         </p>
         <cite class="block text-xs uppercase tracking-widest text-white/70 font-semibold mt-3">— BSSFC Community Foundation</cite>
@@ -139,30 +139,30 @@ export const articles: Article[] = [
 
       <h3>The Five Pillars of Our Developmental Pathway</h3>
       <div class="space-y-3 my-6">
-        <div class="bg-gray-50 rounded-xl p-4 border-l-4 border-[#10143A]">
-          <strong class="text-[#10143A] uppercase text-sm">1. Discovery:</strong>
+        <div class="bg-gray-50 rounded-xl p-4 border-l-4 border-[#11123c]">
+          <strong class="text-[#11123c] uppercase text-sm">1. Discovery:</strong>
           <span class="text-sm text-[#4B5563] ml-1">Open grassroots festivals and school trial clinics across Karnataka and Tamil Nadu.</span>
         </div>
-        <div class="bg-gray-50 rounded-xl p-4 border-l-4 border-[#10143A]">
-          <strong class="text-[#10143A] uppercase text-sm">2. Foundation:</strong>
+        <div class="bg-gray-50 rounded-xl p-4 border-l-4 border-[#11123c]">
+          <strong class="text-[#11123c] uppercase text-sm">2. Foundation:</strong>
           <span class="text-sm text-[#4B5563] ml-1">Comprehensive coaching at Bangalore Football School, mastering ball control and agility.</span>
         </div>
-        <div class="bg-gray-50 rounded-xl p-4 border-l-4 border-[#10143A]">
-          <strong class="text-[#10143A] uppercase text-sm">3. Competition:</strong>
+        <div class="bg-gray-50 rounded-xl p-4 border-l-4 border-[#11123c]">
+          <strong class="text-[#11123c] uppercase text-sm">3. Competition:</strong>
           <span class="text-sm text-[#4B5563] ml-1">Joining youth competitive squads in KSFA, TFA, and PFA sanctioned tournaments.</span>
         </div>
-        <div class="bg-gray-50 rounded-xl p-4 border-l-4 border-[#10143A]">
-          <strong class="text-[#10143A] uppercase text-sm">4. Exposure:</strong>
+        <div class="bg-gray-50 rounded-xl p-4 border-l-4 border-[#11123c]">
+          <strong class="text-[#11123c] uppercase text-sm">4. Exposure:</strong>
           <span class="text-sm text-[#4B5563] ml-1">National tournament showcases and fixtures against international youth academies.</span>
         </div>
-        <div class="bg-gray-50 rounded-xl p-4 border-l-4 border-[#10143A]">
-          <strong class="text-[#10143A] uppercase text-sm">5. Professional Contracts:</strong>
+        <div class="bg-gray-50 rounded-xl p-4 border-l-4 border-[#11123c]">
+          <strong class="text-[#11123c] uppercase text-sm">5. Professional Contracts:</strong>
           <span class="text-sm text-[#4B5563] ml-1">First-team promotion and professional sports representation.</span>
         </div>
       </div>
 
-      <blockquote class="my-10 border-l-4 border-[#DCE135] bg-[#10143A] text-white p-6 sm:p-8 rounded-2xl">
-        <p class="text-base sm:text-xl font-bold uppercase tracking-tight text-[#DCE135] leading-relaxed">
+      <blockquote class="my-10 border-l-4 border-[#e9d319] bg-[#11123c] text-white p-6 sm:p-8 rounded-2xl">
+        <p class="text-base sm:text-xl font-bold uppercase tracking-tight text-[#e9d319] leading-relaxed">
           "The distance between a dream and reality is called hard work and discipline. When a player commits to the process, our pathway delivers the platform."
         </p>
         <cite class="block text-xs uppercase tracking-widest text-white/70 font-semibold mt-3">— Head of Player Development</cite>
@@ -204,8 +204,8 @@ export const articles: Article[] = [
 
       <img src="/images/training-2.jpg" alt="High performance turf pitch facility" class="w-full rounded-2xl my-8 object-cover shadow-lg aspect-[16/9]" />
 
-      <blockquote class="my-10 border-l-4 border-[#DCE135] bg-[#10143A] text-white p-6 sm:p-8 rounded-2xl">
-        <p class="text-base sm:text-xl font-bold uppercase tracking-tight text-[#DCE135] leading-relaxed">
+      <blockquote class="my-10 border-l-4 border-[#e9d319] bg-[#11123c] text-white p-6 sm:p-8 rounded-2xl">
+        <p class="text-base sm:text-xl font-bold uppercase tracking-tight text-[#e9d319] leading-relaxed">
           "Investing in football infrastructure is investing in human potential. When players have world-class pitches, they train harder, recover faster, and dream bigger."
         </p>
         <cite class="block text-xs uppercase tracking-widest text-white/70 font-semibold mt-3">— Investor Relations Executive Board</cite>
@@ -250,8 +250,8 @@ export const articles: Article[] = [
 
       <img src="/images/news-pondicherry-scout.jpg" alt="U-15 training session in progress" class="w-full rounded-2xl my-8 object-cover shadow-lg aspect-[16/9]" />
 
-      <blockquote class="my-10 border-l-4 border-[#10143A] bg-[#10143A] text-white p-6 sm:p-8 rounded-2xl">
-        <p class="text-base sm:text-xl font-bold uppercase tracking-tight text-[#DCE135] leading-relaxed">
+      <blockquote class="my-10 border-l-4 border-[#11123c] bg-[#11123c] text-white p-6 sm:p-8 rounded-2xl">
+        <p class="text-base sm:text-xl font-bold uppercase tracking-tight text-[#e9d319] leading-relaxed">
           "Champions are forged in the quiet hours of practice when no one is watching. In our residential academy, hard work is our daily standard."
         </p>
         <cite class="block text-xs uppercase tracking-widest text-white/70 font-semibold mt-3">— Technical Staff, Pondicherry FC</cite>
@@ -293,8 +293,8 @@ export const articles: Article[] = [
 
       <img src="/images/match-1.jpg" alt="Chennai Super Strikers match action on turf" class="w-full rounded-2xl my-8 object-cover shadow-lg aspect-[16/9]" />
 
-      <blockquote class="my-10 border-l-4 border-[#DCE135] bg-[#10143A] text-white p-6 sm:p-8 rounded-2xl">
-        <p class="text-base sm:text-xl font-bold uppercase tracking-tight text-[#DCE135] leading-relaxed">
+      <blockquote class="my-10 border-l-4 border-[#e9d319] bg-[#11123c] text-white p-6 sm:p-8 rounded-2xl">
+        <p class="text-base sm:text-xl font-bold uppercase tracking-tight text-[#e9d319] leading-relaxed">
           "On matchday, passion meets preparation. Every ball contested, every tackle made, and every goal scored is a testament to the sweat poured into training."
         </p>
         <cite class="block text-xs uppercase tracking-widest text-white/70 font-semibold mt-3">— Senior Team Captain, Chennai Super Strikers</cite>

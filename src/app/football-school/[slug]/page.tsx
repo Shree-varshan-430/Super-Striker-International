@@ -77,7 +77,7 @@ export default async function SchoolPage({ params }: PageProps) {
         <div className="max-w-4xl mx-auto">
           <Link
             href="/"
-            className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-secondary-navy hover:text-[#10143A] transition-colors"
+            className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-secondary-navy hover:text-[#11123c] transition-colors"
           >
             <ChevronLeft className="h-4 w-4" />
             Back to Home
@@ -89,8 +89,8 @@ export default async function SchoolPage({ params }: PageProps) {
       <div className="max-w-4xl mx-auto px-4 py-16 sm:px-6">
         {/* Title and Location */}
         <div className="flex flex-col gap-4 text-center sm:text-left mb-8">
-          <div className="inline-flex items-center gap-1.5 self-center sm:self-start bg-[#10143A]/10 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#10143A] shadow-sm">
-            <GraduationCap className="h-3.5 w-3.5 text-[#10143A]" />
+          <div className="inline-flex items-center gap-1.5 self-center sm:self-start bg-[#11123c]/10 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#11123c] shadow-sm">
+            <GraduationCap className="h-3.5 w-3.5 text-[#11123c]" />
             {school.location}
           </div>
           <h1 className="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight text-secondary-navy leading-none">
@@ -112,8 +112,8 @@ export default async function SchoolPage({ params }: PageProps) {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           {/* Quick Metrics */}
           <div className="md:col-span-4 flex flex-col gap-6">
-            <div className="bg-[#F4F6FA] border border-[#10143A]/10 p-6 rounded-xl flex flex-col gap-4 hover:border-[#10143A]/30 hover:shadow-[0_12px_24px_rgba(16,20,58,0.05)] transition-all duration-300">
-              <h3 className="font-display text-xs font-bold uppercase tracking-widest text-[#10143A] border-b border-gray-200 pb-2">
+            <div className="bg-[#F4F6FA] border border-[#11123c]/10 p-6 rounded-xl flex flex-col gap-4 hover:border-[#11123c]/30 hover:shadow-[0_12px_24px_rgba(17,18,60,0.05)] transition-all duration-300">
+              <h3 className="font-display text-xs font-bold uppercase tracking-widest text-[#11123c] border-b border-gray-200 pb-2">
                 Academy Profile
               </h3>
               
@@ -164,7 +164,7 @@ export default async function SchoolPage({ params }: PageProps) {
               <div className="grid grid-cols-1 gap-3">
                 {school.highlights.map((h, idx) => (
                   <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-[#4B5563] leading-relaxed">
-                    <span className="h-5 w-5 rounded-full bg-[#10143A]/10 text-[#10143A] flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">
+                    <span className="h-5 w-5 rounded-full bg-[#11123c]/10 text-[#11123c] flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">
                       ✓
                     </span>
                     <span>{h}</span>
@@ -180,7 +180,7 @@ export default async function SchoolPage({ params }: PageProps) {
               </h3>
               <div className="flex flex-col gap-4">
                 {school.ageGroups.map((g, idx) => (
-                  <div key={idx} className="bg-[#F4F6FA] border border-[#10143A]/10 p-5 rounded-xl flex flex-col gap-1 hover:border-[#10143A]/30 hover:shadow-sm transition-all duration-300">
+                  <div key={idx} className="bg-[#F4F6FA] border border-[#11123c]/10 p-5 rounded-xl flex flex-col gap-1 hover:border-[#11123c]/30 hover:shadow-sm transition-all duration-300">
                     <h4 className="text-xs font-bold uppercase tracking-wide text-secondary-navy">
                       {g.title}
                     </h4>
@@ -195,7 +195,7 @@ export default async function SchoolPage({ params }: PageProps) {
             <div className="mt-4 flex flex-wrap gap-4">
               <Link
                 href="/investors#enquire"
-                className="inline-flex items-center justify-center rounded-full bg-[#10143A] border border-[#10143A] px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white hover:bg-white hover:text-[#10143A] transition-all hover:scale-105 active:scale-95 shadow-md shadow-[#10143A]/10"
+                className="inline-flex items-center justify-center rounded-full bg-[#11123c] border border-[#11123c] px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white hover:bg-white hover:text-[#11123c] transition-all hover:scale-105 active:scale-95 shadow-md shadow-[#11123c]/10"
               >
                 Inquire About Sponsorships
               </Link>

@@ -321,15 +321,15 @@ export default function NewsroomFeed() {
   ];
 
   return (
-    <div ref={sectionRef} className="w-full bg-white text-[#0A1028] pt-24 pb-0">
+    <div ref={sectionRef} className="w-full bg-white text-[#11123c] pt-24 pb-0">
       
       {/* SECTION IDENTITY & DESCRIPTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
-        <div className="flex flex-col items-start gap-3 text-left border-l-8 border-[#DCE135] pl-6 py-2">
-          <span className="text-xs font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-3 py-1 rounded">
+        <div className="flex flex-col items-start gap-3 text-left border-l-8 border-[#e9d319] pl-6 py-2">
+          <span className="text-xs font-black uppercase tracking-widest text-[#e9d319] bg-[#11123c] px-3 py-1 rounded">
             THE OFFICIAL STORYTELLING PLATFORM
           </span>
-          <h2 className="font-display text-4xl sm:text-7xl font-black uppercase tracking-tight text-[#10143A] leading-none">
+          <h2 className="font-display text-4xl sm:text-7xl font-black uppercase tracking-tight text-[#11123c] leading-none">
             INSIDE SUPERSTRIKER
           </h2>
           <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed max-w-2xl mt-1">
@@ -345,18 +345,18 @@ export default function NewsroomFeed() {
             
             {/* Section 1: LATEST NEWS */}
             <div className="flex flex-col gap-8">
-              <div className="w-full bg-[#10143A] text-white p-6 sm:p-8 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4 border-l-8 border-[#DCE135] shadow-md">
+              <div className="w-full bg-[#11123c] text-white p-6 sm:p-8 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4 border-l-8 border-[#e9d319] shadow-md">
                 <div className="flex flex-col items-start gap-1 text-left">
-                  <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135]">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-[#e9d319]">
                     Coverage Feed
                   </span>
                   <h3 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight text-white">
                     LATEST NEWSROOM COVERAGE
                   </h3>
                 </div>
-                <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-[#DCE135]">
+                <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-[#e9d319]">
                   <span>Live Feed</span>
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#DCE135] animate-pulse" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#e9d319] animate-pulse" />
                 </div>
               </div>
               
@@ -380,17 +380,17 @@ export default function NewsroomFeed() {
                   </div>
 
                     <div className="flex flex-col gap-2">
-                      <span className="text-[10px] font-black uppercase tracking-widest text-[#10143A] leading-none mb-1 block">
+                      <span className="text-[10px] font-black uppercase tracking-widest text-[#11123c] leading-none mb-1 block">
                         {leftFeaturedCard.category}
                       </span>
-                      <h4 className="font-display text-xl sm:text-2xl font-black uppercase tracking-tight text-[#10143A] leading-snug group-hover:opacity-85 transition-opacity">
+                      <h4 className="font-display text-xl sm:text-2xl font-black uppercase tracking-tight text-[#11123c] leading-snug group-hover:opacity-85 transition-opacity">
                         {leftFeaturedCard.title}
                       </h4>
                       <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed line-clamp-3 mt-1">
                         {leftFeaturedCard.description}
                       </p>
                       <div className="flex items-center gap-3 text-[10px] font-bold text-[#4B5563]/60 uppercase tracking-wider mt-3">
-                        <span className="flex items-center gap-1"><User className="h-3.5 w-3.5 text-[#10143A]" /> {leftFeaturedCard.author}</span>
+                        <span className="flex items-center gap-1"><User className="h-3.5 w-3.5 text-[#11123c]" /> {leftFeaturedCard.author}</span>
                         <span>•</span>
                         <span>{leftFeaturedCard.date}</span>
                         <span>•</span>
@@ -418,10 +418,10 @@ export default function NewsroomFeed() {
                       </div>
 
                       <div className="flex flex-col gap-2">
-                        <span className="text-[10px] font-black uppercase tracking-widest text-[#10143A] leading-none mb-1 block">
+                        <span className="text-[10px] font-black uppercase tracking-widest text-[#11123c] leading-none mb-1 block">
                           {card.category}
                         </span>
-                        <h4 className="font-display text-base sm:text-lg font-black uppercase tracking-tight text-[#10143A] leading-snug line-clamp-3 group-hover:opacity-85 transition-opacity">
+                        <h4 className="font-display text-base sm:text-lg font-black uppercase tracking-tight text-[#11123c] leading-snug line-clamp-3 group-hover:opacity-85 transition-opacity">
                           {card.title}
                         </h4>
                         <div className="flex items-center gap-2 text-[9px] font-bold text-[#4B5563]/60 uppercase tracking-wider mt-2">
@@ -445,9 +445,9 @@ export default function NewsroomFeed() {
                 className="object-cover transition-transform duration-1000 group-hover:scale-105"
                 sizes="(max-w-1200px) 100vw, 1200px"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#10143A] via-[#10143A]/80 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#11123c] via-[#11123c]/80 to-transparent" />
               <div className="absolute inset-0 flex flex-col justify-center items-start p-8 sm:p-12 max-w-xl text-left gap-4">
-                <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#DCE135]/15 px-3 py-1 rounded-full">
+                <span className="text-[10px] font-black uppercase tracking-widest text-[#e9d319] bg-[#e9d319]/15 px-3 py-1 rounded-full">
                   Elite Academy
                 </span>
                 <h3 className="font-display text-2xl sm:text-4xl font-black uppercase tracking-tight text-white leading-tight">
@@ -458,7 +458,7 @@ export default function NewsroomFeed() {
                 </p>
                 <Link
                   href="/football-school/bangalore-football-school"
-                  className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-white border-b-2 border-[#DCE135] pb-0.5 hover:text-[#DCE135] transition-colors mt-2"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-white border-b-2 border-[#e9d319] pb-0.5 hover:text-[#e9d319] transition-colors mt-2"
                 >
                   Explore Academy Pathways
                   <ArrowRight className="h-4 w-4" />
@@ -468,9 +468,9 @@ export default function NewsroomFeed() {
 
             {/* Section 2: CLUB & SQUAD UPDATES */}
             <div className="flex flex-col gap-8">
-              <div className="w-full bg-[#10143A] text-white p-6 sm:p-8 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4 border-l-8 border-[#DCE135] shadow-md">
+              <div className="w-full bg-[#11123c] text-white p-6 sm:p-8 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4 border-l-8 border-[#e9d319] shadow-md">
                 <div className="flex flex-col items-start gap-1 text-left">
-                  <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135]">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-[#e9d319]">
                     Affiliated Clubs
                   </span>
                   <h3 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight text-white">
@@ -499,17 +499,17 @@ export default function NewsroomFeed() {
                       </div>
 
                       <div className="flex flex-col gap-2">
-                        <span className="text-[10px] font-black uppercase tracking-widest text-[#10143A] leading-none mb-1 block">
+                        <span className="text-[10px] font-black uppercase tracking-widest text-[#11123c] leading-none mb-1 block">
                           {card.category}
                         </span>
-                        <h4 className="font-display text-base sm:text-lg font-black uppercase tracking-tight text-[#10143A] leading-snug line-clamp-2 group-hover:opacity-85 transition-opacity">
+                        <h4 className="font-display text-base sm:text-lg font-black uppercase tracking-tight text-[#11123c] leading-snug line-clamp-2 group-hover:opacity-85 transition-opacity">
                           {card.title}
                         </h4>
                         <p className="text-xs text-[#4B5563] leading-relaxed line-clamp-2">
                           {card.description}
                         </p>
                         <div className="flex items-center gap-3 text-[9px] font-bold text-[#4B5563]/60 uppercase tracking-wider mt-2">
-                          <span className="flex items-center gap-1"><User className="h-3 w-3 text-[#10143A]" /> {card.author}</span>
+                          <span className="flex items-center gap-1"><User className="h-3 w-3 text-[#11123c]" /> {card.author}</span>
                           <span>•</span>
                           <span>{card.date}</span>
                           <span>•</span>
@@ -531,9 +531,9 @@ export default function NewsroomFeed() {
                 className="object-cover transition-transform duration-1000 group-hover:scale-105"
                 sizes="(max-w-1200px) 100vw, 1200px"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#10143A] via-[#10143A]/80 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#11123c] via-[#11123c]/80 to-transparent" />
               <div className="absolute inset-0 flex flex-col justify-center items-start p-8 sm:p-12 max-w-xl text-left gap-4">
-                <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#DCE135]/15 px-3 py-1 rounded-full">
+                <span className="text-[10px] font-black uppercase tracking-widest text-[#e9d319] bg-[#e9d319]/15 px-3 py-1 rounded-full">
                   Investments
                 </span>
                 <h3 className="font-display text-2xl sm:text-4xl font-black uppercase tracking-tight text-white leading-tight">
@@ -544,7 +544,7 @@ export default function NewsroomFeed() {
                 </p>
                 <Link
                   href="/investors#enquire"
-                  className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-white border-b-2 border-[#DCE135] pb-0.5 hover:text-[#DCE135] transition-colors mt-2"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-white border-b-2 border-[#e9d319] pb-0.5 hover:text-[#e9d319] transition-colors mt-2"
                 >
                   Inquire Now
                   <ArrowRight className="h-4 w-4" />
@@ -554,9 +554,9 @@ export default function NewsroomFeed() {
 
             {/* Section 3: ACADEMY FOCUS */}
             <div className="flex flex-col gap-8">
-              <div className="w-full bg-[#10143A] text-white p-6 sm:p-8 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4 border-l-8 border-[#DCE135] shadow-md">
+              <div className="w-full bg-[#11123c] text-white p-6 sm:p-8 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4 border-l-8 border-[#e9d319] shadow-md">
                 <div className="flex flex-col items-start gap-1 text-left">
-                  <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135]">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-[#e9d319]">
                     Development Syllabuses
                   </span>
                   <h3 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight text-white">
@@ -585,17 +585,17 @@ export default function NewsroomFeed() {
                       </div>
 
                       <div className="flex flex-col gap-2">
-                        <span className="text-[10px] font-black uppercase tracking-widest text-[#10143A] leading-none mb-1 block">
+                        <span className="text-[10px] font-black uppercase tracking-widest text-[#11123c] leading-none mb-1 block">
                           {card.category}
                         </span>
-                        <h4 className="font-display text-base sm:text-lg font-black uppercase tracking-tight text-[#10143A] leading-snug line-clamp-2 group-hover:opacity-85 transition-opacity">
+                        <h4 className="font-display text-base sm:text-lg font-black uppercase tracking-tight text-[#11123c] leading-snug line-clamp-2 group-hover:opacity-85 transition-opacity">
                           {card.title}
                         </h4>
                         <p className="text-xs text-[#4B5563] leading-relaxed line-clamp-2">
                           {card.description}
                         </p>
                         <div className="flex items-center gap-3 text-[9px] font-bold text-[#4B5563]/60 uppercase tracking-wider mt-2">
-                          <span className="flex items-center gap-1"><User className="h-3.5 w-3.5 text-[#10143A]" /> {card.author}</span>
+                          <span className="flex items-center gap-1"><User className="h-3.5 w-3.5 text-[#11123c]" /> {card.author}</span>
                           <span>•</span>
                           <span>{card.date}</span>
                           <span>•</span>
@@ -610,9 +610,9 @@ export default function NewsroomFeed() {
 
             {/* Section 4: CORPORATE & COMMUNITY IMPACT */}
             <div className="flex flex-col gap-8">
-              <div className="w-full bg-[#10143A] text-white p-6 sm:p-8 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4 border-l-8 border-[#DCE135] shadow-md">
+              <div className="w-full bg-[#11123c] text-white p-6 sm:p-8 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4 border-l-8 border-[#e9d319] shadow-md">
                 <div className="flex flex-col items-start gap-1 text-left">
-                  <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135]">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-[#e9d319]">
                     Ecosystem growth
                   </span>
                   <h3 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight text-white">
@@ -641,17 +641,17 @@ export default function NewsroomFeed() {
                       </div>
 
                       <div className="flex flex-col gap-2">
-                        <span className="text-[10px] font-black uppercase tracking-widest text-[#10143A] leading-none mb-1 block">
+                        <span className="text-[10px] font-black uppercase tracking-widest text-[#11123c] leading-none mb-1 block">
                           {card.category}
                         </span>
-                        <h4 className="font-display text-base sm:text-lg font-black uppercase tracking-tight text-[#10143A] leading-snug line-clamp-2 group-hover:opacity-85 transition-opacity">
+                        <h4 className="font-display text-base sm:text-lg font-black uppercase tracking-tight text-[#11123c] leading-snug line-clamp-2 group-hover:opacity-85 transition-opacity">
                           {card.title}
                         </h4>
                         <p className="text-xs text-[#4B5563] leading-relaxed line-clamp-2">
                           {card.description}
                         </p>
                         <div className="flex items-center gap-3 text-[9px] font-bold text-[#4B5563]/60 uppercase tracking-wider mt-2">
-                          <span className="flex items-center gap-1"><User className="h-3.5 w-3.5 text-[#10143A]" /> {card.author}</span>
+                          <span className="flex items-center gap-1"><User className="h-3.5 w-3.5 text-[#11123c]" /> {card.author}</span>
                           <span>•</span>
                           <span>{card.date}</span>
                           <span>•</span>
@@ -679,11 +679,11 @@ export default function NewsroomFeed() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="text-left mb-16 flex flex-col gap-1 border-l-4 border-[#10143A] pl-6">
-            <span className="text-[10px] font-black uppercase tracking-widest text-white leading-none bg-[#10143A] px-2.5 py-1 rounded w-fit">
+          <div className="text-left mb-16 flex flex-col gap-1 border-l-4 border-[#11123c] pl-6">
+            <span className="text-[10px] font-black uppercase tracking-widest text-white leading-none bg-[#11123c] px-2.5 py-1 rounded w-fit">
               PLAYER JOURNEYS
             </span>
-            <h2 className="font-display text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#0A1028] mt-2">
+            <h2 className="font-display text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#11123c] mt-2">
               Every player has a story before becoming a champion.
             </h2>
             <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed max-w-xl">
@@ -706,15 +706,15 @@ export default function NewsroomFeed() {
                     height={480}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#10143A]/40 to-transparent z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#11123c]/40 to-transparent z-10" />
                 </div>
                 
                 {/* Details below image (No Card containers, no borders) */}
                 <div className="flex flex-col gap-2">
-                  <span className="text-[9px] font-black uppercase tracking-widest text-white bg-[#10143A] px-2.5 py-1 rounded w-fit leading-none">
+                  <span className="text-[9px] font-black uppercase tracking-widest text-white bg-[#11123c] px-2.5 py-1 rounded w-fit leading-none">
                     {player.position}
                   </span>
-                  <h4 className="font-display text-xl sm:text-2xl font-black uppercase text-[#10143A] tracking-tight">
+                  <h4 className="font-display text-xl sm:text-2xl font-black uppercase text-[#11123c] tracking-tight">
                     {player.name}
                   </h4>
                   <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed">
@@ -731,7 +731,7 @@ export default function NewsroomFeed() {
       {/* PART 5: SUPERSTRIKER MEDIA */}
       <section 
         ref={mediaSectionRef}
-        className="w-full bg-[#10143A] py-24 text-white relative overflow-hidden"
+        className="w-full bg-[#11123c] py-24 text-white relative overflow-hidden"
       >
         {/* Decorative Grid backdrop */}
         <div className="absolute inset-0 opacity-5 bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
@@ -739,7 +739,7 @@ export default function NewsroomFeed() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <div className="text-center flex flex-col items-center gap-2 mb-16">
-            <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135]">
+            <span className="text-[10px] font-black uppercase tracking-widest text-[#e9d319]">
               VIDEO STORYTELLING
             </span>
             <h2 className="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight text-white mt-1">
@@ -748,7 +748,7 @@ export default function NewsroomFeed() {
             <p className="text-xs sm:text-sm text-white/70 max-w-xl">
               Watch exclusive academy documentaries, player scouting releases, and leadership interviews directly from the training pitches.
             </p>
-            <div className="h-1 w-12 bg-[#DCE135] mt-2" />
+            <div className="h-1 w-12 bg-[#e9d319] mt-2" />
           </div>
 
           {/* Videos Grid */}
@@ -773,14 +773,14 @@ export default function NewsroomFeed() {
                   
                   {/* Pulsing Play Button overlay */}
                   <div className="absolute inset-0 flex items-center justify-center z-20">
-                    <div className="h-12 w-12 rounded-full bg-[#DCE135] flex items-center justify-center shadow-lg group-hover:scale-110 active:scale-95 transition-transform duration-300 relative">
-                      <Play className="h-5 w-5 text-[#10143A] fill-[#10143A] ml-0.5" />
-                      <span className="absolute inset-0 rounded-full border border-[#DCE135] animate-ping opacity-60" />
+                    <div className="h-12 w-12 rounded-full bg-[#e9d319] flex items-center justify-center shadow-lg group-hover:scale-110 active:scale-95 transition-transform duration-300 relative">
+                      <Play className="h-5 w-5 text-[#11123c] fill-[#11123c] ml-0.5" />
+                      <span className="absolute inset-0 rounded-full border border-[#e9d319] animate-ping opacity-60" />
                     </div>
                   </div>
                   
                   {/* Category label */}
-                  <span className="absolute top-4 left-4 bg-black/60 backdrop-blur-md text-[#DCE135] px-2.5 py-0.5 rounded text-[8px] font-black tracking-widest uppercase">
+                  <span className="absolute top-4 left-4 bg-black/60 backdrop-blur-md text-[#e9d319] px-2.5 py-0.5 rounded text-[8px] font-black tracking-widest uppercase">
                     {video.category}
                   </span>
 
@@ -792,11 +792,11 @@ export default function NewsroomFeed() {
 
                 {/* Meta Details below image */}
                 <div className="flex flex-col gap-1.5">
-                  <h4 className="font-display text-sm sm:text-base font-bold uppercase text-white leading-snug group-hover:text-[#DCE135] transition-colors line-clamp-2">
+                  <h4 className="font-display text-sm sm:text-base font-bold uppercase text-white leading-snug group-hover:text-[#e9d319] transition-colors line-clamp-2">
                     {video.title}
                   </h4>
                   <div className="flex items-center gap-1.5 text-[9px] font-semibold text-white/50 tracking-wider">
-                    <BookOpen className="h-3.5 w-3.5 text-[#DCE135]" />
+                    <BookOpen className="h-3.5 w-3.5 text-[#e9d319]" />
                     <span>Watch Release</span>
                   </div>
                 </div>
@@ -808,15 +808,15 @@ export default function NewsroomFeed() {
       </section>
 
       {/* PART 6: TRENDING TICKER BAR */}
-      <section className="w-full bg-[#10143A]/5 py-4 border-y border-[#10143A]/10 overflow-hidden relative mb-0">
-        <div className="absolute left-0 top-0 bottom-0 bg-[#10143A] px-6 flex items-center gap-2 z-10 border-r border-white/10 text-white">
+      <section className="w-full bg-[#11123c]/5 py-4 border-y border-[#11123c]/10 overflow-hidden relative mb-0">
+        <div className="absolute left-0 top-0 bottom-0 bg-[#11123c] px-6 flex items-center gap-2 z-10 border-r border-white/10 text-white">
           <TrendingUp className="h-4.5 w-4.5 text-white" />
           <span className="text-xs font-black uppercase tracking-widest text-white whitespace-nowrap">TRENDING NOW</span>
         </div>
-        <div className="flex items-center pl-48 animate-marquee-fast text-[#0A1028]">
+        <div className="flex items-center pl-48 animate-marquee-fast text-[#11123c]">
           {trendingTopics.concat(trendingTopics).map((topic, idx) => (
-            <span key={idx} className="text-xs font-black uppercase tracking-wider mx-10 text-[#0A1028]/90 flex items-center gap-2 whitespace-nowrap">
-              <span className="text-[#10143A] font-extrabold">→</span> {topic}
+            <span key={idx} className="text-xs font-black uppercase tracking-wider mx-10 text-[#11123c]/90 flex items-center gap-2 whitespace-nowrap">
+              <span className="text-[#11123c] font-extrabold">→</span> {topic}
             </span>
           ))}
         </div>

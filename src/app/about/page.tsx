@@ -14,10 +14,10 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="w-full bg-white text-[#10143A] min-h-screen pb-20 select-none text-left">
+    <div className="w-full bg-white text-[#11123c] min-h-screen pb-20 select-none text-left">
       
       {/* Small Hero Banner */}
-      <div className="relative w-full h-[240px] sm:h-[300px] bg-[#10143A] flex items-center justify-start overflow-hidden group select-none mt-20">
+      <div className="relative w-full h-[240px] sm:h-[300px] bg-[#11123c] flex items-center justify-start overflow-hidden group select-none mt-20">
         <Image
           src="/images/founder-pitch-side.jpg"
           alt="About Bangalore Super Strikers"
@@ -27,20 +27,20 @@ export default function AboutPage() {
           priority
         />
         {/* Subtle contrast gradient for typography */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-[#10143A]/60 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-[#11123c]/60 to-transparent z-10" />
         
         {/* Brand accent wedges on bottom right */}
         <div 
-          className="absolute bottom-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-[#10143A] pointer-events-none z-15 translate-x-2 translate-y-2 lg:block hidden" 
+          className="absolute bottom-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-[#11123c] pointer-events-none z-15 translate-x-2 translate-y-2 lg:block hidden" 
           style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }} 
         />
         <div 
-          className="absolute bottom-0 right-0 w-20 h-20 sm:w-28 sm:h-28 bg-[#DCE135] pointer-events-none z-20 lg:block hidden" 
+          className="absolute bottom-0 right-0 w-20 h-20 sm:w-28 sm:h-28 bg-[#e9d319] pointer-events-none z-20 lg:block hidden" 
           style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }} 
         />
 
         <div className="relative z-20 max-w-7xl 2xl:max-w-[1440px] mx-auto w-full px-4 sm:px-6 lg:px-10 xl:px-12 text-left flex flex-col gap-2">
-          <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-3 py-1 rounded w-fit">
+          <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-[#e9d319] bg-[#11123c] px-3 py-1 rounded w-fit">
             ABOUT THE PLATFORM
           </span>
           <h1 className="font-display text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-none">
@@ -73,16 +73,16 @@ export default function AboutPage() {
 
           {/* Right Side: His Vision for Young Players with Highlighted Key Points */}
           <div className="lg:col-span-7 xl:col-span-7 flex flex-col gap-4 sm:gap-6 text-left relative z-10">
-            <span className="text-[10px] font-black uppercase tracking-widest text-[#10143A] bg-[#DCE135] px-3 py-1 rounded w-fit">
+            <span className="text-[10px] font-black uppercase tracking-widest text-[#11123c] bg-[#e9d319] px-3 py-1 rounded w-fit">
               PRESIDENTIAL VISION & HERITAGE
             </span>
             
-            <h2 className="font-display text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#10143A] leading-tight">
+            <h2 className="font-display text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#11123c] leading-tight">
               Vision For Young Players
             </h2>
-            <div className="h-1.5 w-16 bg-[#10143A]" />
+            <div className="h-1.5 w-16 bg-[#11123c]" />
             
-            <p className="text-base sm:text-xl font-bold text-[#10143A] leading-relaxed">
+            <p className="text-base sm:text-xl font-bold text-[#11123c] leading-relaxed">
               Ramakrishnan envisions a future where young players in India have access to the same structured development pipelines, elite physical resources, and competitive exposure as their international counterparts.
             </p>
             
@@ -92,8 +92,8 @@ export default function AboutPage() {
 
             {/* Highlighted Important Key Points */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mt-2">
-              <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-5 shadow-xs border-l-4 border-[#10143A] flex flex-col gap-1">
-                <span className="text-xs sm:text-sm font-black uppercase tracking-wider text-[#10143A]">
+              <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-5 shadow-xs border-l-4 border-[#11123c] flex flex-col gap-1">
+                <span className="text-xs sm:text-sm font-black uppercase tracking-wider text-[#11123c]">
                   AIFF-C Licensed Coaching
                 </span>
                 <p className="text-xs sm:text-sm text-[#4B5563] font-medium leading-normal">
@@ -101,8 +101,8 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-5 shadow-xs border-l-4 border-[#DCE135] flex flex-col gap-1">
-                <span className="text-xs sm:text-sm font-black uppercase tracking-wider text-[#10143A]">
+              <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-5 shadow-xs border-l-4 border-[#e9d319] flex flex-col gap-1">
+                <span className="text-xs sm:text-sm font-black uppercase tracking-wider text-[#11123c]">
                   KSFA Affiliated Pathways
                 </span>
                 <p className="text-xs sm:text-sm text-[#4B5563] font-medium leading-normal">
@@ -118,16 +118,16 @@ export default function AboutPage() {
           
           {/* Left Side: Text */}
           <div className="lg:col-span-7 xl:col-span-7 flex flex-col gap-4 sm:gap-6 text-left order-2 lg:order-1 relative z-10">
-            <span className="text-[10px] font-black uppercase tracking-widest text-[#10143A] bg-[#DCE135] px-3 py-1 rounded w-fit">
+            <span className="text-[10px] font-black uppercase tracking-widest text-[#11123c] bg-[#e9d319] px-3 py-1 rounded w-fit">
               FOUNDATION ORIGINS
             </span>
             
-            <h2 className="font-display text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#10143A] leading-tight">
+            <h2 className="font-display text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#11123c] leading-tight">
               Why the Foundation Was Created
             </h2>
-            <div className="h-1.5 w-16 bg-[#10143A]" />
+            <div className="h-1.5 w-16 bg-[#11123c]" />
 
-            <p className="text-base sm:text-xl font-bold text-[#10143A] leading-relaxed">
+            <p className="text-base sm:text-xl font-bold text-[#11123c] leading-relaxed">
               The Bangalore Super Strikers Foundation (BSSFC Foundation) was established to dismantle socioeconomic barriers that prevent talented children from accessing sports.
             </p>
             
@@ -174,16 +174,16 @@ export default function AboutPage() {
 
           {/* Right Side: Text */}
           <div className="lg:col-span-7 xl:col-span-7 flex flex-col gap-4 sm:gap-6 text-left relative z-10">
-            <span className="text-[10px] font-black uppercase tracking-widest text-[#10143A] bg-[#DCE135] px-3 py-1 rounded w-fit">
+            <span className="text-[10px] font-black uppercase tracking-widest text-[#11123c] bg-[#e9d319] px-3 py-1 rounded w-fit">
               SOCIAL IMPACT
             </span>
             
-            <h2 className="font-display text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#10143A] leading-tight">
+            <h2 className="font-display text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#11123c] leading-tight">
               Community Initiatives
             </h2>
-            <div className="h-1.5 w-16 bg-[#10143A]" />
+            <div className="h-1.5 w-16 bg-[#11123c]" />
 
-            <p className="text-base sm:text-xl font-bold text-[#10143A] leading-relaxed">
+            <p className="text-base sm:text-xl font-bold text-[#11123c] leading-relaxed">
               SuperStriker actively operates free weekly grassroots football clinics, kit donation drives, and public school sports programs across local neighborhoods.
             </p>
             
@@ -202,16 +202,16 @@ export default function AboutPage() {
           
           {/* Left Side: Text */}
           <div className="lg:col-span-7 xl:col-span-7 flex flex-col gap-4 sm:gap-6 text-left order-2 lg:order-1 relative z-10">
-            <span className="text-[10px] font-black uppercase tracking-widest text-[#10143A] bg-[#DCE135] px-3 py-1 rounded w-fit">
+            <span className="text-[10px] font-black uppercase tracking-widest text-[#11123c] bg-[#e9d319] px-3 py-1 rounded w-fit">
               COACHING METHODOLOGY
             </span>
             
-            <h2 className="font-display text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#10143A] leading-tight">
+            <h2 className="font-display text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#11123c] leading-tight">
               Leadership & Coaching Philosophy
             </h2>
-            <div className="h-1.5 w-16 bg-[#10143A]" />
+            <div className="h-1.5 w-16 bg-[#11123c]" />
 
-            <p className="text-base sm:text-xl font-bold text-[#10143A] leading-relaxed">
+            <p className="text-base sm:text-xl font-bold text-[#11123c] leading-relaxed">
               As an AIFF-C Licensed Coach, certified KSFA Referee, and holder of official Grassroots Certifications, Ram brings a rigorous technical standard to player development.
             </p>
             
@@ -222,7 +222,7 @@ export default function AboutPage() {
             <div className="pt-2">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-[#10143A] text-white hover:bg-[#DCE135] hover:text-[#10143A] transition-all px-8 py-4 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider shadow-sm"
+                className="inline-flex items-center justify-center gap-2 bg-[#11123c] text-white hover:bg-[#e9d319] hover:text-[#11123c] transition-all px-8 py-4 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider shadow-sm"
               >
                 Join Our Academy
                 <ArrowRight className="h-4 w-4" />
@@ -246,8 +246,8 @@ export default function AboutPage() {
         </div>
 
         {/* 5. Tribute & Dedication Block */}
-        <div className="bg-[#10143A] text-white rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-14 relative overflow-hidden text-left shadow-xl flex flex-col gap-2">
-          <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135]">
+        <div className="bg-[#11123c] text-white rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-14 relative overflow-hidden text-left shadow-xl flex flex-col gap-2">
+          <span className="text-[10px] font-black uppercase tracking-widest text-[#e9d319]">
             DEDICATION & TRIBUTE
           </span>
           <p className="font-display text-sm sm:text-lg lg:text-xl font-bold uppercase tracking-wide leading-relaxed">

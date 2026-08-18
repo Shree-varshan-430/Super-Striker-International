@@ -162,18 +162,18 @@ export default function FootballLoader({ onComplete }: FootballLoaderProps) {
                 <stop offset="100%" stopColor="#C4CED8" />
               </radialGradient>
             </defs>
-            <circle cx="50" cy="50" r="47" fill="url(#loaderBallGrad)" stroke="#10143A" strokeWidth="2" />
-            <polygon points="50,36 61,44 56,57 44,57 39,44" fill="#10143A" />
-            <line x1="50" y1="36" x2="50" y2="18" stroke="#10143A" strokeWidth="2" />
-            <line x1="61" y1="44" x2="78" y2="38" stroke="#10143A" strokeWidth="2" />
-            <line x1="56" y1="57" x2="68" y2="74" stroke="#10143A" strokeWidth="2" />
-            <line x1="44" y1="57" x2="32" y2="74" stroke="#10143A" strokeWidth="2" />
-            <line x1="39" y1="44" x2="22" y2="38" stroke="#10143A" strokeWidth="2" />
-            <polygon points="50,18 64,8 77,16 69,28" fill="none" stroke="#10143A" strokeWidth="2" />
-            <polygon points="78,38 91,32 94,48 85,55" fill="none" stroke="#10143A" strokeWidth="2" />
-            <polygon points="68,74 80,72 82,88 68,92" fill="none" stroke="#10143A" strokeWidth="2" />
-            <polygon points="32,74 20,72 18,88 32,92" fill="none" stroke="#10143A" strokeWidth="2" />
-            <polygon points="22,38 9,32 6,48 15,55" fill="none" stroke="#10143A" strokeWidth="2" />
+            <circle cx="50" cy="50" r="47" fill="url(#loaderBallGrad)" stroke="#11123c" strokeWidth="2" />
+            <polygon points="50,36 61,44 56,57 44,57 39,44" fill="#11123c" />
+            <line x1="50" y1="36" x2="50" y2="18" stroke="#11123c" strokeWidth="2" />
+            <line x1="61" y1="44" x2="78" y2="38" stroke="#11123c" strokeWidth="2" />
+            <line x1="56" y1="57" x2="68" y2="74" stroke="#11123c" strokeWidth="2" />
+            <line x1="44" y1="57" x2="32" y2="74" stroke="#11123c" strokeWidth="2" />
+            <line x1="39" y1="44" x2="22" y2="38" stroke="#11123c" strokeWidth="2" />
+            <polygon points="50,18 64,8 77,16 69,28" fill="none" stroke="#11123c" strokeWidth="2" />
+            <polygon points="78,38 91,32 94,48 85,55" fill="none" stroke="#11123c" strokeWidth="2" />
+            <polygon points="68,74 80,72 82,88 68,92" fill="none" stroke="#11123c" strokeWidth="2" />
+            <polygon points="32,74 20,72 18,88 32,92" fill="none" stroke="#11123c" strokeWidth="2" />
+            <polygon points="22,38 9,32 6,48 15,55" fill="none" stroke="#11123c" strokeWidth="2" />
           </svg>
         </div>
 
@@ -182,7 +182,7 @@ export default function FootballLoader({ onComplete }: FootballLoaderProps) {
           ref={ballShadowRef}
           className="absolute bottom-6 w-14 h-2 rounded-full z-0"
           style={{
-            background: "radial-gradient(ellipse at center, rgba(16,20,58,0.25) 0%, rgba(16,20,58,0) 70%)",
+            background: "radial-gradient(ellipse at center, rgba(17,18,60,0.25) 0%, rgba(17,18,60,0) 70%)",
           }}
         />
 

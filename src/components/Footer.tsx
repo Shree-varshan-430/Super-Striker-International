@@ -35,7 +35,7 @@ const YoutubeIcon = (props: React.SVGProps<SVGSVGElement>) => (
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t border-white/10 bg-[#10143A] text-white select-none">
+    <footer className="w-full border-t border-white/10 bg-[#11123c] text-white select-none">
       {/* Upper footer */}
       <div className="mx-auto max-w-7xl 2xl:max-w-[1440px] px-4 py-20 sm:px-6 lg:px-10 xl:px-12">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 md:grid-cols-2">
@@ -55,7 +55,7 @@ export default function Footer() {
                 <span className="font-display text-xl sm:text-2xl font-black tracking-tight text-white uppercase leading-none">
                   SuperStriker
                 </span>
-                <span className="text-xs font-extrabold uppercase tracking-widest text-[#DCE135] leading-none mt-1">
+                <span className="text-xs font-extrabold uppercase tracking-widest text-[#e9d319] leading-none mt-1">
                   International
                 </span>
               </div>
@@ -64,16 +64,16 @@ export default function Footer() {
               SuperStriker International Pvt Ltd is dedicated to developing the football ecosystem in India, connecting grassroots clinics to professional leagues and national talent pathways.
             </p>
             <div className="flex items-center gap-5 text-white/60">
-              <a href="https://www.facebook.com/bangaloresuperstrikers/" target="_blank" rel="noopener noreferrer" className="hover:text-[#DCE135] transition-colors" aria-label="Facebook">
+              <a href="https://www.facebook.com/bangaloresuperstrikers/" target="_blank" rel="noopener noreferrer" className="hover:text-[#e9d319] transition-colors" aria-label="Facebook">
                 <FacebookIcon className="h-6 w-6" />
               </a>
-              <a href="https://www.instagram.com/bangaloresuperstrikersfc/?hl=en" target="_blank" rel="noopener noreferrer" className="hover:text-[#DCE135] transition-colors" aria-label="Instagram">
+              <a href="https://www.instagram.com/bangaloresuperstrikersfc/?hl=en" target="_blank" rel="noopener noreferrer" className="hover:text-[#e9d319] transition-colors" aria-label="Instagram">
                 <InstagramIcon className="h-6 w-6" />
               </a>
-              <a href="https://www.linkedin.com/company/bangalore-super-strikers-football-club/?originalSubdomain=in" target="_blank" rel="noopener noreferrer" className="hover:text-[#DCE135] transition-colors" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/company/bangalore-super-strikers-football-club/?originalSubdomain=in" target="_blank" rel="noopener noreferrer" className="hover:text-[#e9d319] transition-colors" aria-label="LinkedIn">
                 <LinkedinIcon className="h-6 w-6" />
               </a>
-              <a href="https://www.youtube.com/channel/UC1hf_p-XBtiIO3QyI5U43dQ" target="_blank" rel="noopener noreferrer" className="hover:text-[#DCE135] transition-colors" aria-label="YouTube">
+              <a href="https://www.youtube.com/channel/UC1hf_p-XBtiIO3QyI5U43dQ" target="_blank" rel="noopener noreferrer" className="hover:text-[#e9d319] transition-colors" aria-label="YouTube">
                 <YoutubeIcon className="h-6 w-6" />
               </a>
             </div>
@@ -81,14 +81,14 @@ export default function Footer() {
 
           {/* Headquarters & Contact Info Column */}
           <div className="lg:col-span-3 text-left">
-            <h3 className="font-display text-base sm:text-lg font-black uppercase tracking-wider text-[#DCE135] border-b border-white/10 pb-3 mb-6">
+            <h3 className="font-display text-base sm:text-lg font-black uppercase tracking-wider text-[#e9d319] border-b border-white/10 pb-3 mb-6">
               Headquarters
             </h3>
             
             <div className="space-y-5 text-xs sm:text-sm text-white/80">
               {/* Location Address */}
               <div className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-[#DCE135] shrink-0 mt-0.5" />
+                <MapPin className="h-5 w-5 text-[#e9d319] shrink-0 mt-0.5" />
                 <p className="leading-relaxed text-white/85">
                   Thirumahondanahalli, Near Vakil Whispering Wood Layout, Neraluru Post, Attibele Hobli, Anekal Taluk, Bangalore - 562107
                 </p>
@@ -96,12 +96,12 @@ export default function Footer() {
 
               {/* Phone Numbers */}
               <div className="flex items-start gap-3 pt-2 border-t border-white/10">
-                <Phone className="h-5 w-5 text-[#DCE135] shrink-0 mt-0.5" />
+                <Phone className="h-5 w-5 text-[#e9d319] shrink-0 mt-0.5" />
                 <div className="flex flex-col gap-1.5 font-bold text-white">
-                  <a href="tel:+919591769293" className="hover:text-[#DCE135] transition-colors">
+                  <a href="tel:+919591769293" className="hover:text-[#e9d319] transition-colors">
                     (+91) 95917 69293
                   </a>
-                  <a href="tel:+919591069293" className="hover:text-[#DCE135] transition-colors">
+                  <a href="tel:+919591069293" className="hover:text-[#e9d319] transition-colors">
                     (+91) 95910 69293
                   </a>
                 </div>
@@ -111,30 +111,30 @@ export default function Footer() {
 
           {/* Clubs & Schools Column */}
           <div className="lg:col-span-2 text-left">
-            <h3 className="font-display text-base sm:text-lg font-black uppercase tracking-wider text-[#DCE135] border-b border-white/10 pb-3 mb-6">
+            <h3 className="font-display text-base sm:text-lg font-black uppercase tracking-wider text-[#e9d319] border-b border-white/10 pb-3 mb-6">
               Ecosystem
             </h3>
             <ul className="space-y-4 text-xs sm:text-sm">
               <li>
-                <a href="https://www.bangaloresuperstrikersfc.com/" target="_blank" rel="noopener noreferrer" className="font-bold text-white hover:text-[#DCE135] transition-colors block">
+                <a href="https://www.bangaloresuperstrikersfc.com/" target="_blank" rel="noopener noreferrer" className="font-bold text-white hover:text-[#e9d319] transition-colors block">
                   Bangalore Super Strikers FC
                   <span className="block text-[11px] font-normal text-white/50">Official Website ↗</span>
                 </a>
               </li>
               <li>
-                <Link href="/clubs/pondicherry-super-strikers-fc" className="font-bold text-white hover:text-[#DCE135] transition-colors block">
+                <Link href="/clubs/pondicherry-super-strikers-fc" className="font-bold text-white hover:text-[#e9d319] transition-colors block">
                   Pondicherry Super Strikers FC
                   <span className="block text-[11px] font-normal text-white/50">Residential Academy</span>
                 </Link>
               </li>
               <li>
-                <Link href="/clubs/chennai-super-strikers-fc" className="font-bold text-white hover:text-[#DCE135] transition-colors block">
+                <Link href="/clubs/chennai-super-strikers-fc" className="font-bold text-white hover:text-[#e9d319] transition-colors block">
                   Chennai Super Strikers FC
                   <span className="block text-[11px] font-normal text-white/50">Metro State Division</span>
                 </Link>
               </li>
               <li>
-                <Link href="/football-school/bangalore-football-school" className="font-bold text-white hover:text-[#DCE135] transition-colors block">
+                <Link href="/football-school/bangalore-football-school" className="font-bold text-white hover:text-[#e9d319] transition-colors block">
                   Bangalore Football School
                   <span className="block text-[11px] font-normal text-white/50">Grassroots to U-15</span>
                 </Link>
@@ -145,7 +145,7 @@ export default function Footer() {
           {/* Links & Newsletter Column */}
           <div className="lg:col-span-3 flex flex-col gap-6 text-left">
             <div>
-              <h3 className="font-display text-base sm:text-lg font-black uppercase tracking-wider text-[#DCE135] border-b border-white/10 pb-3 mb-4">
+              <h3 className="font-display text-base sm:text-lg font-black uppercase tracking-wider text-[#e9d319] border-b border-white/10 pb-3 mb-4">
                 Corporate Newsletter
               </h3>
               <p className="text-xs sm:text-sm text-white/70 mb-4 leading-relaxed">
@@ -157,7 +157,7 @@ export default function Footer() {
               <h3 className="font-display text-xs font-black uppercase tracking-wider text-white mb-2">
                 Quick Navigation
               </h3>
-              <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs font-bold text-[#DCE135]">
+              <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs font-bold text-[#e9d319]">
                 <Link href="/about" className="hover:text-white transition-colors">About</Link>
                 <Link href="/news" className="hover:text-white transition-colors">News</Link>
                 <Link href="/investors" className="hover:text-white transition-colors">Investors</Link>

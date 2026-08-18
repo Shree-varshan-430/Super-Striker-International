@@ -39,10 +39,10 @@ export default function Navbar() {
                 />
               </div>
               <div className="flex flex-col text-left">
-                <span className="font-display text-base sm:text-lg lg:text-xl font-black uppercase tracking-tight leading-none text-[#10143A]">
+                <span className="font-display text-base sm:text-lg lg:text-xl font-black uppercase tracking-tight leading-none text-[#11123c]">
                   SuperStriker
                 </span>
-                <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest leading-none mt-1 text-gray-400">
+                <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest leading-none mt-1 text-[#a29142]">
                   International
                 </span>
               </div>
@@ -59,15 +59,15 @@ export default function Navbar() {
                   href={link.href}
                   className={`text-xs sm:text-sm font-black uppercase tracking-widest transition-colors py-2 relative ${
                     isActive 
-                      ? "text-[#10143A]" 
-                      : "text-[#10143A]/60 hover:text-[#10143A]"
+                      ? "text-[#11123c]" 
+                      : "text-[#696484] hover:text-[#11123c]"
                   }`}
                 >
                   {link.name}
                   {isActive && (
                     <motion.span
                       layoutId="activeBorder"
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#10143A]"
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#e9d319]"
                     />
                   )}
                 </Link>
@@ -81,7 +81,7 @@ export default function Navbar() {
             {/* Account Icon */}
             <Link 
               href="/investors#enquire" 
-              className="text-[#10143A] hover:text-gray-500 transition-colors p-2 hover:bg-gray-50 rounded-full flex items-center justify-center border border-gray-150 shadow-sm"
+              className="text-[#11123c] hover:text-[#11123c] transition-colors p-2 hover:bg-[#e9d319]/20 hover:border-[#a29142]/40 rounded-full flex items-center justify-center border border-gray-200 shadow-xs"
               aria-label="Profile"
             >
               <User className="h-5 w-5" />
@@ -91,7 +91,7 @@ export default function Navbar() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="lg:hidden p-2.5 text-[#10143A] hover:bg-gray-100 rounded-md transition-colors"
+              className="lg:hidden p-2.5 text-[#11123c] hover:bg-gray-100 rounded-md transition-colors"
               aria-controls="mobile-menu"
               aria-expanded={isOpen}
             >
@@ -124,8 +124,8 @@ export default function Navbar() {
                     onClick={() => setIsOpen(false)}
                     className={`block rounded-lg px-4 py-3 text-sm font-bold uppercase tracking-wider transition-colors ${
                       isActive
-                        ? "bg-gray-100 text-[#10143A]"
-                        : "text-[#10143A]/70 hover:bg-gray-50 hover:text-[#10143A]"
+                        ? "bg-[#11123c] text-[#e9d319]"
+                        : "text-[#696484] hover:bg-gray-50 hover:text-[#11123c]"
                     }`}
                   >
                     {link.name}
@@ -136,7 +136,7 @@ export default function Navbar() {
                 <Link
                   href="/investors#enquire"
                   onClick={() => setIsOpen(false)}
-                  className="flex w-full items-center justify-center gap-2 rounded-full py-3 text-center text-xs font-bold uppercase tracking-wider bg-[#10143A] text-white hover:bg-[#DCE135] hover:text-[#10143A] transition-all"
+                  className="flex w-full items-center justify-center gap-2 rounded-full py-3 text-center text-xs font-bold uppercase tracking-wider bg-[#11123c] text-[#e9d319] hover:bg-[#e9d319] hover:text-[#11123c] transition-all"
                 >
                   Partner With Us
                 </Link>

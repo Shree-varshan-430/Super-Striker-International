@@ -21,13 +21,13 @@ export default function LiveTicker() {
   }, []);
 
   return (
-    <div className="w-full bg-[#DCE135] text-[#10143A] py-3 select-none border-b border-[#10143A]/10 relative z-30">
+    <div className="w-full bg-[#e9d319] text-[#11123c] py-3 select-none border-b border-[#11123c]/10 relative z-30">
       <div className="max-w-[95%] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-6">
         
         {/* Left Badge */}
         <div className="flex items-center gap-2 shrink-0">
-          <Radio className="h-3.5 w-3.5 text-[#10143A] animate-pulse" />
-          <span className="text-[10px] font-black uppercase tracking-widest bg-[#10143A] text-white px-2 py-0.5 rounded">
+          <Radio className="h-3.5 w-3.5 text-[#11123c] animate-pulse" />
+          <span className="text-[10px] font-black uppercase tracking-widest bg-[#11123c] text-white px-2 py-0.5 rounded">
             STRIKER NOW
           </span>
         </div>
@@ -46,7 +46,7 @@ export default function LiveTicker() {
         </div>
 
         {/* Live Indicator */}
-        <span className="hidden sm:inline text-[9px] font-black uppercase tracking-wider text-[#10143A]/70">
+        <span className="hidden sm:inline text-[9px] font-black uppercase tracking-wider text-[#11123c]/70">
           Telemetry Active
         </span>
 

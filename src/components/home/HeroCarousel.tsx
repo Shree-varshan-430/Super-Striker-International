@@ -87,7 +87,7 @@ export default function HeroCarousel() {
   }, [currentSlide]);
 
   return (
-    <section className="relative h-[88vh] min-h-[600px] max-h-[900px] w-full bg-[#10143A] text-white overflow-hidden select-none">
+    <section className="relative h-[88vh] min-h-[600px] max-h-[900px] w-full bg-[#11123c] text-white overflow-hidden select-none">
       
       {/* 1. Full 4K Background Slides */}
       <div className="absolute inset-0 w-full h-full">
@@ -112,16 +112,16 @@ export default function HeroCarousel() {
       </div>
 
       {/* 2. Linear Contrast Vignette for Content Readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#10143A]/95 via-[#10143A]/70 to-transparent z-20 pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#10143A]/80 via-transparent to-transparent z-20 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#11123c]/95 via-[#11123c]/70 to-transparent z-20 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#11123c]/80 via-transparent to-transparent z-20 pointer-events-none" />
 
       {/* 3. Brand Accent Corner Wedges */}
       <div 
-        className="absolute bottom-0 right-0 w-28 h-28 sm:w-36 sm:h-36 bg-[#10143A] pointer-events-none z-25 translate-x-2 translate-y-2 lg:block hidden" 
+        className="absolute bottom-0 right-0 w-28 h-28 sm:w-36 sm:h-36 bg-[#11123c] pointer-events-none z-25 translate-x-2 translate-y-2 lg:block hidden" 
         style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }} 
       />
       <div 
-        className="absolute bottom-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-[#DCE135] pointer-events-none z-30 lg:block hidden" 
+        className="absolute bottom-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-[#e9d319] pointer-events-none z-30 lg:block hidden" 
         style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }} 
       />
 
@@ -136,7 +136,7 @@ export default function HeroCarousel() {
               }`}
             >
               {/* Category Badge */}
-              <span className="slide-category text-[10px] font-black uppercase tracking-widest text-[#10143A] bg-[#DCE135] px-3.5 py-1 rounded-md shadow-xs">
+              <span className="slide-category text-[10px] font-black uppercase tracking-widest text-[#11123c] bg-[#e9d319] px-3.5 py-1 rounded-md shadow-xs">
                 {slide.category}
               </span>
               
@@ -159,7 +159,7 @@ export default function HeroCarousel() {
               <div className="slide-cta-btn mt-1">
                 <Link 
                   href={slide.ctaLink} 
-                  className="inline-flex items-center gap-2 rounded-full bg-[#DCE135] px-8 py-4 text-xs font-bold uppercase tracking-wider text-[#10143A] hover:bg-white hover:text-[#10143A] transition-all hover:scale-103 active:scale-95 shadow-xl"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#e9d319] px-8 py-4 text-xs font-bold uppercase tracking-wider text-[#11123c] hover:bg-white hover:text-[#11123c] transition-all hover:scale-103 active:scale-95 shadow-xl"
                 >
                   {slide.ctaText}
                   <ArrowRight className="h-4 w-4" />
@@ -174,7 +174,7 @@ export default function HeroCarousel() {
       <div className="absolute right-4 sm:right-8 lg:right-12 top-1/2 -translate-y-1/2 z-40 flex items-center gap-3">
         <button
           onClick={prevSlide}
-          className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-[#DCE135] hover:text-[#10143A] hover:border-[#DCE135] transition-all duration-300 shadow-xl active:scale-95 group"
+          className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-[#e9d319] hover:text-[#11123c] hover:border-[#e9d319] transition-all duration-300 shadow-xl active:scale-95 group"
           aria-label="Previous slide"
         >
           <ChevronLeft className="h-6 w-6 transition-transform group-hover:-translate-x-0.5" />
@@ -182,7 +182,7 @@ export default function HeroCarousel() {
 
         <button
           onClick={nextSlide}
-          className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-[#DCE135] hover:text-[#10143A] hover:border-[#DCE135] transition-all duration-300 shadow-xl active:scale-95 group"
+          className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-[#e9d319] hover:text-[#11123c] hover:border-[#e9d319] transition-all duration-300 shadow-xl active:scale-95 group"
           aria-label="Next slide"
         >
           <ChevronRight className="h-6 w-6 transition-transform group-hover:translate-x-0.5" />

@@ -32,7 +32,7 @@ export default function NewsCard({ item, darkTheme }: NewsCardProps) {
     <>
       <div className={`rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col h-full text-left group w-full select-none ${
         darkTheme 
-          ? "bg-[#10143A]/40" 
+          ? "bg-[#11123c]/40" 
           : "bg-white"
       }`}>
         {/* Media Container (16:9 Aspect Box) */}
@@ -53,14 +53,14 @@ export default function NewsCard({ item, darkTheme }: NewsCardProps) {
 
           {/* Video Overlay */}
           {item.type === "video" && (
-            <div className="absolute inset-0 bg-[#10143A]/30 flex items-center justify-center transition-colors group-hover:bg-[#10143A]/40">
-              <div className="w-12 h-12 rounded-full bg-white text-[#10143A] flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110">
+            <div className="absolute inset-0 bg-[#11123c]/30 flex items-center justify-center transition-colors group-hover:bg-[#11123c]/40">
+              <div className="w-12 h-12 rounded-full bg-white text-[#11123c] flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110">
                 <Play className="h-5 w-5 fill-current ml-0.5" />
               </div>
               
               {/* Duration Badge */}
               {item.duration && (
-                <div className="absolute bottom-2 right-2 bg-[#10143A]/80 text-white text-[10px] font-extrabold uppercase px-2 py-1 rounded flex items-center gap-1">
+                <div className="absolute bottom-2 right-2 bg-[#11123c]/80 text-white text-[10px] font-extrabold uppercase px-2 py-1 rounded flex items-center gap-1">
                   <Clock className="h-3 w-3" />
                   <span>{item.duration}</span>
                 </div>
@@ -89,7 +89,7 @@ export default function NewsCard({ item, darkTheme }: NewsCardProps) {
               <h4 className={`font-display text-lg sm:text-xl lg:text-2xl font-black uppercase tracking-tight leading-tight line-clamp-3 transition-colors ${
                 darkTheme 
                   ? "text-white group-hover:text-white/80" 
-                  : "text-[#0A1028] group-hover:text-black"
+                  : "text-[#11123c] group-hover:text-black"
               }`}>
                 {(() => {
                   const words = item.title.split(" ");
@@ -110,15 +110,15 @@ export default function NewsCard({ item, darkTheme }: NewsCardProps) {
 
       {/* Styled "Coming Soon" Modal for Video placeholders */}
       {showModal && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-[#10143A]/70 backdrop-blur-sm">
-          <div className="relative bg-white text-[#0A1028] max-w-sm w-full rounded-2xl p-6 shadow-2xl border border-gray-100 text-center flex flex-col items-center gap-4">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-[#11123c]/70 backdrop-blur-sm">
+          <div className="relative bg-white text-[#11123c] max-w-sm w-full rounded-2xl p-6 shadow-2xl border border-gray-100 text-center flex flex-col items-center gap-4">
             <button 
               onClick={() => setShowModal(false)}
-              className="absolute top-4 right-4 text-[#4B5563] hover:text-[#0A1028] transition-colors"
+              className="absolute top-4 right-4 text-[#4B5563] hover:text-[#11123c] transition-colors"
             >
               <X className="h-5 w-5" />
             </button>
-            <div className="w-14 h-14 rounded-full bg-[#DCE135]/25 text-[#10143A] flex items-center justify-center">
+            <div className="w-14 h-14 rounded-full bg-[#e9d319]/25 text-[#11123c] flex items-center justify-center">
               <Play className="h-6 w-6 fill-current ml-0.5" />
             </div>
             <div className="flex flex-col gap-1">
@@ -131,7 +131,7 @@ export default function NewsCard({ item, darkTheme }: NewsCardProps) {
             </div>
             <button 
               onClick={() => setShowModal(false)}
-              className="w-full rounded-full bg-[#10143A] text-white py-2.5 text-xs font-bold uppercase tracking-wider hover:bg-[#DCE135] hover:text-[#10143A] transition-all"
+              className="w-full rounded-full bg-[#11123c] text-white py-2.5 text-xs font-bold uppercase tracking-wider hover:bg-[#e9d319] hover:text-[#11123c] transition-all"
             >
               Back To Homepage
             </button>

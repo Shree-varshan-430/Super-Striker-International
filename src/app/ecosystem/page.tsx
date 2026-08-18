@@ -104,10 +104,10 @@ export default function Ecosystem() {
   ];
 
   return (
-    <div className="w-full bg-white text-[#10143A] min-h-screen pb-20 select-none text-left">
+    <div className="w-full bg-white text-[#11123c] min-h-screen pb-20 select-none text-left">
       
       {/* 1. Small Hero Banner */}
-      <div className="relative w-full h-[240px] sm:h-[300px] bg-[#10143A] flex items-center justify-start overflow-hidden group select-none mt-20">
+      <div className="relative w-full h-[240px] sm:h-[300px] bg-[#11123c] flex items-center justify-start overflow-hidden group select-none mt-20">
         <Image
           src="/images/match-1.jpg"
           alt="SuperStriker Ecosystem"
@@ -117,20 +117,20 @@ export default function Ecosystem() {
           priority
         />
         {/* Subtle contrast gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-[#10143A]/60 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-[#11123c]/60 to-transparent z-10" />
         
         {/* Brand accent wedges on bottom right */}
         <div 
-          className="absolute bottom-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-[#10143A] pointer-events-none z-15 translate-x-2 translate-y-2 lg:block hidden" 
+          className="absolute bottom-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-[#11123c] pointer-events-none z-15 translate-x-2 translate-y-2 lg:block hidden" 
           style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }} 
         />
         <div 
-          className="absolute bottom-0 right-0 w-20 h-20 sm:w-28 sm:h-28 bg-[#DCE135] pointer-events-none z-20 lg:block hidden" 
+          className="absolute bottom-0 right-0 w-20 h-20 sm:w-28 sm:h-28 bg-[#e9d319] pointer-events-none z-20 lg:block hidden" 
           style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }} 
         />
 
         <div className="relative z-20 max-w-7xl 2xl:max-w-[1440px] mx-auto w-full px-4 sm:px-6 lg:px-10 xl:px-12 text-left flex flex-col gap-2">
-          <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-3 py-1 rounded w-fit">
+          <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-[#e9d319] bg-[#11123c] px-3 py-1 rounded w-fit">
             STRATEGIC ARCHITECTURE
           </span>
           <h1 className="font-display text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-none">
@@ -153,8 +153,8 @@ export default function Ecosystem() {
                 onClick={() => setActiveTier(idx)}
                 className={`px-4 sm:px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
                   activeTier === idx
-                    ? "bg-[#10143A] text-[#DCE135] shadow-md scale-102"
-                    : "bg-transparent text-[#4B5563] hover:text-[#10143A] hover:bg-white"
+                    ? "bg-[#11123c] text-[#e9d319] shadow-md scale-102"
+                    : "bg-transparent text-[#4B5563] hover:text-[#11123c] hover:bg-white"
                 }`}
               >
                 {t.tier}
@@ -190,7 +190,7 @@ export default function Ecosystem() {
             {/* Content Side */}
             <div className="lg:col-span-7 flex flex-col gap-6 text-left relative z-10 order-2 lg:order-2">
               <div className="flex items-center gap-3">
-                <span className="text-[10px] font-black uppercase tracking-widest text-[#10143A] bg-[#DCE135] px-3 py-1 rounded">
+                <span className="text-[10px] font-black uppercase tracking-widest text-[#11123c] bg-[#e9d319] px-3 py-1 rounded">
                   {tiers[activeTier].tier}
                 </span>
                 <span className="text-xs font-bold uppercase tracking-wider text-[#6B7280]">
@@ -198,10 +198,10 @@ export default function Ecosystem() {
                 </span>
               </div>
 
-              <h3 className="font-display text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#10143A] leading-tight">
+              <h3 className="font-display text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#11123c] leading-tight">
                 {tiers[activeTier].title}
               </h3>
-              <div className="h-1.5 w-16 bg-[#10143A]" />
+              <div className="h-1.5 w-16 bg-[#11123c]" />
 
               <p className="text-base sm:text-lg text-[#374151] leading-relaxed font-normal">
                 {tiers[activeTier].description}
@@ -209,13 +209,13 @@ export default function Ecosystem() {
 
               {/* Key Operations List */}
               <div className="flex flex-col gap-3">
-                <span className="text-xs font-black uppercase tracking-wider text-[#10143A]">
+                <span className="text-xs font-black uppercase tracking-wider text-[#11123c]">
                   Core Functions & Strategic Operations:
                 </span>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {tiers[activeTier].highlights.map((h, i) => (
-                    <div key={i} className="bg-white rounded-xl p-3.5 shadow-xs border-l-3 border-[#10143A]">
-                      <p className="text-xs sm:text-sm font-semibold text-[#10143A] leading-snug">
+                    <div key={i} className="bg-white rounded-xl p-3.5 shadow-xs border-l-3 border-[#11123c]">
+                      <p className="text-xs sm:text-sm font-semibold text-[#11123c] leading-snug">
                         {h}
                       </p>
                     </div>
@@ -226,19 +226,19 @@ export default function Ecosystem() {
               {/* Associated Entities if any */}
               {tiers[activeTier].entities && (
                 <div className="flex flex-col gap-3 pt-2">
-                  <span className="text-xs font-black uppercase tracking-wider text-[#10143A]">
+                  <span className="text-xs font-black uppercase tracking-wider text-[#11123c]">
                     Key Affiliated Clubs & Entities:
                   </span>
                   <div className="grid grid-cols-1 gap-2.5">
                     {tiers[activeTier].entities?.map((ent, i) => (
                       <div key={i} className="bg-white rounded-xl p-4 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                         <div>
-                          <h4 className="font-display text-sm font-black uppercase tracking-tight text-[#10143A]">
+                          <h4 className="font-display text-sm font-black uppercase tracking-tight text-[#11123c]">
                             {ent.name}
                           </h4>
                           <p className="text-xs text-[#4B5563] mt-0.5">{ent.details}</p>
                         </div>
-                        <span className="text-[10px] font-bold uppercase tracking-wider text-[#10143A] bg-gray-100 px-2.5 py-1 rounded w-fit shrink-0">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-[#11123c] bg-gray-100 px-2.5 py-1 rounded w-fit shrink-0">
                           {ent.loc}
                         </span>
                       </div>
@@ -252,13 +252,13 @@ export default function Ecosystem() {
 
         {/* 5. Complete Vertical Architecture Showcase (Alternating Story Cards) */}
         <div className="mb-20 text-left flex flex-col gap-4">
-          <span className="text-[10px] font-black uppercase tracking-widest text-[#10143A] bg-[#DCE135] px-3 py-1 rounded w-fit">
+          <span className="text-[10px] font-black uppercase tracking-widest text-[#11123c] bg-[#e9d319] px-3 py-1 rounded w-fit">
             ALL TIERS SUMMARY
           </span>
-          <h2 className="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight text-[#10143A] leading-tight">
+          <h2 className="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight text-[#11123c] leading-tight">
             Comprehensive Developmental Journey
           </h2>
-          <div className="h-1.5 w-16 bg-[#10143A]" />
+          <div className="h-1.5 w-16 bg-[#11123c]" />
         </div>
 
         {/* Tier Cards Stack */}
@@ -290,14 +290,14 @@ export default function Ecosystem() {
                 <div className={`lg:col-span-7 flex flex-col gap-6 text-left relative z-10 ${
                   isEven ? "order-2 lg:order-2" : "order-2 lg:order-1"
                 }`}>
-                  <span className="text-[10px] font-black uppercase tracking-widest text-[#10143A] bg-[#DCE135] px-3 py-1 rounded w-fit">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-[#11123c] bg-[#e9d319] px-3 py-1 rounded w-fit">
                     {t.tier}
                   </span>
 
-                  <h3 className="font-display text-2xl sm:text-4xl font-black uppercase tracking-tight text-[#10143A] leading-tight">
+                  <h3 className="font-display text-2xl sm:text-4xl font-black uppercase tracking-tight text-[#11123c] leading-tight">
                     {t.title}
                   </h3>
-                  <div className="h-1.5 w-16 bg-[#10143A]" />
+                  <div className="h-1.5 w-16 bg-[#11123c]" />
 
                   <p className="text-base sm:text-lg text-[#374151] leading-relaxed font-normal">
                     {t.description}
@@ -305,8 +305,8 @@ export default function Ecosystem() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {t.highlights.slice(0, 2).map((h, i) => (
-                      <div key={i} className="bg-white rounded-xl p-3.5 shadow-xs border-l-3 border-[#10143A]">
-                        <p className="text-xs sm:text-sm font-semibold text-[#10143A] leading-snug">
+                      <div key={i} className="bg-white rounded-xl p-3.5 shadow-xs border-l-3 border-[#11123c]">
+                        <p className="text-xs sm:text-sm font-semibold text-[#11123c] leading-snug">
                           {h}
                         </p>
                       </div>
@@ -319,9 +319,9 @@ export default function Ecosystem() {
         </div>
 
         {/* 6. Call To Action Footer Banner */}
-        <div className="mt-20 bg-[#10143A] text-white rounded-3xl p-8 sm:p-12 relative overflow-hidden text-left shadow-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8">
+        <div className="mt-20 bg-[#11123c] text-white rounded-3xl p-8 sm:p-12 relative overflow-hidden text-left shadow-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8">
           <div className="flex flex-col gap-2 max-w-2xl">
-            <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135]">
+            <span className="text-[10px] font-black uppercase tracking-widest text-[#e9d319]">
               PARTNER WITH US
             </span>
             <h3 className="font-display text-2xl sm:text-4xl font-black uppercase tracking-tight leading-tight">
@@ -335,7 +335,7 @@ export default function Ecosystem() {
           <div className="flex flex-wrap gap-4 shrink-0">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-full bg-[#DCE135] text-[#10143A] px-8 py-4 text-xs font-bold uppercase tracking-wider hover:bg-white transition-all shadow-md"
+              className="inline-flex items-center gap-2 rounded-full bg-[#e9d319] text-[#11123c] px-8 py-4 text-xs font-bold uppercase tracking-wider hover:bg-white transition-all shadow-md"
             >
               Get In Touch
               <ArrowRight className="h-4 w-4" />

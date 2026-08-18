@@ -68,10 +68,10 @@ export default function Investors() {
   ];
 
   return (
-    <div className="w-full bg-white text-[#10143A] min-h-screen relative select-none text-left">
+    <div className="w-full bg-white text-[#11123c] min-h-screen relative select-none text-left">
       
       {/* Small Hero Banner */}
-      <div className="relative w-full h-[220px] sm:h-[280px] bg-[#10143A] flex items-center justify-start overflow-hidden group select-none mt-20 z-20">
+      <div className="relative w-full h-[220px] sm:h-[280px] bg-[#11123c] flex items-center justify-start overflow-hidden group select-none mt-20 z-20">
         <Image
           src="/images/news-pitch-sponsorship.jpg"
           alt="Partnerships & Capital"
@@ -81,20 +81,20 @@ export default function Investors() {
         />
         {/* Black full accent overlay & Cinematic gradient overlay */}
         <div className="absolute inset-0 bg-black/45 z-10" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-[#10143A]/70 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-[#11123c]/70 to-transparent z-10" />
         
         {/* Brand accent wedges on bottom right */}
         <div 
-          className="absolute bottom-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-[#10143A] pointer-events-none z-15 translate-x-2 translate-y-2 lg:block hidden" 
+          className="absolute bottom-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-[#11123c] pointer-events-none z-15 translate-x-2 translate-y-2 lg:block hidden" 
           style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }} 
         />
         <div 
-          className="absolute bottom-0 right-0 w-20 h-20 sm:w-28 sm:h-28 bg-[#DCE135] pointer-events-none z-20 lg:block hidden" 
+          className="absolute bottom-0 right-0 w-20 h-20 sm:w-28 sm:h-28 bg-[#e9d319] pointer-events-none z-20 lg:block hidden" 
           style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }} 
         />
 
         <div className="relative z-20 max-w-6xl mx-auto w-full px-4 sm:px-6 lg:px-8 text-left flex flex-col gap-2">
-          <span className="text-[9px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-2.5 py-0.5 rounded w-fit">
+          <span className="text-[9px] font-black uppercase tracking-widest text-[#e9d319] bg-[#11123c] px-2.5 py-0.5 rounded w-fit">
             PARTNERSHIPS & CAPITAL
           </span>
           <h1 className="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-none">
@@ -109,11 +109,11 @@ export default function Investors() {
       {/* Grid of 5 Investment Cards */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <span className="text-[11px] font-bold uppercase tracking-wider text-[#10143A]">Strategic Allocation</span>
-          <h2 className="font-display text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#10143A] mt-1">
+          <span className="text-[11px] font-bold uppercase tracking-wider text-[#11123c]">Strategic Allocation</span>
+          <h2 className="font-display text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#11123c] mt-1">
             Investment Opportunities
           </h2>
-          <div className="h-1 w-12 bg-[#10143A] mx-auto mt-4" />
+          <div className="h-1 w-12 bg-[#11123c] mx-auto mt-4" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -122,9 +122,9 @@ export default function Investors() {
               key={op.id}
               className="bg-gray-50 rounded-2xl p-8 shadow-sm flex flex-col gap-4 hover:shadow-md transition-all duration-300 relative overflow-hidden group"
             >
-              <div className="absolute top-0 left-0 w-1.5 h-full bg-[#10143A] group-hover:bg-[#DCE135] transition-all" />
-              <span className="text-xs font-black text-[#10143A]">0{op.id}</span>
-              <h3 className="font-display text-lg font-black uppercase tracking-tight text-[#10143A]">
+              <div className="absolute top-0 left-0 w-1.5 h-full bg-[#11123c] group-hover:bg-[#e9d319] transition-all" />
+              <span className="text-xs font-black text-[#11123c]">0{op.id}</span>
+              <h3 className="font-display text-lg font-black uppercase tracking-tight text-[#11123c]">
                 {op.title}
               </h3>
               <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed font-medium">
@@ -140,11 +140,11 @@ export default function Investors() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           <div className="lg:col-span-6 flex flex-col gap-6">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#10143A]">Value Proposition</span>
-            <h2 className="font-display text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#10143A]">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#11123c]">Value Proposition</span>
+            <h2 className="font-display text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#11123c]">
               Why Partner With Us?
             </h2>
-            <div className="h-1 w-12 bg-[#10143A]" />
+            <div className="h-1 w-12 bg-[#11123c]" />
             <p className="text-[#4B5563] text-sm leading-relaxed font-medium">
               SuperStriker&apos;s model is designed for long-term growth. We don&apos;t just run football clubs; we operate a complete vertical network integrating academy scouts with professional team assets to create a self-sustaining talent pipeline.
             </p>
@@ -164,10 +164,10 @@ export default function Investors() {
                 key={idx}
                 className="bg-white p-5 rounded-2xl shadow-sm flex items-start gap-4 hover:shadow-md transition-all duration-300"
               >
-                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#10143A]/5 text-[#10143A]">
+                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#11123c]/5 text-[#11123c]">
                   <TrendingUp className="h-4 w-4" />
                 </div>
-                <p className="text-xs sm:text-sm font-semibold text-[#10143A] leading-relaxed">
+                <p className="text-xs sm:text-sm font-semibold text-[#11123c] leading-relaxed">
                   {benefit}
                 </p>
               </div>
@@ -180,8 +180,8 @@ export default function Investors() {
       {/* Enquiry Form Section */}
       <section id="enquire" className="py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto scroll-mt-24 relative z-10">
         <div className="text-center mb-12">
-          <span className="text-[11px] font-bold uppercase tracking-wider text-[#10143A] font-semibold">Strategic Access</span>
-          <h2 className="font-display text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#10143A] mt-1">
+          <span className="text-[11px] font-bold uppercase tracking-wider text-[#11123c] font-semibold">Strategic Access</span>
+          <h2 className="font-display text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#11123c] mt-1">
             Become A Strategic Partner
           </h2>
           <p className="text-xs sm:text-sm text-[#4B5563] max-w-lg mx-auto mt-2 leading-relaxed font-medium">
@@ -203,7 +203,7 @@ export default function Investors() {
                   <CheckCircle2 className="h-8 w-8" />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <h3 className="font-display text-2xl font-black uppercase tracking-tight text-[#10143A]">
+                  <h3 className="font-display text-2xl font-black uppercase tracking-tight text-[#11123c]">
                     Enquiry Received
                   </h3>
                   <p className="text-sm text-[#4B5563] max-w-md leading-relaxed font-medium">
@@ -212,7 +212,7 @@ export default function Investors() {
                 </div>
                 <button
                   onClick={() => setStatus("idle")}
-                  className="mt-4 rounded-full bg-[#10143A] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider hover:bg-[#DCE135] hover:text-[#10143A] transition-all shadow-sm"
+                  className="mt-4 rounded-full bg-[#11123c] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider hover:bg-[#e9d319] hover:text-[#11123c] transition-all shadow-sm"
                 >
                   Submit Another Enquiry
                 </button>
@@ -228,7 +228,7 @@ export default function Investors() {
               >
                 {/* Name */}
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="name" className="text-xs font-bold uppercase tracking-wider text-[#10143A]">
+                  <label htmlFor="name" className="text-xs font-bold uppercase tracking-wider text-[#11123c]">
                     Full Name
                   </label>
                   <input
@@ -240,13 +240,13 @@ export default function Investors() {
                     required
                     disabled={status === "submitting"}
                     placeholder="Enter your name"
-                    className="w-full rounded-xl bg-white border border-gray-200 px-4 py-3.5 text-sm text-[#10143A] placeholder-gray-400 focus:border-[#10143A] focus:outline-none focus:ring-2 focus:ring-[#10143A]/10 disabled:opacity-50 shadow-xs"
+                    className="w-full rounded-xl bg-white border border-gray-200 px-4 py-3.5 text-sm text-[#11123c] placeholder-gray-400 focus:border-[#11123c] focus:outline-none focus:ring-2 focus:ring-[#11123c]/10 disabled:opacity-50 shadow-xs"
                   />
                 </div>
 
                 {/* Email */}
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="email" className="text-xs font-bold uppercase tracking-wider text-[#10143A]">
+                  <label htmlFor="email" className="text-xs font-bold uppercase tracking-wider text-[#11123c]">
                     Business Email
                   </label>
                   <div className="relative">
@@ -259,7 +259,7 @@ export default function Investors() {
                       required
                       disabled={status === "submitting"}
                       placeholder="name@company.com"
-                      className="w-full rounded-xl bg-white border border-gray-200 pl-10 pr-4 py-3.5 text-sm text-[#10143A] placeholder-gray-400 focus:border-[#10143A] focus:outline-none focus:ring-2 focus:ring-[#10143A]/10 disabled:opacity-50 shadow-xs"
+                      className="w-full rounded-xl bg-white border border-gray-200 pl-10 pr-4 py-3.5 text-sm text-[#11123c] placeholder-gray-400 focus:border-[#11123c] focus:outline-none focus:ring-2 focus:ring-[#11123c]/10 disabled:opacity-50 shadow-xs"
                     />
                     <Mail className="absolute left-3.5 top-4 h-4 w-4 text-gray-400" />
                   </div>
@@ -267,7 +267,7 @@ export default function Investors() {
 
                 {/* Organization */}
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="organization" className="text-xs font-bold uppercase tracking-wider text-[#10143A]">
+                  <label htmlFor="organization" className="text-xs font-bold uppercase tracking-wider text-[#11123c]">
                     Organization / Fund
                   </label>
                   <div className="relative">
@@ -280,7 +280,7 @@ export default function Investors() {
                       required
                       disabled={status === "submitting"}
                       placeholder="Company Name"
-                      className="w-full rounded-xl bg-white border border-gray-200 pl-10 pr-4 py-3.5 text-sm text-[#10143A] placeholder-gray-400 focus:border-[#10143A] focus:outline-none focus:ring-2 focus:ring-[#10143A]/10 disabled:opacity-50 shadow-xs"
+                      className="w-full rounded-xl bg-white border border-gray-200 pl-10 pr-4 py-3.5 text-sm text-[#11123c] placeholder-gray-400 focus:border-[#11123c] focus:outline-none focus:ring-2 focus:ring-[#11123c]/10 disabled:opacity-50 shadow-xs"
                     />
                     <Building className="absolute left-3.5 top-4 h-4 w-4 text-gray-400" />
                   </div>
@@ -288,7 +288,7 @@ export default function Investors() {
 
                 {/* Phone */}
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="phone" className="text-xs font-bold uppercase tracking-wider text-[#10143A]">
+                  <label htmlFor="phone" className="text-xs font-bold uppercase tracking-wider text-[#11123c]">
                     Contact Phone
                   </label>
                   <div className="relative">
@@ -301,7 +301,7 @@ export default function Investors() {
                       required
                       disabled={status === "submitting"}
                       placeholder="+91 99000 00000"
-                      className="w-full rounded-xl bg-white border border-gray-200 pl-10 pr-4 py-3.5 text-sm text-[#10143A] placeholder-gray-400 focus:border-[#10143A] focus:outline-none focus:ring-2 focus:ring-[#10143A]/10 disabled:opacity-50 shadow-xs"
+                      className="w-full rounded-xl bg-white border border-gray-200 pl-10 pr-4 py-3.5 text-sm text-[#11123c] placeholder-gray-400 focus:border-[#11123c] focus:outline-none focus:ring-2 focus:ring-[#11123c]/10 disabled:opacity-50 shadow-xs"
                     />
                     <Phone className="absolute left-3.5 top-4 h-4 w-4 text-gray-400" />
                   </div>
@@ -309,7 +309,7 @@ export default function Investors() {
 
                 {/* Investment Range */}
                 <div className="flex flex-col gap-2 md:col-span-2">
-                  <label htmlFor="range" className="text-xs font-bold uppercase tracking-wider text-[#10143A]">
+                  <label htmlFor="range" className="text-xs font-bold uppercase tracking-wider text-[#11123c]">
                     Target Investment Capital (INR)
                   </label>
                   <select
@@ -318,7 +318,7 @@ export default function Investors() {
                     value={formData.range}
                     onChange={handleChange}
                     disabled={status === "submitting"}
-                    className="w-full rounded-xl bg-white border border-gray-200 px-4 py-3.5 text-sm text-[#10143A] focus:border-[#10143A] focus:outline-none focus:ring-2 focus:ring-[#10143A]/10 disabled:opacity-50 cursor-pointer shadow-xs"
+                    className="w-full rounded-xl bg-white border border-gray-200 px-4 py-3.5 text-sm text-[#11123c] focus:border-[#11123c] focus:outline-none focus:ring-2 focus:ring-[#11123c]/10 disabled:opacity-50 cursor-pointer shadow-xs"
                   >
                     <option value="10L-50L">₹10 Lakhs – ₹50 Lakhs</option>
                     <option value="50L-2Cr">₹50 Lakhs – ₹2 Crores</option>
@@ -329,7 +329,7 @@ export default function Investors() {
 
                 {/* Message */}
                 <div className="flex flex-col gap-2 md:col-span-2">
-                  <label htmlFor="message" className="text-xs font-bold uppercase tracking-wider text-[#10143A]">
+                  <label htmlFor="message" className="text-xs font-bold uppercase tracking-wider text-[#11123c]">
                     Partnership Objectives
                   </label>
                   <textarea
@@ -341,7 +341,7 @@ export default function Investors() {
                     required
                     disabled={status === "submitting"}
                     placeholder="Tell us about your investment objectives and how you would like to collaborate..."
-                    className="w-full rounded-xl bg-white border border-gray-200 px-4 py-3.5 text-sm text-[#10143A] placeholder-gray-400 focus:border-[#10143A] focus:outline-none focus:ring-2 focus:ring-[#10143A]/10 disabled:opacity-50 resize-y shadow-xs"
+                    className="w-full rounded-xl bg-white border border-gray-200 px-4 py-3.5 text-sm text-[#11123c] placeholder-gray-400 focus:border-[#11123c] focus:outline-none focus:ring-2 focus:ring-[#11123c]/10 disabled:opacity-50 resize-y shadow-xs"
                   />
                 </div>
 
@@ -357,7 +357,7 @@ export default function Investors() {
                   <button
                     type="submit"
                     disabled={status === "submitting"}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#10143A] px-8 py-4 text-xs font-bold uppercase tracking-wider text-white shadow-md hover:bg-[#DCE135] hover:text-[#10143A] transition-all hover:scale-105 active:scale-95 disabled:bg-gray-400"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#11123c] px-8 py-4 text-xs font-bold uppercase tracking-wider text-white shadow-md hover:bg-[#e9d319] hover:text-[#11123c] transition-all hover:scale-105 active:scale-95 disabled:bg-gray-400"
                   >
                     {status === "submitting" ? (
                       <>

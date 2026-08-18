@@ -2,19 +2,23 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #0a1028;
+  --foreground: #11123c;
   
-  /* Brand Color System */
-  --primary-navy: #10143A;
-  --secondary-navy: #1B2255;
-  --accent-gold: #DCE135;
-  --background-soft: #F4F6FA;
-  --text-body: #4B5563;
+  /* Exact Brand Color System */
+  --primary-navy: #11123c;       /* Midnight Navy: #11123c (rgba(17,18,60,1)) */
+  --secondary-navy: #25265e;     /* Royal Slate Navy: #25265e (rgba(37,38,94,1)) */
+  --brand-gold: #e9d319;         /* Electric Brand Gold / Yellow: #e9d319 (rgba(233,211,25,1)) */
+  --heritage-gold: #a29142;      /* Heritage Antique Gold / Bronze: #a29142 (rgba(162,145,66,1)) */
+  --slate-lavender: #696484;     /* Slate Muted Purple / Grey: #696484 (rgba(105,100,132,1)) */
 
-  /* Legacy/compatibility mappings to prevent breaking existing classes */
-  --primary-sky: #DCE135;      /* Championship Gold replaces old light blue */
-  --accent-violet: #DCE135;    /* Gold replaces violet accents */
-  --highlight-blue: #DCE135;   /* Gold replaces electric highlights */
+  --accent-gold: #e9d319;
+  --background-soft: #F8F9FC;
+  --text-body: #696484;
+
+  /* Legacy/compatibility mappings */
+  --primary-sky: #e9d319;
+  --accent-violet: #25265e;
+  --highlight-blue: #e9d319;
   
   --font-inter: var(--font-inter);
   --font-outfit: var(--font-outfit);
@@ -23,6 +27,10 @@
 @theme {
   --color-primary-navy: var(--primary-navy);
   --color-secondary-navy: var(--secondary-navy);
+  --color-brand-gold: var(--brand-gold);
+  --color-heritage-gold: var(--heritage-gold);
+  --color-slate-lavender: var(--slate-lavender);
+
   --color-accent-gold: var(--accent-gold);
   --color-background-soft: var(--background-soft);
   --color-text-body: var(--text-body);
@@ -50,11 +58,11 @@ body {
   background: var(--background-soft);
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #696484/40;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-gold);
+  background: var(--brand-gold);
 }
 
 /* Editorial line highlights */
@@ -68,12 +76,12 @@ body {
   left: 0;
   width: 40px;
   height: 3px;
-  background-color: var(--accent-gold);
+  background-color: var(--brand-gold);
 }
 
 /* Image overlay overlay-editorial */
 .overlay-editorial {
-  background: linear-gradient(to bottom, rgba(16, 20, 58, 0.1), rgba(16, 20, 58, 0.85));
+  background: linear-gradient(to bottom, rgba(17, 18, 60, 0.1), rgba(17, 18, 60, 0.9));
 }
 
 /* Infinite marquee scrolling keyframes and utilities */

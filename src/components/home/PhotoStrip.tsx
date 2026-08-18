@@ -33,11 +33,11 @@ export default function PhotoStrip() {
         
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 pb-6 border-b border-gray-150 gap-4">
-          <div className="flex flex-col items-start gap-1 text-left border-l-4 border-[#10143A] pl-4 sm:pl-6">
-            <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-3 py-1 rounded">
+          <div className="flex flex-col items-start gap-1 text-left border-l-4 border-[#11123c] pl-4 sm:pl-6">
+            <span className="text-[10px] font-black uppercase tracking-widest text-[#e9d319] bg-[#11123c] px-3 py-1 rounded">
               VISUAL REEL
             </span>
-            <h2 className="font-display text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#10143A] mt-1">
+            <h2 className="font-display text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#11123c] mt-1">
               Latest Moments On The Pitch
             </h2>
             <p className="text-xs sm:text-base text-[#4B5563] mt-1 max-w-xl font-medium">
@@ -49,14 +49,14 @@ export default function PhotoStrip() {
           <div className="flex items-center gap-3 self-end sm:self-auto">
             <button
               onClick={() => scroll("left")}
-              className="flex h-11 w-11 items-center justify-center rounded-full bg-gray-50 text-[#10143A] hover:bg-[#10143A] hover:text-white transition-all active:scale-95 shadow-sm border border-gray-200"
+              className="flex h-11 w-11 items-center justify-center rounded-full bg-gray-50 text-[#11123c] hover:bg-[#11123c] hover:text-white transition-all active:scale-95 shadow-sm border border-gray-200"
               aria-label="Previous photos"
             >
               <ChevronLeft className="h-5 w-5" />
             </button>
             <button
               onClick={() => scroll("right")}
-              className="flex h-11 w-11 items-center justify-center rounded-full bg-gray-50 text-[#10143A] hover:bg-[#10143A] hover:text-white transition-all active:scale-95 shadow-sm border border-gray-200"
+              className="flex h-11 w-11 items-center justify-center rounded-full bg-gray-50 text-[#11123c] hover:bg-[#11123c] hover:text-white transition-all active:scale-95 shadow-sm border border-gray-200"
               aria-label="Next photos"
             >
               <ChevronRight className="h-5 w-5" />
@@ -88,14 +88,14 @@ export default function PhotoStrip() {
 
               <div className="flex items-center justify-between px-1 text-left">
                 <div>
-                  <h3 className="font-display text-sm sm:text-base font-black uppercase tracking-tight text-[#10143A]">
+                  <h3 className="font-display text-sm sm:text-base font-black uppercase tracking-tight text-[#11123c]">
                     {photo.title}
                   </h3>
                   <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">
                     {photo.location}
                   </span>
                 </div>
-                <span className="flex items-center gap-1 text-[9px] font-black uppercase tracking-widest text-[#10143A] bg-[#DCE135] px-2.5 py-1 rounded">
+                <span className="flex items-center gap-1 text-[9px] font-black uppercase tracking-widest text-[#11123c] bg-[#e9d319] px-2.5 py-1 rounded">
                   <Camera className="h-3 w-3" />
                   HD 4K
                 </span>

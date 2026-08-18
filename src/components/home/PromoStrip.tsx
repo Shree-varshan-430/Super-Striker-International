@@ -37,13 +37,13 @@ export default function PromoStrip() {
   const active = ANNOUNCEMENTS[index];
 
   return (
-    <div className="w-full bg-[#DCE135] text-[#10143A] py-3.5 border-y border-[#10143A]/10 relative z-35 overflow-hidden shadow-sm select-none">
+    <div className="w-full bg-[#e9d319] text-[#11123c] py-3.5 border-y border-[#11123c]/10 relative z-35 overflow-hidden shadow-sm select-none">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center">
         <Link 
           href={active.link}
           className="group flex items-center gap-2 text-center text-xs sm:text-sm font-extrabold uppercase tracking-wider hover:opacity-85 transition-all"
         >
-          <span className="flex h-2 w-2 rounded-full bg-[#10143A] animate-ping" />
+          <span className="flex h-2 w-2 rounded-full bg-[#11123c] animate-ping" />
           <span>{active.text}</span>
           <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
         </Link>

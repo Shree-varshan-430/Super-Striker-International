@@ -75,11 +75,11 @@ export default function SubBrandSpotlight() {
       <div className="max-w-[95%] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col items-start gap-1 border-l-4 border-[#10143A] pl-4 mb-12 text-left">
-          <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-2.5 py-0.5 rounded">
+        <div className="flex flex-col items-start gap-1 border-l-4 border-[#11123c] pl-4 mb-12 text-left">
+          <span className="text-[10px] font-black uppercase tracking-widest text-[#e9d319] bg-[#11123c] px-2.5 py-0.5 rounded">
             OUR ECOSYSTEM
           </span>
-          <h2 className="font-display text-2xl sm:text-4xl font-black uppercase tracking-tight text-[#0A1028] mt-1">
+          <h2 className="font-display text-2xl sm:text-4xl font-black uppercase tracking-tight text-[#11123c] mt-1">
             CLUBS & DEVELOPMENTS
           </h2>
         </div>
@@ -115,14 +115,14 @@ export default function SubBrandSpotlight() {
                   </div>
 
                   {/* Slide number badge */}
-                  <div className="absolute top-3 left-3 bg-[#10143A] text-[#DCE135] text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full z-20">
+                  <div className="absolute top-3 left-3 bg-[#11123c] text-[#e9d319] text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full z-20">
                     {item.num}
                   </div>
                 </div>
 
                 {/* Content area */}
                 <div className="p-6 flex flex-col gap-4">
-                  <h3 className="font-display text-base sm:text-lg font-black uppercase tracking-tight text-[#10143A] leading-tight line-clamp-1">
+                  <h3 className="font-display text-base sm:text-lg font-black uppercase tracking-tight text-[#11123c] leading-tight line-clamp-1">
                     {item.title}
                   </h3>
 
@@ -132,12 +132,12 @@ export default function SubBrandSpotlight() {
 
                   {/* Affiliation / Badge */}
                   <div className="flex items-center gap-2 bg-[#F4F6FA] border border-gray-100 rounded-lg p-2.5 w-fit">
-                    <Shield className="h-4 w-4 text-[#10143A]" />
+                    <Shield className="h-4 w-4 text-[#11123c]" />
                     <div className="flex flex-col text-left">
                       <span className="text-[8px] font-black uppercase tracking-wider text-[#4B5563]/60 leading-none">
                         {item.badgeLabel}
                       </span>
-                      <span className="text-[10px] font-bold text-[#10143A] mt-0.5 leading-none">
+                      <span className="text-[10px] font-bold text-[#11123c] mt-0.5 leading-none">
                         {item.badgeValue}
                       </span>
                     </div>
@@ -150,7 +150,7 @@ export default function SubBrandSpotlight() {
                 <Link
                   href={item.ctaLink}
                   {...(item.ctaLink.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#10143A] hover:bg-[#DCE135] text-white hover:text-[#10143A] py-3 text-xs font-bold uppercase tracking-wider transition-all shadow-sm active:scale-97"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#11123c] hover:bg-[#e9d319] text-white hover:text-[#11123c] py-3 text-xs font-bold uppercase tracking-wider transition-all shadow-sm active:scale-97"
                 >
                   {item.ctaText}
                   <ArrowRight className="h-4 w-4" />

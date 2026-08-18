@@ -159,18 +159,18 @@ export default function LatestFeed() {
           
           {/* Header with Navigation Link */}
           <div className="flex justify-between items-end pb-4 border-b border-gray-150 mb-12">
-            <div className="flex flex-col items-start gap-1 text-left border-l-4 border-[#10143A] pl-4">
-              <span className="text-[10px] font-black uppercase tracking-widest text-[#DCE135] bg-[#10143A] px-2.5 py-0.5 rounded">
+            <div className="flex flex-col items-start gap-1 text-left border-l-4 border-[#11123c] pl-4">
+              <span className="text-[10px] font-black uppercase tracking-widest text-[#e9d319] bg-[#11123c] px-2.5 py-0.5 rounded">
                 LATEST STORIES
               </span>
-              <h2 className="font-display text-2xl sm:text-4xl font-black uppercase tracking-tight text-[#0A1028] mt-1">
+              <h2 className="font-display text-2xl sm:text-4xl font-black uppercase tracking-tight text-[#11123c] mt-1">
                 NEWS & EDITORIAL READS
               </h2>
             </div>
             
             <Link
               href="/news"
-              className="inline-flex items-center gap-1.5 rounded-full bg-[#10143A] text-white hover:bg-[#DCE135] hover:text-[#10143A] px-5 py-2.5 text-xs font-bold uppercase tracking-wider transition-all hover:scale-103 active:scale-95 shadow-sm border border-gray-150"
+              className="inline-flex items-center gap-1.5 rounded-full bg-[#11123c] text-white hover:bg-[#e9d319] hover:text-[#11123c] px-5 py-2.5 text-xs font-bold uppercase tracking-wider transition-all hover:scale-103 active:scale-95 shadow-sm border border-gray-150"
             >
               Explore All News
               <ArrowRight className="h-4 w-4" />
@@ -193,9 +193,9 @@ export default function LatestFeed() {
                   className="object-cover transition-transform duration-1000 group-hover:scale-102"
                   sizes="(max-w-1024px) 100vw, 800px"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#10143A] via-[#10143A]/45 to-transparent z-10" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#11123c] via-[#11123c]/45 to-transparent z-10" />
                 <div className="relative z-20 p-6 sm:p-10 text-left flex flex-col gap-2 max-w-2xl text-white">
-                  <span className="text-[9px] font-black uppercase tracking-widest text-[#10143A] bg-[#DCE135] px-2 py-0.5 rounded w-fit">
+                  <span className="text-[9px] font-black uppercase tracking-widest text-[#11123c] bg-[#e9d319] px-2 py-0.5 rounded w-fit">
                     FEATURED
                   </span>
                   <h3 className="font-display text-xl sm:text-3xl font-black uppercase tracking-tight leading-tight">
@@ -204,7 +204,7 @@ export default function LatestFeed() {
                   <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-medium line-clamp-2 mt-1">
                     {featuredArticle.excerpt}
                   </p>
-                  <div className="inline-flex items-center gap-1.5 text-xs font-bold text-[#DCE135] mt-2">
+                  <div className="inline-flex items-center gap-1.5 text-xs font-bold text-[#e9d319] mt-2">
                     Read Story
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </div>
@@ -225,13 +225,13 @@ export default function LatestFeed() {
       </section>
 
       {/* ROW 2: VIDEOS (MUTV Style Dark Carousel Layout) */}
-      <section className="py-20 bg-[#0F1227] text-white border-b border-white/5 text-left">
+      <section className="py-20 bg-[#11123c] text-white border-b border-white/5 text-left">
         <div className="max-w-[95%] mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Header with Navigation Controls */}
           <div className="flex justify-between items-end pb-4 border-b border-white/10 mb-12">
-            <div className="flex flex-col items-start gap-1 text-left border-l-4 border-[#DCE135] pl-4">
-              <span className="text-[10px] font-black uppercase tracking-widest text-[#10143A] bg-[#DCE135] px-2.5 py-0.5 rounded">
+            <div className="flex flex-col items-start gap-1 text-left border-l-4 border-[#e9d319] pl-4">
+              <span className="text-[10px] font-black uppercase tracking-widest text-[#11123c] bg-[#e9d319] px-2.5 py-0.5 rounded">
                 MUTV CHANNELS
               </span>
               <h2 className="font-display text-2xl sm:text-4xl font-black uppercase tracking-tight text-white mt-1">
@@ -243,14 +243,14 @@ export default function LatestFeed() {
             <div className="hidden sm:flex items-center gap-2">
               <button
                 onClick={() => scroll(videoScrollRef, "left")}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white hover:bg-[#DCE135] hover:text-[#10143A] transition-all active:scale-95 shadow-sm"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white hover:bg-[#e9d319] hover:text-[#11123c] transition-all active:scale-95 shadow-sm"
                 aria-label="Scroll left"
               >
                 <ChevronLeft className="h-5 w-5" />
               </button>
               <button
                 onClick={() => scroll(videoScrollRef, "right")}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white hover:bg-[#DCE135] hover:text-[#10143A] transition-all active:scale-95 shadow-sm"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white hover:bg-[#e9d319] hover:text-[#11123c] transition-all active:scale-95 shadow-sm"
                 aria-label="Scroll right"
               >
                 <ChevronRight className="h-5 w-5" />
@@ -277,9 +277,9 @@ export default function LatestFeed() {
             <div className="w-[280px] sm:w-[320px] md:w-[360px] flex-shrink-0 snap-start">
               <Link 
                 href="/news"
-                className="flex flex-col items-center justify-center h-full min-h-[300px] border border-white/10 rounded-2xl bg-white/5 group p-6 text-center hover:border-[#DCE135] transition-all hover:bg-white/10"
+                className="flex flex-col items-center justify-center h-full min-h-[300px] border border-white/10 rounded-2xl bg-white/5 group p-6 text-center hover:border-[#e9d319] transition-all hover:bg-white/10"
               >
-                <div className="w-12 h-12 rounded-full bg-white/10 text-white flex items-center justify-center mb-4 group-hover:bg-[#DCE135] group-hover:text-[#10143A] transition-all">
+                <div className="w-12 h-12 rounded-full bg-white/10 text-white flex items-center justify-center mb-4 group-hover:bg-[#e9d319] group-hover:text-[#11123c] transition-all">
                   <Play className="h-5 w-5 fill-current group-hover:scale-110 transition-transform ml-0.5" />
                 </div>
                 <h3 className="font-display text-base font-black uppercase tracking-tight text-white">
