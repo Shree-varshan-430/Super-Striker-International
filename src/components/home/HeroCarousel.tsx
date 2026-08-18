@@ -87,7 +87,7 @@ export default function HeroCarousel() {
   }, [currentSlide]);
 
   return (
-    <section className="relative h-[88vh] min-h-[600px] max-h-[900px] w-full bg-[#11123c] text-white overflow-hidden select-none">
+    <section className="relative h-[88vh] min-h-[600px] max-h-[900px] w-full bg-black text-white overflow-hidden select-none">
       
       {/* 1. Full 4K Background Slides */}
       <div className="absolute inset-0 w-full h-full">
@@ -111,21 +111,11 @@ export default function HeroCarousel() {
         ))}
       </div>
 
-      {/* 2. Linear Contrast Vignette for Content Readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#11123c]/95 via-[#11123c]/70 to-transparent z-20 pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#11123c]/80 via-transparent to-transparent z-20 pointer-events-none" />
+      {/* 2. Linear Neutral Contrast Vignette for Content Readability (No Blue Tint) */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent z-20 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-20 pointer-events-none" />
 
-      {/* 3. Brand Accent Corner Wedges */}
-      <div 
-        className="absolute bottom-0 right-0 w-28 h-28 sm:w-36 sm:h-36 bg-[#11123c] pointer-events-none z-25 translate-x-2 translate-y-2 lg:block hidden" 
-        style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }} 
-      />
-      <div 
-        className="absolute bottom-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-[#e9d319] pointer-events-none z-30 lg:block hidden" 
-        style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }} 
-      />
-
-      {/* 4. Structured Main Content Container (Left-Aligned, Vertically Centered) */}
+      {/* 3. Structured Main Content Container (Left-Aligned, Vertically Centered) */}
       <div className="max-w-7xl 2xl:max-w-[1440px] mx-auto w-full h-full px-4 sm:px-6 lg:px-10 xl:px-12 flex flex-col justify-center items-start pt-20 sm:pt-24 pb-8 sm:pb-12 relative z-30 pointer-events-none">
         <div className="w-full max-w-3xl relative min-h-[380px] sm:min-h-[420px] flex items-center">
           {HERO_SLIDES.map((slide, idx) => (
