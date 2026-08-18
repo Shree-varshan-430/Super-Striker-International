@@ -160,26 +160,40 @@ export default function Home() {
         {/* 2. PROMO ANNOUNCEMENT STRIP (LIVE SCROLLING TICKER - YELLOW) */}
         <LiveTicker />
 
-        {/* 3. VENTURE SCALE & GROWTH METRICS (BUSINESS COUNT UP BAR - DARK) */}
-        <section 
-          ref={businessSectionRef} 
-          className="py-12 bg-[#11123c] text-white border-b border-white/10 px-4 sm:px-6 lg:px-8 select-none"
+        {/* 3. VENTURE SCALE & GROWTH METRICS (BROADCAST SCOREBOARD HUD - DARK) */}
+        <section
+          ref={businessSectionRef}
+          className="py-14 bg-[#11123c] text-white border-b border-white/10 px-4 sm:px-6 lg:px-8 select-none relative overflow-hidden"
         >
-          <div className="max-w-[95%] mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+          {/* HUD section divider lines */}
+          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#e9d319]/40 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#e9d319]/40 to-transparent" />
+
+          {/* LIVE indicator */}
+          <div className="flex items-center justify-center gap-2 mb-8">
+            <span className="w-2 h-2 rounded-full bg-[#e9d319] animate-pulse shadow-[0_0_8px_rgba(233,211,25,0.8)]" />
+            <span className="text-[9px] font-black uppercase tracking-[0.25em] text-[#e9d319]/80">Live Metrics</span>
+          </div>
+
+          <div className="max-w-[95%] mx-auto grid grid-cols-2 md:grid-cols-4 gap-0">
             {[
-              { target: 1500, suffix: "+", label: "Grassroots Discovered Base" },
-              { target: 5, suffix: "", label: "Smart Telemetry Fields" },
-              { target: 3, suffix: "", label: "Affiliated State Clubs" },
-              { target: 100, suffix: "%", label: "Talent Pathway Flow" }
+              { target: 1500, suffix: "+", label: "Grassroots Discovered Base", icon: "⚽" },
+              { target: 5, suffix: "", label: "Smart Telemetry Fields", icon: "📡" },
+              { target: 3, suffix: "", label: "Affiliated State Clubs", icon: "🏆" },
+              { target: 100, suffix: "%", label: "Talent Pathway Flow", icon: "📈" }
             ].map((item, idx) => (
-              <div key={idx} className="flex flex-col items-center text-center py-2 border-r last:border-r-0 border-white/10">
-                <span className="text-3xl sm:text-5xl font-display font-black text-[#e9d319] leading-none">
+              <div key={idx} className="flex flex-col items-center text-center py-4 px-4 border-r last:border-r-0 border-white/10 relative">
+                {/* Scoreboard number with gold glow */}
+                <span className="text-3xl sm:text-5xl font-display font-black leading-none" style={{ color: "#e9d319", textShadow: "0 0 20px rgba(233,211,25,0.4)" }}>
                   <span className="stat-counter" data-target={item.target}>0</span>
                   {item.suffix}
                 </span>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-white/70 mt-2 max-w-[150px]">
+                {/* Lower-third label */}
+                <span className="text-[10px] font-bold uppercase tracking-wider text-white/60 mt-3 max-w-[140px] leading-tight">
                   {item.label}
                 </span>
+                {/* HUD accent underline */}
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-[2px] bg-[#e9d319]/30 mt-2" />
               </div>
             ))}
           </div>
@@ -243,7 +257,15 @@ export default function Home() {
                       sub: "Asset Backing: Official federation club registry charters, stadium match day gates, broadcast rights."
                     }
                   ].map((asset, idx) => (
-                    <div key={idx} className="bg-white rounded-2xl p-6 border-l-4 border-[#11123c] shadow-xs flex flex-col gap-2 transition-transform duration-300 hover:scale-[1.01]">
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, x: -16 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: idx * 0.1 }}
+                      whileHover={{ scale: 1.01, boxShadow: "0 0 0 1px rgba(233,211,25,0.3), 0 8px 24px rgba(17,18,60,0.12)" }}
+                      className="reticle bg-white rounded-2xl p-6 border-l-4 border-[#11123c] shadow-xs flex flex-col gap-2 transition-all duration-300"
+                    >
                       <h4 className="font-display text-base sm:text-lg font-black uppercase text-[#11123c]">
                         {asset.title}
                       </h4>
@@ -253,7 +275,7 @@ export default function Home() {
                       <span className="text-[10px] sm:text-xs font-bold text-[#11123c] uppercase tracking-wide mt-1 bg-gray-50 px-2.5 py-1 rounded w-fit">
                         {asset.sub}
                       </span>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
               </div>
@@ -290,7 +312,15 @@ export default function Home() {
                       returnVal: "Target Yield: Exponential long-term enterprise valuation growth."
                     }
                   ].map((ret, idx) => (
-                    <div key={idx} className="bg-white rounded-2xl p-6 border-l-4 border-[#e9d319] shadow-xs flex flex-col gap-2 transition-transform duration-300 hover:scale-[1.01]">
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, x: 16 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: idx * 0.1 }}
+                      whileHover={{ scale: 1.01, boxShadow: "0 0 0 1px rgba(233,211,25,0.45), 0 8px 24px rgba(233,211,25,0.08)" }}
+                      className="reticle bg-white rounded-2xl p-6 border-l-4 border-[#e9d319] shadow-xs flex flex-col gap-2 transition-all duration-300"
+                    >
                       <h4 className="font-display text-base sm:text-lg font-black uppercase text-[#11123c]">
                         {ret.title}
                       </h4>
@@ -300,7 +330,7 @@ export default function Home() {
                       <span className="text-[10px] sm:text-xs font-bold text-[#11123c] uppercase tracking-wide mt-1 bg-[#e9d319]/20 px-2.5 py-1 rounded w-fit">
                         {ret.returnVal}
                       </span>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
               </div>
@@ -490,18 +520,29 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Render Player Journeys using 100% 4K Clear Profile Cards */}
+          {/* Render Player Cards — EA Sports FIFA style: 3D tilt, jersey glow, scanline */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10">
             {[
               { name: "Aditya Kumar", role: "Midfielder", cohort: "U-15 Elite Cohort", number: "10", image: "/images/Player1.jpeg", stats: "Pass Accuracy: 88% | Assist Leader" },
               { name: "Sanjay Raj", role: "Striker", cohort: "BSS Senior Squad", number: "09", image: "/images/Player2.jpeg", stats: "Goals: 12 | Shots conversion: 24%" },
               { name: "Vikram Seth", role: "Goalkeeper", cohort: "Pondicherry Resident Academy", number: "01", image: "/images/Player3.jpeg", stats: "Clean Sheets: 8 | Penalty Saves: 2" }
-            ].map((player) => (
-              <div 
+            ].map((player, playerIdx) => (
+              <motion.div
                 key={player.name}
-                className="relative rounded-2xl sm:rounded-3xl overflow-hidden aspect-[3/4] group shadow-xl bg-gray-50 flex flex-col justify-end p-6 sm:p-8 select-none"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: playerIdx * 0.15 }}
+                whileHover={{
+                  rotateY: 4,
+                  rotateX: -2,
+                  scale: 1.02,
+                  boxShadow: "0 0 0 1.5px rgba(233,211,25,0.5), 0 24px 48px rgba(17,18,60,0.25)"
+                }}
+                style={{ perspective: 1000, transformStyle: "preserve-3d" }}
+                className="reticle relative rounded-2xl sm:rounded-3xl overflow-hidden aspect-[3/4] group shadow-xl bg-gray-50 flex flex-col justify-end p-6 sm:p-8 select-none cursor-default transition-all duration-300"
               >
-                {/* 100% Pure 4K Player Image (Zero Grayscale, Zero Dark Dimming) */}
+                {/* Player image */}
                 <div className="absolute inset-0 z-0">
                   <Image
                     src={player.image}
@@ -511,18 +552,24 @@ export default function Home() {
                     className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-w-768px) 100vw, 400px"
                   />
-                  {/* Gentle bottom-only vignette to keep text legible while leaving the player face completely 100% crisp & bright */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#11123c]/90 via-[#11123c]/25 to-transparent z-10" />
+                  {/* Gentle bottom vignette */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#11123c]/92 via-[#11123c]/25 to-transparent z-10" />
                 </div>
 
-                {/* Floating Top Number Badge */}
+                {/* Scanline telemetry texture overlay */}
+                <div className="absolute inset-0 z-[11] scanline-overlay pointer-events-none rounded-2xl sm:rounded-3xl" />
+
+                {/* Jersey number badge with gold glow */}
                 <div className="absolute top-5 right-5 z-20">
-                  <span className="font-display text-xl sm:text-2xl font-black text-[#11123c] bg-[#e9d319] px-3 py-1 rounded-xl shadow-md">
+                  <span
+                    className="font-display text-xl sm:text-2xl font-black text-[#11123c] bg-[#e9d319] px-3 py-1 rounded-xl shadow-md"
+                    style={{ textShadow: "0 0 12px rgba(233,211,25,0.8)" }}
+                  >
                     #{player.number}
                   </span>
                 </div>
 
-                {/* Content info overlay at bottom */}
+                {/* Content overlay */}
                 <div className="relative z-20 text-left text-white flex flex-col gap-1.5">
                   <span className="text-[10px] font-black uppercase tracking-widest text-[#e9d319]">
                     {player.role}
@@ -534,18 +581,19 @@ export default function Home() {
                     {player.cohort}
                   </span>
 
-                  {/* Telemetry stats pill */}
-                  <div className="mt-2 pt-2 border-t border-white/20 flex flex-col gap-0.5">
-                    <span className="text-[9px] font-black tracking-widest text-[#e9d319] uppercase">
-                      TELEMETRY INDEX
+                  {/* Telemetry readout panel */}
+                  <div className="mt-3 pt-2 border-t border-[#e9d319]/30 flex flex-col gap-0.5">
+                    <span className="text-[9px] font-black tracking-widest text-[#e9d319] uppercase flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#e9d319] animate-pulse" />
+                      Telemetry Index
                     </span>
-                    <span className="text-xs font-bold text-white">
+                    <span className="text-xs font-bold text-white font-mono tracking-wide">
                       {player.stats}
                     </span>
                   </div>
                 </div>
 
-              </div>
+              </motion.div>
             ))}
           </div>
         </motion.section>
@@ -565,26 +613,37 @@ export default function Home() {
               </h2>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
               {[
                 { img: "/images/news-underpriv-camp.jpg", likes: "1,240", caption: "Hard work on the turf today. 💪 #SuperStriker" },
                 { img: "/images/news-pathways.jpg", likes: "890", caption: "Developing youth pathways step-by-step. ⚽" },
                 { img: "/images/Instagram2.jpeg", likes: "2,050", caption: "Matchday memories. Three points locked in! 🏆" },
                 { img: "/images/Instagram3.jpeg", likes: "1,560", caption: "Grassroots scouting festivals active in school clusters. 🧤" }
               ].map((post, idx) => (
-                <div key={idx} className="relative rounded-xl overflow-hidden aspect-square group shadow-sm bg-[#11123c]/40 border border-white/5">
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.08 }}
+                  whileHover={{
+                    scale: 1.03,
+                    boxShadow: "0 0 0 2px rgba(233,211,25,0.5), 0 16px 32px rgba(17,18,60,0.3)"
+                  }}
+                  className="relative rounded-xl overflow-hidden aspect-square group shadow-sm bg-[#11123c]/40 border border-white/5 cursor-pointer transition-all duration-300"
+                >
                   <Image
                     src={post.img}
                     alt="Instagram Post"
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-103 opacity-90 group-hover:opacity-100"
+                    className="object-cover transition-transform duration-700 group-hover:scale-108 opacity-90 group-hover:opacity-100"
                     sizes="(max-w-768px) 50vw, 25vw"
                   />
-                  <div className="absolute inset-0 bg-[#11123c]/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 text-left text-white">
+                  <div className="absolute inset-0 bg-[#11123c]/65 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 text-left text-white">
                     <span className="text-[10px] font-bold tracking-wider text-[#e9d319]">♥ {post.likes} likes</span>
                     <p className="text-[11px] leading-relaxed mt-1 font-medium">{post.caption}</p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>

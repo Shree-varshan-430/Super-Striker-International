@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Play, Clock, X } from "lucide-react";
+import { motion } from "framer-motion";
 import { NewsItem } from "@/types/news";
 
 interface NewsCardProps {
@@ -38,11 +39,20 @@ export default function NewsCard({ item, darkTheme }: NewsCardProps) {
 
   return (
     <>
-      <div className={`rounded-2xl sm:rounded-3xl overflow-hidden transition-all duration-300 flex flex-col h-full text-left group w-full select-none ${
-        darkTheme 
-          ? "bg-[#18194a] border border-white/10 hover:border-[#e9d319]/40 hover:shadow-xl" 
-          : "bg-white border border-gray-150/80 hover:border-[#11123c]/40 hover:shadow-xl shadow-xs"
-      }`}>
+      <motion.div
+        whileHover={{
+          y: -5,
+          boxShadow: darkTheme
+            ? "0 0 0 1px rgba(233,211,25,0.35), 0 20px 40px rgba(17,18,60,0.35)"
+            : "0 0 0 1px rgba(17,18,60,0.15), 0 20px 40px rgba(17,18,60,0.12)"
+        }}
+        transition={{ duration: 0.25, ease: "easeOut" }}
+        className={`rounded-2xl sm:rounded-3xl overflow-hidden transition-all duration-300 flex flex-col h-full text-left group w-full select-none ${
+          darkTheme 
+            ? "bg-[#18194a] border border-white/10 hover:border-[#e9d319]/40 hover:shadow-xl" 
+            : "bg-white border border-gray-150/80 hover:border-[#11123c]/40 hover:shadow-xl shadow-xs"
+        }`}
+      >
         {/* Media Container (16:10 Aspect Box) */}
         <Link 
           href={targetLink} 
@@ -70,10 +80,13 @@ export default function NewsCard({ item, darkTheme }: NewsCardProps) {
             </span>
           </div>
 
-          {/* Video Overlay */}
+          {/* Video Overlay — gold ring glow on play button hover */}
           {item.type === "video" && (
             <div className="absolute inset-0 bg-[#11123c]/35 flex items-center justify-center transition-colors group-hover:bg-[#11123c]/45">
-              <div className="w-12 h-12 rounded-full bg-white text-[#11123c] flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#e9d319]">
+              <div
+                className="w-12 h-12 rounded-full bg-white text-[#11123c] flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:bg-[#e9d319]"
+                style={{ boxShadow: undefined }}
+              >
                 <Play className="h-5 w-5 fill-current ml-0.5" />
               </div>
               
@@ -139,7 +152,7 @@ export default function NewsCard({ item, darkTheme }: NewsCardProps) {
             </span>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Styled "Coming Soon" Modal for Video placeholders */}
       {showModal && (

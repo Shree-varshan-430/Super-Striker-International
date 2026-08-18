@@ -1,7 +1,10 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, MapPin, Mail } from "lucide-react";
+import { motion } from "framer-motion";
 import NewsletterForm from "./NewsletterForm";
 
 const FacebookIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -40,8 +43,14 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl 2xl:max-w-[1440px] px-4 py-20 sm:px-6 lg:px-10 xl:px-12">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 md:grid-cols-2">
           
-          {/* Brand Column */}
-          <div className="lg:col-span-4 flex flex-col gap-6">
+          {/* Brand Column — closes like film credits fading in */}
+          <motion.div
+            className="lg:col-span-4 flex flex-col gap-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <Link href="/" className="flex items-center gap-4 group self-start">
               <div className="relative w-20 h-20 transition-all duration-300 group-hover:scale-105">
                 <Image
@@ -77,7 +86,7 @@ export default function Footer() {
                 <YoutubeIcon className="h-6 w-6" />
               </a>
             </div>
-          </div>
+          </motion.div>
 
           {/* Headquarters & Contact Info Column */}
           <div className="lg:col-span-3 text-left">

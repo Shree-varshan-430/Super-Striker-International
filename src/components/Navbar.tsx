@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -9,7 +9,14 @@ import { Menu, X, User } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 80);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -20,14 +27,25 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 w-full bg-white border-b border-gray-200 select-none shadow-sm">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 w-full select-none transition-all duration-500 ${
+        scrolled
+          ? "bg-[#11123c]/95 backdrop-blur-md border-b border-white/10 shadow-[0_4px_24px_rgba(17,18,60,0.4)]"
+          : "bg-white border-b border-gray-200 shadow-sm"
+      }`}
+    >
       <div className="mx-auto max-w-[95%] px-4 sm:px-6 lg:px-8">
         
-        {/* Navigation Bar (Single Row, Spacious h-24 on Desktop) */}
+        {/* Navigation Bar */}
         <div className="flex items-center justify-between h-20 sm:h-24 relative">
           
           {/* Left: Logo & Brand Name */}
-          <div className="flex items-center gap-3 shrink-0">
+          <motion.div
+            className="flex items-center gap-3 shrink-0"
+            initial={{ opacity: 0, x: -12 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
             <Link href="/" className="flex items-center gap-3 group">
               <div className="relative w-14 h-14 sm:w-18 sm:h-18 transition-transform duration-300 group-hover:scale-103">
                 <Image
@@ -39,7 +57,7 @@ export default function Navbar() {
                 />
               </div>
               <div className="flex flex-col text-left">
-                <span className="font-display text-base sm:text-lg lg:text-xl font-black uppercase tracking-tight leading-none text-[#11123c]">
+                <span className={`font-display text-base sm:text-lg lg:text-xl font-black uppercase tracking-tight leading-none transition-colors duration-300 ${scrolled ? "text-white" : "text-[#11123c]"}`}>
                   SuperStriker
                 </span>
                 <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest leading-none mt-1 text-[#a29142]">
@@ -47,7 +65,7 @@ export default function Navbar() {
                 </span>
               </div>
             </Link>
-          </div>
+          </motion.div>
 
           {/* Center: Navigation Links (Desktop) */}
           <nav className="hidden lg:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
@@ -57,10 +75,10 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`text-xs sm:text-sm font-black uppercase tracking-widest transition-colors py-2 relative ${
-                    isActive 
-                      ? "text-[#11123c]" 
-                      : "text-[#696484] hover:text-[#11123c]"
+                  className={`text-xs sm:text-sm font-black uppercase tracking-widest transition-colors duration-300 py-2 relative ${
+                    isActive
+                      ? scrolled ? "text-[#e9d319]" : "text-[#11123c]"
+                      : scrolled ? "text-white/70 hover:text-white" : "text-[#696484] hover:text-[#11123c]"
                   }`}
                 >
                   {link.name}
@@ -81,7 +99,9 @@ export default function Navbar() {
             {/* Account Icon */}
             <Link 
               href="/investors#enquire" 
-              className="text-[#11123c] hover:text-[#11123c] transition-colors p-2 hover:bg-[#e9d319]/20 hover:border-[#a29142]/40 rounded-full flex items-center justify-center border border-gray-200 shadow-xs"
+              className={`transition-colors duration-300 p-2 rounded-full flex items-center justify-center border shadow-xs hover:bg-[#e9d319]/20 hover:border-[#a29142]/40 ${
+                scrolled ? "text-white border-white/20" : "text-[#11123c] border-gray-200"
+              }`}
               aria-label="Profile"
             >
               <User className="h-5 w-5" />
@@ -91,7 +111,9 @@ export default function Navbar() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="lg:hidden p-2.5 text-[#11123c] hover:bg-gray-100 rounded-md transition-colors"
+              className={`lg:hidden p-2.5 rounded-md transition-colors ${
+                scrolled ? "text-white hover:bg-white/10" : "text-[#11123c] hover:bg-gray-100"
+              }`}
               aria-controls="mobile-menu"
               aria-expanded={isOpen}
             >

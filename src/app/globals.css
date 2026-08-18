@@ -5,15 +5,21 @@
   --foreground: #11123c;
   
   /* Exact Brand Color System */
-  --primary-navy: #11123c;       /* Midnight Navy: #11123c (rgba(17,18,60,1)) */
-  --secondary-navy: #25265e;     /* Royal Slate Navy: #25265e (rgba(37,38,94,1)) */
-  --brand-gold: #e9d319;         /* Electric Brand Gold / Yellow: #e9d319 (rgba(233,211,25,1)) */
-  --heritage-gold: #a29142;      /* Heritage Antique Gold / Bronze: #a29142 (rgba(162,145,66,1)) */
-  --slate-lavender: #696484;     /* Slate Muted Purple / Grey: #696484 (rgba(105,100,132,1)) */
+  --primary-navy: #11123c;       /* Midnight Navy */
+  --secondary-navy: #25265e;     /* Royal Slate Navy */
+  --brand-gold: #e9d319;         /* Electric Brand Gold */
+  --heritage-gold: #a29142;      /* Heritage Antique Gold */
+  --slate-lavender: #696484;     /* Slate Muted Purple */
 
   --accent-gold: #e9d319;
   --background-soft: #F8F9FC;
   --text-body: #696484;
+
+  /* Derived cinematic glow tokens (tints only — no new colors) */
+  --glow-gold: rgba(233,211,25,0.18);
+  --glow-gold-soft: rgba(233,211,25,0.08);
+  --glow-navy: rgba(17,18,60,0.85);
+  --border-glow: 0 0 0 1px rgba(233,211,25,0.35), 0 0 16px rgba(233,211,25,0.12);
 
   /* Legacy/compatibility mappings */
   --primary-sky: #e9d319;
@@ -50,56 +56,156 @@ body {
   font-family: var(--font-sans);
 }
 
-/* Custom premium scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+/* ─── CINEMATIC SCROLL SYSTEM ─────────────────────────────────────── */
+
+/* Ken Burns: slow zoom on hero images */
+@keyframes ken-burns {
+  from { transform: scale(1.0); }
+  to   { transform: scale(1.1); }
 }
-::-webkit-scrollbar-track {
-  background: var(--background-soft);
-}
-::-webkit-scrollbar-thumb {
-  background: #696484/40;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--brand-gold);
+.animate-ken-burns {
+  animation: ken-burns 9s ease-in-out forwards;
 }
 
-/* Editorial line highlights */
-.editorial-line {
+/* Ambient light sweep across hero frame */
+@keyframes light-sweep {
+  0%   { opacity: 0; transform: translateX(-140%) skewX(-18deg); }
+  35%  { opacity: 1; }
+  100% { opacity: 0; transform: translateX(240%) skewX(-18deg); }
+}
+.animate-light-sweep {
+  animation: light-sweep 3.5s ease-in-out forwards;
+  animation-delay: 0.6s;
+}
+
+/* HUD progress bar sweeping across bottom of hero */
+@keyframes hud-progress {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+.animate-hud-progress {
+  transform-origin: left center;
+  animation: hud-progress 6s linear forwards;
+}
+
+/* Film-credit text reveal (stagger applied via inline delay) */
+@keyframes film-reveal {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-film-reveal {
+  animation: film-reveal 0.65s cubic-bezier(0.22,1,0.36,1) forwards;
+  opacity: 0;
+}
+
+/* Scoreboard counter tick flicker */
+@keyframes hud-flicker {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.7; }
+}
+.animate-hud-flicker {
+  animation: hud-flicker 0.08s steps(1) 3;
+}
+
+/* Scanline shimmer for telemetry readout panels */
+@keyframes scanline-drift {
+  0%   { background-position: 0 0; }
+  100% { background-position: 0 40px; }
+}
+.scanline-overlay {
   position: relative;
 }
+.scanline-overlay::after {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(233,211,25,0.025) 3px,
+    rgba(233,211,25,0.025) 4px
+  );
+  animation: scanline-drift 4s linear infinite;
+  border-radius: inherit;
+}
+
+/* Corner reticle bracket decorator */
+.reticle {
+  position: relative;
+}
+.reticle::before,
+.reticle::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-color: #e9d319;
+  border-style: solid;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.reticle::before {
+  top: 8px; left: 8px;
+  border-width: 2px 0 0 2px;
+}
+.reticle::after {
+  bottom: 8px; right: 8px;
+  border-width: 0 2px 2px 0;
+}
+.reticle:hover::before,
+.reticle:hover::after {
+  opacity: 1;
+}
+
+/* Prefers-reduced-motion: disable all non-essential animation */
+@media (prefers-reduced-motion: reduce) {
+  .animate-ken-burns,
+  .animate-light-sweep,
+  .animate-hud-progress,
+  .animate-film-reveal,
+  .animate-hud-flicker,
+  .scanline-overlay::after {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ─── EXISTING UTILITIES ────────────────────────────────────────── */
+
+/* Custom premium scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--background-soft); }
+::-webkit-scrollbar-thumb { background: rgba(105,100,132,0.4); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--brand-gold); }
+
+/* Editorial line highlights */
+.editorial-line { position: relative; }
 .editorial-line::after {
   content: '';
   position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 40px;
-  height: 3px;
+  bottom: -4px; left: 0;
+  width: 40px; height: 3px;
   background-color: var(--brand-gold);
 }
 
-/* Image overlay overlay-editorial */
+/* Image overlay */
 .overlay-editorial {
-  background: linear-gradient(to bottom, rgba(17, 18, 60, 0.1), rgba(17, 18, 60, 0.9));
+  background: linear-gradient(to bottom, rgba(17,18,60,0.1), rgba(17,18,60,0.9));
 }
 
-/* Infinite marquee scrolling keyframes and utilities */
+/* Infinite marquee */
 @keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
 }
-
 .animate-marquee-slow {
   display: flex;
   width: max-content;
   animation: marquee 35s linear infinite;
 }
-
 .animate-marquee-fast {
   display: flex;
   width: max-content;
