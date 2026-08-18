@@ -20,7 +20,7 @@ export default function NewsCard({ item, darkTheme }: NewsCardProps) {
 
   const handleClick = (e: React.MouseEvent) => {
     if (hasVideoUrl) {
-      return;
+      return; // let link handle direct youtube tab opening
     }
     if (item.type === "video") {
       e.preventDefault();
@@ -38,32 +38,30 @@ export default function NewsCard({ item, darkTheme }: NewsCardProps) {
 
   return (
     <>
-      <div
-        className={`border overflow-hidden transition-all duration-300 flex flex-col h-full text-left group w-full select-none ${
-          darkTheme 
-            ? "bg-[#11123c] border-white/15 hover:border-[#e9d319]" 
-            : "bg-white border-gray-200 hover:border-[#11123c]"
-        }`}
-      >
+      <div className={`rounded-2xl sm:rounded-3xl overflow-hidden transition-all duration-300 flex flex-col h-full text-left group w-full select-none ${
+        darkTheme 
+          ? "bg-[#18194a] border border-white/10 hover:border-[#e9d319]/40 hover:shadow-xl" 
+          : "bg-white border border-gray-150/80 hover:border-[#11123c]/40 hover:shadow-xl shadow-xs"
+      }`}>
         {/* Media Container (16:10 Aspect Box) */}
         <Link 
           href={targetLink} 
           onClick={handleClick}
           target={hasVideoUrl ? "_blank" : undefined}
           rel={hasVideoUrl ? "noopener noreferrer" : undefined}
-          className="relative w-full overflow-hidden aspect-[16/10] block bg-gray-100 shrink-0"
+          className="relative w-full overflow-hidden aspect-[16/10] block bg-gray-50 shrink-0"
         >
           <Image
             src={item.thumbnail}
             alt={item.title}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-103"
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
             sizes="(max-w-768px) 100vw, 420px"
           />
 
           {/* Category Ribbon */}
           <div className="absolute top-3.5 left-3.5 z-10">
-            <span className={`text-[9px] font-mono font-bold uppercase tracking-[0.18em] px-2.5 py-1 ${
+            <span className={`text-[9px] font-black uppercase tracking-wider px-2.5 py-1 rounded-md shadow-xs ${
               darkTheme 
                 ? "bg-[#e9d319] text-[#11123c]" 
                 : "bg-[#11123c] text-[#e9d319]"
@@ -74,14 +72,14 @@ export default function NewsCard({ item, darkTheme }: NewsCardProps) {
 
           {/* Video Overlay */}
           {item.type === "video" && (
-            <div className="absolute inset-0 bg-[#11123c]/40 flex items-center justify-center transition-colors group-hover:bg-[#11123c]/55">
-              <div className="w-12 h-12 bg-white text-[#11123c] flex items-center justify-center transition-transform duration-300 group-hover:scale-108 group-hover:bg-[#e9d319]">
+            <div className="absolute inset-0 bg-[#11123c]/35 flex items-center justify-center transition-colors group-hover:bg-[#11123c]/45">
+              <div className="w-12 h-12 rounded-full bg-white text-[#11123c] flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#e9d319]">
                 <Play className="h-5 w-5 fill-current ml-0.5" />
               </div>
               
               {/* Duration Badge */}
               {item.duration && (
-                <div className="absolute bottom-3 right-3 bg-[#11123c]/90 text-white text-[9px] font-mono font-bold uppercase px-2 py-0.5 flex items-center gap-1 border border-white/20">
+                <div className="absolute bottom-3 right-3 bg-[#11123c]/85 text-white text-[10px] font-bold uppercase px-2 py-0.5 rounded flex items-center gap-1">
                   <Clock className="h-3 w-3 text-[#e9d319]" />
                   <span>{item.duration}</span>
                 </div>
@@ -94,8 +92,8 @@ export default function NewsCard({ item, darkTheme }: NewsCardProps) {
         <div className="p-6 flex flex-col justify-between flex-grow gap-4">
           <div className="flex flex-col gap-2.5">
             {/* Metadata Byline Row */}
-            <div className="flex items-center justify-between text-[10px] font-mono font-bold uppercase tracking-wider">
-              <span className={darkTheme ? "text-white/70" : "text-[#696484]"}>
+            <div className="flex items-center justify-between text-[11px] font-bold uppercase tracking-wider">
+              <span className={darkTheme ? "text-white/60" : "text-[#696484]"}>
                 {item.author || "Editorial Desk"}
               </span>
               <span className={darkTheme ? "text-white/40" : "text-gray-400"}>
@@ -121,8 +119,8 @@ export default function NewsCard({ item, darkTheme }: NewsCardProps) {
 
             {/* Excerpt if present */}
             {item.excerpt && (
-              <p className={`text-xs leading-relaxed font-normal line-clamp-2 ${
-                darkTheme ? "text-white/70" : "text-[#4B5563]"
+              <p className={`text-xs sm:text-sm line-clamp-2 leading-relaxed font-normal ${
+                darkTheme ? "text-white/70" : "text-[#696484]"
               }`}>
                 {item.excerpt}
               </p>
@@ -130,10 +128,10 @@ export default function NewsCard({ item, darkTheme }: NewsCardProps) {
           </div>
 
           {/* Bottom Interactive Read Link */}
-          <div className={`pt-3 border-t flex items-center justify-between text-xs font-mono font-bold uppercase tracking-wider ${
+          <div className={`pt-3 border-t flex items-center justify-between text-xs font-black uppercase tracking-wider ${
             darkTheme 
               ? "border-white/10 text-[#e9d319]" 
-              : "border-gray-150 text-[#11123c]"
+              : "border-gray-100 text-[#11123c]"
           }`}>
             <span className="flex items-center gap-1.5">
               {item.type === "video" ? "Watch Clip" : "Read Dispatch"}
@@ -143,17 +141,17 @@ export default function NewsCard({ item, darkTheme }: NewsCardProps) {
         </div>
       </div>
 
-      {/* Styled Modal for Video placeholders */}
+      {/* Styled "Coming Soon" Modal for Video placeholders */}
       {showModal && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-[#11123c]/80 backdrop-blur-sm">
-          <div className="relative bg-white text-[#11123c] max-w-sm w-full p-8 border border-gray-200 text-center flex flex-col items-center gap-4 shadow-2xl">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-[#11123c]/70 backdrop-blur-sm">
+          <div className="relative bg-white text-[#11123c] max-w-sm w-full rounded-2xl p-6 shadow-2xl border border-gray-100 text-center flex flex-col items-center gap-4">
             <button 
               onClick={() => setShowModal(false)}
               className="absolute top-4 right-4 text-[#4B5563] hover:text-[#11123c] transition-colors"
             >
               <X className="h-5 w-5" />
             </button>
-            <div className="w-14 h-14 bg-[#e9d319] text-[#11123c] flex items-center justify-center">
+            <div className="w-14 h-14 rounded-full bg-[#e9d319]/25 text-[#11123c] flex items-center justify-center">
               <Play className="h-6 w-6 fill-current ml-0.5" />
             </div>
             <div className="flex flex-col gap-1">
@@ -166,7 +164,7 @@ export default function NewsCard({ item, darkTheme }: NewsCardProps) {
             </div>
             <button 
               onClick={() => setShowModal(false)}
-              className="w-full bg-[#11123c] text-white py-3 text-xs font-mono font-bold uppercase tracking-wider hover:bg-[#e9d319] hover:text-[#11123c] transition-all"
+              className="w-full rounded-full bg-[#11123c] text-white py-2.5 text-xs font-bold uppercase tracking-wider hover:bg-[#e9d319] hover:text-[#11123c] transition-all"
             >
               Back To Homepage
             </button>
